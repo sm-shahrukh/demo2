@@ -2,10 +2,1225 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Discover a calmer journey from Islamabad to Dubai with Bukhari Booking."
+    />
+    <title>Bukhari Booking — The Calm Journey</title>
+    <link rel="stylesheet" href="css/vendor/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    Hello World!
+    <input
+      class="visually-hidden service-choice"
+      type="radio"
+      name="service"
+      id="service-flights"
+      checked
+    />
+    <input
+      class="visually-hidden service-choice"
+      type="radio"
+      name="service"
+      id="service-umrah"
+    />
+    <input
+      class="visually-hidden service-choice"
+      type="radio"
+      name="service"
+      id="service-visa"
+    />
+    <div class="welcome-strip text-center text-white">
+      Your journey begins with Bukhari Booking.
+      <a class="text-white text-decoration-underline ms-2" href="#booking"
+        >Find your next flight</a
+      >
+    </div>
+    <header class="travel-header bg-white sticky-top shadow-sm">
+      <div
+        class="container d-flex align-items-center gap-3 flex-wrap flex-lg-nowrap"
+      >
+        <a href="index.html" class="brand me-lg-4"
+          >bukhari<span>BOOKING.COM</span></a
+        >
+        <nav
+          class="travel-nav d-flex align-self-stretch gap-4 me-auto"
+          aria-label="Travel services"
+        >
+          <label class="nav-service" for="service-flights"
+            ><i class="bi bi-airplane"></i><span>Flights</span></label
+          >
+          <label class="nav-service" for="service-umrah"
+            ><i class="bi bi-moon-stars"></i><span>Umrah</span></label
+          >
+          <label class="nav-service" for="service-visa"
+            ><i class="bi bi-passport"></i><span>Visa</span></label
+          >
+        </nav>
+        <button
+          class="d-none d-lg-flex align-items-center gap-2 text-start"
+          popovertarget="my-trips"
+        >
+          <i class="bi bi-suitcase fs-4 text-primary"></i
+          ><span
+            ><strong class="d-block">My trips</strong
+            ><small class="text-secondary">Manage your bookings</small></span
+          >
+        </button>
+        <button
+          class="d-none d-xl-flex align-items-center gap-2 text-start"
+          popovertarget="account"
+        >
+          <i class="bi bi-heart-fill fs-4 text-danger"></i
+          ><span
+            ><strong class="d-block">Wishlist</strong
+            ><small class="text-secondary">Save your favourites</small></span
+          >
+        </button>
+        <div class="account-dropdown position-relative ms-2">
+          <button
+            type="button"
+            popovertarget="account-menu"
+            id="account-menu-trigger"
+            class="d-flex align-items-center gap-2"
+            aria-label="My account menu"
+          >
+            <img
+              src="images/demo-profile.jpg"
+              class="account-photo rounded-circle"
+              width="40"
+              height="40"
+              alt="Demo profile avatar"
+            />
+            <span class="d-none d-md-block"
+              ><strong class="d-block">My account</strong
+              ><small class="text-secondary">Ali Ahmed</small></span
+            >
+            <i class="bi bi-chevron-down ms-1"></i>
+          </button>
+          <div
+            id="account-menu"
+            popover="auto"
+            aria-label="My account"
+            class="account-menu bg-white border rounded-3 shadow p-2"
+          >
+            <div class="px-3 py-2 border-bottom mb-2">
+              <strong class="d-block">Ali Ahmed</strong
+              ><small class="text-secondary">Demo account</small>
+            </div>
+            <button popovertarget="wallet-demo" class="account-menu-item">
+              <i class="bi bi-wallet2"></i>Wallet
+            </button>
+            <button popovertarget="profile-demo" class="account-menu-item">
+              <i class="bi bi-person"></i>Profile
+            </button>
+            <button popovertarget="my-trips" class="account-menu-item">
+              <i class="bi bi-suitcase"></i>My bookings
+            </button>
+            <div class="border-top my-2"></div>
+            <button
+              popovertarget="logout-demo"
+              class="account-menu-item text-danger"
+            >
+              <i class="bi bi-box-arrow-right"></i>Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="travel-hero" aria-label="Search flights, Umrah and visa">
+        <div class="container hero-layout position-relative">
+          <nav
+            class="service-dock bg-white rounded-4 shadow d-flex justify-content-center mx-auto"
+            aria-label="Choose a travel service"
+          >
+            <label for="service-flights" class="dock-service"
+              ><i class="bi bi-airplane"></i><span>Flights</span></label
+            >
+            <label for="service-umrah" class="dock-service"
+              ><i class="bi bi-moon-stars"></i><span>Umrah</span></label
+            >
+            <label for="service-visa" class="dock-service"
+              ><i class="bi bi-passport"></i><span>Visa</span></label
+            >
+          </nav>
+          <div
+            class="static-booking bg-white rounded-3 shadow p-3 p-lg-4"
+            id="booking"
+          >
+            <section
+              class="static-panel flight-panel"
+              aria-label="Flight search"
+            >
+              <input
+                type="radio"
+                class="visually-hidden"
+                name="static-trip"
+                id="trip-one"
+              />
+              <input
+                type="radio"
+                class="visually-hidden"
+                name="static-trip"
+                id="trip-round"
+                checked
+              />
+              <input
+                type="radio"
+                class="visually-hidden"
+                name="static-trip"
+                id="trip-multi"
+              />
+              <div
+                class="trip-options d-flex align-items-center flex-wrap gap-3 mb-3"
+              >
+                <label for="trip-one">One way</label
+                ><label for="trip-round">Round trip</label
+                ><label for="trip-multi">Multi-city</label>
+                <span class="ms-lg-auto text-secondary"
+                  >Book international and domestic flights</span
+                >
+              </div>
+              <div class="journey-grid border rounded-3 position-relative">
+                <button
+                  type="button"
+                  id="origin-trigger"
+                  class="journey-cell text-start"
+                  popovertarget="origin"
+                  aria-haspopup="dialog"
+                >
+                  <small>From</small><strong>Islamabad</strong
+                  ><span class="text-secondary text-truncate"
+                    >ISB, Islamabad International Airport</span
+                  >
+                </button>
+                <span
+                  class="route-divider bg-white shadow-sm rounded-circle"
+                  aria-hidden="true"
+                  ><i class="bi bi-arrow-left-right text-primary"></i
+                ></span>
+                <button type="button" id="destination-trigger" class="journey-cell text-start" popovertarget="destination" aria-haspopup="dialog">
+                  <small>To</small><strong>Dubai</strong
+                  ><span class="text-secondary text-truncate"
+                    >DXB, Dubai International Airport</span
+                  >
+                </button>
+                <button type="button" class="journey-cell text-start" popovertarget="departure-calendar" aria-haspopup="dialog">
+                  <small
+                    >Departure
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong>24 <span>Nov ’26</span></strong
+                  ><span class="text-secondary">Tuesday</span>
+                </button>
+                <button type="button" class="journey-cell return-cell text-start" popovertarget="return-calendar" aria-haspopup="dialog">
+                  <small
+                    >Return
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong>01 <span>Dec ’26</span></strong
+                  ><span class="text-secondary">Tuesday</span>
+                </button>
+                <button
+                  class="journey-cell text-start"
+                  popovertarget="travellers"
+                >
+                  <small
+                    >Travellers
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong>1</strong><span class="text-secondary">Adult</span>
+                </button>
+                <button type="button" class="journey-cell text-start" popovertarget="cabin-picker" aria-haspopup="dialog"><small>Cabin class <i class="bi bi-chevron-down text-primary ms-1"></i></small><strong class="cabin-name">Economy</strong><span class="text-secondary">Choose your cabin</span></button>
+              </div>
+              <div class="multi-static border rounded-3 p-3 mt-3">
+                <strong>Flight 2</strong
+                ><span class="ms-3">Dubai (DXB) → Islamabad (ISB)</span
+                ><span class="ms-3 text-secondary">01 Dec 2026</span>
+              </div>
+              <div
+                class="static-fares d-flex align-items-stretch gap-2 flex-wrap mt-4"
+              >
+                <strong class="align-self-center me-3"
+                  >Select a<br />special fare</strong
+                >
+                <label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="fare"
+                    checked
+                  /><span>Regular</span><small>Standard fares</small></label
+                >
+                <label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="fare"
+                  /><span>Student</span><small>Student travel</small></label
+                >
+                <label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="fare"
+                  /><span>Armed forces</span
+                  ><small>Service personnel</small></label
+                >
+                <label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="fare"
+                  /><span>Senior citizen</span
+                  ><small>Senior travel</small></label
+                >
+                <label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="fare"
+                  /><span>Doctors &amp; nurses</span
+                  ><small>Healthcare professionals</small></label
+                >
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
+                <label
+                  class="travel-assurance border rounded-3 p-3 flex-grow-1 d-flex align-items-center gap-2"
+                  ><input
+                    class="form-check-input mt-0"
+                    type="checkbox" /><strong>Non-stop flights only</strong
+                  ><span class="text-secondary d-none d-md-inline"
+                    >Fly directly from Islamabad to Dubai.</span
+                  ><i class="bi bi-shield-check text-primary ms-auto fs-4"></i
+                ></label>
+                <button
+                  class="btn btn-outline-secondary p-3"
+                  popovertarget="support"
+                >
+                  <i class="bi bi-headset text-primary me-2"></i>Flight support
+                </button>
+              </div>
+              <div class="static-search-action text-center">
+                <button
+                  class="btn btn-primary rounded-pill px-5 py-3 fw-bold"
+                  popovertarget="results"
+                >
+                  SEARCH
+                </button>
+              </div>
+            </section>
+            <section
+              class="static-panel umrah-panel"
+              aria-label="Umrah planning"
+            >
+              <h1 class="mb-4">Plan your Umrah journey</h1>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label class="form-label" for="umrah-from">Departure</label
+                  ><input
+                    id="umrah-from"
+                    class="form-control"
+                    value="Islamabad (ISB)"
+                    readonly
+                  />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="umrah-stay">Duration</label
+                  ><select id="umrah-stay" class="form-select">
+                    <option>14 nights</option>
+                    <option>7 nights</option>
+                    <option>21 nights</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="umrah-travel"
+                    >Travel date</label
+                  ><input
+                    id="umrah-travel"
+                    type="date"
+                    value="2026-11-24"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <button class="btn btn-primary px-4" popovertarget="support">
+                  Explore Umrah
+                </button>
+              </div>
+            </section>
+            <section class="static-panel visa-panel" aria-label="Visa planning">
+              <h1 class="mb-4">Explore visa options</h1>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="visa-destination"
+                    >Destination</label
+                  ><select id="visa-destination" class="form-select">
+                    <option>United Arab Emirates</option>
+                    <option>Saudi Arabia</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="visa-passport"
+                    >Passport country</label
+                  ><input
+                    id="visa-passport"
+                    class="form-control"
+                    value="Pakistan"
+                    readonly
+                  />
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <button class="btn btn-primary px-4" popovertarget="support">
+                  Explore visas
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="hero-explore text-center text-white">
+            <a href="#destinations"
+              ><i class="bi bi-chevron-double-down me-2"></i>Explore more</a
+            >
+          </div>
+          <div
+            class="travel-shortcuts bg-white rounded-pill shadow d-flex justify-content-around align-items-center gap-3 mx-auto px-4"
+          >
+            <a href="#destinations"
+              ><i class="bi bi-compass text-primary me-2"></i>Where to go</a
+            ><button popovertarget="my-trips">
+              <i class="bi bi-suitcase text-primary me-2"></i>My trips</button
+            ><button popovertarget="support">
+              <i class="bi bi-headset text-primary me-2"></i>Travel assistance</button
+            ><a href="#offers"
+              ><i class="bi bi-gift text-primary me-2"></i>Latest offers</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="container section mb-5" id="destinations">
+        <div
+          class="section-heading d-flex justify-content-between align-items-end gap-3 mb-3"
+        >
+          <div>
+            <p class="eyebrow"></p>
+            <h2>Popular destinations</h2>
+          </div>
+          <a href="#last-card"
+            >Explore all destinations <i class="bi bi-arrow-right"></i
+          ></a>
+        </div>
+        <div class="slider d-grid gap-3">
+          <a href="#dubai" class="destination city rounded-4 p-4 text-white"
+            ><span class="tag">THE CITY ESCAPE</span>
+            <div>
+              <small>ISLAMABAD → DUBAI</small>
+              <h3>Istanbul</h3>
+              <p>City of two continents</p>
+            </div>
+            <span class="arrow">→</span></a
+          ><a href="#dubai" class="destination beach rounded-4 p-4 text-white"
+            ><span class="tag">SLOW DOWN A LITTLE</span>
+            <div>
+              <small>ISLAMABAD → DUBAI</small>
+              <h3>Dubai</h3>
+              <p>Modern wonders await</p>
+            </div>
+            <span class="arrow">→</span></a
+          ><a
+            href="#dubai"
+            id="last-card"
+            class="destination desert rounded-4 p-4 text-white"
+            ><span class="tag">BEYOND THE SKYLINE</span>
+            <div>
+              <small>ISLAMABAD → DUBAI</small>
+              <h3>Hunza</h3>
+              <p>Nature at its most beautiful</p>
+            </div>
+            <span class="arrow">→</span></a
+          >
+        </div>
+        <p class="swipe">Swipe to explore →</p>
+      </section>
+      <section class="container section mb-5" id="offers">
+        <div
+          class="section-heading d-flex justify-content-between align-items-end gap-3 mb-3"
+        >
+          <h2>A little extra for your next trip</h2>
+          <a href="#terms">View all offers <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="offers d-grid gap-4">
+          <article
+            class="offer card flex-row border-0 shadow-sm overflow-hidden rounded-4"
+          >
+            <div class="offer-photo pool"></div>
+            <div class="offer-copy p-3">
+              <span class="badge text-bg-warning fw-normal">FLIGHTS</span>
+              <h3>Up to PKR 25,000 off</h3>
+              <p>on international flight bookings</p>
+              <a href="#terms">View offer terms →</a>
+            </div>
+          </article>
+          <article
+            class="offer card flex-row border-0 shadow-sm overflow-hidden rounded-4"
+          >
+            <div class="offer-photo resort"></div>
+            <div class="offer-copy p-3">
+              <span class="badge text-bg-warning fw-normal">HOLIDAYS</span>
+              <h3>Save up to 30%</h3>
+              <p>on selected holiday packages</p>
+              <a href="#terms">View offer terms →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer id="contact">
+      <div class="container footer-grid d-grid gap-4 py-4">
+        <div id="about">
+          <a href="index.html" class="brand">bukhari<span>BOOKING.COM</span></a>
+          <p>Journeys for a brighter tomorrow.</p>
+        </div>
+        <div>
+          <h4>About</h4>
+          <a href="#about">Our story</a><a href="#about">Careers</a
+          ><a href="#destinations">Media</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <button popovertarget="support">Get in touch</button
+          ><button popovertarget="support">Branch locations</button
+          ><button popovertarget="support">Feedback</button>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <button popovertarget="support">Help centre</button
+          ><button popovertarget="support">Change or cancel booking</button
+          ><button popovertarget="support">Baggage information</button>
+        </div>
+        <div>
+          <h4>Follow us</h4>
+          <div class="socials d-flex gap-3 fs-5">
+            <i class="bi bi-facebook"></i><i class="bi bi-instagram"></i
+            ><i class="bi bi-youtube"></i><i class="bi bi-linkedin"></i>
+          </div>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>© 2026 Bukhari Booking. The calm journey.</span
+        ><span>Static preview · Illustrative offers and fares.</span>
+      </div>
+    </footer>
+    <nav
+      class="bottom-nav justify-content-around bg-white border-top py-2"
+      aria-label="Mobile navigation"
+    >
+      <a href="#booking"><i class="bi bi-house-fill"></i>Explore</a
+      ><a href="#destinations"><i class="bi bi-suitcase"></i>Trips</a
+      ><a href="#offers"><i class="bi bi-gift"></i>Rewards</a
+      ><button popovertarget="account">
+        <i class="bi bi-person"></i>Account
+      </button>
+    </nav>
+    <div class="popup rounded-4 border shadow-lg" popover id="travellers">
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h3>Travellers</h3>
+        <button popovertarget="travellers" aria-label="Close travellers">
+          ×
+        </button>
+      </div>
+      <div class="popup-body p-4">
+        <label
+          class="traveller d-flex justify-content-between align-items-center mb-4"
+          ><span><strong>Adults</strong><small>Aged 12+ years</small></span
+          ><input
+            class="form-control"
+            type="number"
+            min="1"
+            max="9"
+            value="1"
+            aria-label="Adults" /></label
+        ><label
+          class="traveller d-flex justify-content-between align-items-center mb-4"
+          ><span><strong>Children</strong><small>Aged 2–11 years</small></span
+          ><input
+            class="form-control"
+            type="number"
+            min="0"
+            max="8"
+            value="0"
+            aria-label="Children" /></label
+        ><label
+          class="traveller d-flex justify-content-between align-items-center mb-4"
+          ><span><strong>Infants</strong><small>Under 2 years</small></span
+          ><input
+            class="form-control"
+            type="number"
+            min="0"
+            max="4"
+            value="0"
+            aria-label="Infants" /></label
+        ><button
+          class="primary full btn btn-primary w-100"
+          popovertarget="travellers"
+        >
+          Done
+        </button>
+      </div>
+    </div>
+    <div
+      class="popup airport-picker rounded-4 border shadow-lg"
+      popover="auto"
+      id="origin"
+      role="dialog"
+      aria-labelledby="origin-heading"
+    >
+      <div
+        class="d-flex align-items-center justify-content-between px-3 pt-3 pb-2"
+      >
+        <h2 id="origin-heading" class="mb-0">Flying from</h2>
+        <button
+          popovertarget="origin"
+          aria-label="Close departure airports"
+          class="fs-4"
+        >
+          ×
+        </button>
+      </div>
+      <div
+        class="airport-search-box d-flex align-items-center gap-2 border rounded-3 mx-3 mb-3 px-3"
+      >
+        <i class="bi bi-search text-primary"></i
+        ><input
+          type="search"
+          class="form-control border-0 shadow-none px-0"
+          placeholder="Search city or airport"
+          aria-label="Search departure city or airport"
+          list="departure-suggestions"
+          autocomplete="off"
+        />
+      </div>
+      <datalist id="departure-suggestions">
+        <option value="Islamabad (ISB)"></option>
+        <option value="Dubai (DXB)"></option>
+        <option value="Doha (DOH)"></option>
+        <option value="London (LHR)"></option>
+        <option value="Jeddah (JED)"></option>
+      </datalist>
+      <div class="px-3 pb-2 text-secondary airport-list-title">
+        POPULAR AIRPORTS
+      </div>
+      <div class="airport-list pb-2">
+        <button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="origin"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >Islamabad <span class="text-secondary">(ISB)</span></strong
+            ><small class="text-secondary d-block"
+              >Islamabad International Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >Pakistan</span
+          ></button
+        ><button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="origin"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >Dubai <span class="text-secondary">(DXB)</span></strong
+            ><small class="text-secondary d-block"
+              >Dubai International Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >United Arab Emirates</span
+          ></button
+        ><button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="origin"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >Doha <span class="text-secondary">(DOH)</span></strong
+            ><small class="text-secondary d-block"
+              >Hamad International Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >Qatar</span
+          ></button
+        ><button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="origin"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >London <span class="text-secondary">(LHR)</span></strong
+            ><small class="text-secondary d-block"
+              >Heathrow Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >United Kingdom</span
+          ></button
+        ><button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="origin"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >Jeddah <span class="text-secondary">(JED)</span></strong
+            ><small class="text-secondary d-block"
+              >King Abdulaziz International Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >Saudi Arabia</span
+          >
+        </button>
+      </div>
+    </div>
+    <div
+      class="popup airport-picker rounded-4 border shadow-lg"
+      popover="auto"
+      id="destination"
+      role="dialog"
+      aria-labelledby="destination-heading"
+    >
+      <div
+        class="d-flex align-items-center justify-content-between px-3 pt-3 pb-2"
+      >
+        <h2 id="destination-heading" class="mb-0">Flying to</h2>
+        <button
+          popovertarget="destination"
+          aria-label="Close arrival airports"
+          class="fs-4"
+        >
+          ×
+        </button>
+      </div>
+      <div
+        class="airport-search-box d-flex align-items-center gap-2 border rounded-3 mx-3 mb-3 px-3"
+      >
+        <i class="bi bi-search text-primary"></i
+        ><input
+          type="search"
+          class="form-control border-0 shadow-none px-0"
+          placeholder="Search city or airport"
+          aria-label="Search arrival city or airport"
+          list="arrival-suggestions"
+          autocomplete="off"
+        />
+      </div>
+      <datalist id="arrival-suggestions">
+        <option value="Islamabad (ISB)"></option>
+        <option value="Dubai (DXB)"></option>
+        <option value="Doha (DOH)"></option>
+        <option value="London (LHR)"></option>
+        <option value="Jeddah (JED)"></option>
+      </datalist>
+      <div class="px-3 pb-2 text-secondary airport-list-title">
+        POPULAR AIRPORTS
+      </div>
+      <div class="airport-list pb-2">
+        <button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="destination"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >Islamabad <span class="text-secondary">(ISB)</span></strong
+            ><small class="text-secondary d-block"
+              >Islamabad International Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >Pakistan</span
+          ></button
+        ><button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="destination"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >Dubai <span class="text-secondary">(DXB)</span></strong
+            ><small class="text-secondary d-block"
+              >Dubai International Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >United Arab Emirates</span
+          ></button
+        ><button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="destination"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >Doha <span class="text-secondary">(DOH)</span></strong
+            ><small class="text-secondary d-block"
+              >Hamad International Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >Qatar</span
+          ></button
+        ><button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="destination"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >London <span class="text-secondary">(LHR)</span></strong
+            ><small class="text-secondary d-block"
+              >Heathrow Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >United Kingdom</span
+          ></button
+        ><button
+          type="button"
+          class="airport-choice d-flex align-items-center gap-3 w-100 text-start px-3 py-3"
+          popovertarget="destination"
+          popovertargetaction="hide"
+        >
+          <span class="airport-plane rounded-circle"
+            ><i class="bi bi-airplane"></i></span
+          ><span class="airport-choice-copy"
+            ><strong class="d-block"
+              >Jeddah <span class="text-secondary">(JED)</span></strong
+            ><small class="text-secondary d-block"
+              >King Abdulaziz International Airport</small
+            ></span
+          ><span class="airport-country text-secondary ms-auto text-end"
+            >Saudi Arabia</span
+          >
+        </button>
+      </div>
+    </div>
+    <div class="popup wide rounded-4 border shadow-lg" popover id="results">
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h3>Islamabad → Dubai</h3>
+        <button popovertarget="results" aria-label="Close results">×</button>
+      </div>
+      <div class="popup-body p-4">
+        <p>Sample fares · per adult · economy</p>
+        <div class="flight">
+          <span class="airline">PK</span>
+          <div>
+            <strong>Pakistan International Airlines</strong
+            ><small>ISB 09:00 → DXB 11:40 · Non-stop</small>
+          </div>
+          <b>PKR 78,500</b>
+        </div>
+        <div class="flight">
+          <span class="airline orange">FZ</span>
+          <div>
+            <strong>flydubai</strong
+            ><small>ISB 12:05 → DXB 14:50 · Non-stop</small>
+          </div>
+          <b>PKR 84,200</b>
+        </div>
+        <p class="note">
+          Illustrative results only. Date and traveller selections do not update
+          these sample fares. Live booking is not connected.
+        </p>
+        <button
+          class="primary full btn btn-primary w-100"
+          popovertarget="results"
+        >
+          Back to planning
+        </button>
+      </div>
+    </div>
+    <div class="popup rounded-4 border shadow-lg" popover id="account">
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h3>Your travel companion</h3>
+        <button popovertarget="account" aria-label="Close account">×</button>
+      </div>
+      <div class="popup-body p-4">
+        <i class="bi bi-person-circle big-icon"></i>
+        <h3>A world of journeys awaits</h3>
+        <p>Keep your trips, favourite places and travel details together.</p>
+        <p class="note">
+          Account sign-in will be available when booking services are connected.
+        </p>
+        <button
+          class="primary full btn btn-primary w-100"
+          popovertarget="account"
+        >
+          Continue exploring
+        </button>
+      </div>
+    </div>
+    <div class="popup rounded-4 border shadow-lg" popover id="support">
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h3>Here when you need us</h3>
+        <button popovertarget="support" aria-label="Close support">×</button>
+      </div>
+      <div class="popup-body p-4">
+        <i class="bi bi-headset big-icon"></i>
+        <h3>Let’s make travel feel easy.</h3>
+        <p>
+          Get help planning your Islamabad–Dubai trip, from flight changes and
+          baggage to holiday packages.
+        </p>
+        <p class="note">
+          Support contacts and branch locations are awaiting confirmation.
+        </p>
+      </div>
+    </div>
+    <div class="popup rounded-4 border shadow-lg" popover id="navigation">
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h3>Explore Bukhari</h3>
+        <button popovertarget="navigation" aria-label="Close menu">×</button>
+      </div>
+      <div class="popup-body menu-links">
+        <a href="#booking">Flights</a><a href="#destinations">Holidays</a
+        ><a href="#about">About us</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+    <section class="modal" id="terms" aria-labelledby="terms-heading">
+      <a class="backdrop" href="#offers" aria-label="Close terms"></a>
+      <div class="modal-content p-4 rounded-4 border-0 shadow-lg">
+        <a class="close" href="#offers" aria-label="Close">×</a
+        ><span class="badge text-bg-warning fw-normal">A LITTLE EXTRA</span>
+        <h2 id="terms-heading">More journey. More value.</h2>
+        <p>
+          Sample Islamabad–Dubai offers include up to PKR 25,000 off flights and
+          up to 30% off selected Dubai holidays.
+        </p>
+        <p class="note">
+          These are design placeholders, not redeemable promotions. Eligibility,
+          travel dates, availability and final terms must be confirmed before
+          launch.
+        </p>
+        <a
+          class="primary btn btn-primary d-inline-flex align-items-center justify-content-center gap-3"
+          href="#booking"
+          >Plan your journey →</a
+        >
+      </div>
+    </section>
+    <section class="modal" id="dubai" aria-labelledby="dubai-heading">
+      <a
+        class="backdrop"
+        href="#destinations"
+        aria-label="Close destination"
+      ></a>
+      <div class="modal-content p-4 rounded-4 border-0 shadow-lg">
+        <a class="close" href="#destinations" aria-label="Close">×</a>
+        <p class="eyebrow">ISLAMABAD → DUBAI</p>
+        <h2 id="dubai-heading">A city full of possibility.</h2>
+        <p>
+          Skyline views, soft sandy beaches and golden desert evenings. Your
+          Dubai journey begins in Islamabad.
+        </p>
+        <a
+          class="primary btn btn-primary d-inline-flex align-items-center justify-content-center gap-3"
+          href="#booking"
+          >Explore flights →</a
+        >
+      </div>
+    </section>
+
+    <div
+      class="popup rounded-4 border shadow-lg"
+      popover
+      id="cabin-options"
+      role="dialog"
+      aria-labelledby="cabin-heading"
+    >
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h2 id="cabin-heading">Choose your cabin</h2>
+        <button popovertarget="cabin-options" aria-label="Close cabin options">
+          ×
+        </button>
+      </div>
+      <div class="p-3 d-grid gap-2">
+        <label
+          class="cabin-option border rounded-3 p-3 d-flex align-items-center gap-3"
+          ><input
+            type="radio"
+            class="form-check-input"
+            name="flight-cabin"
+            value="Economy"
+            checked /><span
+            ><strong class="d-block">Economy</strong
+            ><small class="text-secondary"
+              >The essentials for your journey</small
+            ></span
+          ><i class="bi bi-airplane ms-auto"></i
+        ></label>
+        <label
+          class="cabin-option border rounded-3 p-3 d-flex align-items-center gap-3"
+          ><input
+            type="radio"
+            class="form-check-input"
+            name="flight-cabin"
+            value="Premium economy" /><span
+            ><strong class="d-block">Premium economy</strong
+            ><small class="text-secondary"
+              >Explore a little more comfort</small
+            ></span
+          ><i class="bi bi-stars ms-auto"></i
+        ></label>
+        <label
+          class="cabin-option border rounded-3 p-3 d-flex align-items-center gap-3"
+          ><input
+            type="radio"
+            class="form-check-input"
+            name="flight-cabin"
+            value="Business" /><span
+            ><strong class="d-block">Business</strong
+            ><small class="text-secondary"
+              >Make room to work and unwind</small
+            ></span
+          ><i class="bi bi-briefcase ms-auto"></i
+        ></label>
+        <label
+          class="cabin-option border rounded-3 p-3 d-flex align-items-center gap-3"
+          ><input
+            type="radio"
+            class="form-check-input"
+            name="flight-cabin"
+            value="First class" /><span
+            ><strong class="d-block">First class</strong
+            ><small class="text-secondary"
+              >Discover an elevated journey</small
+            ></span
+          ><i class="bi bi-gem ms-auto"></i
+        ></label>
+        <button
+          class="primary btn btn-primary py-2"
+          popovertarget="cabin-options"
+        >
+          Apply cabin
+        </button>
+      </div>
+    </div>
+    <div
+      class="popup rounded-4 border shadow-lg"
+      popover
+      id="service-preview"
+      role="dialog"
+      aria-labelledby="service-preview-title"
+    >
+      <div
+        class="popup-head d-flex justify-content-between align-items-center border-bottom p-4"
+      >
+        <h2 id="service-preview-title">Your journey</h2>
+        <button
+          popovertarget="service-preview"
+          aria-label="Close journey summary"
+        >
+          ×
+        </button>
+      </div>
+      <div class="p-4">
+        <p id="service-preview-summary"></p>
+        <p class="text-secondary">
+          This is a planning preview. Live availability, applications and
+          payments are not connected.
+        </p>
+        <button class="primary btn btn-primary" popovertarget="service-preview">
+          Continue planning
+        </button>
+      </div>
+    </div>
+    <div
+      class="popup rounded-4 border shadow-lg"
+      popover
+      id="my-trips"
+      role="dialog"
+      aria-labelledby="trips-heading"
+    >
+      <div
+        class="popup-head d-flex justify-content-between align-items-center border-bottom p-4"
+      >
+        <h2 id="trips-heading">My trips</h2>
+        <button popovertarget="my-trips" aria-label="Close my trips">×</button>
+      </div>
+      <div class="p-4 text-center">
+        <i class="bi bi-suitcase fs-2"></i>
+        <p class="mt-3">Your upcoming journeys will appear here.</p>
+        <small class="text-secondary"
+          >Trip management will be available when booking services are
+          connected.</small
+        >
+      </div>
+    </div>
+
+    <div
+      class="popup rounded-4 border shadow-lg"
+      popover
+      id="wallet-demo"
+      aria-labelledby="wallet-title"
+    >
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h2 id="wallet-title">My wallet</h2>
+        <button popovertarget="wallet-demo" aria-label="Close wallet">×</button>
+      </div>
+      <div class="p-4">
+        <small class="text-secondary">Demo balance</small>
+        <h2 class="mt-2">PKR 0.00</h2>
+        <p class="text-secondary mt-3">No transactions yet.</p>
+      </div>
+    </div>
+    <div
+      class="popup rounded-4 border shadow-lg"
+      popover
+      id="profile-demo"
+      aria-labelledby="profile-title"
+    >
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h2 id="profile-title">My profile</h2>
+        <button popovertarget="profile-demo" aria-label="Close profile">
+          ×
+        </button>
+      </div>
+      <div class="p-4 text-center">
+        <img
+          src="images/demo-profile.jpg"
+          class="rounded-circle mb-3"
+          width="72"
+          height="72"
+          alt="Demo profile avatar"
+        />
+        <h2>Ali Ahmed</h2>
+        <p class="text-secondary">Demo traveller profile</p>
+      </div>
+    </div>
+    <div
+      class="popup rounded-4 border shadow-lg"
+      popover
+      id="logout-demo"
+      aria-labelledby="logout-title"
+    >
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
+      >
+        <h2 id="logout-title">Logout</h2>
+        <button popovertarget="logout-demo" aria-label="Close logout">×</button>
+      </div>
+      <div class="p-4">
+        <p>This is a demo account. No active sign-in session is connected.</p>
+        <button class="btn btn-primary" popovertarget="logout-demo">
+          Close
+        </button>
+      </div>
+    </div>
+<div id="cabin-picker" class="popup booking-popup border rounded-4 shadow-lg" popover="auto" role="dialog" aria-label="Choose cabin class"><div
+                    class="cabin-picker-body bg-white border rounded-4 shadow-lg p-3"
+                  >
+                    <h2 class="mb-3">Choose cabin class</h2>
+                    <label
+                      class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
+                      ><input
+                        class="form-check-input"
+                        type="radio"
+                        name="static-cabin"
+                        value="Economy"
+                        checked /><span
+                        ><strong>Economy</strong
+                        ><small class="d-block text-secondary"
+                          >Comfort for every journey</small
+                        ></span
+                      ><i class="bi bi-airplane ms-auto fs-3"></i
+                    ></label>
+                    <label
+                      class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
+                      ><input
+                        class="form-check-input"
+                        type="radio"
+                        name="static-cabin"
+                        value="Premium economy" /><span
+                        ><strong>Premium economy</strong
+                        ><small class="d-block text-secondary"
+                          >More room to relax</small
+                        ></span
+                      ><i class="bi bi-stars ms-auto fs-3"></i
+                    ></label>
+                    <label
+                      class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
+                      ><input
+                        class="form-check-input"
+                        type="radio"
+                        name="static-cabin"
+                        value="Business" /><span
+                        ><strong>Business class</strong
+                        ><small class="d-block text-secondary"
+                          >Space to work and unwind</small
+                        ></span
+                      ><i class="bi bi-briefcase ms-auto fs-3"></i
+                    ></label>
+                    <label
+                      class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3"
+                      ><input
+                        class="form-check-input"
+                        type="radio"
+                        name="static-cabin"
+                        value="First" /><span
+                        ><strong>First class</strong
+                        ><small class="d-block text-secondary"
+                          >A more personal journey</small
+                        ></span
+                      ><i class="bi bi-gem ms-auto fs-3"></i
+                    ></label>
+                    <small class="d-block text-secondary mt-3"
+                      >Select a preference. Click outside to close.</small
+                    >
+                  </div><div class="px-3 pb-3"><button class="btn btn-primary w-100" popovertarget="cabin-picker">Done</button></div></div><div id="departure-calendar" class="popup booking-popup calendar-popup border rounded-4 shadow-lg" popover="auto" role="dialog" aria-labelledby="departure-title"><div class="d-flex justify-content-between align-items-center border-bottom p-3"><h2 id="departure-title" class="mb-0">Departure date</h2><button class="fs-4" popovertarget="departure-calendar" aria-label="Close departure calendar">×</button></div><div class="p-3"><strong class="d-block text-center mb-3">November 2026</strong><div class="calendar-grid"><span class="calendar-weekday">Mo</span><span class="calendar-weekday">Tu</span><span class="calendar-weekday">We</span><span class="calendar-weekday">Th</span><span class="calendar-weekday">Fr</span><span class="calendar-weekday">Sa</span><span class="calendar-weekday">Su</span><span></span><span></span><span></span><span></span><span></span><span></span><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="1 November 2026"><span>1</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="2 November 2026"><span>2</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="3 November 2026"><span>3</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="4 November 2026"><span>4</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="5 November 2026"><span>5</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="6 November 2026"><span>6</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="7 November 2026"><span>7</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="8 November 2026"><span>8</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="9 November 2026"><span>9</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="10 November 2026"><span>10</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="11 November 2026"><span>11</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="12 November 2026"><span>12</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="13 November 2026"><span>13</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="14 November 2026"><span>14</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="15 November 2026"><span>15</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="16 November 2026"><span>16</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="17 November 2026"><span>17</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="18 November 2026"><span>18</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="19 November 2026"><span>19</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="20 November 2026"><span>20</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="21 November 2026"><span>21</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="22 November 2026"><span>22</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="23 November 2026"><span>23</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="24 November 2026" checked><span>24</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="25 November 2026"><span>25</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="26 November 2026"><span>26</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="27 November 2026"><span>27</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="28 November 2026"><span>28</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="29 November 2026"><span>29</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="30 November 2026"><span>30</span></label><span></span><span></span><span></span><span></span><span></span><span></span></div><button class="btn btn-primary w-100 mt-3" popovertarget="departure-calendar">Apply date</button></div></div><div id="return-calendar" class="popup booking-popup calendar-popup border rounded-4 shadow-lg" popover="auto" role="dialog" aria-labelledby="return-title"><div class="d-flex justify-content-between align-items-center border-bottom p-3"><h2 id="return-title" class="mb-0">Return date</h2><button class="fs-4" popovertarget="return-calendar" aria-label="Close return calendar">×</button></div><div class="p-3"><strong class="d-block text-center mb-3">December 2026</strong><div class="calendar-grid"><span class="calendar-weekday">Mo</span><span class="calendar-weekday">Tu</span><span class="calendar-weekday">We</span><span class="calendar-weekday">Th</span><span class="calendar-weekday">Fr</span><span class="calendar-weekday">Sa</span><span class="calendar-weekday">Su</span><span></span><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="1 December 2026" checked><span>1</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="2 December 2026"><span>2</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="3 December 2026"><span>3</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="4 December 2026"><span>4</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="5 December 2026"><span>5</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="6 December 2026"><span>6</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="7 December 2026"><span>7</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="8 December 2026"><span>8</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="9 December 2026"><span>9</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="10 December 2026"><span>10</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="11 December 2026"><span>11</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="12 December 2026"><span>12</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="13 December 2026"><span>13</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="14 December 2026"><span>14</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="15 December 2026"><span>15</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="16 December 2026"><span>16</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="17 December 2026"><span>17</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="18 December 2026"><span>18</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="19 December 2026"><span>19</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="20 December 2026"><span>20</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="21 December 2026"><span>21</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="22 December 2026"><span>22</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="23 December 2026"><span>23</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="24 December 2026"><span>24</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="25 December 2026"><span>25</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="26 December 2026"><span>26</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="27 December 2026"><span>27</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="28 December 2026"><span>28</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="29 December 2026"><span>29</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="30 December 2026"><span>30</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="31 December 2026"><span>31</span></label><span></span><span></span><span></span></div><button class="btn btn-primary w-100 mt-3" popovertarget="return-calendar">Apply date</button></div></div>
   </body>
 </html>

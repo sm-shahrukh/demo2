@@ -1,0 +1,293 @@
+/* Shared design system. Load Bootstrap first, this file second, styles.css last.
+   Change tokens here to theme this page and future pages together.
+   styles.css keeps the page composition and responsive layouts. */
+:root {
+  --color-primary: #008cff;
+  --color-primary-hover: #0074d4;
+  --color-primary-active: #0066bb;
+  --color-primary-rgb: 0, 140, 255;
+  --color-on-primary: #ffffff;
+  --color-text: #212529;
+  --color-muted: #6c757d;
+  --color-surface: #ffffff;
+  --color-page: #f7f9f8;
+  --color-border: #dee2e6;
+  --color-focus: var(--color-primary);
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading: Georgia, serif;
+  --font-size-base: 15px;
+  --font-size-small: 13px;
+  --font-size-button: 15px;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --line-height-base: 1.45;
+  --radius-control: 8px;
+  --radius-card: 16px;
+  --radius-popup: 16px;
+  --shadow-card: 0 4px 16px #0713250d;
+  --shadow-popup: 0 12px 40px #07132526;
+  --shadow-focus: 0 0 0 3px #008cff26;
+  --duration-fast: 160ms;
+  --button-padding-y: 10px;
+  --button-padding-x: 20px;
+  --control-padding-y: 10px;
+  --control-padding-x: 12px;
+  --card-padding: 20px;
+  --color-announcement: #272727;
+  --color-avatar-start: #88ce6a;
+  --color-avatar-end: #1696a0;
+  --color-hero-overlay-start: #07132580;
+  --color-hero-overlay-end: #071325b3;
+  --color-nav-text: #454545;
+  --color-icon-shadow: #0002;
+  --color-border-strong: #aaa;
+  --color-selected-bg: #eaf5ff;
+  --color-white: var(--color-surface);
+  --color-divider: #e4e4e4;
+  --color-label: #555;
+  --color-caption: #777;
+  --color-fare-selected: #edf7ff;
+  --color-assurance-end: #dcefff;
+  --color-assurance-border: #c8e4ff;
+  --color-search-start: #49b6ff;
+  --color-search-end: #075aff;
+  --color-button-shadow: #0003;
+  --color-shortcut-divider: #ddd;
+  --color-teal: #007f8c;
+  --color-hero-fade: #f8f7f3;
+  --color-hero-fade-translucent: #f8f7f3c9;
+  --color-teal-dark: #006674;
+  --color-destination-overlay: #09222c;
+  --color-destination-overlay-translucent: #09222ced;
+  --color-popup-backdrop: #06213660;
+  --color-modal-backdrop: #06213670;
+  --color-page-translucent: #f7f9f8d9;
+  --color-avatar-border: #dbe4ed;
+  --color-field-hover: #f0f7ff;
+  --color-airport-search: #f8fbff;
+  --color-airport-focus: #008cff15;
+  --color-airport-hover: #edf6ff;
+  --color-airport-icon-bg: #edf5fd;
+  --font-size-31-75px: 31.75px;
+  --font-size-7-938px: 7.938px;
+  --gradient-1: linear-gradient(130deg, var(--color-avatar-start), var(--color-avatar-end));
+  --space-4px: 4px;
+  --font-size-29-48px: 29.48px;
+  --hero-background-image: linear-gradient(var(--color-hero-overlay-start), var(--color-hero-overlay-end)),
+    url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2400&q=85");
+  --space-neg-38px: -38px;
+  --space-8px: 8px;
+  --space-12px: 12px;
+  --space-24px: 24px;
+  --font-size-40-82px: 40.82px;
+  --space-76px: 76px;
+  --space-44px: 44px;
+  --font-weight-700: 700;
+  --space-7px: 7px;
+  --space-5px: 5px;
+  --space-10px: 10px;
+  --radius-20px: 20px;
+  --radius-50percent: 50%;
+  --shadow-4: inset 0 0 0 2px var(--color-white);
+  --space-18px: 18px;
+  --space-22px: 22px;
+  --space-14px: 14px;
+  --space-6px: 6px;
+  --font-weight-800: 800;
+  --font-size-0: 0;
+  --font-size-20-41px: 20.41px;
+  --gradient-2: linear-gradient(120deg, var(--color-white) 65%, var(--color-assurance-end));
+  --space-20px: 20px;
+  --space-neg-69px: -69px;
+  --gradient-3: linear-gradient(105deg, var(--color-search-start), var(--color-search-end));
+  --shadow-5: 0 3px 10px var(--color-button-shadow);
+  --tracking-0-5px: 0.5px;
+  --space-neg-68px: -68px;
+  --space-56px: 56px;
+  --space-16px: 16px;
+  --space-2rem: 2rem;
+  --space-neg-28px: -28px;
+  --space-64px: 64px;
+  --font-size-2-268rem: 2.268rem;
+  --tracking-neg-0-05rem: -0.05rem;
+  --tracking-neg-0-08rem: -0.08rem;
+  --line-height-1: 1;
+  --font-size-0-5103rem: 0.5103rem;
+  --tracking-0-25rem: 0.25rem;
+  --space-0-4rem: 0.4rem;
+  --space-5rem: 5rem;
+  --space-1rem: 1rem;
+  --space-0-5rem: 0.5rem;
+  --gradient-4: linear-gradient(
+    90deg,
+    var(--color-hero-fade) 0%,
+    var(--color-hero-fade) 31%,
+    var(--color-hero-fade-translucent) 39%,
+    transparent 51%
+  );
+  --space-60px: 60px;
+  --font-size-0-7371rem: 0.7371rem;
+  --tracking-0-3rem: 0.3rem;
+  --font-size-13: clamp(3rem, 5.2vw, 4.75rem);
+  --line-height-0-98: 0.98;
+  --tracking-neg-0-15rem: -0.15rem;
+  --font-size-1-644rem: 1.644rem;
+  --line-height-1-3: 1.3;
+  --space-neg-110px: -110px;
+  --space-0-25rem: 0.25rem;
+  --font-size-1-588rem: 1.588rem;
+  --font-size-0-8505rem: 0.8505rem;
+  --font-size-1-077rem: 1.077rem;
+  --font-weight-500: 500;
+  --font-size-1-021rem: 1.021rem;
+  --font-size-0-9639rem: 0.9639rem;
+  --font-size-2-041rem: 2.041rem;
+  --background-image-2: url("../images/01-Home.png");
+  --gradient-5: linear-gradient(0deg, var(--color-destination-overlay) 0%, var(--color-destination-overlay-translucent) 19%, transparent 45%);
+  --font-size-1-814rem: 1.814rem;
+  --space-0-3rem: 0.3rem;
+  --space-0-75rem: 0.75rem;
+  --font-size-0-9072rem: 0.9072rem;
+  --space-1-5rem: 1.5rem;
+  --font-size-1-247rem: 1.247rem;
+  --font-size-1-984rem: 1.984rem;
+  --font-size-2-835rem: 2.835rem;
+  --font-size-1-474rem: 1.474rem;
+  --font-size-0-7938rem: 0.7938rem;
+  --space-70px: 70px;
+  --font-size-1-701rem: 1.701rem;
+  --gradient-6: linear-gradient(
+      0deg,
+      var(--color-page) 0%,
+      var(--color-page) 8%,
+      var(--color-page-translucent) 23%,
+      transparent 42%
+    );
+  --space-220px: 220px;
+  --font-size-2-722rem: 2.722rem;
+  --tracking-neg-0-1rem: -0.1rem;
+  --font-size-17-01px: 17.01px;
+  --font-size-24-95px: 24.95px;
+  --font-size-18-14px: 18.14px;
+  --font-size-13-61px: 13.61px;
+  --font-size-15-88px: 15.88px;
+  --font-size-27-22px: 27.22px;
+  --space-neg-24px: -24px;
+  --space-28px: 28px;
+  --font-size-14-74px: 14.74px;
+  --line-height-1-2: 1.2;
+  --space-9px: 9px;
+  --font-size-21-55px: 21.55px;
+  --space-3px: 3px;
+  --space-neg-48px: -48px;
+  --space-40px: 40px;
+  --space-34px: 34px;
+  --line-height-22px: 22px;
+  --space-30px: 30px;
+  --font-size-26-08px: 26.08px;
+  --font-size-12-47px: 12.47px;
+  --space-neg-20px: -20px;
+  --space-36px: 36px;
+  --font-size-19-28px: 19.28px;
+  --space-32px: 32px;
+  --font-size-28-35px: 28.35px;
+  --font-size-23-81px: 23.81px;
+  --space-2px: 2px;
+  --space-neg-18px: -18px;
+  --font-size-22-68px: 22.68px;
+  --space-neg-42px: -42px;
+  --space-26px: 26px;
+  --line-height-20px: 20px;
+  --space-48px: 48px;
+  --font-size-16px: 16px;
+  --font-size-28px: 28px;
+  --font-size-19px: 19px;
+  --font-size-14px: 14px;
+  --font-size-21px: 21px;
+  --font-size-25px: 25px;
+  --line-height-1-5: 1.5;
+  --shadow-6: 0 0 0 1px var(--color-avatar-border);
+  --space-11px: 11px;
+  --radius-6px: 6px;
+  --font-size-18px: 18px;
+  --shadow-7: 0 0 0 3px var(--color-airport-focus);
+  --font-size-11px: 11px;
+  --tracking-1px: 1px;
+  --radius-0: 0;
+  --font-size-12px: 12px;
+  /* Bootstrap components and utilities use the same brand palette. */
+  --bs-primary: var(--color-primary);
+  --bs-primary-rgb: var(--color-primary-rgb);
+  --bs-body-font-family: var(--font-body);
+  --bs-body-font-size: var(--font-size-base);
+  --bs-body-line-height: var(--line-height-base);
+  --bs-body-color: var(--color-text);
+  --bs-secondary-color: var(--color-muted);
+  --bs-body-bg: var(--color-surface);
+  --bs-border-color: var(--color-border);
+  --bs-link-color: var(--color-primary);
+  --bs-link-hover-color: var(--color-primary-hover);
+  --bs-border-radius: var(--radius-control);
+  --bs-border-radius-lg: var(--radius-card);
+  --bs-border-radius-xl: var(--radius-popup);
+  --bs-box-shadow-sm: var(--shadow-card);
+  --bs-box-shadow: var(--shadow-card);
+  --bs-box-shadow-lg: var(--shadow-popup);
+}
+
+/* Reusable defaults for every Bootstrap button, card, form and popup. */
+body { font-family:var(--font-body); color:var(--color-text); background:var(--color-page); }
+h1,h2,h3,h4,h5,h6 { font-family:var(--font-heading); }
+.btn {
+  --bs-btn-font-family:var(--font-body);
+  --bs-btn-font-size:var(--font-size-button);
+  --bs-btn-font-weight:var(--font-weight-semibold);
+  --bs-btn-padding-y:var(--button-padding-y);
+  --bs-btn-padding-x:var(--button-padding-x);
+  --bs-btn-border-radius:var(--radius-control);
+  transition:background-color var(--duration-fast),border-color var(--duration-fast),box-shadow var(--duration-fast);
+}
+.btn-primary,.primary {
+  --bs-btn-color:var(--color-on-primary);
+  --bs-btn-bg:var(--color-primary);
+  --bs-btn-border-color:var(--color-primary);
+  --bs-btn-hover-color:var(--color-on-primary);
+  --bs-btn-hover-bg:var(--color-primary-hover);
+  --bs-btn-hover-border-color:var(--color-primary-hover);
+  --bs-btn-active-bg:var(--color-primary-active);
+  --bs-btn-active-border-color:var(--color-primary-active);
+  --bs-btn-disabled-bg:var(--color-primary);
+  --bs-btn-disabled-border-color:var(--color-primary);
+  --bs-btn-focus-shadow-rgb:var(--color-primary-rgb);
+}
+.btn-outline-primary {
+  --bs-btn-color:var(--color-primary);
+  --bs-btn-border-color:var(--color-primary);
+  --bs-btn-hover-bg:var(--color-primary);
+  --bs-btn-hover-border-color:var(--color-primary);
+  --bs-btn-active-bg:var(--color-primary-active);
+  --bs-btn-active-border-color:var(--color-primary-active);
+}
+.card,.theme-card {
+  --bs-card-bg:var(--color-surface);
+  --bs-card-border-color:var(--color-border);
+  --bs-card-border-radius:var(--radius-card);
+  --bs-card-spacer-x:var(--card-padding);
+  --bs-card-spacer-y:var(--card-padding);
+  background:var(--color-surface);
+  border-radius:var(--radius-card);
+}
+.form-control,.form-select {
+  font-family:var(--font-body);
+  font-size:var(--font-size-base);
+  padding:var(--control-padding-y) var(--control-padding-x);
+  color:var(--color-text);
+  border-color:var(--color-border);
+  border-radius:var(--radius-control);
+}
+.form-control:focus,.form-select:focus { border-color:var(--color-focus);box-shadow:var(--shadow-focus); }
+.form-check-input:checked { background-color:var(--color-primary);border-color:var(--color-primary); }
+.popup,.modal-content { background:var(--color-surface);color:var(--color-text);border-radius:var(--radius-popup);box-shadow:var(--shadow-popup); }
+@media(prefers-reduced-motion:reduce) { .btn { transition:none; } }
+
+.theme-card { padding:var(--card-padding); border:1px solid var(--color-border); box-shadow:var(--shadow-card); }
