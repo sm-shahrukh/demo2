@@ -14,7 +14,8 @@
   --color-border: #dee2e6;
   --color-focus: var(--color-primary);
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-heading: Georgia, serif;
+  /* Use the same clean UI font everywhere, including headings and booking labels. */
+  --font-heading: var(--font-body);
   --font-size-base: 15px;
   --font-size-small: 13px;
   --font-size-button: 15px;
@@ -70,10 +71,18 @@
   --color-airport-icon-bg: #edf5fd;
   --font-size-31-75px: 31.75px;
   --font-size-7-938px: 7.938px;
-  --gradient-1: linear-gradient(130deg, var(--color-avatar-start), var(--color-avatar-end));
+  --gradient-1: linear-gradient(
+    130deg,
+    var(--color-avatar-start),
+    var(--color-avatar-end)
+  );
   --space-4px: 4px;
   --font-size-29-48px: 29.48px;
-  --hero-background-image: linear-gradient(var(--color-hero-overlay-start), var(--color-hero-overlay-end)),
+  --hero-background-image:
+    linear-gradient(
+      var(--color-hero-overlay-start),
+      var(--color-hero-overlay-end)
+    ),
     url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2400&q=85");
   --space-neg-38px: -38px;
   --space-8px: 8px;
@@ -96,10 +105,18 @@
   --font-weight-800: 800;
   --font-size-0: 0;
   --font-size-20-41px: 20.41px;
-  --gradient-2: linear-gradient(120deg, var(--color-white) 65%, var(--color-assurance-end));
+  --gradient-2: linear-gradient(
+    120deg,
+    var(--color-white) 65%,
+    var(--color-assurance-end)
+  );
   --space-20px: 20px;
   --space-neg-69px: -69px;
-  --gradient-3: linear-gradient(105deg, var(--color-search-start), var(--color-search-end));
+  --gradient-3: linear-gradient(
+    105deg,
+    var(--color-search-start),
+    var(--color-search-end)
+  );
   --shadow-5: 0 3px 10px var(--color-button-shadow);
   --tracking-0-5px: 0.5px;
   --space-neg-68px: -68px;
@@ -143,7 +160,12 @@
   --font-size-0-9639rem: 0.9639rem;
   --font-size-2-041rem: 2.041rem;
   --background-image-2: url("../images/01-Home.png");
-  --gradient-5: linear-gradient(0deg, var(--color-destination-overlay) 0%, var(--color-destination-overlay-translucent) 19%, transparent 45%);
+  --gradient-5: linear-gradient(
+    0deg,
+    var(--color-destination-overlay) 0%,
+    var(--color-destination-overlay-translucent) 19%,
+    transparent 45%
+  );
   --font-size-1-814rem: 1.814rem;
   --space-0-3rem: 0.3rem;
   --space-0-75rem: 0.75rem;
@@ -157,12 +179,12 @@
   --space-70px: 70px;
   --font-size-1-701rem: 1.701rem;
   --gradient-6: linear-gradient(
-      0deg,
-      var(--color-page) 0%,
-      var(--color-page) 8%,
-      var(--color-page-translucent) 23%,
-      transparent 42%
-    );
+    0deg,
+    var(--color-page) 0%,
+    var(--color-page) 8%,
+    var(--color-page-translucent) 23%,
+    transparent 42%
+  );
   --space-220px: 220px;
   --font-size-2-722rem: 2.722rem;
   --tracking-neg-0-1rem: -0.1rem;
@@ -236,58 +258,96 @@
 }
 
 /* Reusable defaults for every Bootstrap button, card, form and popup. */
-body { font-family:var(--font-body); color:var(--color-text); background:var(--color-page); }
-h1,h2,h3,h4,h5,h6 { font-family:var(--font-heading); }
-.btn {
-  --bs-btn-font-family:var(--font-body);
-  --bs-btn-font-size:var(--font-size-button);
-  --bs-btn-font-weight:var(--font-weight-semibold);
-  --bs-btn-padding-y:var(--button-padding-y);
-  --bs-btn-padding-x:var(--button-padding-x);
-  --bs-btn-border-radius:var(--radius-control);
-  transition:background-color var(--duration-fast),border-color var(--duration-fast),box-shadow var(--duration-fast);
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-page);
 }
-.btn-primary,.primary {
-  --bs-btn-color:var(--color-on-primary);
-  --bs-btn-bg:var(--color-primary);
-  --bs-btn-border-color:var(--color-primary);
-  --bs-btn-hover-color:var(--color-on-primary);
-  --bs-btn-hover-bg:var(--color-primary-hover);
-  --bs-btn-hover-border-color:var(--color-primary-hover);
-  --bs-btn-active-bg:var(--color-primary-active);
-  --bs-btn-active-border-color:var(--color-primary-active);
-  --bs-btn-disabled-bg:var(--color-primary);
-  --bs-btn-disabled-border-color:var(--color-primary);
-  --bs-btn-focus-shadow-rgb:var(--color-primary-rgb);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+.btn {
+  --bs-btn-font-family: var(--font-body);
+  --bs-btn-font-size: var(--font-size-button);
+  --bs-btn-font-weight: var(--font-weight-semibold);
+  --bs-btn-padding-y: var(--button-padding-y);
+  --bs-btn-padding-x: var(--button-padding-x);
+  --bs-btn-border-radius: var(--radius-control);
+  transition:
+    background-color var(--duration-fast),
+    border-color var(--duration-fast),
+    box-shadow var(--duration-fast);
+}
+.btn-primary,
+.primary {
+  --bs-btn-color: var(--color-on-primary);
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-color: var(--color-on-primary);
+  --bs-btn-hover-bg: var(--color-primary-hover);
+  --bs-btn-hover-border-color: var(--color-primary-hover);
+  --bs-btn-active-bg: var(--color-primary-active);
+  --bs-btn-active-border-color: var(--color-primary-active);
+  --bs-btn-disabled-bg: var(--color-primary);
+  --bs-btn-disabled-border-color: var(--color-primary);
+  --bs-btn-focus-shadow-rgb: var(--color-primary-rgb);
 }
 .btn-outline-primary {
-  --bs-btn-color:var(--color-primary);
-  --bs-btn-border-color:var(--color-primary);
-  --bs-btn-hover-bg:var(--color-primary);
-  --bs-btn-hover-border-color:var(--color-primary);
-  --bs-btn-active-bg:var(--color-primary-active);
-  --bs-btn-active-border-color:var(--color-primary-active);
+  --bs-btn-color: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary);
+  --bs-btn-hover-border-color: var(--color-primary);
+  --bs-btn-active-bg: var(--color-primary-active);
+  --bs-btn-active-border-color: var(--color-primary-active);
 }
-.card,.theme-card {
-  --bs-card-bg:var(--color-surface);
-  --bs-card-border-color:var(--color-border);
-  --bs-card-border-radius:var(--radius-card);
-  --bs-card-spacer-x:var(--card-padding);
-  --bs-card-spacer-y:var(--card-padding);
-  background:var(--color-surface);
-  border-radius:var(--radius-card);
+.card,
+.theme-card {
+  --bs-card-bg: var(--color-surface);
+  --bs-card-border-color: var(--color-border);
+  --bs-card-border-radius: var(--radius-card);
+  --bs-card-spacer-x: var(--card-padding);
+  --bs-card-spacer-y: var(--card-padding);
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
 }
-.form-control,.form-select {
-  font-family:var(--font-body);
-  font-size:var(--font-size-base);
-  padding:var(--control-padding-y) var(--control-padding-x);
-  color:var(--color-text);
-  border-color:var(--color-border);
-  border-radius:var(--radius-control);
+.form-control,
+.form-select {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  padding: var(--control-padding-y) var(--control-padding-x);
+  color: var(--color-text);
+  border-color: var(--color-border);
+  border-radius: var(--radius-control);
 }
-.form-control:focus,.form-select:focus { border-color:var(--color-focus);box-shadow:var(--shadow-focus); }
-.form-check-input:checked { background-color:var(--color-primary);border-color:var(--color-primary); }
-.popup,.modal-content { background:var(--color-surface);color:var(--color-text);border-radius:var(--radius-popup);box-shadow:var(--shadow-popup); }
-@media(prefers-reduced-motion:reduce) { .btn { transition:none; } }
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-focus);
+  box-shadow: var(--shadow-focus);
+}
+.form-check-input:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.popup,
+.modal-content {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-popup);
+  box-shadow: var(--shadow-popup);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
 
-.theme-card { padding:var(--card-padding); border:1px solid var(--color-border); box-shadow:var(--shadow-card); }
+.theme-card {
+  padding: var(--card-padding);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}

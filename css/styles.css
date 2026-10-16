@@ -124,6 +124,11 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
   background: var(--color-selected-bg);
   font-weight: var(--font-weight-700);
 }
+#trip-one:checked ~ .journey-grid #return-trigger {
+  opacity: .42;
+  pointer-events: none;
+  cursor: not-allowed;
+}
 #trip-one:checked ~ .trip-options label[for="trip-one"]:before,
 #trip-round:checked ~ .trip-options label[for="trip-round"]:before,
 #trip-multi:checked ~ .trip-options label[for="trip-multi"]:before {
@@ -181,6 +186,242 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
 }
 #trip-multi:checked ~ .multi-static {
   display: block;
+}
+.multi-flight-heading {
+  font-size: var(--font-size-base);
+}
+.flight-count {
+  font-size: var(--font-size-12px);
+}
+.multi-flight-row {
+  grid-template-columns: 1.1fr 1.1fr .9fr auto;
+}
+.multi-flight-field small {
+  display: block;
+  margin-bottom: var(--space-4px);
+  color: var(--bs-secondary-color);
+  font-size: var(--font-size-12px);
+}
+.multi-flight-field .form-control {
+  min-width: 0;
+  font-size: var(--font-size-14px);
+}
+.multi-remove {
+  white-space: nowrap;
+}
+.multi-flight-popup {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(1140px, calc(100vw - 48px)) !important;
+  max-width: calc(100vw - 48px) !important;
+  max-height: min(720px, calc(100dvh - 24px));
+  overflow: visible;
+  scrollbar-color: #fff #dfe5eb;
+  scrollbar-width: thin;
+}
+.multi-flight-popup::-webkit-scrollbar {
+  width: 10px;
+}
+.multi-flight-popup::-webkit-scrollbar-track {
+  background: #dfe5eb;
+}
+.multi-flight-popup::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+#multi-flight-list {
+  max-height: min(560px, calc(100dvh - 250px));
+  overflow-y: auto;
+  scrollbar-color: #fff #dfe5eb;
+  scrollbar-width: thin;
+}
+#multi-flight-list::-webkit-scrollbar {
+  width: 10px;
+}
+#multi-flight-list::-webkit-scrollbar-track {
+  background: #dfe5eb;
+}
+#multi-flight-list::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.multi-popup-flight-row {
+  display: grid;
+  grid-template-columns: 1.25fr 1.25fr 1fr 1fr auto auto;
+  align-items: end;
+  gap: var(--space-12px);
+}
+.multi-popup-field {
+  display: block;
+  margin: 0;
+  font-size: var(--font-size-12px);
+  color: var(--bs-secondary-color);
+}
+.multi-popup-field .form-control,
+.multi-popup-field .form-select {
+  margin-top: var(--space-4px);
+  min-width: 0;
+}
+@media (max-width: 991px) {
+  .multi-popup-flight-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.multi-flight-launch {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  min-height: 24px;
+}
+.multi-static {
+  padding: var(--space-8px) var(--space-12px) !important;
+}
+.service-journey-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.service-journey-grid .journey-cell {
+  min-height: 126px;
+  padding: var(--space-18px) var(--space-22px);
+}
+.umrah-journey-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.umrah-panel .journey-cell > small,
+.umrah-panel .journey-cell > label,
+.umrah-panel .journey-cell > span {
+  font-size: var(--font-size-16px);
+}
+.umrah-panel .journey-cell strong,
+.umrah-panel .service-date-input,
+.umrah-panel .service-inline-select {
+  font-size: var(--font-size-28px);
+  line-height: var(--line-height-1-2);
+}
+.umrah-panel .journey-cell > span {
+  font-size: var(--font-size-14px);
+}
+.visa-journey-grid {
+  grid-template-columns: 1.55fr 1.55fr 1fr 1fr .9fr 1fr;
+}
+.visa-journey-grid .journey-cell {
+  min-height: 126px;
+  padding: var(--space-18px) var(--space-22px);
+}
+.service-date-input,
+.service-inline-select {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-4px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--bs-body-color);
+  font: inherit;
+  font-weight: var(--font-weight-700);
+  min-width: 0;
+}
+.service-date-input:focus,
+.service-inline-select:focus {
+  outline: 0;
+}
+.service-inline-select {
+  appearance: auto;
+}
+.trip-mode-active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-700);
+}
+.service-search-btn {
+  min-width: 240px;
+  background: var(--gradient-3);
+  border: 0;
+  box-shadow: var(--shadow-5);
+  letter-spacing: var(--tracking-0-5px);
+}
+.service-search-action {
+  position: relative;
+  margin-bottom: var(--space-neg-69px);
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .service-journey-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.multi-flight-launch:hover strong {
+  color: var(--color-primary);
+}
+.multi-flight-launch small {
+  font-size: var(--font-size-12px);
+}
+.multi-flight-popup h2 {
+  font-family: inherit;
+  font-size: var(--font-size-18px);
+}
+.multi-popup-journey {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto auto;
+  border-color: var(--color-border) !important;
+}
+.multi-popup-journey .journey-cell {
+  min-width: 0;
+  min-height: 92px;
+}
+.multi-popup-add,
+.multi-popup-remove {
+  align-self: center;
+  margin: var(--space-10px);
+  white-space: nowrap;
+}
+.multi-popup-done {
+  min-width: 240px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-21-55px);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-1-3);
+  padding: var(--space-10px) var(--space-40px) !important;
+  color: var(--color-on-primary);
+  background: var(--gradient-3);
+  border: 0;
+  box-shadow: var(--shadow-5);
+  letter-spacing: var(--tracking-0-5px);
+}
+.multi-popup-footer {
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 1px;
+  margin: var(--space-32px) 0 var(--space-8px);
+  padding-top: var(--space-8px);
+}
+.multi-popup-footer #multi-flight-count {
+  position: absolute;
+  left: 0;
+}
+.multi-popup-footer .multi-popup-done {
+  position: absolute;
+  left: 50%;
+  bottom: -28px;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+@media (max-width: 991px) {
+  .multi-popup-journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .multi-flight-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .multi-remove {
+    width: 100%;
+  }
 }
 #trip-one:checked ~ .journey-grid .return-cell {
   opacity: 0.4;
@@ -670,17 +911,17 @@ h1 {
   isolation: isolate;
   min-height: 250px;
   overflow: hidden;
-  background-image: var(--background-image-2);
-  background-size: 535.19% auto;
+  background-size: cover;
+  background-position: center;
 }
 .city {
-  background-position: 5.204% 62.898%;
+  background-image: url("../images/destination-istanbul.png");
 }
 .beach {
-  background-position: 29.063% 62.898%;
+  background-image: url("../images/destination-hunza.png");
 }
 .desert {
-  background-position: 53.323% 62.898%;
+  background-image: url("../images/destination-dubai.png");
 }
 .destination:before {
   content: "";
@@ -721,16 +962,58 @@ h1 {
 .offer-photo {
   width: 44%;
   flex-shrink: 0;
-  background-image: var(--background-image-2);
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .pool {
-  background-size: 721.12% auto;
-  background-position: 4.913% 83.698%;
+  background-image: url("../images/destination-dubai.png");
 }
 .resort {
-  background-size: 791.75% auto;
-  background-position: 38.599% 83.698%;
+  background-image: url("../images/destination-hunza.png");
+}
+.travel-ad-row {
+  max-width: 1320px;
+}
+.travel-ad {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5, 31, 52, 0.88) 0%,
+      rgba(5, 31, 52, 0.65) 42%,
+      rgba(5, 31, 52, 0.08) 100%
+    ),
+    url("../images/travel-ad.png");
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+}
+.travel-ad-copy {
+  max-width: 560px;
+  padding: var(--space-2rem);
+}
+.travel-ad-copy .eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+}
+.travel-ad-copy h2 {
+  max-width: 420px;
+  margin: var(--space-8px) 0;
+}
+.travel-ad-copy p {
+  margin-bottom: var(--space-16px);
+  color: rgba(255, 255, 255, 0.86);
+}
+@media (max-width: 575px) {
+  .travel-ad {
+    min-height: 300px;
+    background-position: 62% center;
+  }
+  .travel-ad-copy {
+    padding: var(--space-1-5rem);
+  }
 }
 .offer h3 {
   font-size: var(--font-size-1-588rem);
@@ -1508,6 +1791,13 @@ body p {
     font-size: var(--font-size-12-47px);
   }
 }
+
+/* Keep the active service indicator on the navbar's bottom edge. */
+.travel-header label.nav-service::after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 @media (min-width: 768px) and (max-width: 991px) {
   .travel-header .container {
     flex-wrap: nowrap !important;
@@ -1690,6 +1980,14 @@ body p {
   font-size: var(--font-size-16px);
   line-height: var(--line-height-1-5);
 }
+.travel-hero .travel-shortcuts > a,
+.travel-hero .travel-shortcuts > button {
+  font-size: var(--font-size-17-01px);
+  font-weight: var(--font-weight-500);
+}
+.travel-hero .travel-shortcuts i {
+  font-size: var(--font-size-21px);
+}
 @media (max-width: 767px) {
   .travel-hero .travel-shortcuts {
     padding-block: var(--space-14px) !important;
@@ -1697,6 +1995,9 @@ body p {
   .travel-hero .travel-shortcuts > a,
   .travel-hero .travel-shortcuts > button {
     font-size: var(--font-size-base);
+  }
+  .travel-hero .travel-shortcuts i {
+    font-size: var(--font-size-18px);
   }
 }
 
@@ -1892,6 +2193,66 @@ body p {
   }
 }
 
+/* Keep the date, traveller, and cabin controls consistent with the airport dropdowns. */
+#departure-trigger,
+#return-trigger,
+#travellers-trigger,
+#cabin-trigger {
+  cursor: pointer;
+}
+#departure-trigger {
+  anchor-name: --departure-field;
+}
+#return-trigger {
+  anchor-name: --return-field;
+}
+#travellers-trigger {
+  anchor-name: --travellers-field;
+}
+#cabin-trigger {
+  anchor-name: --cabin-field;
+}
+#departure-trigger:hover,
+#return-trigger:hover,
+#travellers-trigger:hover,
+#cabin-trigger:hover {
+  background: var(--color-field-hover);
+}
+@supports (top: anchor(bottom)) {
+  @media (min-width: 768px) {
+    #departure-calendar,
+    #return-calendar,
+    #travellers,
+    #cabin-picker {
+      position: fixed;
+      inset: auto;
+      top: anchor(bottom);
+      left: anchor(left);
+      margin: var(--space-8px) 0 0;
+    }
+    #departure-calendar {
+      position-anchor: --departure-field;
+    }
+    #return-calendar {
+      position-anchor: --return-field;
+    }
+    #travellers {
+      position-anchor: --travellers-field;
+    }
+    #cabin-picker {
+      position-anchor: --cabin-field;
+      left: auto;
+      right: anchor(right);
+    }
+    #departure-calendar::backdrop,
+    #return-calendar::backdrop,
+    #travellers::backdrop,
+    #cabin-picker::backdrop {
+      background: transparent;
+    }
+  }
+}
+
 /* Complete booking popups fit on desktop without internal scrolling. */
 .booking-popup {
   width: min(400px, calc(100vw - 24px));
@@ -1976,5 +2337,33 @@ body p {
   #travellers {
     max-height: calc(100dvh - 24px);
     overflow: auto;
+  }
+}
+
+/* Compact, elevated service tabs attached to the booking form. */
+.service-dock {
+  width: min(540px, 66%);
+  min-height: 64px;
+  box-shadow: 0 8px 18px rgba(7, 19, 37, .14), 0 2px 6px rgba(7, 19, 37, .08) !important;
+}
+.dock-service {
+  padding: var(--space-6px) var(--space-16px);
+  gap: var(--space-3px);
+  font-size: var(--font-size-14px);
+}
+.dock-service i {
+  font-size: var(--font-size-28px);
+}
+@media (max-width: 767px) {
+  .service-dock {
+    width: 86%;
+    min-height: 58px;
+  }
+  .dock-service {
+    padding: var(--space-5px) var(--space-8px);
+    font-size: var(--font-size-13px);
+  }
+  .dock-service i {
+    font-size: var(--font-size-22-68px);
   }
 }
