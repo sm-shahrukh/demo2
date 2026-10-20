@@ -5,11 +5,38 @@
 .travel-header {
   z-index: 20;
 }
+.bi:not(.socials .bi):not(.btn .bi):not(.destination .bi):not(.avatar .bi) {
+  display: inline-block;
+  color: transparent;
+  background-image: var(--gradient-icon);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .travel-header .brand {
-  font-size: var(--font-size-31-75px) !important;
+  width: var(--brand-logo-width);
+  height: var(--brand-logo-height);
 }
 .travel-header .brand span {
   font-size: var(--font-size-7-938px) !important;
+  color: var(--color-accent);
+}
+.logo-brand {
+  display: block;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.brand-logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.footer-logo-brand {
+  width: var(--brand-logo-footer-width);
+  height: var(--brand-logo-height);
 }
 .travel-header .avatar {
   background: var(--gradient-1);
@@ -26,6 +53,57 @@
 }
 .travel-nav i {
   font-size: var(--font-size-29-48px);
+}
+.travel-nav .nav-service:hover,
+.travel-nav .nav-service:focus-visible {
+  color: var(--color-nav-hover);
+  outline: none;
+}
+.travel-nav .nav-service:hover span,
+.travel-nav .nav-service:focus-visible span {
+  color: var(--color-nav-hover);
+}
+.travel-nav .nav-service:hover .bi,
+.travel-nav .nav-service:focus-visible .bi {
+  color: var(--color-nav-hover) !important;
+  background-image: none !important;
+  -webkit-text-fill-color: var(--color-nav-hover) !important;
+  filter: var(--icon-hover-shadow);
+  transform: var(--icon-hover-transform);
+}
+.hero-explore a > .bi {
+  color: var(--color-accent) !important;
+  background-image: none !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
+}
+.travel-header > .container > button:hover,
+.travel-header .account-dropdown > button:hover {
+  transform: none;
+  box-shadow: none;
+}
+.travel-header > .container > button:hover strong,
+.travel-header .account-dropdown > button:hover strong {
+  color: var(--color-accent);
+}
+.travel-header > .container > button:hover .bi,
+.travel-header .account-dropdown > button:hover .bi {
+  color: var(--color-accent) !important;
+  background-image: none !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
+  transform: none;
+  filter: none;
+}
+.travel-header button[popovertarget="my-trips"]:hover strong,
+.travel-header button[popovertarget="my-trips"]:focus-visible strong {
+  color: var(--color-accent);
+}
+.travel-header button[popovertarget="my-trips"]:hover .bi,
+.travel-header button[popovertarget="my-trips"]:focus-visible .bi {
+  color: var(--color-accent) !important;
+  background-image: none !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
+  transform: none;
+  filter: none;
 }
 .nav-service:after {
   content: "";
@@ -65,6 +143,22 @@
   font-size: var(--font-size-40-82px);
   filter: drop-shadow(0 3px 1px var(--color-icon-shadow));
 }
+.service-dock .dock-service:hover,
+.service-dock .dock-service:focus-visible {
+  color: var(--color-nav-hover);
+}
+.service-dock .dock-service:hover span,
+.service-dock .dock-service:focus-visible span {
+  color: var(--color-nav-hover);
+}
+.service-dock .dock-service:hover .bi,
+.service-dock .dock-service:focus-visible .bi {
+  color: var(--color-nav-hover) !important;
+  background-image: none !important;
+  -webkit-text-fill-color: var(--color-nav-hover) !important;
+  filter: var(--icon-hover-shadow);
+  transform: var(--icon-hover-transform);
+}
 .dock-service:after {
   content: "";
   position: absolute;
@@ -75,18 +169,25 @@
   background: transparent;
 }
 .static-booking {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   position: relative;
   z-index: 2;
   padding-top: var(--space-76px) !important;
   padding-bottom: var(--space-44px) !important;
 }
 .static-panel {
-  display: none;
+  display: block;
+  grid-area: 1 / 1;
+  min-width: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 #service-flights:checked ~ main .flight-panel,
 #service-umrah:checked ~ main .umrah-panel,
 #service-visa:checked ~ main .visa-panel {
-  display: block;
+  visibility: visible;
+  pointer-events: auto;
 }
 body:has(#service-flights:checked) label[for="service-flights"],
 body:has(#service-umrah:checked) label[for="service-umrah"],
@@ -97,7 +198,7 @@ body:has(#service-visa:checked) label[for="service-visa"] {
 body:has(#service-flights:checked) label[for="service-flights"]:after,
 body:has(#service-umrah:checked) label[for="service-umrah"]:after,
 body:has(#service-visa:checked) label[for="service-visa"]:after {
-  background: var(--color-primary);
+  background: var(--color-accent);
 }
 .service-choice:focus-visible ~ .travel-header .travel-nav {
   outline: 2px solid var(--color-primary);
@@ -125,7 +226,7 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
   font-weight: var(--font-weight-700);
 }
 #trip-one:checked ~ .journey-grid #return-trigger {
-  opacity: .42;
+  opacity: 0.42;
   pointer-events: none;
   cursor: not-allowed;
 }
@@ -187,6 +288,9 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
 #trip-multi:checked ~ .multi-static {
   display: block;
 }
+body:not(:has(#service-flights:checked)) .flight-panel .multi-static {
+  display: none !important;
+}
 .multi-flight-heading {
   font-size: var(--font-size-base);
 }
@@ -194,7 +298,7 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
   font-size: var(--font-size-12px);
 }
 .multi-flight-row {
-  grid-template-columns: 1.1fr 1.1fr .9fr auto;
+  grid-template-columns: 1.1fr 1.1fr 0.9fr auto;
 }
 .multi-flight-field small {
   display: block;
@@ -217,17 +321,17 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
   max-width: calc(100vw - 48px) !important;
   max-height: min(720px, calc(100dvh - 24px));
   overflow: visible;
-  scrollbar-color: #fff #dfe5eb;
+  scrollbar-color: var(--color-scroll-thumb) var(--color-scroll-track);
   scrollbar-width: thin;
 }
 .multi-flight-popup::-webkit-scrollbar {
   width: 10px;
 }
 .multi-flight-popup::-webkit-scrollbar-track {
-  background: #dfe5eb;
+  background: var(--color-scroll-track);
 }
 .multi-flight-popup::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: var(--color-scroll-thumb);
   border-radius: 999px;
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -235,17 +339,17 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
 #multi-flight-list {
   max-height: min(560px, calc(100dvh - 250px));
   overflow-y: auto;
-  scrollbar-color: #fff #dfe5eb;
+  scrollbar-color: var(--color-scroll-thumb) var(--color-scroll-track);
   scrollbar-width: thin;
 }
 #multi-flight-list::-webkit-scrollbar {
   width: 10px;
 }
 #multi-flight-list::-webkit-scrollbar-track {
-  background: #dfe5eb;
+  background: var(--color-scroll-track);
 }
 #multi-flight-list::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: var(--color-scroll-thumb);
   border-radius: 999px;
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -282,71 +386,11 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
   padding: var(--space-8px) var(--space-12px) !important;
 }
 .service-journey-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.service-journey-grid .journey-cell {
-  min-height: 126px;
-  padding: var(--space-18px) var(--space-22px);
-}
-.umrah-journey-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-.umrah-panel .journey-cell > small,
-.umrah-panel .journey-cell > label,
-.umrah-panel .journey-cell > span {
-  font-size: var(--font-size-16px);
-}
-.umrah-panel .journey-cell strong,
-.umrah-panel .service-date-input,
-.umrah-panel .service-inline-select {
-  font-size: var(--font-size-28px);
-  line-height: var(--line-height-1-2);
-}
-.umrah-panel .journey-cell > span {
-  font-size: var(--font-size-14px);
-}
-.visa-journey-grid {
-  grid-template-columns: 1.55fr 1.55fr 1fr 1fr .9fr 1fr;
-}
-.visa-journey-grid .journey-cell {
-  min-height: 126px;
-  padding: var(--space-18px) var(--space-22px);
-}
-.service-date-input,
-.service-inline-select {
-  display: block;
-  width: 100%;
-  margin-top: var(--space-4px);
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--bs-body-color);
-  font: inherit;
-  font-weight: var(--font-weight-700);
-  min-width: 0;
-}
-.service-date-input:focus,
-.service-inline-select:focus {
-  outline: 0;
-}
-.service-inline-select {
-  appearance: auto;
+  grid-template-columns: 1.55fr 1.55fr 1fr 1fr 0.9fr 1fr;
 }
 .trip-mode-active {
   color: var(--color-primary);
   font-weight: var(--font-weight-700);
-}
-.service-search-btn {
-  min-width: 240px;
-  background: var(--gradient-3);
-  border: 0;
-  box-shadow: var(--shadow-5);
-  letter-spacing: var(--tracking-0-5px);
-}
-.service-search-action {
-  position: relative;
-  margin-bottom: var(--space-neg-69px);
-  z-index: 2;
 }
 @media (max-width: 767px) {
   .service-journey-grid {
@@ -435,9 +479,9 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
 .cabin-dropdown {
   position: absolute;
   right: 0;
-  top: calc(100% - 16px);
-  width: 430px;
-  max-width: calc(100vw - 24px);
+  top: calc(100% - var(--dropdown-cabin-overlap));
+  width: var(--dropdown-cabin-width);
+  max-width: calc(100vw - var(--dropdown-mobile-gutter));
   z-index: 10;
   max-height: 70dvh;
   overflow: auto;
@@ -488,11 +532,14 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
   margin-top: var(--space-6px);
 }
 .static-fares label:has(input:checked) {
-  border-color: var(--color-primary) !important;
+  border-color: var(--color-fare-selected-border) !important;
   background: var(--color-fare-selected);
 }
 .static-fares label:focus-within {
   outline: 2px solid var(--color-primary);
+}
+.static-fares label:has(input:checked):focus-within {
+  outline: none;
 }
 .travel-assurance {
   background: var(--gradient-2);
@@ -642,7 +689,7 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
 }
 body {
   background: var(--color-page);
-  color: var(--bs-dark);
+  color: var(--color-text);
 }
 a {
   color: inherit;
@@ -675,7 +722,7 @@ h2,
   font-weight: var(--font-weight-700);
 }
 h2 {
-  font-size: var(--font-size-2-268rem);
+  font-size: var(--font-size-heading-2);
   letter-spacing: var(--tracking-neg-0-05rem);
 }
 summary {
@@ -699,6 +746,7 @@ summary::-webkit-details-marker {
   font-size: var(--font-size-0-5103rem);
   letter-spacing: var(--tracking-0-25rem);
   margin-top: var(--space-0-4rem);
+  color: var(--color-accent);
 }
 .header nav {
   display: flex;
@@ -713,17 +761,21 @@ summary::-webkit-details-marker {
 .dropdown {
   position: absolute;
   z-index: 20;
-  top: calc(100% + 16px);
-  min-width: 190px;
-  padding: var(--space-1rem);
-  background: var(--bs-body-bg);
-  border: 1px solid var(--bs-border-color);
-  border-radius: var(--bs-border-radius-lg);
-  box-shadow: var(--bs-box-shadow);
+  top: calc(100% + var(--dropdown-offset) * 2);
+  min-width: var(--dropdown-min-width);
+  padding: var(--dropdown-padding);
 }
 .dropdown a {
   display: block;
-  padding: var(--space-0-5rem);
+  padding: var(--dropdown-item-padding-y) var(--dropdown-item-padding-x);
+  border-radius: var(--radius-dropdown-item);
+  color: var(--color-dropdown-text);
+  font-size: var(--font-size-dropdown);
+}
+.dropdown a:hover,
+.dropdown a:focus-visible {
+  color: var(--color-primary);
+  background: var(--color-dropdown-selected);
 }
 .avatar {
   display: grid;
@@ -767,7 +819,7 @@ summary::-webkit-details-marker {
   letter-spacing: var(--tracking-0-3rem);
 }
 h1 {
-  font-size: var(--font-size-13);
+  font-size: var(--font-size-heading-1);
   line-height: var(--line-height-0-98);
   letter-spacing: var(--tracking-neg-0-15rem);
 }
@@ -937,6 +989,7 @@ h1 {
 .destination h3 {
   font-size: var(--font-size-1-814rem);
   margin-bottom: var(--space-0-3rem);
+  color: var(--color-accent);
 }
 .destination p {
   font-size: var(--font-size-0-9639rem);
@@ -950,8 +1003,8 @@ h1 {
   height: 40px;
   flex-shrink: 0;
   border-radius: var(--radius-50percent);
-  background: var(--bs-var(--color-white));
-  color: var(--bs-dark);
+  background: var(--color-white);
+  color: var(--color-text);
 }
 .swipe {
   display: none;
@@ -982,9 +1035,9 @@ h1 {
   background-image:
     linear-gradient(
       90deg,
-      rgba(5, 31, 52, 0.88) 0%,
-      rgba(5, 31, 52, 0.65) 42%,
-      rgba(5, 31, 52, 0.08) 100%
+      var(--color-photo-overlay-strong) 0%,
+      var(--color-photo-overlay-medium) 42%,
+      var(--color-photo-overlay-light) 100%
     ),
     url("../images/travel-ad.png");
   background-size: cover;
@@ -996,15 +1049,207 @@ h1 {
   padding: var(--space-2rem);
 }
 .travel-ad-copy .eyebrow {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-on-image-strong);
 }
 .travel-ad-copy h2 {
   max-width: 420px;
   margin: var(--space-8px) 0;
+  color: var(--color-accent);
 }
 .travel-ad-copy p {
   margin-bottom: var(--space-16px);
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--color-on-image-muted);
+}
+.home-feature-section .section-heading h2 {
+  margin-bottom: var(--space-8px);
+}
+.home-feature-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--color-feature-border);
+  border-radius: var(--radius-section);
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      var(--color-feature-glow) 0,
+      transparent 34%
+    ),
+    var(--gradient-blue-soft);
+}
+.home-feature-section::after {
+  position: absolute;
+  z-index: -1;
+  right: -55px;
+  bottom: -90px;
+  width: 210px;
+  height: 210px;
+  border: 1px solid var(--color-feature-decoration);
+  border-radius: 50%;
+  box-shadow: var(--shadow-feature-rings);
+  content: "";
+  pointer-events: none;
+}
+.home-feature-section .section-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px !important;
+}
+.home-feature-section .section-heading .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-accent);
+  font-size: var(--font-size-0-7938rem);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.12em;
+}
+.home-feature-section .section-heading .eyebrow::before {
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  content: "";
+}
+input[type="radio"]:checked {
+  accent-color: var(--color-accent);
+}
+.home-feature-section .row {
+  position: relative;
+  z-index: 1;
+}
+.home-feature-card {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-24px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--gradient-feature-card);
+  box-shadow: var(--shadow-brand-card);
+  transition:
+    transform var(--duration-card-hover) ease,
+    box-shadow var(--duration-card-hover) ease,
+    border-color var(--duration-card-hover) ease;
+}
+.home-feature-card::after {
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: var(--gradient-feature-glow);
+  content: "";
+  transition: transform var(--duration-decoration) ease;
+  pointer-events: none;
+}
+.home-feature-card:hover,
+.home-feature-card:focus-within {
+  transform: translateY(-7px);
+  border-color: var(--color-feature-border-hover);
+  box-shadow: var(--shadow-brand-card-hover);
+}
+.home-feature-card:hover::after,
+.home-feature-card:focus-within::after {
+  transform: scale(1.35);
+}
+.home-feature-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  margin-bottom: var(--space-16px);
+  place-items: center;
+  border-radius: var(--radius-50percent);
+  background: var(--color-airport-icon-bg);
+  color: var(--color-primary);
+  font-size: var(--font-size-21px);
+  box-shadow: var(--shadow-brand-button);
+}
+.home-feature-section .col:nth-child(2) .home-feature-icon {
+  color: var(--color-accent);
+  background: var(--color-feature-icon-red-bg);
+}
+.home-feature-section .col:nth-child(3) .home-feature-icon {
+  color: var(--color-primary);
+  background: var(--color-feature-icon-blue-pale);
+}
+.home-feature-card h3 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-8px);
+  font-size: var(--font-size-1-247rem);
+}
+.home-feature-card p {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-16px);
+  color: var(--color-muted);
+}
+.home-feature-card a,
+.home-feature-link {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-teal);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+.home-feature-card a:hover,
+.home-feature-link:hover {
+  color: var(--color-teal-dark);
+  text-decoration: underline;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .home-feature-card {
+    animation: home-feature-arrive 650ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+  }
+  .home-feature-section .col:nth-child(2) .home-feature-card {
+    animation-delay: 100ms;
+  }
+  .home-feature-section .col:nth-child(3) .home-feature-card {
+    animation-delay: 200ms;
+  }
+  .home-feature-icon {
+    animation: home-icon-drift 4s ease-in-out infinite;
+  }
+  .home-feature-section .col:nth-child(2) .home-feature-icon {
+    animation-delay: -1.3s;
+  }
+  .home-feature-section .col:nth-child(3) .home-feature-icon {
+    animation-delay: -2.6s;
+  }
+}
+@keyframes home-feature-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes home-icon-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-5deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-feature-card,
+  .home-feature-card::after,
+  .home-feature-icon {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 @media (max-width: 575px) {
   .travel-ad {
@@ -1014,10 +1259,58 @@ h1 {
   .travel-ad-copy {
     padding: var(--space-1-5rem);
   }
+  .home-feature-card {
+    padding: var(--space-20px);
+  }
+  .home-feature-section {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+  .home-feature-card:hover,
+  .home-feature-card:focus-within {
+    transform: translateY(-3px);
+  }
 }
 .offer h3 {
   font-size: var(--font-size-1-588rem);
   margin-top: var(--space-0-75rem);
+}
+#offers .offer .badge {
+  color: var(--color-on-primary) !important;
+  background-color: var(--color-accent) !important;
+}
+#offers .offer h3,
+#offers .offer a {
+  color: var(--color-accent);
+}
+#offers .offer h3 {
+  color: var(--color-primary);
+}
+#offers .offer a {
+  color: var(--color-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: var(--transition-interactive);
+}
+#offers .offer a:hover,
+#offers .offer a:focus-visible {
+  color: var(--color-accent);
+}
+#offers .section-heading > a {
+  transition: var(--transition-interactive);
+}
+#offers .section-heading > a:hover,
+#offers .section-heading > a:focus-visible {
+  color: var(--color-accent);
+}
+#offers .section-heading > a:hover .bi,
+#offers .section-heading > a:focus-visible .bi {
+  color: var(--color-accent) !important;
+  background-image: none !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
+  transform: none;
+  filter: none;
 }
 .offer p {
   color: var(--bs-secondary-color);
@@ -1059,16 +1352,19 @@ footer {
   position: fixed;
   margin: auto;
   padding: 0;
-  width: min(400px, calc(100% - 32px));
+  width: min(
+    var(--dropdown-booking-width),
+    calc(100% - var(--popup-mobile-gutter))
+  );
   max-height: 88dvh;
-  color: var(--bs-body-color);
-  background: var(--bs-body-bg);
+  color: var(--color-dropdown-text);
+  background: var(--color-dropdown-surface);
 }
 .popup::backdrop {
   background: var(--color-popup-backdrop);
 }
 .popup h3 {
-  font-size: var(--font-size-1-247rem);
+  font-size: var(--font-size-dropdown-heading);
   margin: 0;
 }
 .popup-head button {
@@ -1289,17 +1585,17 @@ footer {
 
 /* Viewport-sized desktop landing section with readable, compact controls. */
 body {
-  font-size: var(--font-size-17-01px);
+  font-size: var(--font-size-body-desktop);
   line-height: var(--line-height-base);
 }
 body h1 {
-  font-size: var(--font-size-31-75px);
+  font-size: var(--font-size-page-title-desktop);
 }
 body :is(h2, h3, h4, h5, h6) {
-  font-size: var(--font-size-24-95px);
+  font-size: var(--font-size-section-title-desktop);
 }
 body p {
-  font-size: var(--font-size-18-14px);
+  font-size: var(--font-size-body-copy-desktop);
 }
 .welcome-strip {
   height: 30px;
@@ -1903,6 +2199,38 @@ body p {
 .static-booking {
   font-size: var(--font-size-16px);
 }
+.static-booking .umrah-panel h1,
+.static-booking .visa-panel h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-31-75px);
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-0-98);
+  letter-spacing: var(--tracking-neg-0-15rem);
+}
+.static-booking .visa-panel h1 {
+  position: relative;
+  top: -4px;
+  margin-bottom: var(--space-14px) !important;
+  font-family: var(--font-body);
+  font-size: var(--font-size-18px) !important;
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-base) !important;
+  letter-spacing: normal;
+}
+.static-booking .umrah-panel h1 {
+  margin-bottom: var(--space-14px) !important;
+  font-family: var(--font-body);
+  font-size: var(--font-size-18px) !important;
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-base);
+  letter-spacing: normal;
+}
+@media (min-width: 768px) {
+  .static-booking .umrah-panel h1,
+  .static-booking .visa-panel h1 {
+    margin-bottom: var(--space-10px) !important;
+  }
+}
 .static-booking .trip-options,
 .static-booking .trip-options > span,
 .static-booking .trip-options label {
@@ -1914,6 +2242,12 @@ body p {
 }
 .static-booking .journey-cell strong {
   font-size: var(--font-size-28px);
+}
+.static-booking .journey-cell > small,
+.static-booking .journey-cell summary > small {
+  font-family: var(--font-body);
+  font-size: var(--font-size-16px);
+  line-height: var(--line-height-base);
 }
 .static-booking .journey-cell strong span {
   font-size: var(--font-size-19px);
@@ -2023,8 +2357,8 @@ body p {
 .account-menu {
   position: absolute;
   right: 0;
-  top: calc(100% + 14px);
-  width: 240px;
+  top: calc(100% + var(--dropdown-offset));
+  width: var(--dropdown-account-width);
   z-index: 30;
 }
 .account-menu-item {
@@ -2032,13 +2366,13 @@ body p {
   align-items: center;
   gap: var(--space-12px);
   width: 100%;
-  padding: var(--space-11px) var(--space-14px) !important;
+  padding: var(--dropdown-item-padding-y) var(--dropdown-item-padding-x) !important;
   text-align: left;
   border-radius: var(--radius-6px);
 }
 .account-menu-item:hover,
 .account-menu-item:focus-visible {
-  background: var(--bs-tertiary-bg);
+  background: var(--color-dropdown-hover);
 }
 .account-menu-item i {
   font-size: var(--font-size-18px);
@@ -2058,7 +2392,7 @@ body p {
   top: 106px;
   right: max(12px, calc((100vw - 1320px) / 2));
   margin: 0;
-  width: 240px;
+  width: var(--dropdown-account-width);
   overflow: visible;
 }
 #account-menu::backdrop {
@@ -2090,14 +2424,17 @@ body p {
 }
 #origin.airport-picker,
 #destination.airport-picker {
-  width: min(350px, calc(100vw - 24px));
+  width: min(
+    var(--dropdown-airport-width),
+    calc(100vw - var(--dropdown-mobile-gutter))
+  );
   max-height: 85dvh;
   padding: 0;
-  color: var(--bs-dark);
+  color: var(--color-dropdown-text);
 }
 .airport-picker h2 {
   font-family: inherit;
-  font-size: var(--font-size-18px);
+  font-size: var(--font-size-dropdown-heading);
 }
 .airport-search-box {
   background: var(--color-airport-search);
@@ -2212,11 +2549,138 @@ body p {
 #cabin-trigger {
   anchor-name: --cabin-field;
 }
+#umrah-start-trigger {
+  anchor-name: --umrah-start-field;
+}
+#umrah-end-trigger {
+  anchor-name: --umrah-end-field;
+}
+#umrah-travellers-trigger {
+  anchor-name: --umrah-travellers-field;
+}
+#visa-travel-date-trigger {
+  anchor-name: --visa-travel-date-field;
+}
+#visa-travellers-trigger {
+  anchor-name: --visa-travellers-field;
+}
 #departure-trigger:hover,
 #return-trigger:hover,
 #travellers-trigger:hover,
 #cabin-trigger:hover {
   background: var(--color-field-hover);
+}
+.service-picker-trigger {
+  cursor: pointer;
+}
+.service-picker-trigger:hover {
+  background: var(--color-field-hover);
+}
+.service-picker {
+  width: min(
+    var(--dropdown-service-width),
+    calc(100vw - var(--dropdown-mobile-gutter))
+  );
+  max-height: none;
+  overflow: visible;
+}
+.service-picker-head h2 {
+  margin: 0;
+  font-family: inherit;
+  font-size: var(--font-size-dropdown-heading);
+}
+.service-picker-head button {
+  font-size: var(--font-size-24px);
+  line-height: var(--line-height-1);
+}
+.service-picker-options {
+  display: grid;
+  gap: var(--dropdown-item-gap);
+}
+.service-picker-option {
+  width: 100%;
+  padding: var(--dropdown-item-padding-y) var(--dropdown-item-padding-x);
+}
+.service-picker-option:hover,
+.service-picker-option:focus-visible,
+.service-picker-option[aria-pressed="true"] {
+  background: var(--color-dropdown-selected);
+  color: var(--color-primary);
+}
+.static-booking .service-journey-grid .journey-cell > small,
+.static-booking .service-journey-grid .journey-cell > strong,
+.static-booking .service-journey-grid .journey-cell > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@supports (top: anchor(bottom)) {
+  @media (min-width: 768px) {
+    #umrah-destination-trigger {
+      anchor-name: --umrah-destination-field;
+    }
+    #umrah-package-trigger {
+      anchor-name: --umrah-package-field;
+    }
+    #umrah-services-trigger {
+      anchor-name: --umrah-services-field;
+    }
+    #visa-passport-trigger {
+      anchor-name: --visa-passport-field;
+    }
+    #visa-destination-trigger {
+      anchor-name: --visa-destination-field;
+    }
+    #visa-type-trigger {
+      anchor-name: --visa-type-field;
+    }
+    #visa-processing-trigger {
+      anchor-name: --visa-processing-field;
+    }
+    .service-picker {
+      position: fixed;
+      inset: auto;
+      margin: var(--space-8px) 0 0;
+    }
+    #umrah-destination-picker {
+      position-anchor: --umrah-destination-field;
+      top: anchor(bottom);
+      left: anchor(left);
+    }
+    #umrah-package-picker {
+      position-anchor: --umrah-package-field;
+      top: anchor(bottom);
+      left: anchor(left);
+    }
+    #umrah-services-picker {
+      position-anchor: --umrah-services-field;
+      top: anchor(bottom);
+      left: anchor(left);
+    }
+    #visa-passport-picker {
+      position-anchor: --visa-passport-field;
+      top: anchor(bottom);
+      left: anchor(left);
+    }
+    #visa-destination-picker {
+      position-anchor: --visa-destination-field;
+      top: anchor(bottom);
+      left: anchor(left);
+    }
+    #visa-type-picker {
+      position-anchor: --visa-type-field;
+      top: anchor(bottom);
+      left: anchor(left);
+    }
+    #visa-processing-picker {
+      position-anchor: --visa-processing-field;
+      top: anchor(bottom);
+      left: anchor(left);
+    }
+    .service-picker::backdrop {
+      background: transparent;
+    }
+  }
 }
 @supports (top: anchor(bottom)) {
   @media (min-width: 768px) {
@@ -2252,16 +2716,57 @@ body p {
     }
   }
 }
+@supports (top: anchor(bottom)) {
+  body:has(#service-umrah:checked) #departure-calendar,
+  body:has(#service-visa:checked) #departure-calendar {
+    position: fixed;
+    inset: auto;
+    top: anchor(bottom);
+    left: anchor(left);
+    margin: var(--space-8px) 0 0;
+  }
+  body:has(#service-umrah:checked) #departure-calendar {
+    position-anchor: --umrah-start-field;
+  }
+  body:has(#service-visa:checked) #departure-calendar {
+    position-anchor: --visa-travel-date-field;
+  }
+  body:has(#service-umrah:checked) #return-calendar {
+    position: fixed;
+    inset: auto;
+    position-anchor: --umrah-end-field;
+    top: anchor(bottom);
+    left: anchor(left);
+    margin: var(--space-8px) 0 0;
+  }
+  body:has(#service-umrah:checked) #travellers,
+  body:has(#service-visa:checked) #travellers {
+    position: fixed;
+    inset: auto;
+    top: anchor(bottom);
+    left: anchor(left);
+    margin: var(--space-8px) 0 0;
+  }
+  body:has(#service-umrah:checked) #travellers {
+    position-anchor: --umrah-travellers-field;
+  }
+  body:has(#service-visa:checked) #travellers {
+    position-anchor: --visa-travellers-field;
+  }
+}
 
 /* Complete booking popups fit on desktop without internal scrolling. */
 .booking-popup {
-  width: min(400px, calc(100vw - 24px));
+  width: min(
+    var(--dropdown-booking-width),
+    calc(100vw - var(--dropdown-mobile-gutter))
+  );
   max-height: none;
   overflow: visible;
 }
 .booking-popup h2 {
   font-family: inherit;
-  font-size: var(--font-size-18px);
+  font-size: var(--font-size-dropdown-heading);
 }
 .cabin-picker-body {
   border: 0 !important;
@@ -2283,7 +2788,10 @@ body p {
   display: none !important;
 }
 .calendar-popup {
-  width: min(350px, calc(100vw - 24px));
+  width: min(
+    var(--dropdown-calendar-width),
+    calc(100vw - var(--dropdown-mobile-gutter))
+  );
 }
 .calendar-grid {
   display: grid;
@@ -2320,7 +2828,10 @@ body p {
 #travellers {
   max-height: none;
   overflow: visible;
-  width: min(360px, calc(100vw - 24px));
+  width: min(
+    var(--dropdown-traveller-width),
+    calc(100vw - var(--dropdown-mobile-gutter))
+  );
 }
 #travellers .popup-head,
 #travellers .popup-body {
@@ -2335,8 +2846,8 @@ body p {
 @media (max-height: 480px) {
   .booking-popup,
   #travellers {
-    max-height: calc(100dvh - 24px);
-    overflow: auto;
+    max-height: none;
+    overflow: visible;
   }
 }
 
@@ -2344,7 +2855,7 @@ body p {
 .service-dock {
   width: min(540px, 66%);
   min-height: 64px;
-  box-shadow: 0 8px 18px rgba(7, 19, 37, .14), 0 2px 6px rgba(7, 19, 37, .08) !important;
+  box-shadow: var(--shadow-service-dock) !important;
 }
 .dock-service {
   padding: var(--space-6px) var(--space-16px);
@@ -2366,4 +2877,679 @@ body p {
   .dock-service i {
     font-size: var(--font-size-22-68px);
   }
+}
+
+/* Final small-screen layout refinements. Keep service selection in the hero dock,
+   while removing the duplicate Flights/Umrah/Visa links from the top navbar. */
+@media (max-width: 767px) {
+  .static-booking {
+    font-size: var(--font-size-13px);
+  }
+  .static-booking h1,
+  .static-panel h1 {
+    font-size: var(--font-size-21px);
+  }
+  .trip-options,
+  .trip-options label {
+    font-size: var(--font-size-11px);
+  }
+  .journey-cell > small {
+    font-size: var(--font-size-10px);
+    line-height: 1.2;
+  }
+  .journey-cell strong {
+    font-size: var(--font-size-18px);
+    line-height: 1.15;
+  }
+  .journey-cell strong span {
+    font-size: var(--font-size-12px);
+  }
+  .journey-cell > span {
+    font-size: var(--font-size-10px);
+    line-height: 1.2;
+  }
+  .static-fares > strong,
+  .static-fares > label {
+    font-size: var(--font-size-11px);
+  }
+  .static-fares small {
+    font-size: var(--font-size-9px);
+  }
+  .travel-assurance,
+  .travel-assurance strong {
+    font-size: var(--font-size-11px);
+  }
+  .static-search-action .btn {
+    font-size: var(--font-size-14px);
+  }
+  .service-picker-head h2,
+  .popup h3 {
+    font-size: var(--font-size-dropdown-heading-mobile);
+  }
+  .service-picker-option,
+  .traveller,
+  .booking-popup {
+    font-size: var(--font-size-13px);
+  }
+  .calendar-weekday,
+  .calendar-day,
+  .calendar-month {
+    font-size: var(--font-size-11px);
+  }
+  html {
+    font-size: var(--font-size-body-mobile);
+  }
+  body {
+    font-size: var(--font-size-body-mobile);
+  }
+  h1 {
+    font-size: var(--font-size-heading-1-tablet);
+  }
+  h2 {
+    font-size: var(--font-size-heading-2-tablet);
+  }
+  h3 {
+    font-size: var(--font-size-heading-3-tablet);
+  }
+  button,
+  .btn,
+  input,
+  select,
+  textarea {
+    font-size: var(--font-size-13px);
+  }
+  .travel-header .brand {
+    font-size: var(--font-size-24px) !important;
+  }
+  .dock-service {
+    font-size: var(--font-size-12px) !important;
+  }
+  .dock-service i {
+    font-size: var(--font-size-24px) !important;
+  }
+  .trip-options {
+    font-size: var(--font-size-13px);
+  }
+  .trip-options label {
+    font-size: var(--font-size-12px);
+  }
+  .static-booking h1,
+  .static-panel h1 {
+    font-size: var(--font-size-23px);
+  }
+  .journey-cell > small {
+    font-size: var(--font-size-11px);
+  }
+  .journey-cell strong {
+    font-size: var(--font-size-21px);
+  }
+  .journey-cell > span {
+    font-size: var(--font-size-11px);
+  }
+  .static-fares > strong,
+  .static-fares > label {
+    font-size: var(--font-size-12px);
+  }
+  .static-fares small {
+    font-size: var(--font-size-10px);
+  }
+  .travel-assurance,
+  .travel-assurance strong {
+    font-size: var(--font-size-12px);
+  }
+  .static-search-action .btn {
+    font-size: var(--font-size-16px);
+  }
+  .travel-shortcuts > a,
+  .travel-shortcuts > button {
+    font-size: var(--font-size-12px) !important;
+  }
+  .section-heading h2 {
+    font-size: var(--font-size-mobile-section-heading);
+  }
+  .home-feature-card h3,
+  .offer h3 {
+    font-size: var(--font-size-16px);
+  }
+  .home-feature-card p,
+  .offer p,
+  .travel-ad-copy p {
+    font-size: var(--font-size-13px);
+  }
+  .home-feature-card a,
+  .home-feature-link,
+  .offer a {
+    font-size: var(--font-size-12px);
+  }
+  .footer-grid h4 {
+    font-size: var(--font-size-14px);
+  }
+  .footer-grid p,
+  .footer-grid a:not(.brand),
+  .footer-grid button {
+    font-size: var(--font-size-12px);
+  }
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .travel-header > .container {
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    gap: var(--space-8px) !important;
+  }
+  .travel-nav {
+    display: none !important;
+  }
+  .travel-header .brand {
+    min-width: 0;
+    width: var(--brand-logo-mobile-width);
+    height: var(--brand-logo-mobile-height);
+  }
+  .travel-header .brand span {
+    font-size: var(--font-size-7px) !important;
+  }
+  .account-dropdown {
+    flex: 0 0 auto;
+    margin-left: auto !important;
+  }
+  .travel-hero {
+    min-height: 0;
+    padding-block: 18px 24px;
+  }
+  .hero-layout {
+    min-width: 0;
+  }
+  .static-booking {
+    min-width: 0;
+    padding: 38px 12px 22px !important;
+  }
+  .trip-options {
+    flex-wrap: wrap;
+    row-gap: 8px !important;
+  }
+  .journey-grid,
+  .service-journey-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .journey-cell {
+    min-width: 0;
+    min-height: 92px;
+    padding: 11px 9px;
+  }
+  .journey-cell > small,
+  .journey-cell > span,
+  .journey-cell strong {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .journey-cell strong {
+    font-size: var(--font-size-mobile-card-heading);
+  }
+  .static-fares {
+    gap: 8px !important;
+  }
+  .static-fares > label {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+  }
+  .static-fares > strong {
+    flex-basis: 100%;
+  }
+  .travel-assurance {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+  .travel-assurance > span {
+    flex-basis: calc(100% - 32px);
+    margin-left: 28px;
+  }
+  .travel-shortcuts {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0;
+    padding: 12px 8px !important;
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+  .travel-shortcuts > a,
+  .travel-shortcuts > button {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    white-space: normal;
+    line-height: 1.25;
+  }
+  .section-heading {
+    align-items: flex-start !important;
+    flex-wrap: wrap;
+  }
+  .section-heading h2 {
+    font-size: var(--font-size-mobile-card-heading);
+  }
+  .offer {
+    flex-direction: column !important;
+  }
+  .offer-photo {
+    width: 100%;
+    height: 150px;
+    flex: 0 0 150px;
+  }
+  .home-feature-section {
+    padding: 22px 14px;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: 24px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .journey-cell > small,
+  .journey-cell > span {
+    font-size: var(--font-size-9px);
+  }
+  .journey-cell strong {
+    font-size: var(--font-size-16px);
+  }
+  .journey-cell strong span {
+    font-size: var(--font-size-11px);
+  }
+  .trip-options,
+  .trip-options label,
+  .static-fares > strong,
+  .static-fares > label {
+    font-size: var(--font-size-10px);
+  }
+  .static-fares small {
+    font-size: var(--font-size-8px);
+  }
+  .service-picker-option,
+  .traveller,
+  .booking-popup {
+    font-size: var(--font-size-12px);
+  }
+  html {
+    font-size: var(--font-size-13px);
+  }
+  body {
+    font-size: var(--font-size-body-mobile);
+  }
+  h1 {
+    font-size: var(--font-size-heading-1-mobile);
+  }
+  h2 {
+    font-size: var(--font-size-heading-2-mobile);
+  }
+  h3 {
+    font-size: var(--font-size-heading-3-mobile);
+  }
+  .static-booking h1,
+  .static-panel h1 {
+    font-size: var(--font-size-21px);
+  }
+  .journey-cell strong {
+    font-size: var(--font-size-18px);
+  }
+  .static-search-action .btn {
+    font-size: var(--font-size-14px);
+  }
+  .home-feature-card p,
+  .offer p,
+  .travel-ad-copy p {
+    font-size: var(--font-size-12px);
+  }
+  .welcome-strip {
+    font-size: var(--font-size-11px);
+  }
+  .welcome-strip a {
+    display: inline-block;
+    margin-left: 4px !important;
+  }
+  .static-booking {
+    padding-inline: 8px !important;
+  }
+  .journey-cell {
+    padding-inline: 7px;
+  }
+  .journey-cell > small {
+    font-size: var(--font-size-11px);
+  }
+  .journey-cell > span {
+    font-size: var(--font-size-10px);
+  }
+  .dock-service {
+    padding-inline: 4px !important;
+  }
+  .static-search-action .btn {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* Keep search-form typography compact on phones while preserving readable controls. */
+@media (max-width: 767px) {
+  .static-booking {
+    font-size: var(--font-size-13px);
+  }
+  .static-booking h1,
+  .static-panel h1 {
+    font-size: var(--font-size-21px);
+  }
+  .trip-options,
+  .trip-options label {
+    font-size: var(--font-size-11px);
+  }
+  .journey-cell > small {
+    font-size: var(--font-size-10px);
+    line-height: 1.2;
+  }
+  .journey-cell strong {
+    font-size: var(--font-size-18px);
+    line-height: 1.15;
+  }
+  .journey-cell strong span {
+    font-size: var(--font-size-12px);
+  }
+  .journey-cell > span {
+    font-size: var(--font-size-10px);
+    line-height: 1.2;
+  }
+  .static-fares > strong,
+  .static-fares > label {
+    font-size: var(--font-size-11px);
+  }
+  .static-fares small {
+    font-size: var(--font-size-9px);
+  }
+  .travel-assurance,
+  .travel-assurance strong {
+    font-size: var(--font-size-11px);
+  }
+  .static-search-action .btn {
+    font-size: var(--font-size-14px);
+  }
+  .service-picker-head h2,
+  .popup h3 {
+    font-size: var(--font-size-dropdown-heading-mobile);
+  }
+  .service-picker-option,
+  .traveller,
+  .booking-popup {
+    font-size: var(--font-size-13px);
+  }
+  .calendar-weekday,
+  .calendar-day,
+  .calendar-month {
+    font-size: var(--font-size-11px);
+  }
+}
+@media (max-width: 380px) {
+  .journey-cell > small,
+  .journey-cell > span {
+    font-size: var(--font-size-9px);
+  }
+  .journey-cell strong {
+    font-size: var(--font-size-16px);
+  }
+  .journey-cell strong span {
+    font-size: var(--font-size-11px);
+  }
+  .trip-options,
+  .trip-options label,
+  .static-fares > strong,
+  .static-fares > label {
+    font-size: var(--font-size-10px);
+  }
+  .static-fares small {
+    font-size: var(--font-size-8px);
+  }
+  .service-picker-option,
+  .traveller,
+  .booking-popup {
+    font-size: var(--font-size-12px);
+  }
+}
+
+/* Match all mobile search text to the Nature escapes card-title size. */
+@media (max-width: 767px) {
+  .static-booking .static-panel h1,
+  .static-booking > h1,
+  .static-booking .trip-options,
+  .static-booking .trip-options label,
+  .static-booking .journey-grid .journey-cell > small,
+  .static-booking .journey-grid .journey-cell > span,
+  .static-booking .journey-grid .journey-cell > strong,
+  .static-booking .static-fares > strong,
+  .static-booking .static-fares > label,
+  .static-booking .static-fares small,
+  .static-booking .travel-assurance,
+  .static-booking .travel-assurance strong,
+  .static-booking .static-search-action .btn,
+  .service-picker-option,
+  #travellers .traveller,
+  .calendar-weekday,
+  .calendar-day,
+  .calendar-month {
+    font-size: var(--font-size-mobile-search) !important;
+  }
+  #trip-one:checked ~ .trip-options label[for="trip-one"],
+  #trip-round:checked ~ .trip-options label[for="trip-round"],
+  #trip-multi:checked ~ .trip-options label[for="trip-multi"] {
+    font-weight: var(--font-weight-semibold);
+  }
+  .static-booking .journey-grid .journey-cell > strong {
+    font-size: var(--font-size-19px) !important;
+    font-weight: var(--font-weight-800) !important;
+    line-height: 1.2;
+  }
+  .static-booking .journey-grid .journey-cell > strong span {
+    font-size: var(--font-size-16px) !important;
+    font-weight: var(--font-weight-normal) !important;
+  }
+  .static-booking .static-fares > strong {
+    font-weight: var(--font-weight-semibold);
+  }
+  .service-picker-head h2,
+  .popup h3,
+  .booking-popup h2 {
+    font-size: var(--font-size-dropdown-heading-mobile) !important;
+  }
+}
+
+/* Bring mobile card copy up to search-form readability without bolding it. */
+@media (max-width: 767px) {
+  .destination h3,
+  .home-feature-card h3,
+  .offer h3 {
+    font-size: var(--font-size-19px) !important;
+    font-weight: var(--font-weight-normal) !important;
+  }
+  .destination p,
+  .destination small,
+  .home-feature-card p,
+  .home-feature-card a,
+  .home-feature-link,
+  .offer p,
+  .offer a,
+  .travel-ad-copy p {
+    font-size: var(--font-size-16px) !important;
+    font-weight: var(--font-weight-normal) !important;
+    line-height: 1.4;
+  }
+  .travel-ad-copy h2 {
+    font-size: var(--font-size-22px) !important;
+    font-weight: var(--font-weight-normal) !important;
+  }
+}
+
+/* Larger footer typography on desktop and mobile. */
+footer .footer-grid h4 {
+  font-size: var(--font-size-18px) !important;
+}
+footer .footer-grid p,
+footer .footer-grid a:not(.brand),
+footer .footer-grid button {
+  font-size: var(--font-size-16px) !important;
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  footer .footer-logo-brand {
+    width: var(--brand-logo-footer-mobile-width);
+    height: var(--brand-logo-mobile-height);
+  }
+  footer .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  footer .footer-grid h4 {
+    font-size: var(--font-size-17px) !important;
+  }
+  footer .footer-grid p,
+  footer .footer-grid a:not(.brand),
+  footer .footer-grid button {
+    font-size: var(--font-size-16px) !important;
+  }
+  footer .footer-grid > div:nth-child(4) {
+    grid-column: 1;
+  }
+  footer .footer-grid > div:nth-child(2) {
+    grid-column: 1;
+  }
+  footer .footer-grid > div:nth-child(3) {
+    grid-column: 2;
+  }
+  footer .footer-grid > div:nth-child(5) {
+    grid-column: 2;
+    grid-row: auto;
+  }
+  footer .footer-grid > div:nth-child(4) button {
+    white-space: nowrap;
+  }
+  footer .footer-grid .socials {
+    gap: 2px !important;
+  }
+}
+footer .footer-grid .socials {
+  font-size: var(--font-size-24px) !important;
+  gap: 12px !important;
+}
+footer .footer-grid .socials i {
+  line-height: 1;
+}
+footer .footer-grid .socials .bi {
+  color: transparent;
+  background-image: var(--gradient-icon);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (max-width: 767px) {
+  .travel-hero .travel-shortcuts > a,
+  .travel-hero .travel-shortcuts > button,
+  #destinations .section-heading > a {
+    font-size: var(--font-size-16px) !important;
+    font-weight: var(--font-weight-normal) !important;
+  }
+}
+
+/* Theme-red hover wipe, revealed from left to right. */
+.btn-primary,
+.primary,
+.theme-button,
+.static-booking .static-search-action .btn,
+.flight-panel button[popovertarget="support"] {
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--color-button-hover) 50%,
+      transparent 50%
+    ),
+    var(--gradient-3);
+  background-position: right center, center;
+  background-repeat: no-repeat;
+  background-size: 200% 100%, 100% 100%;
+  transition:
+    background-position var(--button-sweep-duration) var(--button-sweep-easing),
+    var(--transition-interactive);
+}
+.btn-primary:hover:not(:disabled),
+.primary:hover:not(:disabled),
+.theme-button:hover,
+.static-booking .static-search-action .btn:hover:not(:disabled),
+.static-booking .static-search-action .btn:focus-visible,
+.flight-panel button[popovertarget="support"]:hover:not(:disabled),
+.flight-panel button[popovertarget="support"]:focus-visible {
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--color-button-hover) 50%,
+      transparent 50%
+    ),
+    var(--gradient-3);
+  background-color: var(--color-primary);
+  background-position: left center, center;
+}
+.btn-outline-primary {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-button-hover) 50%,
+    transparent 50%
+  );
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  transition:
+    background-position var(--button-sweep-duration) var(--button-sweep-easing),
+    var(--transition-interactive);
+}
+.btn-outline-primary:hover:not(:disabled) {
+  background-color: transparent;
+  background-position: left center;
+}
+.btn:not(.btn-primary):not(.btn-outline-primary):not(.primary):not(.btn-link),
+.theme-button-outline {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-button-hover) 50%,
+    transparent 50%
+  );
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  transition:
+    background-position var(--button-sweep-duration) var(--button-sweep-easing),
+    var(--transition-interactive);
+}
+.btn:not(.btn-primary):not(.btn-outline-primary):not(.primary):not(.btn-link):hover:not(:disabled),
+.theme-button-outline:hover {
+  color: var(--color-on-primary);
+  background-color: transparent;
+  background-position: left center;
+  border-color: var(--color-button-hover);
+}
+
+/* Keep a fixed, consistent gap above each service search CTA. */
+.static-panel .static-search-action {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-14px);
+  padding-top: 0;
+}
+
+/* Keep the active search field highlighted while its attached menu is open. */
+body:has(#origin:popover-open) .static-booking [popovertarget="origin"],
+body:has(#destination:popover-open) .static-booking [popovertarget="destination"],
+body:has(#departure-calendar:popover-open) .static-booking [popovertarget="departure-calendar"],
+body:has(#return-calendar:popover-open) .static-booking [popovertarget="return-calendar"],
+body:has(#travellers:popover-open) .static-booking [popovertarget="travellers"],
+body:has(#cabin-picker:popover-open) .static-booking [popovertarget="cabin-picker"],
+body:has(#umrah-destination-picker:popover-open) .static-booking [popovertarget="umrah-destination-picker"],
+body:has(#umrah-package-picker:popover-open) .static-booking [popovertarget="umrah-package-picker"],
+body:has(#umrah-services-picker:popover-open) .static-booking [popovertarget="umrah-services-picker"],
+body:has(#visa-passport-picker:popover-open) .static-booking [popovertarget="visa-passport-picker"],
+body:has(#visa-destination-picker:popover-open) .static-booking [popovertarget="visa-destination-picker"],
+body:has(#visa-type-picker:popover-open) .static-booking [popovertarget="visa-type-picker"],
+body:has(#visa-processing-picker:popover-open) .static-booking [popovertarget="visa-processing-picker"] {
+  background: var(--color-field-hover);
 }

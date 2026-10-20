@@ -49,9 +49,17 @@
       <div
         class="container d-flex align-items-center gap-3 flex-wrap flex-lg-nowrap"
       >
-        <a href="index.html" class="brand me-lg-4"
-          >bukhari<span>BOOKING.COM</span></a
+        <a
+          href="index.html"
+          class="brand logo-brand me-lg-4"
+          aria-label="Sparrow Flights home"
         >
+          <img
+            class="brand-logo-image"
+            src="images/logo.jpeg"
+            alt="Sparrow Flights"
+          />
+        </a>
         <nav
           class="travel-nav d-flex align-self-stretch gap-4 me-auto"
           aria-label="Travel services"
@@ -209,20 +217,38 @@
                   aria-hidden="true"
                   ><i class="bi bi-arrow-left-right text-primary"></i
                 ></span>
-                <button type="button" id="destination-trigger" class="journey-cell text-start" popovertarget="destination" aria-haspopup="dialog">
+                <button
+                  type="button"
+                  id="destination-trigger"
+                  class="journey-cell text-start"
+                  popovertarget="destination"
+                  aria-haspopup="dialog"
+                >
                   <small>To</small><strong>Dubai</strong
                   ><span class="text-secondary text-truncate"
                     >DXB, Dubai International Airport</span
                   >
                 </button>
-                <button type="button" id="departure-trigger" class="journey-cell text-start" popovertarget="departure-calendar" aria-haspopup="dialog">
+                <button
+                  type="button"
+                  id="departure-trigger"
+                  class="journey-cell text-start"
+                  popovertarget="departure-calendar"
+                  aria-haspopup="dialog"
+                >
                   <small
                     >Departure
                     <i class="bi bi-chevron-down text-primary ms-1"></i></small
                   ><strong>24 <span>Nov ’26</span></strong
                   ><span class="text-secondary">Tuesday</span>
                 </button>
-                <button type="button" id="return-trigger" class="journey-cell return-cell text-start" popovertarget="return-calendar" aria-haspopup="dialog">
+                <button
+                  type="button"
+                  id="return-trigger"
+                  class="journey-cell return-cell text-start"
+                  popovertarget="return-calendar"
+                  aria-haspopup="dialog"
+                >
                   <small
                     >Return
                     <i class="bi bi-chevron-down text-primary ms-1"></i></small
@@ -239,12 +265,40 @@
                     <i class="bi bi-chevron-down text-primary ms-1"></i></small
                   ><strong>1</strong><span class="text-secondary">Adult</span>
                 </button>
-                <button type="button" id="cabin-trigger" class="journey-cell text-start" popovertarget="cabin-picker" aria-haspopup="dialog"><small>Cabin class <i class="bi bi-chevron-down text-primary ms-1"></i></small><strong class="cabin-name">Economy</strong><span class="text-secondary">Choose your cabin</span></button>
+                <button
+                  type="button"
+                  id="cabin-trigger"
+                  class="journey-cell text-start"
+                  popovertarget="cabin-picker"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Cabin class
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong class="cabin-name">Economy</strong
+                  ><span class="text-secondary">Choose your cabin</span>
+                </button>
               </div>
               <div class="multi-static border rounded-3 p-3 mt-3">
-                <div class="multi-flight-launch w-100 d-flex align-items-center justify-content-between gap-3 text-start">
-                  <span class="d-flex align-items-center gap-2"><strong id="multi-flight-summary-count">2 flights selected</strong><small class="text-secondary">Multi-city route</small></span>
-                  <span class="text-nowrap"><button class="btn btn-outline-primary btn-sm" type="button" popovertarget="multi-flight-popup"><i class="bi bi-plus-lg me-1"></i>Add more flights</button></span>
+                <div
+                  class="multi-flight-launch w-100 d-flex align-items-center justify-content-between gap-3 text-start"
+                >
+                  <span class="d-flex align-items-center gap-2"
+                    ><strong id="multi-flight-summary-count"
+                      >2 flights selected</strong
+                    ><small class="text-secondary"
+                      >Multi-city route</small
+                    ></span
+                  >
+                  <span class="text-nowrap"
+                    ><button
+                      class="btn btn-outline-primary btn-sm"
+                      type="button"
+                      popovertarget="multi-flight-popup"
+                    >
+                      <i class="bi bi-plus-lg me-1"></i>Add more flights
+                    </button></span
+                  >
                 </div>
               </div>
               <div
@@ -303,10 +357,7 @@
                     >Fly directly from Islamabad to Dubai.</span
                   ><i class="bi bi-shield-check text-primary ms-auto fs-4"></i
                 ></label>
-                <button
-                  class="btn btn-outline-secondary p-3"
-                  popovertarget="support"
-                >
+                <button class="btn btn-outline-secondary p-3" popovertarget="support">
                   <i class="bi bi-headset text-primary me-2"></i>Flight support
                 </button>
               </div>
@@ -324,28 +375,305 @@
               aria-label="Umrah planning"
             >
               <h1 class="mb-4">Plan your Umrah journey</h1>
-              <div class="journey-grid border rounded-3 position-relative service-journey-grid umrah-journey-grid">
-                <div class="journey-cell text-start"><small>Destination</small><strong>Jeddah</strong><span class="text-secondary">Saudi Arabia</span></div>
-                <label class="journey-cell text-start"><small>Start Date</small><input class="service-date-input" type="date" value="2026-11-24" aria-label="Umrah start date" /><span class="text-secondary">Choose your start date</span></label>
-                <label class="journey-cell text-start"><small>End Date</small><input class="service-date-input" type="date" value="2026-12-08" aria-label="Umrah end date" /><span class="text-secondary">Choose your end date</span></label>
-                <label class="journey-cell text-start"><small>Package Type <i class="bi bi-chevron-down text-primary ms-1"></i></small><select class="service-inline-select" aria-label="Umrah package type"><option>Economy</option><option>Premium</option><option>Luxury</option></select><span class="text-secondary">Choose your package</span></label>
-                <label class="journey-cell text-start"><small>Services <i class="bi bi-chevron-down text-primary ms-1"></i></small><select class="service-inline-select" aria-label="Umrah services"><option>Flights only</option><option>Hotel and transport</option><option>Complete Umrah package</option></select><span class="text-secondary">Choose a service</span></label>
+              <div
+                class="journey-grid border rounded-3 position-relative service-journey-grid umrah-journey-grid"
+              >
+                <button
+                  id="umrah-destination-trigger"
+                  class="journey-cell text-start service-picker-trigger"
+                  type="button"
+                  popovertarget="umrah-destination-picker"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Destination
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong data-current-value>Jeddah</strong
+                  ><span class="text-secondary">Saudi Arabia</span>
+                </button>
+                <button
+                  id="umrah-start-trigger"
+                  class="journey-cell text-start"
+                  type="button"
+                  popovertarget="departure-calendar"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Start Date
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong>24 <span>Nov ’26</span></strong
+                  ><span class="text-secondary">Tuesday</span>
+                </button>
+                <button
+                  id="umrah-end-trigger"
+                  class="journey-cell text-start"
+                  type="button"
+                  popovertarget="return-calendar"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >End Date
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong>08 <span>Dec ’26</span></strong
+                  ><span class="text-secondary">Tuesday</span>
+                </button>
+                <button
+                  id="umrah-package-trigger"
+                  class="journey-cell text-start service-picker-trigger"
+                  type="button"
+                  popovertarget="umrah-package-picker"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Package Type
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong data-current-value>Economy</strong
+                  ><span class="text-secondary">Choose your package</span>
+                </button>
+                <button
+                  id="umrah-services-trigger"
+                  class="journey-cell text-start service-picker-trigger"
+                  type="button"
+                  popovertarget="umrah-services-picker"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Services
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong data-current-value>Flights only</strong
+                  ><span class="text-secondary">Choose a service</span>
+                </button>
+                <button
+                  id="umrah-travellers-trigger"
+                  class="journey-cell text-start"
+                  type="button"
+                  popovertarget="travellers"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Travellers
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong>1</strong><span class="text-secondary">Adult</span>
+                </button>
               </div>
-              <div class="d-flex flex-wrap align-items-center gap-3 mt-3"><label class="travel-assurance border rounded-3 p-3 flex-grow-1 d-flex align-items-center gap-2"><input class="form-check-input mt-0" type="checkbox" /><strong>Non-stop flights only</strong><span class="text-secondary d-none d-md-inline">Fly directly from Islamabad to Dubai.</span><i class="bi bi-shield-check text-primary ms-auto fs-4"></i></label><button class="btn btn-outline-secondary p-3" popovertarget="support"><i class="bi bi-headset text-primary me-2"></i>Flight support</button></div>
-              <div class="text-center mt-4 service-search-action"><button class="btn btn-primary rounded-pill px-5 py-3 fw-bold service-search-btn" popovertarget="support">EXPLORE UMRAH</button></div>
+              <div
+                class="static-fares d-flex align-items-stretch gap-2 flex-wrap mt-4"
+              >
+                <strong class="align-self-center me-3"
+                  >Select a<br />special fare</strong
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="umrah-fare"
+                    checked
+                  /><span>Regular</span><small>Standard fares</small></label
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="umrah-fare"
+                  /><span>Student</span><small>Student travel</small></label
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="umrah-fare"
+                  /><span>Armed forces</span
+                  ><small>Service personnel</small></label
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="umrah-fare"
+                  /><span>Senior citizen</span
+                  ><small>Senior travel</small></label
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="umrah-fare"
+                  /><span>Doctors &amp; nurses</span
+                  ><small>Healthcare professionals</small></label
+                >
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-3 mt-3">
+                <label
+                  class="travel-assurance border rounded-3 p-3 flex-grow-1 d-flex align-items-center gap-2"
+                  ><input
+                    class="form-check-input mt-0"
+                    type="checkbox" /><strong>Include airport transfers</strong
+                  ><span class="text-secondary d-none d-md-inline"
+                    >Add transport between the airport and your hotel.</span
+                  ><i
+                    class="bi bi-shield-check text-primary ms-auto fs-4"
+                  ></i></label
+                ><button
+                  class="btn btn-outline-secondary p-3"
+                  popovertarget="support"
+                >
+                  <i class="bi bi-headset text-primary me-2"></i>Umrah support
+                </button>
+              </div>
+              <div class="static-search-action text-center">
+                <button
+                  class="btn btn-primary rounded-pill px-5 py-3 fw-bold"
+                  popovertarget="support"
+                >
+                  EXPLORE UMRAH
+                </button>
+              </div>
             </section>
             <section class="static-panel visa-panel" aria-label="Visa planning">
               <h1 class="mb-4">Explore visa options</h1>
-              <div class="journey-grid border rounded-3 position-relative service-journey-grid visa-journey-grid">
-                <button class="journey-cell text-start" type="button" popovertarget="origin"><small>From</small><strong>Pakistan</strong><span class="text-secondary">Your passport country</span></button>
-                <button class="journey-cell text-start" type="button" popovertarget="destination"><small>To</small><strong>United Arab Emirates</strong><span class="text-secondary">Choose your destination</span></button>
-                <label class="journey-cell text-start"><small>Travel Date</small><input class="service-date-input" type="date" value="2026-11-24" aria-label="Visa travel date" /><span class="text-secondary">Choose your travel date</span></label>
-                <label class="journey-cell text-start"><small>Visa Type <i class="bi bi-chevron-down text-primary ms-1"></i></small><select class="service-inline-select" aria-label="Visa type"><option>Tourist</option><option>Business</option><option>Transit</option></select><span class="text-secondary">Choose visa type</span></label>
-                <label class="journey-cell text-start"><small>Processing <i class="bi bi-chevron-down text-primary ms-1"></i></small><select class="service-inline-select" aria-label="Visa processing"><option>Standard</option><option>Express</option><option>Priority</option></select><span class="text-secondary">Choose processing</span></label>
-                <button class="journey-cell text-start" type="button" popovertarget="travellers"><small>Travellers <i class="bi bi-chevron-down text-primary ms-1"></i></small><strong>1</strong><span class="text-secondary">Adult</span></button>
+              <div
+                class="journey-grid border rounded-3 position-relative service-journey-grid visa-journey-grid"
+              >
+                <button
+                  id="visa-passport-trigger"
+                  class="journey-cell text-start service-picker-trigger"
+                  type="button"
+                  popovertarget="visa-passport-picker"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Passport Country
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong data-current-value>Pakistan</strong
+                  ><span class="text-secondary">Your passport country</span>
+                </button>
+                <button
+                  id="visa-destination-trigger"
+                  class="journey-cell text-start service-picker-trigger"
+                  type="button"
+                  popovertarget="visa-destination-picker"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Destination
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong data-current-value>United Arab Emirates</strong
+                  ><span class="text-secondary">Choose your destination</span>
+                </button>
+                <button
+                  id="visa-travel-date-trigger"
+                  class="journey-cell text-start"
+                  type="button"
+                  popovertarget="departure-calendar"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Travel Date
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong>24 <span>Nov ’26</span></strong
+                  ><span class="text-secondary">Tuesday</span>
+                </button>
+                <button
+                  id="visa-type-trigger"
+                  class="journey-cell text-start service-picker-trigger"
+                  type="button"
+                  popovertarget="visa-type-picker"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Visa Type
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong data-current-value>Tourist</strong
+                  ><span class="text-secondary">Choose visa type</span>
+                </button>
+                <button
+                  id="visa-processing-trigger"
+                  class="journey-cell text-start service-picker-trigger"
+                  type="button"
+                  popovertarget="visa-processing-picker"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Processing
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong data-current-value>Standard</strong
+                  ><span class="text-secondary">Choose processing</span>
+                </button>
+                <button
+                  id="visa-travellers-trigger"
+                  class="journey-cell text-start"
+                  type="button"
+                  popovertarget="travellers"
+                  aria-haspopup="dialog"
+                >
+                  <small
+                    >Travellers
+                    <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                  ><strong>1</strong><span class="text-secondary">Adult</span>
+                </button>
               </div>
-              <div class="d-flex flex-wrap align-items-center gap-3 mt-3"><label class="travel-assurance border rounded-3 p-3 flex-grow-1 d-flex align-items-center gap-2"><input class="form-check-input mt-0" type="checkbox" /><strong>Non-stop flights only</strong><span class="text-secondary d-none d-md-inline">Fly directly from Islamabad to Dubai.</span><i class="bi bi-shield-check text-primary ms-auto fs-4"></i></label><button class="btn btn-outline-secondary p-3" popovertarget="support"><i class="bi bi-headset text-primary me-2"></i>Flight support</button></div>
-              <div class="text-center mt-4 service-search-action"><button class="btn btn-primary rounded-pill px-5 py-3 fw-bold service-search-btn" popovertarget="support">EXPLORE VISAS</button></div>
+              <div
+                class="static-fares d-flex align-items-stretch gap-2 flex-wrap mt-4"
+              >
+                <strong class="align-self-center me-3"
+                  >Select a<br />special fare</strong
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="visa-fare"
+                    checked
+                  /><span>Regular</span><small>Standard fares</small></label
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="visa-fare"
+                  /><span>Student</span><small>Student travel</small></label
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="visa-fare"
+                  /><span>Armed forces</span
+                  ><small>Service personnel</small></label
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="visa-fare"
+                  /><span>Senior citizen</span
+                  ><small>Senior travel</small></label
+                ><label class="border rounded-3 p-3"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="visa-fare"
+                  /><span>Doctors &amp; nurses</span
+                  ><small>Healthcare professionals</small></label
+                >
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-3 mt-3">
+                <label
+                  class="travel-assurance border rounded-3 p-3 flex-grow-1 d-flex align-items-center gap-2"
+                  ><input
+                    class="form-check-input mt-0"
+                    type="checkbox" /><strong>Priority visa processing</strong
+                  ><span class="text-secondary d-none d-md-inline"
+                    >Request faster handling where available.</span
+                  ><i
+                    class="bi bi-shield-check text-primary ms-auto fs-4"
+                  ></i></label
+                ><button
+                  class="btn btn-outline-secondary p-3"
+                  popovertarget="support"
+                >
+                  <i class="bi bi-headset text-primary me-2"></i>Visa support
+                </button>
+              </div>
+              <div class="static-search-action text-center">
+                <button
+                  class="btn btn-primary rounded-pill px-5 py-3 fw-bold"
+                  popovertarget="support"
+                >
+                  EXPLORE VISAS
+                </button>
+              </div>
             </section>
           </div>
           <div class="hero-explore text-center text-white">
@@ -413,15 +741,152 @@
         </div>
         <p class="swipe">Swipe to explore →</p>
       </section>
-      <section class="container section travel-ad-row mb-5" aria-label="Featured travel offer">
+      <section
+        class="container section mb-5 home-feature-section travel-inspiration-section"
+        aria-labelledby="travel-inspiration-title"
+      >
+        <div class="section-heading mb-3">
+          <p class="eyebrow mb-1">TRAVEL YOUR WAY</p>
+          <h2 id="travel-inspiration-title">
+            A trip for every kind of traveller
+          </h2>
+          <p class="text-secondary mb-0">
+            Find inspiration for the moments you want to make.
+          </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+          <div class="col">
+            <article class="home-feature-card h-100">
+              <span class="home-feature-icon"
+                ><i class="bi bi-buildings" aria-hidden="true"></i
+              ></span>
+              <h3>City discoveries</h3>
+              <p>
+                Make room for new flavours, famous sights and a little
+                spontaneity.
+              </p>
+              <a href="#destinations"
+                >Explore destinations
+                <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></a>
+            </article>
+          </div>
+          <div class="col">
+            <article class="home-feature-card h-100">
+              <span class="home-feature-icon"
+                ><i class="bi bi-tree" aria-hidden="true"></i
+              ></span>
+              <h3>Nature escapes</h3>
+              <p>
+                Trade busy days for fresh air, open landscapes and slower
+                mornings.
+              </p>
+              <a href="#destinations"
+                >Find your escape
+                <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></a>
+            </article>
+          </div>
+          <div class="col">
+            <article class="home-feature-card h-100">
+              <span class="home-feature-icon"
+                ><i class="bi bi-moon-stars" aria-hidden="true"></i
+              ></span>
+              <h3>Meaningful journeys</h3>
+              <p>
+                Plan a thoughtful trip with the details that matter most to you.
+              </p>
+              <a href="#booking"
+                >Start planning
+                <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        class="container section travel-ad-row mb-5"
+        aria-label="Featured travel offer"
+      >
         <article class="travel-ad rounded-4 overflow-hidden shadow-sm">
           <div class="travel-ad-copy">
             <span class="eyebrow">BUKHARI BOOKING EXCLUSIVE</span>
             <h2>Make your next journey unforgettable</h2>
             <p>Book your next escape and enjoy a smoother way to travel.</p>
-            <a class="btn btn-light rounded-pill px-4" href="#booking">Explore offers</a>
+            <a class="btn btn-light rounded-pill px-4" href="#booking"
+              >Explore offers</a
+            >
           </div>
         </article>
+      </section>
+      <section
+        class="container section mb-5 home-feature-section journey-details-section"
+        aria-labelledby="journey-details-title"
+      >
+        <div class="section-heading mb-3">
+          <p class="eyebrow mb-1">A BETTER WAY TO GO</p>
+          <h2 id="journey-details-title">
+            Thoughtful details for a smoother journey
+          </h2>
+          <p class="text-secondary mb-0">
+            From the first search to the trip home, we make planning feel
+            easier.
+          </p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+          <div class="col">
+            <article class="home-feature-card h-100">
+              <span class="home-feature-icon"
+                ><i class="bi bi-search" aria-hidden="true"></i
+              ></span>
+              <h3>Options made clear</h3>
+              <p>
+                Compare the details that help you choose a trip that feels
+                right.
+              </p>
+              <a href="#booking"
+                >Search your journey
+                <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></a>
+            </article>
+          </div>
+          <div class="col">
+            <article class="home-feature-card h-100">
+              <span class="home-feature-icon"
+                ><i class="bi bi-wallet2" aria-hidden="true"></i
+              ></span>
+              <h3>More value in every plan</h3>
+              <p>
+                Explore offers on flights and holiday packages for your next
+                getaway.
+              </p>
+              <a href="#offers"
+                >See current offers
+                <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></a>
+            </article>
+          </div>
+          <div class="col">
+            <article class="home-feature-card h-100">
+              <span class="home-feature-icon"
+                ><i class="bi bi-headset" aria-hidden="true"></i
+              ></span>
+              <h3>Help when you need it</h3>
+              <p>
+                Get support with the questions and details that come up along
+                the way.
+              </p>
+              <button
+                type="button"
+                class="home-feature-link"
+                popovertarget="support"
+              >
+                Talk to our team
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </article>
+          </div>
+        </div>
       </section>
       <section class="container section mb-5" id="offers">
         <div
@@ -459,7 +924,17 @@
     <footer id="contact">
       <div class="container footer-grid d-grid gap-4 py-4">
         <div id="about">
-          <a href="index.html" class="brand">bukhari<span>BOOKING.COM</span></a>
+          <a
+            href="index.html"
+            class="brand logo-brand footer-logo-brand"
+            aria-label="Sparrow Flights home"
+          >
+            <img
+              class="brand-logo-image"
+              src="images/logo.jpeg"
+              alt="Sparrow Flights"
+            />
+          </a>
           <p>Journeys for a brighter tomorrow.</p>
         </div>
         <div>
@@ -1139,124 +1614,1151 @@
         </button>
       </div>
     </div>
-    <div id="multi-flight-popup" class="popup multi-flight-popup border rounded-4 shadow-lg" popover="auto" role="dialog" aria-labelledby="multi-flight-popup-title">
-      <div class="popup-head d-flex align-items-center justify-content-between border-bottom p-3">
+    <div
+      id="multi-flight-popup"
+      class="popup multi-flight-popup border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="multi-flight-popup-title"
+    >
+      <div
+        class="popup-head d-flex align-items-center justify-content-between border-bottom p-3"
+      >
         <h2 id="multi-flight-popup-title" class="mb-0">Additional flights</h2>
-        <button type="button" popovertarget="multi-flight-popup" aria-label="Close add flight">×</button>
+        <button
+          type="button"
+          popovertarget="multi-flight-popup"
+          aria-label="Close add flight"
+        >
+          ×
+        </button>
       </div>
       <form class="p-3" id="multi-flight-form">
         <div id="multi-flight-list">
           <div class="multi-popup-flight border rounded-3 p-3 mb-3">
-            <div class="d-flex justify-content-between align-items-center mb-3"><strong>Flight 2</strong><span id="multi-flight-count" class="text-secondary">2/6 flights</span></div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <strong>Flight 2</strong
+              ><span id="multi-flight-count" class="text-secondary"
+                >2/6 flights</span
+              >
+            </div>
             <div class="multi-popup-journey journey-grid border rounded-3">
-              <button class="journey-cell text-start" type="button" popovertarget="origin"><small>From</small><strong>Dubai</strong><span class="text-secondary">DXB, Dubai International Airport</span></button>
-              <button class="journey-cell text-start" type="button" popovertarget="destination"><small>To</small><strong>Islamabad</strong><span class="text-secondary">ISB, Islamabad International Airport</span></button>
-              <button class="journey-cell text-start" type="button" popovertarget="departure-calendar"><small>Departure <i class="bi bi-chevron-down text-primary ms-1"></i></small><strong>01 <span>Dec ’26</span></strong><span class="text-secondary">Tuesday</span></button>
-              <button class="journey-cell text-start" type="button" popovertarget="cabin-picker"><small>Cabin class <i class="bi bi-chevron-down text-primary ms-1"></i></small><strong>Economy</strong><span class="text-secondary">Choose your cabin</span></button>
-              <button class="btn btn-outline-primary multi-popup-add" type="button" data-add-flight><i class="bi bi-plus-lg me-1"></i>Add flight</button>
-              <button class="btn btn-outline-secondary multi-popup-remove" type="button" data-remove-flight><i class="bi bi-trash3 me-1"></i>Remove flight</button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="origin"
+              >
+                <small>From</small><strong>Dubai</strong
+                ><span class="text-secondary"
+                  >DXB, Dubai International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="destination"
+              >
+                <small>To</small><strong>Islamabad</strong
+                ><span class="text-secondary"
+                  >ISB, Islamabad International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="departure-calendar"
+              >
+                <small
+                  >Departure
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>01 <span>Dec ’26</span></strong
+                ><span class="text-secondary">Tuesday</span>
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="cabin-picker"
+              >
+                <small
+                  >Cabin class
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>Economy</strong
+                ><span class="text-secondary">Choose your cabin</span>
+              </button>
+              <button
+                class="btn btn-outline-primary multi-popup-add"
+                type="button"
+                data-add-flight
+              >
+                <i class="bi bi-plus-lg me-1"></i>Add flight
+              </button>
+              <button
+                class="btn btn-outline-secondary multi-popup-remove"
+                type="button"
+                data-remove-flight
+              >
+                <i class="bi bi-trash3 me-1"></i>Remove flight
+              </button>
             </div>
           </div>
         </div>
-        <div class="multi-popup-footer mt-3"><button class="btn btn-primary rounded-pill px-5 py-3 fw-bold multi-popup-done" type="button" popovertarget="multi-flight-popup">DONE</button></div>
+        <div class="multi-popup-footer mt-3">
+          <button
+            class="btn btn-primary rounded-pill px-5 py-3 fw-bold multi-popup-done"
+            type="button"
+            popovertarget="multi-flight-popup"
+          >
+            DONE
+          </button>
+        </div>
       </form>
     </div>
-    <div id="cabin-picker" class="popup booking-popup border rounded-4 shadow-lg" popover="auto" role="dialog" aria-label="Choose cabin class"><div
-                    class="cabin-picker-body bg-white border rounded-4 shadow-lg p-3"
-                  >
-                    <h2 class="mb-3">Choose cabin class</h2>
-                    <label
-                      class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
-                      ><input
-                        class="form-check-input"
-                        type="radio"
-                        name="static-cabin"
-                        value="Economy"
-                        checked /><span
-                        ><strong>Economy</strong
-                        ><small class="d-block text-secondary"
-                          >Comfort for every journey</small
-                        ></span
-                      ><i class="bi bi-airplane ms-auto fs-3"></i
-                    ></label>
-                    <label
-                      class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
-                      ><input
-                        class="form-check-input"
-                        type="radio"
-                        name="static-cabin"
-                        value="Premium economy" /><span
-                        ><strong>Premium economy</strong
-                        ><small class="d-block text-secondary"
-                          >More room to relax</small
-                        ></span
-                      ><i class="bi bi-stars ms-auto fs-3"></i
-                    ></label>
-                    <label
-                      class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
-                      ><input
-                        class="form-check-input"
-                        type="radio"
-                        name="static-cabin"
-                        value="Business" /><span
-                        ><strong>Business class</strong
-                        ><small class="d-block text-secondary"
-                          >Space to work and unwind</small
-                        ></span
-                      ><i class="bi bi-briefcase ms-auto fs-3"></i
-                    ></label>
-                    <label
-                      class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3"
-                      ><input
-                        class="form-check-input"
-                        type="radio"
-                        name="static-cabin"
-                        value="First" /><span
-                        ><strong>First class</strong
-                        ><small class="d-block text-secondary"
-                          >A more personal journey</small
-                        ></span
-                      ><i class="bi bi-gem ms-auto fs-3"></i
-                    ></label>
-                    <small class="d-block text-secondary mt-3"
-                      >Select a preference. Click outside to close.</small
-                    >
-                  </div><div class="px-3 pb-3"><button class="btn btn-primary w-100" popovertarget="cabin-picker">Done</button></div></div><div id="departure-calendar" class="popup booking-popup calendar-popup border rounded-4 shadow-lg" popover="auto" role="dialog" aria-labelledby="departure-title"><div class="d-flex justify-content-between align-items-center border-bottom p-3"><h2 id="departure-title" class="mb-0">Departure date</h2><button class="fs-4" popovertarget="departure-calendar" aria-label="Close departure calendar">×</button></div><div class="p-3"><strong class="d-block text-center mb-3">November 2026</strong><div class="calendar-grid"><span class="calendar-weekday">Mo</span><span class="calendar-weekday">Tu</span><span class="calendar-weekday">We</span><span class="calendar-weekday">Th</span><span class="calendar-weekday">Fr</span><span class="calendar-weekday">Sa</span><span class="calendar-weekday">Su</span><span></span><span></span><span></span><span></span><span></span><span></span><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="1 November 2026"><span>1</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="2 November 2026"><span>2</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="3 November 2026"><span>3</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="4 November 2026"><span>4</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="5 November 2026"><span>5</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="6 November 2026"><span>6</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="7 November 2026"><span>7</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="8 November 2026"><span>8</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="9 November 2026"><span>9</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="10 November 2026"><span>10</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="11 November 2026"><span>11</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="12 November 2026"><span>12</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="13 November 2026"><span>13</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="14 November 2026"><span>14</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="15 November 2026"><span>15</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="16 November 2026"><span>16</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="17 November 2026"><span>17</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="18 November 2026"><span>18</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="19 November 2026"><span>19</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="20 November 2026"><span>20</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="21 November 2026"><span>21</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="22 November 2026"><span>22</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="23 November 2026"><span>23</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="24 November 2026" checked><span>24</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="25 November 2026"><span>25</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="26 November 2026"><span>26</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="27 November 2026"><span>27</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="28 November 2026"><span>28</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="29 November 2026"><span>29</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="departure-day" aria-label="30 November 2026"><span>30</span></label><span></span><span></span><span></span><span></span><span></span><span></span></div><button class="btn btn-primary w-100 mt-3" popovertarget="departure-calendar">Apply date</button></div></div><div id="return-calendar" class="popup booking-popup calendar-popup border rounded-4 shadow-lg" popover="auto" role="dialog" aria-labelledby="return-title"><div class="d-flex justify-content-between align-items-center border-bottom p-3"><h2 id="return-title" class="mb-0">Return date</h2><button class="fs-4" popovertarget="return-calendar" aria-label="Close return calendar">×</button></div><div class="p-3"><strong class="d-block text-center mb-3">December 2026</strong><div class="calendar-grid"><span class="calendar-weekday">Mo</span><span class="calendar-weekday">Tu</span><span class="calendar-weekday">We</span><span class="calendar-weekday">Th</span><span class="calendar-weekday">Fr</span><span class="calendar-weekday">Sa</span><span class="calendar-weekday">Su</span><span></span><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="1 December 2026" checked><span>1</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="2 December 2026"><span>2</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="3 December 2026"><span>3</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="4 December 2026"><span>4</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="5 December 2026"><span>5</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="6 December 2026"><span>6</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="7 December 2026"><span>7</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="8 December 2026"><span>8</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="9 December 2026"><span>9</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="10 December 2026"><span>10</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="11 December 2026"><span>11</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="12 December 2026"><span>12</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="13 December 2026"><span>13</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="14 December 2026"><span>14</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="15 December 2026"><span>15</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="16 December 2026"><span>16</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="17 December 2026"><span>17</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="18 December 2026"><span>18</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="19 December 2026"><span>19</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="20 December 2026"><span>20</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="21 December 2026"><span>21</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="22 December 2026"><span>22</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="23 December 2026"><span>23</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="24 December 2026"><span>24</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="25 December 2026"><span>25</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="26 December 2026"><span>26</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="27 December 2026"><span>27</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="28 December 2026"><span>28</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="29 December 2026"><span>29</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="30 December 2026"><span>30</span></label><label class="calendar-day"><input class="visually-hidden" type="radio" name="return-day" aria-label="31 December 2026"><span>31</span></label><span></span><span></span><span></span></div><button class="btn btn-primary w-100 mt-3" popovertarget="return-calendar">Apply date</button></div></div>
+    <div
+      id="cabin-picker"
+      class="popup booking-popup border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-label="Choose cabin class"
+    >
+      <div class="cabin-picker-body bg-white border rounded-4 shadow-lg p-3">
+        <h2 class="mb-3">Choose cabin class</h2>
+        <label
+          class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
+          ><input
+            class="form-check-input"
+            type="radio"
+            name="static-cabin"
+            value="Economy"
+            checked /><span
+            ><strong>Economy</strong
+            ><small class="d-block text-secondary"
+              >Comfort for every journey</small
+            ></span
+          ><i class="bi bi-airplane ms-auto fs-3"></i
+        ></label>
+        <label
+          class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
+          ><input
+            class="form-check-input"
+            type="radio"
+            name="static-cabin"
+            value="Premium economy" /><span
+            ><strong>Premium economy</strong
+            ><small class="d-block text-secondary"
+              >More room to relax</small
+            ></span
+          ><i class="bi bi-stars ms-auto fs-3"></i
+        ></label>
+        <label
+          class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3 mb-2"
+          ><input
+            class="form-check-input"
+            type="radio"
+            name="static-cabin"
+            value="Business" /><span
+            ><strong>Business class</strong
+            ><small class="d-block text-secondary"
+              >Space to work and unwind</small
+            ></span
+          ><i class="bi bi-briefcase ms-auto fs-3"></i
+        ></label>
+        <label
+          class="cabin-pick border rounded-3 p-3 d-flex align-items-center gap-3"
+          ><input
+            class="form-check-input"
+            type="radio"
+            name="static-cabin"
+            value="First" /><span
+            ><strong>First class</strong
+            ><small class="d-block text-secondary"
+              >A more personal journey</small
+            ></span
+          ><i class="bi bi-gem ms-auto fs-3"></i
+        ></label>
+        <small class="d-block text-secondary mt-3"
+          >Select a preference. Click outside to close.</small
+        >
+      </div>
+      <div class="px-3 pb-3">
+        <button class="btn btn-primary w-100" popovertarget="cabin-picker">
+          Done
+        </button>
+      </div>
+    </div>
+    <div
+      id="departure-calendar"
+      class="popup booking-popup calendar-popup border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="departure-title"
+    >
+      <div
+        class="d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="departure-title" class="mb-0">Departure date</h2>
+        <button
+          class="fs-4"
+          popovertarget="departure-calendar"
+          aria-label="Close departure calendar"
+        >
+          ×
+        </button>
+      </div>
+      <div class="p-3">
+        <strong class="d-block text-center mb-3">November 2026</strong>
+        <div class="calendar-grid">
+          <span class="calendar-weekday">Mo</span
+          ><span class="calendar-weekday">Tu</span
+          ><span class="calendar-weekday">We</span
+          ><span class="calendar-weekday">Th</span
+          ><span class="calendar-weekday">Fr</span
+          ><span class="calendar-weekday">Sa</span
+          ><span class="calendar-weekday">Su</span><span></span><span></span
+          ><span></span><span></span><span></span><span></span
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="1 November 2026"
+            /><span>1</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="2 November 2026"
+            /><span>2</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="3 November 2026"
+            /><span>3</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="4 November 2026"
+            /><span>4</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="5 November 2026"
+            /><span>5</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="6 November 2026"
+            /><span>6</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="7 November 2026"
+            /><span>7</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="8 November 2026"
+            /><span>8</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="9 November 2026"
+            /><span>9</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="10 November 2026"
+            /><span>10</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="11 November 2026"
+            /><span>11</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="12 November 2026"
+            /><span>12</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="13 November 2026"
+            /><span>13</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="14 November 2026"
+            /><span>14</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="15 November 2026"
+            /><span>15</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="16 November 2026"
+            /><span>16</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="17 November 2026"
+            /><span>17</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="18 November 2026"
+            /><span>18</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="19 November 2026"
+            /><span>19</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="20 November 2026"
+            /><span>20</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="21 November 2026"
+            /><span>21</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="22 November 2026"
+            /><span>22</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="23 November 2026"
+            /><span>23</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="24 November 2026"
+              checked
+            /><span>24</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="25 November 2026"
+            /><span>25</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="26 November 2026"
+            /><span>26</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="27 November 2026"
+            /><span>27</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="28 November 2026"
+            /><span>28</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="29 November 2026"
+            /><span>29</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="departure-day"
+              aria-label="30 November 2026"
+            /><span>30</span></label
+          ><span></span><span></span><span></span><span></span><span></span
+          ><span></span>
+        </div>
+        <button
+          class="btn btn-primary w-100 mt-3"
+          popovertarget="departure-calendar"
+        >
+          Apply date
+        </button>
+      </div>
+    </div>
+    <div
+      id="return-calendar"
+      class="popup booking-popup calendar-popup border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="return-title"
+    >
+      <div
+        class="d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="return-title" class="mb-0">Return date</h2>
+        <button
+          class="fs-4"
+          popovertarget="return-calendar"
+          aria-label="Close return calendar"
+        >
+          ×
+        </button>
+      </div>
+      <div class="p-3">
+        <strong class="d-block text-center mb-3">December 2026</strong>
+        <div class="calendar-grid">
+          <span class="calendar-weekday">Mo</span
+          ><span class="calendar-weekday">Tu</span
+          ><span class="calendar-weekday">We</span
+          ><span class="calendar-weekday">Th</span
+          ><span class="calendar-weekday">Fr</span
+          ><span class="calendar-weekday">Sa</span
+          ><span class="calendar-weekday">Su</span><span></span
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="1 December 2026"
+              checked
+            /><span>1</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="2 December 2026"
+            /><span>2</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="3 December 2026"
+            /><span>3</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="4 December 2026"
+            /><span>4</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="5 December 2026"
+            /><span>5</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="6 December 2026"
+            /><span>6</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="7 December 2026"
+            /><span>7</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="8 December 2026"
+            /><span>8</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="9 December 2026"
+            /><span>9</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="10 December 2026"
+            /><span>10</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="11 December 2026"
+            /><span>11</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="12 December 2026"
+            /><span>12</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="13 December 2026"
+            /><span>13</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="14 December 2026"
+            /><span>14</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="15 December 2026"
+            /><span>15</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="16 December 2026"
+            /><span>16</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="17 December 2026"
+            /><span>17</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="18 December 2026"
+            /><span>18</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="19 December 2026"
+            /><span>19</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="20 December 2026"
+            /><span>20</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="21 December 2026"
+            /><span>21</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="22 December 2026"
+            /><span>22</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="23 December 2026"
+            /><span>23</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="24 December 2026"
+            /><span>24</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="25 December 2026"
+            /><span>25</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="26 December 2026"
+            /><span>26</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="27 December 2026"
+            /><span>27</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="28 December 2026"
+            /><span>28</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="29 December 2026"
+            /><span>29</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="30 December 2026"
+            /><span>30</span></label
+          ><label class="calendar-day"
+            ><input
+              class="visually-hidden"
+              type="radio"
+              name="return-day"
+              aria-label="31 December 2026"
+            /><span>31</span></label
+          ><span></span><span></span><span></span>
+        </div>
+        <button
+          class="btn btn-primary w-100 mt-3"
+          popovertarget="return-calendar"
+        >
+          Apply date
+        </button>
+      </div>
+    </div>
+    <div
+      id="umrah-destination-picker"
+      class="popup service-picker border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="umrah-destination-title"
+    >
+      <div
+        class="service-picker-head d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="umrah-destination-title" class="mb-0">Choose destination</h2>
+        <button
+          type="button"
+          popovertarget="umrah-destination-picker"
+          aria-label="Close destination list"
+        >
+          ×
+        </button>
+      </div>
+      <div class="service-picker-options p-2">
+        <button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-destination-trigger"
+          data-picker-value="Jeddah"
+          aria-pressed="true"
+        >
+          Jeddah</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-destination-trigger"
+          data-picker-value="Makkah"
+          aria-pressed="false"
+        >
+          Makkah</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-destination-trigger"
+          data-picker-value="Madinah"
+          aria-pressed="false"
+        >
+          Madinah
+        </button>
+      </div>
+    </div>
+    <div
+      id="umrah-package-picker"
+      class="popup service-picker border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="umrah-package-title"
+    >
+      <div
+        class="service-picker-head d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="umrah-package-title" class="mb-0">Choose package type</h2>
+        <button
+          type="button"
+          popovertarget="umrah-package-picker"
+          aria-label="Close package list"
+        >
+          ×
+        </button>
+      </div>
+      <div class="service-picker-options p-2">
+        <button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-package-trigger"
+          data-picker-value="Economy"
+          aria-pressed="true"
+        >
+          Economy</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-package-trigger"
+          data-picker-value="Premium"
+          aria-pressed="false"
+        >
+          Premium</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-package-trigger"
+          data-picker-value="Luxury"
+          aria-pressed="false"
+        >
+          Luxury
+        </button>
+      </div>
+    </div>
+    <div
+      id="umrah-services-picker"
+      class="popup service-picker border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="umrah-services-title"
+    >
+      <div
+        class="service-picker-head d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="umrah-services-title" class="mb-0">Choose services</h2>
+        <button
+          type="button"
+          popovertarget="umrah-services-picker"
+          aria-label="Close services list"
+        >
+          ×
+        </button>
+      </div>
+      <div class="service-picker-options p-2">
+        <button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-services-trigger"
+          data-picker-value="Flights only"
+          aria-pressed="true"
+        >
+          Flights only</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-services-trigger"
+          data-picker-value="Hotel and transport"
+          aria-pressed="false"
+        >
+          Hotel and transport</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="umrah-services-trigger"
+          data-picker-value="Complete Umrah package"
+          aria-pressed="false"
+        >
+          Complete Umrah package
+        </button>
+      </div>
+    </div>
+    <div
+      id="visa-passport-picker"
+      class="popup service-picker border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="visa-passport-title"
+    >
+      <div
+        class="service-picker-head d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="visa-passport-title" class="mb-0">Choose passport country</h2>
+        <button
+          type="button"
+          popovertarget="visa-passport-picker"
+          aria-label="Close passport country list"
+        >
+          ×
+        </button>
+      </div>
+      <div class="service-picker-options p-2">
+        <button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-passport-trigger"
+          data-picker-value="Pakistan"
+          aria-pressed="true"
+        >
+          Pakistan</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-passport-trigger"
+          data-picker-value="United Kingdom"
+          aria-pressed="false"
+        >
+          United Kingdom</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-passport-trigger"
+          data-picker-value="United States"
+          aria-pressed="false"
+        >
+          United States</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-passport-trigger"
+          data-picker-value="United Arab Emirates"
+          aria-pressed="false"
+        >
+          United Arab Emirates
+        </button>
+      </div>
+    </div>
+    <div
+      id="visa-destination-picker"
+      class="popup service-picker border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="visa-destination-title"
+    >
+      <div
+        class="service-picker-head d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="visa-destination-title" class="mb-0">
+          Choose visa destination
+        </h2>
+        <button
+          type="button"
+          popovertarget="visa-destination-picker"
+          aria-label="Close destination list"
+        >
+          ×
+        </button>
+      </div>
+      <div class="service-picker-options p-2">
+        <button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-destination-trigger"
+          data-picker-value="United Arab Emirates"
+          aria-pressed="true"
+        >
+          United Arab Emirates</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-destination-trigger"
+          data-picker-value="Saudi Arabia"
+          aria-pressed="false"
+        >
+          Saudi Arabia</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-destination-trigger"
+          data-picker-value="United Kingdom"
+          aria-pressed="false"
+        >
+          United Kingdom</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-destination-trigger"
+          data-picker-value="Turkey"
+          aria-pressed="false"
+        >
+          Turkey
+        </button>
+      </div>
+    </div>
+    <div
+      id="visa-type-picker"
+      class="popup service-picker border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="visa-type-title"
+    >
+      <div
+        class="service-picker-head d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="visa-type-title" class="mb-0">Choose visa type</h2>
+        <button
+          type="button"
+          popovertarget="visa-type-picker"
+          aria-label="Close visa type list"
+        >
+          ×
+        </button>
+      </div>
+      <div class="service-picker-options p-2">
+        <button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-type-trigger"
+          data-picker-value="Tourist"
+          aria-pressed="true"
+        >
+          Tourist</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-type-trigger"
+          data-picker-value="Business"
+          aria-pressed="false"
+        >
+          Business</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-type-trigger"
+          data-picker-value="Transit"
+          aria-pressed="false"
+        >
+          Transit
+        </button>
+      </div>
+    </div>
+    <div
+      id="visa-processing-picker"
+      class="popup service-picker border rounded-4 shadow-lg"
+      popover="auto"
+      role="dialog"
+      aria-labelledby="visa-processing-title"
+    >
+      <div
+        class="service-picker-head d-flex justify-content-between align-items-center border-bottom p-3"
+      >
+        <h2 id="visa-processing-title" class="mb-0">Choose processing speed</h2>
+        <button
+          type="button"
+          popovertarget="visa-processing-picker"
+          aria-label="Close processing list"
+        >
+          ×
+        </button>
+      </div>
+      <div class="service-picker-options p-2">
+        <button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-processing-trigger"
+          data-picker-value="Standard"
+          aria-pressed="true"
+        >
+          Standard</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-processing-trigger"
+          data-picker-value="Express"
+          aria-pressed="false"
+        >
+          Express</button
+        ><button
+          type="button"
+          class="service-picker-option"
+          data-picker-target="visa-processing-trigger"
+          data-picker-value="Priority"
+          aria-pressed="false"
+        >
+          Priority
+        </button>
+      </div>
+    </div>
     <script>
       (() => {
-        const list = document.querySelector('#multi-flight-list');
-        const addButton = document.querySelector('[data-add-flight]');
-        const count = document.querySelector('#multi-flight-count');
-        const summaryCount = document.querySelector('#multi-flight-summary-count');
+        const list = document.querySelector("#multi-flight-list");
+        const addButton = document.querySelector("[data-add-flight]");
+        const count = document.querySelector("#multi-flight-count");
+        const summaryCount = document.querySelector(
+          "#multi-flight-summary-count",
+        );
         if (!list || !addButton || !count) return;
         const updateFlights = () => {
-          const total = list.querySelectorAll('.multi-popup-flight').length + 1;
+          const total = list.querySelectorAll(".multi-popup-flight").length + 1;
           count.textContent = `${total}/6 flights`;
-          if (summaryCount) summaryCount.textContent = `${total} flights selected`;
+          if (summaryCount)
+            summaryCount.textContent = `${total} flights selected`;
           addButton.disabled = total >= 6;
         };
         const addFlight = () => {
-          const total = list.querySelectorAll('.multi-popup-flight').length + 2;
+          const total = list.querySelectorAll(".multi-popup-flight").length + 2;
           if (total > 6) return;
           const flight = list.firstElementChild.cloneNode(true);
-          flight.querySelector('strong').textContent = `Flight ${total}`;
-          flight.querySelectorAll('select').forEach((select) => select.selectedIndex = 0);
+          flight.querySelector("strong").textContent = `Flight ${total}`;
+          flight
+            .querySelectorAll("select")
+            .forEach((select) => (select.selectedIndex = 0));
           list.appendChild(flight);
           updateFlights();
         };
-        list.addEventListener('click', (event) => {
-          if (event.target.closest('[data-add-flight]')) addFlight();
+        list.addEventListener("click", (event) => {
+          if (event.target.closest("[data-add-flight]")) addFlight();
         });
-        list.addEventListener('click', (event) => {
-          const remove = event.target.closest('[data-remove-flight]');
+        list.addEventListener("click", (event) => {
+          const remove = event.target.closest("[data-remove-flight]");
           if (!remove || list.children.length === 1) return;
-          remove.closest('.multi-popup-flight').remove();
+          remove.closest(".multi-popup-flight").remove();
           [...list.children].forEach((flight, index) => {
-            flight.querySelector('strong').textContent = `Flight ${index + 2}`;
+            flight.querySelector("strong").textContent = `Flight ${index + 2}`;
           });
           updateFlights();
         });
         updateFlights();
+      })();
+    </script>
+    <script>
+      document.addEventListener("click", (event) => {
+        const option = event.target.closest(".service-picker-option");
+        if (!option) return;
+        const picker = option.closest(".service-picker");
+        const trigger = document.getElementById(option.dataset.pickerTarget);
+        const value = trigger?.querySelector("[data-current-value]");
+        if (!picker || !value) return;
+        value.textContent = option.dataset.pickerValue;
+        picker.querySelectorAll(".service-picker-option").forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === option));
+        });
+        picker.hidePopover();
+      });
+      (() => {
+        let activeTrigger = null;
+        let positionFrame = 0;
+        const positionPopup = () => {
+          positionFrame = 0;
+          if (!activeTrigger) return;
+          const popup = document.getElementById(
+            activeTrigger.getAttribute("popovertarget"),
+          );
+          if (!popup?.matches(":popover-open")) return;
+          const field = activeTrigger.getBoundingClientRect();
+          const panel = popup.getBoundingClientRect();
+          const left = Math.max(
+            12,
+            Math.min(field.left, window.innerWidth - panel.width - 12),
+          );
+          popup.style.position = "fixed";
+          popup.style.inset = "auto";
+          popup.style.margin = "0";
+          popup.style.left = `${left}px`;
+          popup.style.top = `${field.bottom + 8}px`;
+        };
+        const schedulePosition = () => {
+          if (!positionFrame)
+            positionFrame = requestAnimationFrame(positionPopup);
+        };
+        document.addEventListener("click", (event) => {
+          const trigger = event.target.closest(
+            "#umrah-start-trigger, #umrah-end-trigger, #umrah-travellers-trigger, #visa-travel-date-trigger, #visa-travellers-trigger",
+          );
+          if (trigger) {
+            activeTrigger = trigger;
+            requestAnimationFrame(positionPopup);
+            return;
+          }
+          if (
+            event.target.closest(
+              '[popovertarget="departure-calendar"], [popovertarget="return-calendar"], [popovertarget="travellers"]',
+            )
+          ) {
+            activeTrigger = null;
+          }
+        });
+        document.addEventListener(
+          "toggle",
+          (event) => {
+            if (
+              event.target.matches(
+                "#departure-calendar, #return-calendar, #travellers",
+              ) &&
+              event.newState === "closed"
+            ) {
+              activeTrigger = null;
+            }
+          },
+          true,
+        );
+        document.addEventListener("scroll", schedulePosition, true);
+        window.addEventListener("scroll", schedulePosition, true);
+        window.addEventListener("resize", schedulePosition);
+        window.visualViewport?.addEventListener("scroll", schedulePosition);
+        window.visualViewport?.addEventListener("resize", schedulePosition);
       })();
     </script>
   </body>
