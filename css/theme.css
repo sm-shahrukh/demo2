@@ -5,6 +5,7 @@
   --color-brand-blue-light: #4267b2;
   --color-brand-red: #ed1c2e;
   --color-brand-red-dark: #c81426;
+  --color-image-blue-sweep: #142b5a8c;
   --color-primary: var(--color-brand-blue);
   --color-primary-hover: var(--color-brand-blue-dark);
   --color-primary-active: #10234a;
@@ -687,4 +688,38 @@ summary:hover .bi {
   padding: var(--card-padding);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
+}
+
+/* Shared full-button red sweep for action buttons throughout the project. */
+.btn:not(.btn-link),
+.theme-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.btn:not(.btn-link)::before,
+.theme-button::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-button-hover);
+  content: "";
+  pointer-events: none;
+  transform: translateX(-101%);
+  transition: transform var(--button-sweep-duration) var(--button-sweep-easing);
+}
+.btn:not(.btn-link):hover::before,
+.btn:not(.btn-link):focus-visible::before,
+.btn:not(.btn-link):active::before,
+.theme-button:hover::before,
+.theme-button:focus-visible::before,
+.theme-button:active::before {
+  transform: translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:not(.btn-link)::before,
+  .theme-button::before {
+    transition: none;
+  }
 }

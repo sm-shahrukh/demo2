@@ -993,6 +993,42 @@ h1 {
   inset: 0;
   z-index: -1;
   background: var(--gradient-5);
+  box-shadow: inset 0 0 0 0 var(--color-image-blue-sweep);
+  transition: box-shadow var(--button-sweep-duration) var(--button-sweep-easing);
+}
+.destination:hover::before,
+.destination:focus-visible::before {
+  box-shadow: inset 0 0 0 100vmax var(--color-image-blue-sweep);
+}
+.destination::after,
+.offer-photo::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 72%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    var(--color-image-blue-sweep) 30%,
+    var(--color-image-blue-sweep) 70%,
+    transparent 100%
+  );
+  content: "";
+  pointer-events: none;
+  transform: translateX(-145%);
+  transition: transform var(--button-sweep-duration) var(--button-sweep-easing);
+}
+.destination:hover::after,
+.destination:focus-visible::after,
+.offer:hover .offer-photo::after,
+.offer:focus-within .offer-photo::after {
+  transform: translateX(190%);
+}
+.destination > *:not(.tag) {
+  position: relative;
+  z-index: 2;
 }
 .destination small,
 .tag {
@@ -1017,7 +1053,9 @@ h1 {
   border-radius: var(--radius-50percent);
   background: var(--color-white);
   color: var(--color-text);
-  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
 }
 .destination:hover .arrow,
 .destination:focus-visible .arrow {
@@ -1031,11 +1069,26 @@ h1 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .offer-photo {
+  position: relative;
+  overflow: hidden;
   width: 44%;
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.offer-photo::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  box-shadow: inset 0 0 0 0 var(--color-image-blue-sweep);
+  content: "";
+  pointer-events: none;
+  transition: box-shadow var(--button-sweep-duration) var(--button-sweep-easing);
+}
+.offer:hover .offer-photo::before,
+.offer:focus-within .offer-photo::before {
+  box-shadow: inset 0 0 0 100vmax var(--color-image-blue-sweep);
 }
 .pool {
   background-image: url("../images/destination-dubai.png");
@@ -1183,7 +1236,9 @@ input[type="radio"]:checked {
   content: "";
   opacity: 0.65;
   pointer-events: none;
-  transition: transform var(--duration-decoration) ease, opacity var(--duration-decoration) ease;
+  transition:
+    transform var(--duration-decoration) ease,
+    opacity var(--duration-decoration) ease;
 }
 .home-feature-card:hover::before,
 .home-feature-card:focus-within::before {
@@ -1201,8 +1256,16 @@ input[type="radio"]:checked {
   border: 1px solid var(--color-feature-border);
   border-radius: 22px 22px 22px 8px;
   background:
-    radial-gradient(circle at 74% 22%, var(--color-white) 0 5px, transparent 6px),
-    linear-gradient(145deg, var(--color-airport-icon-bg), var(--color-feature-icon-blue-pale));
+    radial-gradient(
+      circle at 74% 22%,
+      var(--color-white) 0 5px,
+      transparent 6px
+    ),
+    linear-gradient(
+      145deg,
+      var(--color-airport-icon-bg),
+      var(--color-feature-icon-blue-pale)
+    );
   color: var(--color-primary);
   font-size: var(--font-size-28px);
   box-shadow: var(--shadow-brand-button);
@@ -1219,14 +1282,30 @@ input[type="radio"]:checked {
 .home-feature-section .col:nth-child(2) .home-feature-icon {
   color: var(--color-accent);
   background:
-    radial-gradient(circle at 74% 22%, var(--color-white) 0 5px, transparent 6px),
-    linear-gradient(145deg, var(--color-feature-icon-red-bg), var(--color-feature-glow));
+    radial-gradient(
+      circle at 74% 22%,
+      var(--color-white) 0 5px,
+      transparent 6px
+    ),
+    linear-gradient(
+      145deg,
+      var(--color-feature-icon-red-bg),
+      var(--color-feature-glow)
+    );
 }
 .home-feature-section .col:nth-child(3) .home-feature-icon {
   color: var(--color-primary);
   background:
-    radial-gradient(circle at 74% 22%, var(--color-white) 0 5px, transparent 6px),
-    linear-gradient(145deg, var(--color-feature-icon-blue-pale), var(--color-airport-icon-bg));
+    radial-gradient(
+      circle at 74% 22%,
+      var(--color-white) 0 5px,
+      transparent 6px
+    ),
+    linear-gradient(
+      145deg,
+      var(--color-feature-icon-blue-pale),
+      var(--color-airport-icon-bg)
+    );
 }
 .journey-details-section .home-feature-icon {
   border-radius: 22px 8px 22px 22px;
@@ -1234,8 +1313,16 @@ input[type="radio"]:checked {
 .journey-details-section .col:nth-child(2) .home-feature-icon {
   color: var(--color-accent);
   background:
-    radial-gradient(circle at 74% 22%, var(--color-white) 0 5px, transparent 6px),
-    linear-gradient(145deg, var(--color-feature-icon-red-bg), var(--color-feature-glow));
+    radial-gradient(
+      circle at 74% 22%,
+      var(--color-white) 0 5px,
+      transparent 6px
+    ),
+    linear-gradient(
+      145deg,
+      var(--color-feature-icon-red-bg),
+      var(--color-feature-glow)
+    );
 }
 .home-feature-card h3 {
   position: relative;
@@ -1342,7 +1429,9 @@ input[type="radio"]:checked {
   .home-feature-card,
   .home-feature-card::after,
   .home-feature-card::before,
-  .home-feature-icon {
+  .home-feature-icon,
+  .destination::after,
+  .offer-photo::after {
     animation: none !important;
     transition: none !important;
   }
@@ -3559,22 +3648,28 @@ footer .footer-grid .socials .bi {
 }
 footer .footer-grid a:hover,
 footer .footer-grid a:focus-visible,
+footer .footer-grid a:active,
 footer .footer-grid button:hover,
-footer .footer-grid button:focus-visible {
+footer .footer-grid button:focus-visible,
+footer .footer-grid button:active {
   box-shadow: none !important;
   filter: none;
   transform: none;
 }
 footer .footer-grid a:hover,
 footer .footer-grid a:focus-visible,
+footer .footer-grid a:active,
 footer .footer-grid button:hover,
-footer .footer-grid button:focus-visible {
+footer .footer-grid button:focus-visible,
+footer .footer-grid button:active {
   color: var(--color-accent) !important;
 }
 footer .footer-grid a:hover .bi,
 footer .footer-grid a:focus-visible .bi,
+footer .footer-grid a:active .bi,
 footer .footer-grid button:hover .bi,
-footer .footer-grid button:focus-visible .bi {
+footer .footer-grid button:focus-visible .bi,
+footer .footer-grid button:active .bi {
   color: var(--color-accent) !important;
   background-image: none !important;
   -webkit-text-fill-color: var(--color-accent) !important;
@@ -3613,6 +3708,16 @@ footer .footer-logo-brand {
   }
 }
 
+/* Align both feature panels and their card rows to the shared page-content rail. */
+.home-feature-section.container {
+  padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+  padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+}
+.home-feature-section.container > .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Keep shortcut hover clean while gently enlarging its label and icon. */
 .travel-shortcuts > a,
 .travel-shortcuts > button {
@@ -3643,15 +3748,15 @@ footer .footer-logo-brand {
 .static-booking .static-search-action .btn,
 .flight-panel button[popovertarget="support"] {
   background-image:
-    linear-gradient(
-      90deg,
-      var(--color-button-hover) 50%,
-      transparent 50%
-    ),
+    linear-gradient(90deg, var(--color-button-hover) 50%, transparent 50%),
     var(--gradient-3);
-  background-position: right center, center;
+  background-position:
+    right center,
+    center;
   background-repeat: no-repeat;
-  background-size: 200% 100%, 100% 100%;
+  background-size:
+    200% 100%,
+    100% 100%;
   transition:
     background-position var(--button-sweep-duration) var(--button-sweep-easing),
     var(--transition-interactive);
@@ -3664,14 +3769,12 @@ footer .footer-logo-brand {
 .flight-panel button[popovertarget="support"]:hover:not(:disabled),
 .flight-panel button[popovertarget="support"]:focus-visible {
   background-image:
-    linear-gradient(
-      90deg,
-      var(--color-button-hover) 50%,
-      transparent 50%
-    ),
+    linear-gradient(90deg, var(--color-button-hover) 50%, transparent 50%),
     var(--gradient-3);
   background-color: var(--color-primary);
-  background-position: left center, center;
+  background-position:
+    left center,
+    center;
 }
 .btn-outline-primary {
   background-image: linear-gradient(
@@ -3704,12 +3807,142 @@ footer .footer-logo-brand {
     background-position var(--button-sweep-duration) var(--button-sweep-easing),
     var(--transition-interactive);
 }
-.btn:not(.btn-primary):not(.btn-outline-primary):not(.primary):not(.btn-link):hover:not(:disabled),
-.theme-button-outline:hover {
+.btn:not(.btn-primary):not(.btn-outline-primary):not(.primary):not(
+    .btn-link
+  ):hover:not(:disabled),
+.btn:not(.btn-primary):not(.btn-outline-primary):not(.primary):not(
+    .btn-link
+  ):active:not(:disabled),
+.theme-button-outline:hover,
+.theme-button-outline:active {
   color: var(--color-on-primary);
   background-color: transparent;
   background-position: left center;
   border-color: var(--color-button-hover);
+}
+
+/* Touch devices receive the same theme-red feedback while a control is pressed. */
+@media (hover: none) {
+  .btn-primary:active:not(:disabled),
+  .btn-primary:focus:not(:disabled),
+  .primary:active:not(:disabled),
+  .primary:focus:not(:disabled),
+  .theme-button:active,
+  .theme-button:focus,
+  .static-booking .static-search-action .btn:active:not(:disabled),
+  .static-booking .static-search-action .btn:focus:not(:disabled),
+  .flight-panel button[popovertarget="support"]:active:not(:disabled),
+  .flight-panel button[popovertarget="support"]:focus:not(:disabled),
+  .btn-outline-primary:active:not(:disabled),
+  .btn-outline-primary:focus:not(:disabled) {
+    background-position: left center;
+    color: var(--color-on-primary);
+    border-color: var(--color-button-hover);
+  }
+  .travel-shortcuts > a:active,
+  .travel-shortcuts > a:focus,
+  #destinations .section-heading > a:active,
+  #destinations .section-heading > a:focus,
+  #offers .section-heading > a:active,
+  #offers .section-heading > a:focus,
+  #offers .offer a:active,
+  #offers .offer a:focus,
+  .home-feature-card a:active,
+  .home-feature-card a:focus,
+  .home-feature-link:active,
+  .home-feature-link:focus,
+  footer .footer-grid a:active,
+  footer .footer-grid a:focus,
+  footer .footer-grid button:active,
+  footer .footer-grid button:focus {
+    color: var(--color-accent) !important;
+  }
+  .travel-shortcuts > a:active .bi,
+  .travel-shortcuts > a:focus .bi,
+  #destinations .section-heading > a:active .bi,
+  #destinations .section-heading > a:focus .bi,
+  #offers .section-heading > a:active .bi,
+  #offers .section-heading > a:focus .bi,
+  #offers .offer a:active .bi,
+  #offers .offer a:focus .bi,
+  .home-feature-card a:active .bi,
+  .home-feature-card a:focus .bi,
+  .home-feature-link:active .bi,
+  .home-feature-link:focus .bi,
+  footer .footer-grid a:active .bi,
+  footer .footer-grid a:focus .bi,
+  footer .footer-grid button:active .bi,
+  footer .footer-grid button:focus .bi {
+    color: var(--color-accent) !important;
+    background-image: none !important;
+    -webkit-text-fill-color: var(--color-accent) !important;
+    filter: none;
+    transform: none;
+  }
+}
+
+/* Match desktop red hover feedback in narrow/mobile layouts and previews. */
+@media (max-width: 767px) {
+  .btn-primary:hover:not(:disabled),
+  .btn-primary:active:not(:disabled),
+  .primary:hover:not(:disabled),
+  .primary:active:not(:disabled),
+  .theme-button:hover,
+  .theme-button:active,
+  .static-booking .static-search-action .btn:hover:not(:disabled),
+  .static-booking .static-search-action .btn:active:not(:disabled),
+  .flight-panel button[popovertarget="support"]:hover:not(:disabled),
+  .flight-panel button[popovertarget="support"]:active:not(:disabled),
+  .btn-outline-primary:hover:not(:disabled),
+  .btn-outline-primary:active:not(:disabled),
+  .btn:not(.btn-primary):not(.btn-outline-primary):not(.primary):not(
+      .btn-link
+    ):hover:not(:disabled),
+  .btn:not(.btn-primary):not(.btn-outline-primary):not(.primary):not(
+      .btn-link
+    ):active:not(:disabled) {
+    background-position: left center;
+    border-color: var(--color-button-hover);
+  }
+  .travel-shortcuts > a:hover,
+  .travel-shortcuts > a:active,
+  #destinations .section-heading > a:hover,
+  #destinations .section-heading > a:active,
+  #offers .section-heading > a:hover,
+  #offers .section-heading > a:active,
+  #offers .offer a:hover,
+  #offers .offer a:active,
+  .home-feature-card a:hover,
+  .home-feature-card a:active,
+  .home-feature-link:hover,
+  .home-feature-link:active,
+  footer .footer-grid a:hover,
+  footer .footer-grid a:active,
+  footer .footer-grid button:hover,
+  footer .footer-grid button:active {
+    color: var(--color-accent) !important;
+  }
+  .travel-shortcuts > a:hover .bi,
+  .travel-shortcuts > a:active .bi,
+  #destinations .section-heading > a:hover .bi,
+  #destinations .section-heading > a:active .bi,
+  #offers .section-heading > a:hover .bi,
+  #offers .section-heading > a:active .bi,
+  #offers .offer a:hover .bi,
+  #offers .offer a:active .bi,
+  .home-feature-card a:hover .bi,
+  .home-feature-card a:active .bi,
+  .home-feature-link:hover .bi,
+  .home-feature-link:active .bi,
+  footer .footer-grid a:hover .bi,
+  footer .footer-grid a:active .bi,
+  footer .footer-grid button:hover .bi,
+  footer .footer-grid button:active .bi {
+    color: var(--color-accent) !important;
+    background-image: none !important;
+    -webkit-text-fill-color: var(--color-accent) !important;
+    filter: none;
+  }
 }
 
 /* Keep a fixed, consistent gap above each service search CTA. */
@@ -3720,19 +3953,67 @@ footer .footer-logo-brand {
   padding-top: 0;
 }
 
+/* Let the shared pseudo-element provide one consistent sweep, without layered fills. */
+.btn-primary:hover:not(:disabled),
+.btn-primary:focus-visible,
+.btn-primary:active:not(:disabled),
+.static-booking .btn-primary:hover:not(:disabled),
+.static-booking .btn-primary:focus-visible,
+.static-booking .btn-primary:active:not(:disabled),
+.theme-button:hover,
+.theme-button:focus-visible,
+.theme-button:active {
+  background-image: var(--gradient-3) !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  background-color: transparent;
+}
+.btn:not(.btn-primary):not(.btn-link):hover:not(:disabled),
+.btn:not(.btn-primary):not(.btn-link):focus-visible,
+.btn:not(.btn-primary):not(.btn-link):active:not(:disabled) {
+  background-image: none !important;
+  background-position: initial !important;
+  background-size: auto !important;
+  background-color: transparent;
+  color: var(--color-on-primary);
+  border-color: var(--color-button-hover);
+}
+
 /* Keep the active search field highlighted while its attached menu is open. */
 body:has(#origin:popover-open) .static-booking [popovertarget="origin"],
-body:has(#destination:popover-open) .static-booking [popovertarget="destination"],
-body:has(#departure-calendar:popover-open) .static-booking [popovertarget="departure-calendar"],
-body:has(#return-calendar:popover-open) .static-booking [popovertarget="return-calendar"],
+body:has(#destination:popover-open)
+  .static-booking
+  [popovertarget="destination"],
+body:has(#departure-calendar:popover-open)
+  .static-booking
+  [popovertarget="departure-calendar"],
+body:has(#return-calendar:popover-open)
+  .static-booking
+  [popovertarget="return-calendar"],
 body:has(#travellers:popover-open) .static-booking [popovertarget="travellers"],
-body:has(#cabin-picker:popover-open) .static-booking [popovertarget="cabin-picker"],
-body:has(#umrah-destination-picker:popover-open) .static-booking [popovertarget="umrah-destination-picker"],
-body:has(#umrah-package-picker:popover-open) .static-booking [popovertarget="umrah-package-picker"],
-body:has(#umrah-services-picker:popover-open) .static-booking [popovertarget="umrah-services-picker"],
-body:has(#visa-passport-picker:popover-open) .static-booking [popovertarget="visa-passport-picker"],
-body:has(#visa-destination-picker:popover-open) .static-booking [popovertarget="visa-destination-picker"],
-body:has(#visa-type-picker:popover-open) .static-booking [popovertarget="visa-type-picker"],
-body:has(#visa-processing-picker:popover-open) .static-booking [popovertarget="visa-processing-picker"] {
+body:has(#cabin-picker:popover-open)
+  .static-booking
+  [popovertarget="cabin-picker"],
+body:has(#umrah-destination-picker:popover-open)
+  .static-booking
+  [popovertarget="umrah-destination-picker"],
+body:has(#umrah-package-picker:popover-open)
+  .static-booking
+  [popovertarget="umrah-package-picker"],
+body:has(#umrah-services-picker:popover-open)
+  .static-booking
+  [popovertarget="umrah-services-picker"],
+body:has(#visa-passport-picker:popover-open)
+  .static-booking
+  [popovertarget="visa-passport-picker"],
+body:has(#visa-destination-picker:popover-open)
+  .static-booking
+  [popovertarget="visa-destination-picker"],
+body:has(#visa-type-picker:popover-open)
+  .static-booking
+  [popovertarget="visa-type-picker"],
+body:has(#visa-processing-picker:popover-open)
+  .static-booking
+  [popovertarget="visa-processing-picker"] {
   background: var(--color-field-hover);
 }
