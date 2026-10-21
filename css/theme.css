@@ -87,6 +87,23 @@
   --radius-dropdown: 12px;
   --radius-dropdown-item: 8px;
   --radius-section: 28px;
+  --page-container-max-width: 100%;
+  --page-container-gutter: 12px;
+  --flight-results-sidebar-width: 292px;
+  --flight-results-gap: 16px;
+  --flight-results-card-gap: 12px;
+  --font-size-flight-body: var(--font-size-base);
+  --font-size-flight-small: var(--font-size-14px);
+  --font-size-flight-caption: var(--font-size-13px);
+  --font-size-flight-time: var(--font-size-20px);
+  --font-size-flight-price: var(--font-size-20px);
+  --font-size-flight-hero: var(--font-size-page-title-desktop);
+  --font-size-flight-hero-mobile: var(--font-size-heading-1-mobile);
+  --flight-results-hero-height: 210px;
+  --flight-results-hero-mobile-height: 150px;
+  --color-flight-results-tint: var(--color-feature-bg);
+  --color-flight-results-selected: var(--color-selected-bg);
+  --color-flight-results-line: var(--color-border);
   --brand-logo-width: 150px;
   --brand-logo-height: 48px;
   --brand-logo-footer-width: 150px;
@@ -444,6 +461,23 @@
   --bs-box-shadow-sm: var(--shadow-card);
   --bs-box-shadow: var(--shadow-card);
   --bs-box-shadow-lg: var(--shadow-popup);
+}
+
+/* Match Bootstrap's shared container rail across all page sections. */
+@media (min-width: 576px) {
+  :root { --page-container-max-width: 540px; }
+}
+@media (min-width: 768px) {
+  :root { --page-container-max-width: 720px; }
+}
+@media (min-width: 992px) {
+  :root { --page-container-max-width: 960px; }
+}
+@media (min-width: 1200px) {
+  :root { --page-container-max-width: 1140px; }
+}
+@media (min-width: 1400px) {
+  :root { --page-container-max-width: 1320px; }
 }
 
 /* Reusable defaults for every Bootstrap button, card, form and popup. */

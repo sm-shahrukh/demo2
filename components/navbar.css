@@ -1,0 +1,96 @@
+html,
+body.navbar-component {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 8px;
+}
+
+.navbar-component .travel-header {
+  position: relative !important;
+  top: auto !important;
+}
+
+.navbar-component .travel-nav .nav-service {
+  color: var(--color-nav-text);
+  text-decoration: none;
+}
+
+.navbar-component .travel-nav .nav-service.is-current {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-700);
+}
+
+.navbar-component .travel-nav .nav-service::after {
+  bottom: 0.5px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: transparent;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.navbar-component .travel-nav .nav-service.is-current::after {
+  z-index: 2;
+  background: var(--color-accent) !important;
+}
+
+.navbar-component .travel-nav .nav-service:hover::after,
+.navbar-component .travel-nav .nav-service:focus-visible::after {
+  z-index: 2;
+  background: var(--color-accent) !important;
+}
+
+.navbar-component .header-action,
+.navbar-component .account-action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8px);
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-component .header-action strong,
+.navbar-component .account-action strong {
+  display: block;
+  font-weight: var(--font-weight-700);
+}
+
+.navbar-component .header-action small,
+.navbar-component .account-action small {
+  display: block;
+  color: var(--color-muted);
+  font-size: var(--font-size-13-61px);
+}
+
+.navbar-component .account-action img {
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar-component .header-action:hover strong,
+.navbar-component .account-action:hover strong {
+  color: var(--color-accent);
+}
+
+.navbar-component .header-action:hover .bi,
+.navbar-component .header-action:focus-visible .bi {
+  color: var(--color-accent) !important;
+  background-image: none !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
+}
+
+.navbar-component .travel-nav .nav-service:hover span,
+.navbar-component .travel-nav .nav-service:hover .bi {
+  color: var(--color-nav-hover) !important;
+  -webkit-text-fill-color: var(--color-nav-hover) !important;
+}
+
+@media (max-width: 767px) {
+  body.navbar-component {
+    padding-bottom: 0;
+  }
+}
+

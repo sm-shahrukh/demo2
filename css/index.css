@@ -3710,12 +3710,64 @@ footer .footer-logo-brand {
 
 /* Align both feature panels and their card rows to the shared page-content rail. */
 .home-feature-section.container {
+  box-sizing: border-box;
+  width: calc(100% - var(--bs-gutter-x, 1.5rem));
+  margin-right: auto !important;
+  margin-left: auto !important;
   padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
   padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
 }
 .home-feature-section.container > .row {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: calc(var(--bs-gutter-x, 1.5rem) * -0.5);
+  margin-right: calc(var(--bs-gutter-x, 1.5rem) * -0.5);
+}
+
+/* Keep both feature panels on the exact same Bootstrap content rail. */
+.shared-navbar-frame,
+.shared-footer-frame {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+.shared-navbar-frame {
+  height: 96px;
+}
+.shared-footer-frame {
+    height: 248px;
+}
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 60px !important;
+  }
+  .shared-navbar-frame {
+    height: 90px;
+    vertical-align: top;
+    margin-bottom: 0;
+  }
+  .shared-footer-frame {
+    height: 488px;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+  #offers {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .home-feature-section.container { max-width: calc(540px - var(--bs-gutter-x, 1.5rem)); }
+}
+@media (min-width: 768px) {
+  .home-feature-section.container { max-width: calc(720px - var(--bs-gutter-x, 1.5rem)); }
+}
+@media (min-width: 992px) {
+  .home-feature-section.container { max-width: calc(960px - var(--bs-gutter-x, 1.5rem)); }
+}
+@media (min-width: 1200px) {
+  .home-feature-section.container { max-width: calc(1140px - var(--bs-gutter-x, 1.5rem)); }
+}
+@media (min-width: 1400px) {
+  .home-feature-section.container { max-width: calc(1320px - var(--bs-gutter-x, 1.5rem)); }
 }
 
 /* Keep shortcut hover clean while gently enlarging its label and icon. */
