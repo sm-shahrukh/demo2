@@ -59,7 +59,7 @@
 #auth-login .auth-dialog::-webkit-scrollbar-thumb,
 #auth-signup .auth-dialog::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: var(--color-brand-blue-light);
+  background: var(--color-scroll-thumb);
 }
 #auth-login .auth-dialog::-webkit-scrollbar-button,
 #auth-signup .auth-dialog::-webkit-scrollbar-button {

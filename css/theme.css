@@ -683,6 +683,17 @@ summary:hover .bi {
     --font-size-dropdown-heading: var(--font-size-dropdown-heading-mobile);
   }
 }
+
+/* Keep scrollbar thumbs white throughout the project. */
+* {
+  scrollbar-color: var(--color-scroll-thumb) var(--color-scroll-track);
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-scroll-thumb);
+  border: 2px solid var(--color-scroll-track);
+  border-radius: 999px;
+}
 .form-control,
 .form-select {
   font-family: var(--font-body);

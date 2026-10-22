@@ -2298,9 +2298,18 @@ body p {
 .travel-header label.nav-service > span {
   position: relative;
 }
-body:has(#service-flights:checked) .travel-header label[for="service-flights"] > span::after,
-body:has(#service-umrah:checked) .travel-header label[for="service-umrah"] > span::after,
-body:has(#service-visa:checked) .travel-header label[for="service-visa"] > span::after {
+body:has(#service-flights:checked)
+  .travel-header
+  label[for="service-flights"]
+  > span::after,
+body:has(#service-umrah:checked)
+  .travel-header
+  label[for="service-umrah"]
+  > span::after,
+body:has(#service-visa:checked)
+  .travel-header
+  label[for="service-visa"]
+  > span::after {
   content: "";
   position: absolute;
   left: 0;
@@ -2346,31 +2355,82 @@ body:has(#service-visa:checked) .travel-header label[for="service-visa"] > span:
 .flight-results-page .static-navbar .travel-nav .nav-service > span::after {
   display: none !important;
 }
-body:has(#service-flights:checked) .home-navbar .travel-header label[for="service-flights"],
-body:has(#service-umrah:checked) .home-navbar .travel-header label[for="service-umrah"],
-body:has(#service-visa:checked) .home-navbar .travel-header label[for="service-visa"],
+body:has(#service-flights:checked)
+  .home-navbar
+  .travel-header
+  label[for="service-flights"],
+body:has(#service-umrah:checked)
+  .home-navbar
+  .travel-header
+  label[for="service-umrah"],
+body:has(#service-visa:checked)
+  .home-navbar
+  .travel-header
+  label[for="service-visa"],
 .flight-results-page .static-navbar .travel-nav .nav-service.is-current,
-body:has(#trip-one:checked) .flight-results-page .trip-dock label[for="trip-one"],
-body:has(#trip-round:checked) .flight-results-page .trip-dock label[for="trip-round"],
-body:has(#trip-multi:checked) .flight-results-page .trip-dock label[for="trip-multi"] {
+body:has(#trip-one:checked)
+  .flight-results-page
+  .trip-dock
+  label[for="trip-one"],
+body:has(#trip-round:checked)
+  .flight-results-page
+  .trip-dock
+  label[for="trip-round"],
+body:has(#trip-multi:checked)
+  .flight-results-page
+  .trip-dock
+  label[for="trip-multi"] {
   border-bottom-color: var(--color-accent);
 }
-body:has(#service-flights:checked) .service-dock label[for="service-flights"] > span:last-child,
-body:has(#service-umrah:checked) .service-dock label[for="service-umrah"] > span:last-child,
-body:has(#service-visa:checked) .service-dock label[for="service-visa"] > span:last-child,
+body:has(#service-flights:checked)
+  .service-dock
+  label[for="service-flights"]
+  > span:last-child,
+body:has(#service-umrah:checked)
+  .service-dock
+  label[for="service-umrah"]
+  > span:last-child,
+body:has(#service-visa:checked)
+  .service-dock
+  label[for="service-visa"]
+  > span:last-child,
 body:has(#trip-one:checked) .trip-dock label[for="trip-one"] > span:last-child,
-body:has(#trip-round:checked) .trip-dock label[for="trip-round"] > span:last-child,
-body:has(#trip-multi:checked) .trip-dock label[for="trip-multi"] > span:last-child {
+body:has(#trip-round:checked)
+  .trip-dock
+  label[for="trip-round"]
+  > span:last-child,
+body:has(#trip-multi:checked)
+  .trip-dock
+  label[for="trip-multi"]
+  > span:last-child {
   position: relative;
   border-bottom: 0;
   padding-bottom: 0;
 }
-body:has(#service-flights:checked) .service-dock label[for="service-flights"] > span:last-child::after,
-body:has(#service-umrah:checked) .service-dock label[for="service-umrah"] > span:last-child::after,
-body:has(#service-visa:checked) .service-dock label[for="service-visa"] > span:last-child::after,
-body:has(#trip-one:checked) .trip-dock label[for="trip-one"] > span:last-child::after,
-body:has(#trip-round:checked) .trip-dock label[for="trip-round"] > span:last-child::after,
-body:has(#trip-multi:checked) .trip-dock label[for="trip-multi"] > span:last-child::after {
+body:has(#service-flights:checked)
+  .service-dock
+  label[for="service-flights"]
+  > span:last-child::after,
+body:has(#service-umrah:checked)
+  .service-dock
+  label[for="service-umrah"]
+  > span:last-child::after,
+body:has(#service-visa:checked)
+  .service-dock
+  label[for="service-visa"]
+  > span:last-child::after,
+body:has(#trip-one:checked)
+  .trip-dock
+  label[for="trip-one"]
+  > span:last-child::after,
+body:has(#trip-round:checked)
+  .trip-dock
+  label[for="trip-round"]
+  > span:last-child::after,
+body:has(#trip-multi:checked)
+  .trip-dock
+  label[for="trip-multi"]
+  > span:last-child::after {
   content: "";
   position: absolute;
   left: 0;
@@ -2379,9 +2439,18 @@ body:has(#trip-multi:checked) .trip-dock label[for="trip-multi"] > span:last-chi
   height: 3px;
   background: var(--color-accent);
 }
-body:has(#service-flights:checked) .service-dock label[for="service-flights"] > span:last-child::after,
-body:has(#service-umrah:checked) .service-dock label[for="service-umrah"] > span:last-child::after,
-body:has(#service-visa:checked) .service-dock label[for="service-visa"] > span:last-child::after {
+body:has(#service-flights:checked)
+  .service-dock
+  label[for="service-flights"]
+  > span:last-child::after,
+body:has(#service-umrah:checked)
+  .service-dock
+  label[for="service-umrah"]
+  > span:last-child::after,
+body:has(#service-visa:checked)
+  .service-dock
+  label[for="service-visa"]
+  > span:last-child::after {
   left: 50%;
   right: auto;
   width: calc(100% + 18px);
