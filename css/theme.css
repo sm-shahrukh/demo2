@@ -465,19 +465,29 @@
 
 /* Match Bootstrap's shared container rail across all page sections. */
 @media (min-width: 576px) {
-  :root { --page-container-max-width: 540px; }
+  :root {
+    --page-container-max-width: 540px;
+  }
 }
 @media (min-width: 768px) {
-  :root { --page-container-max-width: 720px; }
+  :root {
+    --page-container-max-width: 720px;
+  }
 }
 @media (min-width: 992px) {
-  :root { --page-container-max-width: 960px; }
+  :root {
+    --page-container-max-width: 960px;
+  }
 }
 @media (min-width: 1200px) {
-  :root { --page-container-max-width: 1140px; }
+  :root {
+    --page-container-max-width: 1140px;
+  }
 }
 @media (min-width: 1400px) {
-  :root { --page-container-max-width: 1320px; }
+  :root {
+    --page-container-max-width: 1320px;
+  }
 }
 
 /* Reusable defaults for every Bootstrap button, card, form and popup. */
@@ -755,5 +765,48 @@ summary:hover .bi {
   .btn:not(.btn-link)::before,
   .theme-button::before {
     transition: none;
+  }
+}
+
+/* Shared flight typography and sizing. Font roles inherit the homepage scale. */
+:root {
+  --font-size-flight-body: var(--font-size-base);
+  --font-size-flight-small: var(--font-size-dropdown);
+  --font-size-flight-caption: var(--font-size-14px);
+  --font-size-flight-micro: var(--font-size-12px);
+  --font-size-flight-detail: var(--font-size-dropdown);
+  --font-size-flight-title: var(--font-size-heading-3-tablet);
+  --font-size-flight-subtitle: var(--font-size-heading-2-tablet);
+  --font-size-flight-time: var(--font-size-26px);
+  --font-size-flight-price: var(--font-size-26px);
+  --font-size-flight-filter: var(--font-size-button-desktop);
+  --font-size-flight-filter-value: var(--font-size-14px);
+  --font-size-flight-filter-compact: var(--font-size-14px);
+  --font-size-flight-filter-value-compact: var(--font-size-13px);
+  --flight-results-sidebar-width: 318px;
+  --flight-results-sidebar-compact: 286px;
+  --flight-route-min-width: 125px;
+  --flight-route-line-height: 34px;
+  --flight-route-icon-size: 34px;
+  --flight-route-icon-padding: 5px;
+  --flight-leg-path-width: 95px;
+  --flight-desk-nav-width: 204px;
+  --flight-search-action-width: 216px;
+  --flight-search-action-gap: 36px;
+  --multi-city-popup-width: 1140px;
+}
+@media (max-width: 767px) {
+  :root {
+    --font-size-flight-body: var(--font-size-mobile-card-copy);
+    --font-size-flight-small: var(--font-size-button);
+    --font-size-flight-caption: var(--font-size-14px);
+    --font-size-flight-detail: var(--font-size-dropdown-mobile);
+    --font-size-flight-title: var(--font-size-heading-3-mobile);
+    --font-size-flight-time: var(--font-size-mobile-card-title);
+    --font-size-flight-price: var(--font-size-24px);
+    --flight-route-min-width: 92px;
+    --flight-route-icon-size: 32px;
+    --flight-route-icon-padding: 4px;
+    --flight-search-action-width: 204px;
   }
 }

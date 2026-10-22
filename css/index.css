@@ -2290,9 +2290,102 @@ body p {
 
 /* Keep the active service indicator on the navbar's bottom edge. */
 .travel-header label.nav-service::after {
-  bottom: 0;
+  bottom: 0.5px;
   left: 0;
   right: 0;
+  display: none;
+}
+.travel-header label.nav-service > span {
+  position: relative;
+}
+body:has(#service-flights:checked) .travel-header label[for="service-flights"] > span::after,
+body:has(#service-umrah:checked) .travel-header label[for="service-umrah"] > span::after,
+body:has(#service-visa:checked) .travel-header label[for="service-visa"] > span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 3px;
+  background: var(--color-accent);
+}
+.service-dock .dock-service::after {
+  height: 3px !important;
+  display: none;
+}
+/* Anchor indicators to the card edge while keeping the text's width. */
+.service-dock:not(.trip-dock) .dock-service {
+  padding-bottom: 0;
+  justify-content: flex-end;
+}
+.service-dock:not(.trip-dock) .dock-service > span:last-child {
+  position: relative;
+  padding-bottom: 12px !important;
+}
+.flight-results-page .trip-dock .dock-service {
+  padding-block: 0;
+  border-bottom: 0 !important;
+}
+.flight-results-page .trip-dock .dock-service > span:last-child {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.service-dock .dock-service > span:last-child::after {
+  bottom: 0 !important;
+  height: 3px;
+  pointer-events: none;
+}
+.home-navbar .travel-header .nav-service,
+.flight-results-page .static-navbar .travel-nav .nav-service,
+.flight-results-page .trip-dock .dock-service {
+  border-bottom: 3px solid transparent;
+}
+.home-navbar .travel-header .nav-service > span::after,
+.flight-results-page .static-navbar .travel-nav .nav-service > span::after {
+  display: none !important;
+}
+body:has(#service-flights:checked) .home-navbar .travel-header label[for="service-flights"],
+body:has(#service-umrah:checked) .home-navbar .travel-header label[for="service-umrah"],
+body:has(#service-visa:checked) .home-navbar .travel-header label[for="service-visa"],
+.flight-results-page .static-navbar .travel-nav .nav-service.is-current,
+body:has(#trip-one:checked) .flight-results-page .trip-dock label[for="trip-one"],
+body:has(#trip-round:checked) .flight-results-page .trip-dock label[for="trip-round"],
+body:has(#trip-multi:checked) .flight-results-page .trip-dock label[for="trip-multi"] {
+  border-bottom-color: var(--color-accent);
+}
+body:has(#service-flights:checked) .service-dock label[for="service-flights"] > span:last-child,
+body:has(#service-umrah:checked) .service-dock label[for="service-umrah"] > span:last-child,
+body:has(#service-visa:checked) .service-dock label[for="service-visa"] > span:last-child,
+body:has(#trip-one:checked) .trip-dock label[for="trip-one"] > span:last-child,
+body:has(#trip-round:checked) .trip-dock label[for="trip-round"] > span:last-child,
+body:has(#trip-multi:checked) .trip-dock label[for="trip-multi"] > span:last-child {
+  position: relative;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+body:has(#service-flights:checked) .service-dock label[for="service-flights"] > span:last-child::after,
+body:has(#service-umrah:checked) .service-dock label[for="service-umrah"] > span:last-child::after,
+body:has(#service-visa:checked) .service-dock label[for="service-visa"] > span:last-child::after,
+body:has(#trip-one:checked) .trip-dock label[for="trip-one"] > span:last-child::after,
+body:has(#trip-round:checked) .trip-dock label[for="trip-round"] > span:last-child::after,
+body:has(#trip-multi:checked) .trip-dock label[for="trip-multi"] > span:last-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  height: 3px;
+  background: var(--color-accent);
+}
+body:has(#service-flights:checked) .service-dock label[for="service-flights"] > span:last-child::after,
+body:has(#service-umrah:checked) .service-dock label[for="service-umrah"] > span:last-child::after,
+body:has(#service-visa:checked) .service-dock label[for="service-visa"] > span:last-child::after {
+  left: 50%;
+  right: auto;
+  width: calc(100% + 18px);
+  transform: translateX(-50%);
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .travel-header .container {
@@ -2472,6 +2565,35 @@ body p {
 .static-booking .travel-assurance + button {
   font-size: var(--font-size-base);
 }
+.static-booking .travel-assurance,
+.static-booking .travel-assurance + button {
+  min-height: 46px;
+  height: 46px;
+  box-sizing: border-box;
+}
+.static-booking .static-fares {
+  margin-top: 10px !important;
+  gap: 6px !important;
+}
+.static-booking .static-fares > strong {
+  margin-right: 6px !important;
+  font-size: var(--font-size-14px);
+  line-height: 1.15;
+}
+.static-booking .static-fares > label {
+  min-width: 90px;
+  padding: 8px 10px !important;
+  font-size: var(--font-size-14px);
+  line-height: 1.15;
+}
+.static-booking .static-fares small {
+  margin-top: 2px;
+  font-size: var(--font-size-12px);
+}
+.static-booking .travel-assurance,
+.static-booking .travel-assurance + button {
+  font-size: var(--font-size-14px);
+}
 .static-booking .form-control,
 .static-booking .form-select,
 .static-booking .form-label {
@@ -2496,7 +2618,7 @@ body p {
     height: 74px;
   }
   .travel-header .nav-service:after {
-    bottom: -13px;
+    bottom: 0.5px;
   }
   .travel-hero {
     height: calc(94vh - 98px);
@@ -3733,7 +3855,7 @@ footer .footer-logo-brand {
   height: 96px;
 }
 .shared-footer-frame {
-    height: 248px;
+  height: 248px;
 }
 @media (max-width: 767px) {
   body {
@@ -3755,19 +3877,29 @@ footer .footer-logo-brand {
 }
 
 @media (min-width: 576px) {
-  .home-feature-section.container { max-width: calc(540px - var(--bs-gutter-x, 1.5rem)); }
+  .home-feature-section.container {
+    max-width: calc(540px - var(--bs-gutter-x, 1.5rem));
+  }
 }
 @media (min-width: 768px) {
-  .home-feature-section.container { max-width: calc(720px - var(--bs-gutter-x, 1.5rem)); }
+  .home-feature-section.container {
+    max-width: calc(720px - var(--bs-gutter-x, 1.5rem));
+  }
 }
 @media (min-width: 992px) {
-  .home-feature-section.container { max-width: calc(960px - var(--bs-gutter-x, 1.5rem)); }
+  .home-feature-section.container {
+    max-width: calc(960px - var(--bs-gutter-x, 1.5rem));
+  }
 }
 @media (min-width: 1200px) {
-  .home-feature-section.container { max-width: calc(1140px - var(--bs-gutter-x, 1.5rem)); }
+  .home-feature-section.container {
+    max-width: calc(1140px - var(--bs-gutter-x, 1.5rem));
+  }
 }
 @media (min-width: 1400px) {
-  .home-feature-section.container { max-width: calc(1320px - var(--bs-gutter-x, 1.5rem)); }
+  .home-feature-section.container {
+    max-width: calc(1320px - var(--bs-gutter-x, 1.5rem));
+  }
 }
 
 /* Keep shortcut hover clean while gently enlarging its label and icon. */
@@ -4068,4 +4200,86 @@ body:has(#visa-processing-picker:popover-open)
   .static-booking
   [popovertarget="visa-processing-picker"] {
   background: var(--color-field-hover);
+}
+
+/* One native, static multi-city popup shared by home and flight results. */
+.multi-flight-popup {
+  width: min(var(--multi-city-popup-width), calc(100vw - 48px)) !important;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-dropdown);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+.multi-flight-popup .static-extra-flight {
+  display: none;
+}
+#multi-extra-3:checked ~ form #extra-flight-3 {
+  display: block;
+}
+#multi-extra-4:checked ~ form #extra-flight-4 {
+  display: block;
+}
+#multi-extra-5:checked ~ form #extra-flight-5 {
+  display: block;
+}
+#multi-extra-6:checked ~ form #extra-flight-6 {
+  display: block;
+}
+.multi-flight-popup .multi-popup-footer .multi-popup-done {
+  position: static;
+  transform: none;
+  margin-inline: auto;
+}
+.multi-flight-popup .multi-popup-footer {
+  margin-top: 18px !important;
+  margin-bottom: 0;
+}
+.multi-flight-popup .multi-popup-add,
+.multi-flight-popup .multi-popup-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-navbar .is-hidden {
+  display: none !important;
+}
+body:has(#service-flights:checked) .home-navbar label[for="service-flights"],
+body:has(#service-umrah:checked) .home-navbar label[for="service-umrah"],
+body:has(#service-visa:checked) .home-navbar label[for="service-visa"] {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-700);
+}
+@media (max-width: 767px) {
+  .multi-flight-popup {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+  }
+  .static-booking .static-fares {
+    margin-top: 8px !important;
+    gap: 4px !important;
+    flex-wrap: wrap !important;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+  .static-booking .static-fares > strong {
+    flex: 0 0 auto;
+    margin-right: 2px !important;
+    font-size: var(--font-size-12px);
+  }
+  .static-booking .static-fares > label {
+    flex: 1 1 86px;
+    min-width: 86px;
+    padding: 6px 8px !important;
+    font-size: var(--font-size-12px);
+  }
+  .static-booking .static-fares small {
+    font-size: var(--font-size-10px);
+  }
+  .static-booking .travel-assurance,
+  .static-booking .travel-assurance + button {
+    font-size: var(--font-size-12px);
+  }
 }

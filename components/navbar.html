@@ -55,17 +55,25 @@
             ><i class="bi bi-airplane" aria-hidden="true"></i
             ><span>Flights</span></a
           >
-          <a class="nav-service" data-service="umrah" href="../index.html#booking" target="_parent"
+          <a
+            class="nav-service"
+            data-service="umrah"
+            href="../index.html#booking"
+            target="_parent"
             ><i class="bi bi-moon-stars" aria-hidden="true"></i
             ><span>Umrah</span></a
           >
-          <a class="nav-service" data-service="visa" href="../index.html#booking" target="_parent"
+          <a
+            class="nav-service"
+            data-service="visa"
+            href="../index.html#booking"
+            target="_parent"
             ><i class="bi bi-passport" aria-hidden="true"></i
             ><span>Visa</span></a
           >
         </nav>
         <a
-          class="header-action d-none d-lg-flex"
+          class="header-action signed-in-nav d-none d-lg-flex is-hidden"
           href="../index.html#contact"
           target="_parent"
           ><i class="bi bi-suitcase fs-4 text-primary" aria-hidden="true"></i
@@ -74,7 +82,7 @@
           ></a
         >
         <a
-          class="header-action wishlist d-none d-xl-flex"
+          class="header-action wishlist signed-in-nav d-none d-xl-flex is-hidden"
           href="../index.html#offers"
           target="_parent"
           ><i class="bi bi-heart-fill fs-4 text-danger" aria-hidden="true"></i
@@ -82,8 +90,22 @@
             ><strong>Wishlist</strong><small>Save your favourites</small></span
           ></a
         >
+        <div class="auth-entry-actions d-flex align-items-center gap-2 ms-lg-2">
+          <a
+            class="nav-auth-button nav-auth-login"
+            href="../index.html#auth-login"
+            target="_parent"
+            >Log in</a
+          >
+          <a
+            class="nav-auth-button nav-auth-start"
+            href="../index.html#auth-signup"
+            target="_parent"
+            >Start here</a
+          >
+        </div>
         <a
-          class="account-action position-relative ms-2"
+          class="account-action signed-in-nav position-relative ms-2 is-hidden"
           href="../index.html#contact"
           target="_parent"
           aria-label="My account"
@@ -96,6 +118,5 @@
         </a>
       </div>
     </header>
-    <script src="navbar.js"></script>
   </body>
 </html>

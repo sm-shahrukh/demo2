@@ -19,7 +19,8 @@
     />
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <script src="components/navbar.js" defer></script>
+    <link rel="stylesheet" href="components/navbar.css" />
+    <link rel="stylesheet" href="css/auth.css" />
   </head>
   <body>
     <input
@@ -41,14 +42,93 @@
       name="service"
       id="service-visa"
     />
-    <iframe
-      class="shared-navbar-frame"
-      src="components/navbar.html"
-      title="Main navigation"
-      width="100%"
-      scrolling="no"
-      style="display: block; border: 0"
-    ></iframe>
+    <div class="navbar-component home-navbar">
+      <div class="welcome-strip text-center text-white">
+        Your journey begins with Sparrow Flights.
+        <a
+          class="text-white text-decoration-underline ms-2"
+          href="index.html#booking"
+          >Find your next flight</a
+        >
+      </div>
+      <header class="travel-header bg-white sticky-top shadow-sm">
+        <div
+          class="container d-flex align-items-center gap-3 flex-wrap flex-lg-nowrap"
+        >
+          <a
+            href="index.html"
+            class="brand logo-brand me-lg-4"
+            aria-label="Sparrow Flights home"
+          >
+            <img
+              class="brand-logo-image"
+              src="images/logo.jpeg"
+              alt="Sparrow Flights"
+            />
+          </a>
+          <nav
+            class="travel-nav d-flex align-self-stretch gap-4 me-auto"
+            aria-label="Travel services"
+          >
+            <label class="nav-service" for="service-flights"
+              ><i class="bi bi-airplane" aria-hidden="true"></i
+              ><span>Flights</span></label
+            >
+            <label class="nav-service" for="service-umrah"
+              ><i class="bi bi-moon-stars" aria-hidden="true"></i
+              ><span>Umrah</span></label
+            >
+            <label class="nav-service" for="service-visa"
+              ><i class="bi bi-passport" aria-hidden="true"></i
+              ><span>Visa</span></label
+            >
+          </nav>
+          <a
+            class="header-action signed-in-nav d-none d-lg-flex is-hidden"
+            href="index.html#contact"
+            ><i class="bi bi-suitcase fs-4 text-primary" aria-hidden="true"></i
+            ><span
+              ><strong>My trips</strong
+              ><small>Manage your bookings</small></span
+            ></a
+          >
+          <a
+            class="header-action wishlist signed-in-nav d-none d-xl-flex is-hidden"
+            href="index.html#offers"
+            ><i class="bi bi-heart-fill fs-4 text-danger" aria-hidden="true"></i
+            ><span
+              ><strong>Wishlist</strong
+              ><small>Save your favourites</small></span
+            ></a
+          >
+          <div
+            class="auth-entry-actions d-flex align-items-center gap-2 ms-lg-2"
+          >
+            <a
+              class="nav-auth-button nav-auth-login"
+              href="index.html#auth-login"
+              >Log in</a
+            >
+            <a
+              class="nav-auth-button nav-auth-start"
+              href="index.html#auth-signup"
+              >Get Started</a
+            >
+          </div>
+          <a
+            class="account-action signed-in-nav position-relative ms-2 is-hidden"
+            href="index.html#contact"
+            aria-label="My account"
+          >
+            <img src="images/demo-profile.jpg" alt="" width="40" height="40" />
+            <span class="d-none d-md-block"
+              ><strong>My account</strong><small>Ali Ahmed</small></span
+            >
+            <i class="bi bi-chevron-down ms-1" aria-hidden="true"></i>
+          </a>
+        </div>
+      </header>
+    </div>
     <main>
       <section class="travel-hero" aria-label="Search flights, Umrah and visa">
         <div class="container hero-layout position-relative">
@@ -829,6 +909,278 @@
         </div>
       </section>
     </main>
+    <section
+      class="auth-modal"
+      id="auth-login"
+      aria-labelledby="auth-login-title"
+    >
+      <a
+        class="auth-backdrop"
+        href="#booking"
+        aria-label="Close account window"
+      ></a>
+      <div class="auth-dialog" role="dialog" aria-modal="true">
+        <a class="auth-close" href="#booking" aria-label="Close account window"
+          >&times;</a
+        >
+        <div class="auth-brand">
+          <img src="images/logo.jpeg" alt="Sparrow Flights" />
+        </div>
+        <div class="auth-panel">
+          <p class="auth-kicker">Welcome back</p>
+          <h2 id="auth-login-title">Log in to your journey</h2>
+          <p class="auth-copy">Access your bookings and plan your next trip.</p>
+          <div class="auth-form">
+            <label
+              >Email<input
+                type="email"
+                placeholder="name@example.com"
+                autocomplete="email" /></label
+            ><label
+              >Password<span class="auth-password-field"
+                ><input
+                  class="auth-password-input"
+                  type="text"
+                  placeholder="••••••••"
+                  autocomplete="current-password" /><input
+                  class="auth-password-visible"
+                  type="text"
+                  placeholder="••••••••"
+                  autocomplete="current-password" /><input
+                  class="auth-eye-toggle"
+                  type="checkbox"
+                  id="login-password-visibility" /><label
+                  class="auth-eye-button"
+                  for="login-password-visibility"
+                  aria-label="Show or hide password"
+                  ><svg
+                    class="auth-eye-show"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2.2 12s3.4-5.2 9.8-5.2S21.8 12 21.8 12 18.4 17.2 12 17.2 2.2 12 2.2 12Z"
+                    />
+                    <circle cx="12" cy="12" r="2.7" />
+                    <path
+                      class="auth-eye-slash"
+                      d="m4 4 16 16"
+                    /></svg></label></span></label
+            ><button type="button" class="auth-submit btn btn-primary">Log in</button>
+            <div class="auth-divider"><span>or continue with</span></div>
+            <button type="button" class="auth-google-button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="#4285f4"
+                  d="M21.35 12.23c0-.71-.06-1.39-.18-2.05H12v3.88h5.24a4.48 4.48 0 0 1-1.94 2.94v2.44h3.14c1.84-1.69 2.91-4.18 2.91-7.21Z"
+                />
+                <path
+                  fill="#34a853"
+                  d="M12 21.6c2.63 0 4.84-.87 6.45-2.36l-3.14-2.44c-.87.58-1.97.93-3.31.93-2.54 0-4.69-1.72-5.46-4.03H3.3v2.52A9.74 9.74 0 0 0 12 21.6Z"
+                />
+                <path
+                  fill="#fbbc05"
+                  d="M6.54 13.7A5.85 5.85 0 0 1 6.23 12c0-.59.11-1.17.31-1.7V7.78H3.3A9.76 9.76 0 0 0 2.25 12c0 1.57.38 3.05 1.05 4.22l3.24-2.52Z"
+                />
+                <path
+                  fill="#ea4335"
+                  d="M12 6.27c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.34 14.63 2.4 12 2.4a9.74 9.74 0 0 0-8.7 5.38l3.24 2.52C7.31 7.99 9.46 6.27 12 6.27Z"
+                /></svg
+              >Continue with Google
+            </button>
+            <button type="button" class="auth-facebook-button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4a22 22 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.2V10H7.3v3h2.8v8h3.4Z"
+                />
+              </svg>
+              Continue with Facebook
+            </button>
+          </div>
+          <a class="auth-link" href="#auth-reset">Forgot your password?</a>
+          <p class="auth-switch">
+            Don’t have an account? <a href="#auth-signup">Create account</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="auth-modal"
+      id="auth-signup"
+      aria-labelledby="auth-signup-title"
+    >
+      <a
+        class="auth-backdrop"
+        href="#booking"
+        aria-label="Close account window"
+      ></a>
+      <div class="auth-dialog" role="dialog" aria-modal="true">
+        <a class="auth-close" href="#booking" aria-label="Close account window"
+          >&times;</a
+        >
+        <div class="auth-brand">
+          <img src="images/logo.jpeg" alt="Sparrow Flights" />
+        </div>
+        <div class="auth-panel">
+          <p class="auth-kicker">Your next journey starts here</p>
+          <h2 id="auth-signup-title">Create account</h2>
+          <p class="auth-copy">
+            Save traveller details, bookings and favourite routes.
+          </p>
+          <div class="auth-form">
+            <label
+              ><span class="auth-label-text">Full name<span class="auth-required" aria-hidden="true">*</span></span><input
+                type="text"
+                placeholder="Ali Khan"
+                autocomplete="name" /></label
+            ><label
+              ><span class="auth-label-text">Email address<span class="auth-required" aria-hidden="true">*</span></span><input
+                type="email"
+                placeholder="name@example.com"
+                autocomplete="email" /></label
+            ><label
+              ><span class="auth-label-text">Phone number<span class="auth-required" aria-hidden="true">*</span></span><input
+                type="tel"
+                placeholder="+92 300 1234567"
+                autocomplete="tel" /></label
+            ><label
+              ><span class="auth-label-text">Password<span class="auth-required" aria-hidden="true">*</span></span><span class="auth-password-field"
+                ><input
+                  class="auth-password-input"
+                  type="text"
+                  placeholder="••••••••"
+                  autocomplete="new-password" /><input
+                  class="auth-password-visible"
+                  type="text"
+                  placeholder="••••••••"
+                  autocomplete="new-password" /><input
+                  class="auth-eye-toggle"
+                  type="checkbox"
+                  id="signup-password-visibility" /><label
+                  class="auth-eye-button"
+                  for="signup-password-visibility"
+                  aria-label="Show or hide password"
+                  ><svg
+                    class="auth-eye-show"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2.2 12s3.4-5.2 9.8-5.2S21.8 12 21.8 12 18.4 17.2 12 17.2 2.2 12 2.2 12Z"
+                    />
+                    <circle cx="12" cy="12" r="2.7" />
+                    <path
+                      class="auth-eye-slash"
+                      d="m4 4 16 16"
+                    /></svg></label></span></label
+            ><label
+              ><span class="auth-label-text">Confirm password<span class="auth-required" aria-hidden="true">*</span></span><span class="auth-password-field"
+                ><input
+                  class="auth-password-input"
+                  type="text"
+                  placeholder="••••••••"
+                  autocomplete="new-password" /><input
+                  class="auth-password-visible"
+                  type="text"
+                  placeholder="••••••••"
+                  autocomplete="new-password" /><input
+                  class="auth-eye-toggle"
+                  type="checkbox"
+                  id="signup-confirm-password-visibility" /><label
+                  class="auth-eye-button"
+                  for="signup-confirm-password-visibility"
+                  aria-label="Show or hide confirm password"
+                  ><svg
+                    class="auth-eye-show"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2.2 12s3.4-5.2 9.8-5.2S21.8 12 21.8 12 18.4 17.2 12 17.2 2.2 12 2.2 12Z"
+                    />
+                    <circle cx="12" cy="12" r="2.7" />
+                    <path
+                      class="auth-eye-slash"
+                      d="m4 4 16 16"
+                    /></svg></label></span></label
+            ><button type="button" class="auth-submit btn btn-primary">
+              Create account
+            </button>
+            <div class="auth-divider"><span>or continue with</span></div>
+            <button type="button" class="auth-google-button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="#4285f4"
+                  d="M21.35 12.23c0-.71-.06-1.39-.18-2.05H12v3.88h5.24a4.48 4.48 0 0 1-1.94 2.94v2.44h3.14c1.84-1.69 2.91-4.18 2.91-7.21Z"
+                />
+                <path
+                  fill="#34a853"
+                  d="M12 21.6c2.63 0 4.84-.87 6.45-2.36l-3.14-2.44c-.87.58-1.97.93-3.31.93-2.54 0-4.69-1.72-5.46-4.03H3.3v2.52A9.76 9.76 0 0 0 12 21.6Z"
+                />
+                <path
+                  fill="#fbbc05"
+                  d="M6.54 13.7A5.85 5.85 0 0 1 6.23 12c0-.59.11-1.17.31-1.7V7.78H3.3A9.76 9.76 0 0 0 2.25 12c0 1.57.38 3.05 1.05 4.22l3.24-2.52Z"
+                />
+                <path
+                  fill="#ea4335"
+                  d="M12 6.27c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.34 14.63 2.4 12 2.4a9.74 9.74 0 0 0-8.7 5.38l3.24 2.52C7.31 7.99 9.46 6.27 12 6.27Z"
+                /></svg
+              >Continue with Google
+            </button>
+            <button type="button" class="auth-facebook-button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4a22 22 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.2V10H7.3v3h2.8v8h3.4Z"
+                />
+              </svg>
+              Continue with Facebook
+            </button>
+          </div>
+          <p class="auth-switch">
+            Already have an account? <a href="#auth-login">Log in</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="auth-modal"
+      id="auth-reset"
+      aria-labelledby="auth-reset-title"
+    >
+      <a
+        class="auth-backdrop"
+        href="#booking"
+        aria-label="Close account window"
+      ></a>
+      <div class="auth-dialog" role="dialog" aria-modal="true">
+        <a class="auth-close" href="#booking" aria-label="Close account window"
+          >&times;</a
+        >
+        <div class="auth-brand">
+          <img src="images/logo.jpeg" alt="Sparrow Flights" />
+        </div>
+        <div class="auth-panel">
+          <p class="auth-kicker">Reset password</p>
+          <h2 id="auth-reset-title">Forgot your password?</h2>
+          <p class="auth-copy">
+            Enter your email to request a secure reset link.
+          </p>
+          <div class="auth-form">
+            <label
+              >Email<input
+                type="email"
+                placeholder="name@example.com"
+                autocomplete="email" /></label
+            ><button type="button" class="auth-submit btn btn-primary"
+              >Send reset link</button
+            >
+          </div>
+          <a class="auth-link" href="#auth-login">Back to log in</a>
+        </div>
+      </div>
+    </section>
     <iframe
       class="shared-footer-frame"
       id="contact"
@@ -1494,6 +1846,23 @@
       role="dialog"
       aria-labelledby="multi-flight-popup-title"
     >
+      <input
+        class="static-multi-control visually-hidden"
+        type="checkbox"
+        id="multi-extra-3"
+      /><input
+        class="static-multi-control visually-hidden"
+        type="checkbox"
+        id="multi-extra-4"
+      /><input
+        class="static-multi-control visually-hidden"
+        type="checkbox"
+        id="multi-extra-5"
+      /><input
+        class="static-multi-control visually-hidden"
+        type="checkbox"
+        id="multi-extra-6"
+      />
       <div
         class="popup-head d-flex align-items-center justify-content-between border-bottom p-3"
       >
@@ -1512,7 +1881,7 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
               <strong>Flight 2</strong
               ><span id="multi-flight-count" class="text-secondary"
-                >2/6 flights</span
+                >Static itinerary</span
               >
             </div>
             <div class="multi-popup-journey journey-grid border rounded-3">
@@ -1558,20 +1927,262 @@
                 ><strong>Economy</strong
                 ><span class="text-secondary">Choose your cabin</span>
               </button>
-              <button
+              <label
                 class="btn btn-outline-primary multi-popup-add"
-                type="button"
-                data-add-flight
+                for="multi-extra-3"
+                ><i class="bi bi-plus-lg"></i>Add flight</label
               >
-                <i class="bi bi-plus-lg me-1"></i>Add flight
-              </button>
               <button
                 class="btn btn-outline-secondary multi-popup-remove"
                 type="button"
-                data-remove-flight
+                disabled
               >
-                <i class="bi bi-trash3 me-1"></i>Remove flight
+                <i class="bi bi-trash3"></i>Remove flight
               </button>
+            </div>
+          </div>
+        </div>
+        <div class="static-extra-flight" id="extra-flight-3">
+          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <strong>Flight 3</strong
+              ><span class="text-secondary">Optional flight</span>
+            </div>
+            <div class="multi-popup-journey journey-grid border rounded-3">
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="origin"
+              >
+                <small>From</small><strong>Dubai</strong
+                ><span class="text-secondary"
+                  >DXB, Dubai International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="destination"
+              >
+                <small>To</small><strong>Islamabad</strong
+                ><span class="text-secondary"
+                  >ISB, Islamabad International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="departure-calendar"
+              >
+                <small
+                  >Departure
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>01 <span>Dec ’26</span></strong
+                ><span class="text-secondary">Tuesday</span>
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="cabin-picker"
+              >
+                <small
+                  >Cabin class
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>Economy</strong
+                ><span class="text-secondary">Choose your cabin</span>
+              </button>
+              <label
+                class="btn btn-outline-primary multi-popup-add"
+                for="multi-extra-4"
+                ><i class="bi bi-plus-lg"></i>Add flight</label
+              >
+              <label
+                class="btn btn-outline-secondary multi-popup-remove"
+                for="multi-extra-3"
+                ><i class="bi bi-trash3"></i>Remove flight</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="static-extra-flight" id="extra-flight-4">
+          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <strong>Flight 4</strong
+              ><span class="text-secondary">Optional flight</span>
+            </div>
+            <div class="multi-popup-journey journey-grid border rounded-3">
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="origin"
+              >
+                <small>From</small><strong>Dubai</strong
+                ><span class="text-secondary"
+                  >DXB, Dubai International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="destination"
+              >
+                <small>To</small><strong>Islamabad</strong
+                ><span class="text-secondary"
+                  >ISB, Islamabad International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="departure-calendar"
+              >
+                <small
+                  >Departure
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>01 <span>Dec ’26</span></strong
+                ><span class="text-secondary">Tuesday</span>
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="cabin-picker"
+              >
+                <small
+                  >Cabin class
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>Economy</strong
+                ><span class="text-secondary">Choose your cabin</span>
+              </button>
+              <label
+                class="btn btn-outline-primary multi-popup-add"
+                for="multi-extra-5"
+                ><i class="bi bi-plus-lg"></i>Add flight</label
+              >
+              <label
+                class="btn btn-outline-secondary multi-popup-remove"
+                for="multi-extra-4"
+                ><i class="bi bi-trash3"></i>Remove flight</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="static-extra-flight" id="extra-flight-5">
+          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <strong>Flight 5</strong
+              ><span class="text-secondary">Optional flight</span>
+            </div>
+            <div class="multi-popup-journey journey-grid border rounded-3">
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="origin"
+              >
+                <small>From</small><strong>Dubai</strong
+                ><span class="text-secondary"
+                  >DXB, Dubai International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="destination"
+              >
+                <small>To</small><strong>Islamabad</strong
+                ><span class="text-secondary"
+                  >ISB, Islamabad International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="departure-calendar"
+              >
+                <small
+                  >Departure
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>01 <span>Dec ’26</span></strong
+                ><span class="text-secondary">Tuesday</span>
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="cabin-picker"
+              >
+                <small
+                  >Cabin class
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>Economy</strong
+                ><span class="text-secondary">Choose your cabin</span>
+              </button>
+              <label
+                class="btn btn-outline-primary multi-popup-add"
+                for="multi-extra-6"
+                ><i class="bi bi-plus-lg"></i>Add flight</label
+              >
+              <label
+                class="btn btn-outline-secondary multi-popup-remove"
+                for="multi-extra-5"
+                ><i class="bi bi-trash3"></i>Remove flight</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="static-extra-flight" id="extra-flight-6">
+          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <strong>Flight 6</strong
+              ><span class="text-secondary">Optional flight</span>
+            </div>
+            <div class="multi-popup-journey journey-grid border rounded-3">
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="origin"
+              >
+                <small>From</small><strong>Dubai</strong
+                ><span class="text-secondary"
+                  >DXB, Dubai International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="destination"
+              >
+                <small>To</small><strong>Islamabad</strong
+                ><span class="text-secondary"
+                  >ISB, Islamabad International Airport</span
+                >
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="departure-calendar"
+              >
+                <small
+                  >Departure
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>01 <span>Dec ’26</span></strong
+                ><span class="text-secondary">Tuesday</span>
+              </button>
+              <button
+                class="journey-cell text-start"
+                type="button"
+                popovertarget="cabin-picker"
+              >
+                <small
+                  >Cabin class
+                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
+                ><strong>Economy</strong
+                ><span class="text-secondary">Choose your cabin</span>
+              </button>
+
+              <label
+                class="btn btn-outline-secondary multi-popup-remove"
+                for="multi-extra-6"
+                ><i class="bi bi-trash3"></i>Remove flight</label
+              >
             </div>
           </div>
         </div>
@@ -2514,125 +3125,5 @@
         </button>
       </div>
     </div>
-    <script>
-      (() => {
-        const list = document.querySelector("#multi-flight-list");
-        const addButton = document.querySelector("[data-add-flight]");
-        const count = document.querySelector("#multi-flight-count");
-        const summaryCount = document.querySelector(
-          "#multi-flight-summary-count",
-        );
-        if (!list || !addButton || !count) return;
-        const updateFlights = () => {
-          const total = list.querySelectorAll(".multi-popup-flight").length + 1;
-          count.textContent = `${total}/6 flights`;
-          if (summaryCount)
-            summaryCount.textContent = `${total} flights selected`;
-          addButton.disabled = total >= 6;
-        };
-        const addFlight = () => {
-          const total = list.querySelectorAll(".multi-popup-flight").length + 2;
-          if (total > 6) return;
-          const flight = list.firstElementChild.cloneNode(true);
-          flight.querySelector("strong").textContent = `Flight ${total}`;
-          flight
-            .querySelectorAll("select")
-            .forEach((select) => (select.selectedIndex = 0));
-          list.appendChild(flight);
-          updateFlights();
-        };
-        list.addEventListener("click", (event) => {
-          if (event.target.closest("[data-add-flight]")) addFlight();
-        });
-        list.addEventListener("click", (event) => {
-          const remove = event.target.closest("[data-remove-flight]");
-          if (!remove || list.children.length === 1) return;
-          remove.closest(".multi-popup-flight").remove();
-          [...list.children].forEach((flight, index) => {
-            flight.querySelector("strong").textContent = `Flight ${index + 2}`;
-          });
-          updateFlights();
-        });
-        updateFlights();
-      })();
-    </script>
-    <script>
-      document.addEventListener("click", (event) => {
-        const option = event.target.closest(".service-picker-option");
-        if (!option) return;
-        const picker = option.closest(".service-picker");
-        const trigger = document.getElementById(option.dataset.pickerTarget);
-        const value = trigger?.querySelector("[data-current-value]");
-        if (!picker || !value) return;
-        value.textContent = option.dataset.pickerValue;
-        picker.querySelectorAll(".service-picker-option").forEach((item) => {
-          item.setAttribute("aria-pressed", String(item === option));
-        });
-        picker.hidePopover();
-      });
-      (() => {
-        let activeTrigger = null;
-        let positionFrame = 0;
-        const positionPopup = () => {
-          positionFrame = 0;
-          if (!activeTrigger) return;
-          const popup = document.getElementById(
-            activeTrigger.getAttribute("popovertarget"),
-          );
-          if (!popup?.matches(":popover-open")) return;
-          const field = activeTrigger.getBoundingClientRect();
-          const panel = popup.getBoundingClientRect();
-          const left = Math.max(
-            12,
-            Math.min(field.left, window.innerWidth - panel.width - 12),
-          );
-          popup.style.position = "fixed";
-          popup.style.inset = "auto";
-          popup.style.margin = "0";
-          popup.style.left = `${left}px`;
-          popup.style.top = `${field.bottom + 8}px`;
-        };
-        const schedulePosition = () => {
-          if (!positionFrame)
-            positionFrame = requestAnimationFrame(positionPopup);
-        };
-        document.addEventListener("click", (event) => {
-          const trigger = event.target.closest(
-            "#umrah-start-trigger, #umrah-end-trigger, #umrah-travellers-trigger, #visa-travel-date-trigger, #visa-travellers-trigger",
-          );
-          if (trigger) {
-            activeTrigger = trigger;
-            requestAnimationFrame(positionPopup);
-            return;
-          }
-          if (
-            event.target.closest(
-              '[popovertarget="departure-calendar"], [popovertarget="return-calendar"], [popovertarget="travellers"]',
-            )
-          ) {
-            activeTrigger = null;
-          }
-        });
-        document.addEventListener(
-          "toggle",
-          (event) => {
-            if (
-              event.target.matches(
-                "#departure-calendar, #return-calendar, #travellers",
-              ) &&
-              event.newState === "closed"
-            ) {
-              activeTrigger = null;
-            }
-          },
-          true,
-        );
-        document.addEventListener("scroll", schedulePosition, true);
-        window.addEventListener("scroll", schedulePosition, true);
-        window.addEventListener("resize", schedulePosition);
-        window.visualViewport?.addEventListener("scroll", schedulePosition);
-        window.visualViewport?.addEventListener("resize", schedulePosition);
-      })();
-    </script>
   </body>
 </html>
