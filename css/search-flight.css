@@ -412,9 +412,6 @@ body:has(#trip-one:checked) #return-trigger {
   opacity: 0.42;
   pointer-events: none;
 }
-body:has(#trip-multi:checked) .search-form-panel > .multi-static {
-  display: block;
-}
 .flight-results-page .search-form-footer {
   display: flex;
   align-items: center;
@@ -711,7 +708,10 @@ body:has(#trip-multi:checked) .search-form-panel > .multi-static {
   justify-content: space-between;
   gap: 12px;
   align-items: center;
-  margin: 0 0 14px;
+  margin: 0;
+}
+.flight-results-page .results-heading > div {
+  display: none;
 }
 .flight-results-page .results-heading h2 {
   display: flex;
@@ -826,6 +826,24 @@ body:has(#trip-multi:checked) .search-form-panel > .multi-static {
 .flight-results-page .card-timezone {
   margin-left: auto;
   font-size: var(--font-size-flight-micro);
+}
+.flight-results-page .card-topline.card-leg-heading {
+  flex-wrap: wrap;
+  margin-inline: 16px;
+  padding: 12px 0 0;
+  border-top: 1px dashed var(--color-border);
+}
+.flight-results-page .card-leg-stay {
+  margin-left: auto;
+  font-size: var(--font-size-flight-caption);
+}
+@media (max-width: 767px) {
+  .flight-results-page .card-topline.card-leg-heading {
+    margin-inline: 12px;
+  }
+  .flight-results-page .card-leg-stay {
+    font-size: var(--font-size-flight-micro);
+  }
 }
 .flight-results-page .flight-card-main {
   display: grid;
@@ -2103,6 +2121,9 @@ body:has(
   .flight-results-page .results-main {
     margin-top: -30px;
   }
+  .flight-results-page .results-heading {
+    margin-bottom: 12px;
+  }
   .flight-results-page .trip-dock {
     width: calc(100% - 24px);
     margin-left: 12px;
@@ -2613,14 +2634,6 @@ body:has(
   min-width: 60px;
   max-width: 140px;
 }
-.flight-results-page .multi-city-route {
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.flight-results-page .multi-city-route .icon {
-  width: 17px;
-  height: 17px;
-}
 .flight-results-page .filter-option {
   font-size: var(--font-size-flight-filter);
 }
@@ -2754,9 +2767,6 @@ body:has(
   .flight-results-page .card-extra-leg .route-line {
     min-width: 50px;
     max-width: 80px;
-  }
-  .flight-results-page .multi-city-route {
-    font-size: var(--font-size-flight-caption);
   }
   .flight-results-page .desk-nav label strong {
     font-size: var(--font-size-flight-caption);

@@ -288,109 +288,6 @@ body:has(#service-visa:checked) label[for="service-visa"]:after {
   place-items: center;
   z-index: 1;
 }
-.multi-static {
-  display: none;
-}
-#trip-multi:checked ~ .multi-static {
-  display: block;
-}
-body:not(:has(#service-flights:checked)) .flight-panel .multi-static {
-  display: none !important;
-}
-.multi-flight-heading {
-  font-size: var(--font-size-base);
-}
-.flight-count {
-  font-size: var(--font-size-12px);
-}
-.multi-flight-row {
-  grid-template-columns: 1.1fr 1.1fr 0.9fr auto;
-}
-.multi-flight-field small {
-  display: block;
-  margin-bottom: var(--space-4px);
-  color: var(--bs-secondary-color);
-  font-size: var(--font-size-12px);
-}
-.multi-flight-field .form-control {
-  min-width: 0;
-  font-size: var(--font-size-14px);
-}
-.multi-remove {
-  white-space: nowrap;
-}
-.multi-flight-popup {
-  position: fixed;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  width: min(1140px, calc(100vw - 48px)) !important;
-  max-width: calc(100vw - 48px) !important;
-  max-height: min(720px, calc(100dvh - 24px));
-  overflow: visible;
-  scrollbar-color: var(--color-scroll-thumb) var(--color-scroll-track);
-  scrollbar-width: thin;
-}
-.multi-flight-popup::-webkit-scrollbar {
-  width: 10px;
-}
-.multi-flight-popup::-webkit-scrollbar-track {
-  background: var(--color-scroll-track);
-}
-.multi-flight-popup::-webkit-scrollbar-thumb {
-  background: var(--color-scroll-thumb);
-  border-radius: 999px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-#multi-flight-list {
-  max-height: min(560px, calc(100dvh - 250px));
-  overflow-y: auto;
-  scrollbar-color: var(--color-scroll-thumb) var(--color-scroll-track);
-  scrollbar-width: thin;
-}
-#multi-flight-list::-webkit-scrollbar {
-  width: 10px;
-}
-#multi-flight-list::-webkit-scrollbar-track {
-  background: var(--color-scroll-track);
-}
-#multi-flight-list::-webkit-scrollbar-thumb {
-  background: var(--color-scroll-thumb);
-  border-radius: 999px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-.multi-popup-flight-row {
-  display: grid;
-  grid-template-columns: 1.25fr 1.25fr 1fr 1fr auto auto;
-  align-items: end;
-  gap: var(--space-12px);
-}
-.multi-popup-field {
-  display: block;
-  margin: 0;
-  font-size: var(--font-size-12px);
-  color: var(--bs-secondary-color);
-}
-.multi-popup-field .form-control,
-.multi-popup-field .form-select {
-  margin-top: var(--space-4px);
-  min-width: 0;
-}
-@media (max-width: 991px) {
-  .multi-popup-flight-row {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-.multi-flight-launch {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  min-height: 24px;
-}
-.multi-static {
-  padding: var(--space-8px) var(--space-12px) !important;
-}
 .service-journey-grid {
   grid-template-columns: 1.55fr 1.55fr 1fr 1fr 0.9fr 1fr;
 }
@@ -401,76 +298,6 @@ body:not(:has(#service-flights:checked)) .flight-panel .multi-static {
 @media (max-width: 767px) {
   .service-journey-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-.multi-flight-launch:hover strong {
-  color: var(--color-primary);
-}
-.multi-flight-launch small {
-  font-size: var(--font-size-12px);
-}
-.multi-flight-popup h2 {
-  font-family: inherit;
-  font-size: var(--font-size-18px);
-}
-.multi-popup-journey {
-  grid-template-columns: repeat(4, minmax(0, 1fr)) auto auto;
-  border-color: var(--color-border) !important;
-}
-.multi-popup-journey .journey-cell {
-  min-width: 0;
-  min-height: 92px;
-}
-.multi-popup-add,
-.multi-popup-remove {
-  align-self: center;
-  margin: var(--space-10px);
-  white-space: nowrap;
-}
-.multi-popup-done {
-  min-width: 240px;
-  font-family: var(--font-body);
-  font-size: var(--font-size-21-55px);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-1-3);
-  padding: var(--space-10px) var(--space-40px) !important;
-  color: var(--color-on-primary);
-  background: var(--gradient-3);
-  border: 0;
-  box-shadow: var(--shadow-5);
-  letter-spacing: var(--tracking-0-5px);
-}
-.multi-popup-footer {
-  position: static;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 1px;
-  margin: var(--space-32px) 0 var(--space-8px);
-  padding-top: var(--space-8px);
-}
-.multi-popup-footer #multi-flight-count {
-  position: absolute;
-  left: 0;
-}
-.multi-popup-footer .multi-popup-done {
-  position: absolute;
-  left: 50%;
-  bottom: -28px;
-  z-index: 1;
-  transform: translateX(-50%);
-}
-@media (max-width: 991px) {
-  .multi-popup-journey {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media (max-width: 767px) {
-  .multi-flight-row {
-    grid-template-columns: 1fr 1fr;
-  }
-  .multi-remove {
-    width: 100%;
   }
 }
 #trip-one:checked ~ .journey-grid .return-cell {
@@ -2806,7 +2633,6 @@ body:has(#service-visa:checked)
 /* Departure airport picker, matching the blue and var(--color-white) booking controls. */
 #origin-trigger,
 #destination-trigger {
-  anchor-name: --origin-field;
   cursor: pointer;
 }
 #origin-trigger:hover,
@@ -2877,20 +2703,19 @@ body:has(#service-visa:checked)
   flex-shrink: 0;
 }
 @supports (top: anchor(bottom)) {
-  @media (min-width: 768px) {
-    #origin.airport-picker,
-    #destination.airport-picker {
-      position-anchor: --origin-field;
-      position: fixed;
-      inset: auto;
-      top: anchor(bottom);
-      left: anchor(left);
-      margin: var(--space-8px) 0 0;
-    }
-    #origin::backdrop,
-    #destination::backdrop {
-      background: transparent;
-    }
+  #origin.airport-picker,
+  #destination.airport-picker {
+    position: fixed;
+    position-anchor: auto;
+    inset: auto;
+    top: anchor(bottom);
+    left: anchor(left);
+    margin: var(--space-8px) 0 0;
+    position-try-fallbacks: flip-block, flip-inline;
+  }
+  #origin::backdrop,
+  #destination::backdrop {
+    background: transparent;
   }
 }
 @media (max-width: 480px) {
@@ -2907,17 +2732,6 @@ body:has(#service-visa:checked)
   .airport-plane {
     width: 30px;
     height: 30px;
-  }
-}
-
-#destination-trigger {
-  anchor-name: --destination-field;
-}
-@supports (top: anchor(bottom)) {
-  @media (min-width: 768px) {
-    #destination.airport-picker {
-      position-anchor: --destination-field;
-    }
   }
 }
 
@@ -3074,11 +2888,22 @@ body:has(#service-visa:checked)
   }
 }
 @supports (top: anchor(bottom)) {
+  #cabin-picker {
+    position: fixed;
+    position-anchor: auto;
+    inset: auto;
+    top: anchor(bottom);
+    left: anchor(left);
+    margin: var(--space-8px) 0 0;
+    position-try-fallbacks: flip-block, flip-inline;
+  }
+  #cabin-picker::backdrop {
+    background: transparent;
+  }
   @media (min-width: 768px) {
     #departure-calendar,
     #return-calendar,
-    #travellers,
-    #cabin-picker {
+    #travellers {
       position: fixed;
       inset: auto;
       top: anchor(bottom);
@@ -3094,15 +2919,9 @@ body:has(#service-visa:checked)
     #travellers {
       position-anchor: --travellers-field;
     }
-    #cabin-picker {
-      position-anchor: --cabin-field;
-      left: auto;
-      right: anchor(right);
-    }
     #departure-calendar::backdrop,
     #return-calendar::backdrop,
-    #travellers::backdrop,
-    #cabin-picker::backdrop {
+    #travellers::backdrop {
       background: transparent;
     }
   }
@@ -3245,28 +3064,34 @@ body:has(#service-visa:checked)
 /* Compact, elevated service tabs attached to the booking form. */
 .service-dock {
   width: min(540px, 66%);
-  min-height: 64px;
+  min-height: 54px;
   box-shadow: var(--shadow-service-dock) !important;
 }
 .dock-service {
-  padding: var(--space-6px) var(--space-16px);
-  gap: var(--space-3px);
+  padding: var(--space-2px) var(--space-16px);
+  gap: var(--space-2px);
   font-size: var(--font-size-14px);
 }
 .dock-service i {
-  font-size: var(--font-size-28px);
+  font-size: var(--font-size-26px);
+}
+.service-dock:not(.trip-dock) .dock-service > span:last-child {
+  padding-bottom: 8px !important;
 }
 @media (max-width: 767px) {
   .service-dock {
     width: 86%;
-    min-height: 58px;
+    min-height: 50px;
   }
   .dock-service {
-    padding: var(--space-5px) var(--space-8px);
+    padding: var(--space-2px) var(--space-8px);
     font-size: var(--font-size-13px);
   }
   .dock-service i {
-    font-size: var(--font-size-22-68px);
+    font-size: var(--font-size-20px);
+  }
+  .service-dock:not(.trip-dock) .dock-service > span:last-child {
+    padding-bottom: 6px !important;
   }
 }
 
@@ -4271,49 +4096,245 @@ body:has(#visa-processing-picker:popover-open)
   background: var(--color-field-hover);
 }
 
-/* One native, static multi-city popup shared by home and flight results. */
-.multi-flight-popup {
-  width: min(var(--multi-city-popup-width), calc(100vw - 48px)) !important;
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: var(--font-size-dropdown);
-  max-height: calc(100dvh - 48px);
-  overflow-y: auto;
-  padding-bottom: 20px;
-}
-.multi-flight-popup .static-extra-flight {
-  display: none;
-}
-#multi-extra-3:checked ~ form #extra-flight-3 {
-  display: block;
-}
-#multi-extra-4:checked ~ form #extra-flight-4 {
-  display: block;
-}
-#multi-extra-5:checked ~ form #extra-flight-5 {
-  display: block;
-}
-#multi-extra-6:checked ~ form #extra-flight-6 {
-  display: block;
-}
-.multi-flight-popup .multi-popup-footer .multi-popup-done {
-  position: static;
-  transform: none;
-  margin-inline: auto;
-}
-.multi-flight-popup .multi-popup-footer {
-  margin-top: 18px !important;
-  margin-bottom: 0;
-}
-.multi-flight-popup .multi-popup-add,
-.multi-flight-popup .multi-popup-remove {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
 .home-navbar .is-hidden {
   display: none !important;
+}
+
+.home-navbar .mobile-auth-menu-trigger {
+  display: none;
+}
+
+.home-navbar .auth-entry-actions .nav-auth-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color var(--button-sweep-duration) var(--button-sweep-easing),
+    border-color var(--button-sweep-duration) var(--button-sweep-easing);
+}
+
+.home-navbar .auth-entry-actions .nav-auth-login {
+  background: #fff;
+}
+
+.home-navbar .auth-entry-actions .nav-auth-start {
+  background: var(--gradient-3);
+  color: #fff;
+}
+
+.home-navbar .auth-entry-actions .nav-auth-button:hover,
+.home-navbar .auth-entry-actions .nav-auth-button:focus-visible {
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .home-navbar .travel-header > .container {
+    position: relative;
+  }
+
+  .home-navbar .auth-entry-actions {
+    display: none !important;
+  }
+
+  .home-navbar .mobile-auth-menu-trigger {
+    display: grid;
+    position: absolute;
+    z-index: 30;
+    top: 50%;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 25px;
+    transform: translateY(-50%);
+  }
+
+  .home-navbar .mobile-auth-menu-trigger:hover,
+  .home-navbar .mobile-auth-menu-trigger:focus-visible,
+  .home-navbar .mobile-auth-menu-trigger:active {
+    transform: translateY(-50%);
+  }
+
+  .home-navbar .mobile-auth-menu-panel[popover] {
+    position: fixed;
+    inset: 0 0 0 auto;
+    display: none;
+    flex-direction: column;
+    width: min(310px, 86vw);
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    border: 0;
+    border-radius: 18px 0 0 18px;
+    background: #fff;
+    box-shadow: -12px 0 36px rgb(20 43 83 / 18%);
+    opacity: 0;
+    transform: translateX(100%);
+    transition:
+      transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 320ms ease,
+      display 320ms allow-discrete,
+      overlay 320ms allow-discrete;
+  }
+
+  .home-navbar .mobile-auth-menu-panel[popover]:popover-open {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @starting-style {
+    .home-navbar .mobile-auth-menu-panel[popover]:popover-open {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  .home-navbar .mobile-auth-menu-panel::backdrop {
+    background: rgb(12 27 54 / 40%);
+    opacity: 1;
+    transition:
+      opacity 320ms ease,
+      display 320ms allow-discrete,
+      overlay 320ms allow-discrete;
+  }
+
+  @starting-style {
+    .home-navbar .mobile-auth-menu-panel:popover-open::backdrop {
+      opacity: 0;
+    }
+  }
+
+  .home-navbar .mobile-auth-drawer-heading {
+    position: relative;
+    display: flex;
+    min-height: 68px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-primary);
+    font-size: 18px;
+  }
+
+  .home-navbar .mobile-auth-drawer-heading button {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-primary);
+    font-size: 20px;
+  }
+
+  .home-navbar:has(#mobile-auth-drawer:popover-open)
+    .mobile-auth-menu-trigger {
+    visibility: hidden;
+  }
+
+  .home-navbar .mobile-auth-drawer-heading button[popovertargetaction="hide"] {
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: #fff;
+    font-size: 18px;
+    transform: translateY(-50%);
+  }
+
+  .home-navbar
+    .mobile-auth-drawer-heading
+    button[popovertargetaction="hide"]:hover,
+  .home-navbar
+    .mobile-auth-drawer-heading
+    button[popovertargetaction="hide"]:focus-visible,
+  .home-navbar
+    .mobile-auth-drawer-heading
+    button[popovertargetaction="hide"]:active {
+    transform: translateY(-50%);
+  }
+
+  .home-navbar .mobile-auth-drawer-links {
+    display: grid;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .home-navbar .mobile-auth-menu-panel .nav-auth-button {
+    display: inline-flex;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border: 1px solid var(--color-primary);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      color var(--button-sweep-duration) var(--button-sweep-easing),
+      border-color var(--button-sweep-duration) var(--button-sweep-easing);
+  }
+
+  .home-navbar .mobile-auth-menu-panel .nav-auth-button:hover,
+  .home-navbar .mobile-auth-menu-panel .nav-auth-button:focus-visible {
+    border-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .home-navbar .mobile-auth-menu-panel .nav-auth-start {
+    background: var(--gradient-3);
+    color: #fff !important;
+  }
+
+  .home-navbar .mobile-auth-menu-panel .nav-auth-start:hover,
+  .home-navbar .mobile-auth-menu-panel .nav-auth-start:focus-visible {
+    color: #fff;
+  }
+
+  .home-navbar .mobile-auth-menu-panel .mobile-auth-page-link {
+    padding: 8px 10px;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .home-navbar .mobile-auth-menu-panel .mobile-auth-page-link:hover,
+  .home-navbar .mobile-auth-menu-panel .mobile-auth-page-link:focus-visible {
+    color: var(--color-accent);
+  }
 }
 body:has(#service-flights:checked) .home-navbar label[for="service-flights"],
 body:has(#service-umrah:checked) .home-navbar label[for="service-umrah"],
@@ -4322,33 +4343,175 @@ body:has(#service-visa:checked) .home-navbar label[for="service-visa"] {
   font-weight: var(--font-weight-700);
 }
 @media (max-width: 767px) {
-  .multi-flight-popup {
-    width: calc(100vw - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
+  body:has(#service-flights:checked) .travel-hero {
+    height: auto;
+    min-height: 0;
+    align-items: stretch;
+    padding-block: 18px 28px;
   }
+  body:has(#service-flights:checked) .travel-hero .hero-layout {
+    justify-content: flex-start;
+  }
+  body:has(#service-flights:checked) .flight-panel .static-search-action {
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+  }
+  .static-booking .journey-grid:not(.service-journey-grid)
+    > .journey-cell:nth-of-type(1) {
+    padding-right: 28px;
+  }
+  .static-booking .journey-grid:not(.service-journey-grid)
+    > .journey-cell:nth-of-type(2) {
+    padding-left: 28px;
+  }
+  .static-booking .journey-grid:not(.service-journey-grid) .route-divider {
+    top: 34px;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+  }
+  .static-booking .journey-grid:not(.service-journey-grid) .text-truncate {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .travel-hero .travel-shortcuts {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: calc(100% - 24px);
+    min-height: 0;
+    margin: 12px auto 0 !important;
+    padding: 7px !important;
+    gap: 0 !important;
+    border-radius: 18px !important;
+    transform: none;
+  }
+  .travel-hero .travel-shortcuts > a,
+  .travel-hero .travel-shortcuts > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 48px;
+    padding: 8px 6px;
+    border: 0 !important;
+    border-radius: 8px;
+    font-size: var(--font-size-14px) !important;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+  }
+  .travel-hero .travel-shortcuts > :nth-child(2n) {
+    border-left: 1px solid var(--color-border) !important;
+  }
+  .travel-hero .travel-shortcuts > :nth-child(-n + 2) {
+    border-bottom: 1px solid var(--color-border) !important;
+  }
+  .travel-hero .travel-shortcuts .bi {
+    flex: 0 0 auto;
+    margin-right: 0 !important;
+    font-size: var(--font-size-18px);
+  }
+}
+@media (max-width: 767px) and (hover: none) {
+  .travel-hero .travel-shortcuts > a:hover,
+  .travel-hero .travel-shortcuts > button:hover,
+  .travel-hero .travel-shortcuts > a:focus-visible,
+  .travel-hero .travel-shortcuts > button:focus-visible {
+    font-size: var(--font-size-14px) !important;
+  }
+  .travel-hero .travel-shortcuts > a:hover .bi,
+  .travel-hero .travel-shortcuts > button:hover .bi,
+  .travel-hero .travel-shortcuts > a:focus-visible .bi,
+  .travel-hero .travel-shortcuts > button:focus-visible .bi {
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
   .static-booking .static-fares {
-    margin-top: 8px !important;
-    gap: 4px !important;
-    flex-wrap: wrap !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch !important;
+    margin-top: 14px !important;
+    gap: 6px !important;
     overflow: visible;
     padding-bottom: 0;
   }
   .static-booking .static-fares > strong {
-    flex: 0 0 auto;
-    margin-right: 2px !important;
-    font-size: var(--font-size-12px);
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0 !important;
+    font-size: var(--font-size-14px) !important;
+    line-height: 1.2;
+  }
+  .static-booking .static-fares > strong br {
+    display: none;
   }
   .static-booking .static-fares > label {
-    flex: 1 1 86px;
-    min-width: 86px;
-    padding: 6px 8px !important;
-    font-size: var(--font-size-12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    min-height: 52px;
+    padding: 5px 9px !important;
+    border-radius: 12px !important;
+    font-size: var(--font-size-14px) !important;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
   }
   .static-booking .static-fares small {
-    font-size: var(--font-size-10px);
+    margin-top: 2px !important;
+    font-size: var(--font-size-12px) !important;
+    line-height: 1.2;
   }
   .static-booking .travel-assurance,
   .static-booking .travel-assurance + button {
     font-size: var(--font-size-12px);
+  }
+  body:has(#service-flights:checked)
+    .flight-panel
+    > .d-flex:has(> .travel-assurance) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+    gap: 6px !important;
+    margin-bottom: 0 !important;
+  }
+  body:has(#service-flights:checked)
+    .flight-panel
+    > .d-flex:has(> .travel-assurance)
+    > .travel-assurance {
+    width: 100%;
+    min-height: 42px;
+    padding: 6px 9px !important;
+  }
+  body:has(#service-flights:checked)
+    .flight-panel
+    > .d-flex:has(> .travel-assurance)
+    > .travel-assurance + button {
+    justify-self: center;
+    width: max-content;
+    min-height: 34px;
+    padding: 3px 10px !important;
+  }
+  .static-panel .static-search-action .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content !important;
+    min-width: 180px;
+    max-width: calc(100vw - 48px);
+    margin-inline: auto;
+    position: relative;
+    top: 48px;
+    z-index: 2;
   }
 }

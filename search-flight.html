@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/search-flight.css" />
+    <link rel="stylesheet" href="css/multi-city.css" />
   </head>
   <body class="flight-results-page">
     <!-- This page is intentionally HTML/CSS only. Native radios, details and popovers own all UI state. -->
@@ -317,27 +318,317 @@
                   ><span class="text-secondary">Choose your cabin</span>
                 </button>
               </div>
-              <div class="multi-static border rounded-3 p-3 mt-3">
-                <div
-                  class="multi-flight-launch w-100 d-flex align-items-center justify-content-between gap-3 text-start"
-                >
-                  <span class="d-flex align-items-center gap-2"
-                    ><strong id="multi-flight-summary-count"
-                      >2 flights selected</strong
-                    ><small class="text-secondary"
-                      >Multi-city route</small
-                    ></span
+              <div
+                class="mc-inline"
+                role="group"
+                aria-label="Additional multi-city flights"
+              >
+                <input
+                  class="mc-inline__state"
+                  type="radio"
+                  name="multi-flight-count"
+                  id="mc-count-2"
+                  value="2"
+                  aria-label="2 flights"
+                  checked
+                />
+                <input
+                  class="mc-inline__state"
+                  type="radio"
+                  name="multi-flight-count"
+                  id="mc-count-3"
+                  value="3"
+                  aria-label="3 flights"
+                />
+                <input
+                  class="mc-inline__state"
+                  type="radio"
+                  name="multi-flight-count"
+                  id="mc-count-4"
+                  value="4"
+                  aria-label="4 flights"
+                />
+                <input
+                  class="mc-inline__state"
+                  type="radio"
+                  name="multi-flight-count"
+                  id="mc-count-5"
+                  value="5"
+                  aria-label="5 flights"
+                />
+                <input
+                  class="mc-inline__state"
+                  type="radio"
+                  name="multi-flight-count"
+                  id="mc-count-6"
+                  value="6"
+                  aria-label="6 flights"
+                />
+                <div class="mc-inline__heading">
+                  <strong
+                    ><span class="mc-inline__count" data-count="2"
+                      >2 flights selected</span
+                    ><span class="mc-inline__count" data-count="3"
+                      >3 flights selected</span
+                    ><span class="mc-inline__count" data-count="4"
+                      >4 flights selected</span
+                    ><span class="mc-inline__count" data-count="5"
+                      >5 flights selected</span
+                    ><span class="mc-inline__count" data-count="6"
+                      >6 flights selected</span
+                    ></strong
                   >
-                  <span class="text-nowrap"
-                    ><button
-                      class="btn btn-outline-primary btn-sm"
-                      type="button"
-                      popovertarget="multi-flight-popup"
-                    >
-                      <i class="bi bi-plus-lg me-1"></i>Add more flights
-                    </button></span
-                  >
+                  <small>Multi-city route · Up to 6 flights</small>
                 </div>
+                <div class="mc-inline__rows">
+                  <fieldset class="mc-inline__row" data-flight="2">
+                    <legend>Flight 2</legend>
+                    <div class="mc-inline__fields">
+                      <label class="mc-inline__field" for="mc-from-2">
+                        <span>From</span>
+                        <input
+                          id="mc-from-2"
+                          name="flight-2-from"
+                          type="button"
+                          value="Dubai (DXB)"
+                          popovertarget="origin"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-to-2">
+                        <span>To</span>
+                        <input
+                          id="mc-to-2"
+                          name="flight-2-to"
+                          type="button"
+                          value="Islamabad (ISB)"
+                          popovertarget="destination"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-cabin-2">
+                        <span>Cabin class</span>
+                        <input
+                          id="mc-cabin-2"
+                          name="flight-2-cabin"
+                          type="button"
+                          value="Economy"
+                          popovertarget="cabin-picker"
+                        />
+                      </label>
+                      <div class="mc-inline__actions">
+                        <label class="mc-inline__action" for="mc-count-3"
+                          ><i class="bi bi-plus-lg" aria-hidden="true"></i>Add
+                          flight</label
+                        >
+                        <label
+                          class="mc-inline__action mc-inline__action--remove"
+                          for="mc-count-2"
+                          ><i class="bi bi-trash3" aria-hidden="true"></i>Remove
+                          flight</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="mc-inline__row" data-flight="3">
+                    <legend>Flight 3</legend>
+                    <div class="mc-inline__fields">
+                      <label class="mc-inline__field" for="mc-from-3">
+                        <span>From</span>
+                        <input
+                          id="mc-from-3"
+                          name="flight-3-from"
+                          type="button"
+                          value="Islamabad (ISB)"
+                          popovertarget="origin"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-to-3">
+                        <span>To</span>
+                        <input
+                          id="mc-to-3"
+                          name="flight-3-to"
+                          type="button"
+                          value="Karachi (KHI)"
+                          popovertarget="destination"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-cabin-3">
+                        <span>Cabin class</span>
+                        <input
+                          id="mc-cabin-3"
+                          name="flight-3-cabin"
+                          type="button"
+                          value="Economy"
+                          popovertarget="cabin-picker"
+                        />
+                      </label>
+                      <div class="mc-inline__actions">
+                        <label class="mc-inline__action" for="mc-count-4"
+                          ><i class="bi bi-plus-lg" aria-hidden="true"></i>Add
+                          flight</label
+                        >
+                        <label
+                          class="mc-inline__action mc-inline__action--remove"
+                          for="mc-count-2"
+                          ><i class="bi bi-trash3" aria-hidden="true"></i>Remove
+                          flight</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="mc-inline__row" data-flight="4">
+                    <legend>Flight 4</legend>
+                    <div class="mc-inline__fields">
+                      <label class="mc-inline__field" for="mc-from-4">
+                        <span>From</span>
+                        <input
+                          id="mc-from-4"
+                          name="flight-4-from"
+                          type="button"
+                          value="Karachi (KHI)"
+                          popovertarget="origin"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-to-4">
+                        <span>To</span>
+                        <input
+                          id="mc-to-4"
+                          name="flight-4-to"
+                          type="button"
+                          value="Doha (DOH)"
+                          popovertarget="destination"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-cabin-4">
+                        <span>Cabin class</span>
+                        <input
+                          id="mc-cabin-4"
+                          name="flight-4-cabin"
+                          type="button"
+                          value="Economy"
+                          popovertarget="cabin-picker"
+                        />
+                      </label>
+                      <div class="mc-inline__actions">
+                        <label class="mc-inline__action" for="mc-count-5"
+                          ><i class="bi bi-plus-lg" aria-hidden="true"></i>Add
+                          flight</label
+                        >
+                        <label
+                          class="mc-inline__action mc-inline__action--remove"
+                          for="mc-count-3"
+                          ><i class="bi bi-trash3" aria-hidden="true"></i>Remove
+                          flight</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="mc-inline__row" data-flight="5">
+                    <legend>Flight 5</legend>
+                    <div class="mc-inline__fields">
+                      <label class="mc-inline__field" for="mc-from-5">
+                        <span>From</span>
+                        <input
+                          id="mc-from-5"
+                          name="flight-5-from"
+                          type="button"
+                          value="Doha (DOH)"
+                          popovertarget="origin"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-to-5">
+                        <span>To</span>
+                        <input
+                          id="mc-to-5"
+                          name="flight-5-to"
+                          type="button"
+                          value="Dubai (DXB)"
+                          popovertarget="destination"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-cabin-5">
+                        <span>Cabin class</span>
+                        <input
+                          id="mc-cabin-5"
+                          name="flight-5-cabin"
+                          type="button"
+                          value="Economy"
+                          popovertarget="cabin-picker"
+                        />
+                      </label>
+                      <div class="mc-inline__actions">
+                        <label class="mc-inline__action" for="mc-count-6"
+                          ><i class="bi bi-plus-lg" aria-hidden="true"></i>Add
+                          flight</label
+                        >
+                        <label
+                          class="mc-inline__action mc-inline__action--remove"
+                          for="mc-count-4"
+                          ><i class="bi bi-trash3" aria-hidden="true"></i>Remove
+                          flight</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="mc-inline__row" data-flight="6">
+                    <legend>Flight 6</legend>
+                    <div class="mc-inline__fields">
+                      <label class="mc-inline__field" for="mc-from-6">
+                        <span>From</span>
+                        <input
+                          id="mc-from-6"
+                          name="flight-6-from"
+                          type="button"
+                          value="Dubai (DXB)"
+                          popovertarget="origin"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-to-6">
+                        <span>To</span>
+                        <input
+                          id="mc-to-6"
+                          name="flight-6-to"
+                          type="button"
+                          value="Lahore (LHE)"
+                          popovertarget="destination"
+                        />
+                      </label>
+                      <label class="mc-inline__field" for="mc-cabin-6">
+                        <span>Cabin class</span>
+                        <input
+                          id="mc-cabin-6"
+                          name="flight-6-cabin"
+                          type="button"
+                          value="Economy"
+                          popovertarget="cabin-picker"
+                        />
+                      </label>
+                      <div class="mc-inline__actions">
+                        <button
+                          class="mc-inline__action"
+                          type="button"
+                          disabled
+                        >
+                          <i class="bi bi-plus-lg" aria-hidden="true"></i>Add
+                          flight
+                        </button>
+                        <label
+                          class="mc-inline__action mc-inline__action--remove"
+                          for="mc-count-5"
+                          ><i class="bi bi-trash3" aria-hidden="true"></i>Remove
+                          flight</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <datalist id="mc-airports">
+                  <option value="Islamabad (ISB)"></option>
+                  <option value="Dubai (DXB)"></option>
+                  <option value="Doha (DOH)"></option>
+                  <option value="Karachi (KHI)"></option>
+                  <option value="Lahore (LHE)"></option>
+                  <option value="Jeddah (JED)"></option>
+                </datalist>
               </div>
               <div class="search-form-footer">
                 <button class="btn btn-primary rounded-pill" type="button">
@@ -564,7 +855,7 @@
               >
             </form>
           </aside>
-          <section class="flight-list" aria-labelledby="route-heading">
+          <section class="flight-list" aria-label="Flight search results">
             <div class="results-heading">
               <div>
                 <p class="eyebrow">A WORLD OF POSSIBILITIES</p>
@@ -1347,20 +1638,41 @@
                     </button>
                   </div>
                 </div>
-                <div class="card-extra-leg">
-                  <span
-                    ><svg class="icon" aria-hidden="true">
-                      <use href="#icon-takeoff" />
-                    </svg>
-                    RETURN · 1 DEC</span
-                  ><strong>09:00 <small>Dubai (DXB)</small></strong>
-                  <div class="route-line">
-                    <svg class="icon plane-side" aria-hidden="true">
-                      <use href="#icon-plane" />
-                    </svg>
+                <div class="card-topline card-leg-heading">
+                  <span class="card-trip-type">Return flight</span
+                  ><span>FZ 337 · Economy</span>
+                </div>
+                <div
+                  class="flight-card-main additional-flight-leg"
+                  aria-label="Return flight from Dubai to Islamabad"
+                >
+                  <div class="airline-identity">
+                    <img
+                      class="airline-logo"
+                      src="images/airlines/flydubai.png"
+                      alt="flydubai"
+                      width="160"
+                      height="80"
+                    />
+                    <span>flydubai</span><small>Boeing 737 MAX 8</small>
                   </div>
-                  <strong>12:40 <small>Islamabad (ISB)</small></strong
-                  ><span>2h 40m · Non-stop</span>
+                  <div class="flight-time">
+                    <strong>09:00</strong><b>Dubai <span>(DXB)</span></b>
+                    <small>Tue, 1 Dec 2026</small><small>Terminal 2</small>
+                  </div>
+                  <div class="flight-duration">
+                    <span>2h 40m</span>
+                    <div class="route-line">
+                      <svg class="icon plane-side" aria-hidden="true">
+                        <use href="#icon-plane" />
+                      </svg>
+                    </div>
+                    <small>Non-stop</small>
+                  </div>
+                  <div class="flight-time arrival">
+                    <strong>12:40</strong><b>Islamabad <span>(ISB)</span></b>
+                    <small>Tue, 1 Dec 2026</small><small>Terminal 1</small>
+                  </div>
                 </div>
                 <div class="card-schedule">
                   <span
@@ -2055,17 +2367,17 @@
                     ><small>Tue, 24 Nov 2026</small><small>Terminal 1</small>
                   </div>
                   <div class="flight-duration">
-                    <span>3 flights</span>
+                    <span>4h 05m</span>
                     <div class="route-line">
                       <svg class="icon plane-side" aria-hidden="true">
                         <use href="#icon-plane" />
                       </svg>
                     </div>
-                    <small>Doha · Karachi</small>
+                    <small>Non-stop</small>
                   </div>
                   <div class="flight-time arrival">
-                    <strong>11:15</strong><b>Dubai <span>(DXB)</span></b
-                    ><small>Fri, 27 Nov 2026</small><small>Terminal 2</small>
+                    <strong>11:20</strong><b>Doha <span>(DOH)</span></b
+                    ><small>Tue, 24 Nov 2026</small><small>Main terminal</small>
                   </div>
                   <div class="flight-price">
                     <div class="trip-content">
@@ -2092,22 +2404,79 @@
                     </button>
                   </div>
                 </div>
-                <div class="card-extra-leg multi-city-route">
-                  <span
-                    ><svg class="icon" aria-hidden="true">
-                      <use href="#icon-calendar" />
-                    </svg>
-                    24–27 NOV</span
-                  ><b>ISB</b
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#icon-arrow" /></svg
-                  ><b>DOH</b
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#icon-arrow" /></svg
-                  ><b>KHI</b
-                  ><svg class="icon" aria-hidden="true">
-                    <use href="#icon-arrow" /></svg
-                  ><b>DXB</b><span>Doha + Karachi city stays</span>
+                <div class="card-topline card-leg-heading">
+                  <span class="card-trip-type">Flight 2</span
+                  ><span>QR 610 · Economy</span>
+                  <span class="card-leg-stay">2 nights in Doha</span>
+                </div>
+                <div
+                  class="flight-card-main additional-flight-leg"
+                  aria-label="Flight 2 from Doha to Karachi"
+                >
+                  <div class="airline-identity">
+                    <img
+                      class="airline-logo"
+                      src="images/airlines/qatar.png"
+                      alt="Qatar Airways"
+                      width="160"
+                      height="80"
+                    />
+                    <span>Qatar Airways</span><small>Boeing 777-300ER</small>
+                  </div>
+                  <div class="flight-time">
+                    <strong>15:30</strong><b>Doha <span>(DOH)</span></b>
+                    <small>Thu, 26 Nov 2026</small><small>Main terminal</small>
+                  </div>
+                  <div class="flight-duration">
+                    <span>2h 45m</span>
+                    <div class="route-line">
+                      <svg class="icon plane-side" aria-hidden="true">
+                        <use href="#icon-plane" />
+                      </svg>
+                    </div>
+                    <small>Non-stop</small>
+                  </div>
+                  <div class="flight-time arrival">
+                    <strong>20:15</strong><b>Karachi <span>(KHI)</span></b>
+                    <small>Thu, 26 Nov 2026</small><small>Terminal 1</small>
+                  </div>
+                </div>
+                <div class="card-topline card-leg-heading">
+                  <span class="card-trip-type">Flight 3</span
+                  ><span>FZ 332 · Economy</span>
+                  <span class="card-leg-stay">1 night in Karachi</span>
+                </div>
+                <div
+                  class="flight-card-main additional-flight-leg"
+                  aria-label="Flight 3 from Karachi to Dubai"
+                >
+                  <div class="airline-identity">
+                    <img
+                      class="airline-logo"
+                      src="images/airlines/flydubai.png"
+                      alt="flydubai"
+                      width="160"
+                      height="80"
+                    />
+                    <span>flydubai</span><small>Boeing 737 MAX 8</small>
+                  </div>
+                  <div class="flight-time">
+                    <strong>10:00</strong><b>Karachi <span>(KHI)</span></b>
+                    <small>Fri, 27 Nov 2026</small><small>Terminal 1</small>
+                  </div>
+                  <div class="flight-duration">
+                    <span>2h 15m</span>
+                    <div class="route-line">
+                      <svg class="icon plane-side" aria-hidden="true">
+                        <use href="#icon-plane" />
+                      </svg>
+                    </div>
+                    <small>Non-stop</small>
+                  </div>
+                  <div class="flight-time arrival">
+                    <strong>11:15</strong><b>Dubai <span>(DXB)</span></b>
+                    <small>Fri, 27 Nov 2026</small><small>Terminal 2</small>
+                  </div>
                 </div>
                 <div class="card-schedule">
                   <span
@@ -3803,364 +4172,6 @@
           Apply date
         </button>
       </div>
-    </div>
-    <div
-      id="multi-flight-popup"
-      class="popup multi-flight-popup border rounded-4 shadow-lg"
-      popover="auto"
-      role="dialog"
-      aria-labelledby="multi-flight-popup-title"
-    >
-      <input
-        class="static-multi-control visually-hidden"
-        type="checkbox"
-        id="multi-extra-3"
-      /><input
-        class="static-multi-control visually-hidden"
-        type="checkbox"
-        id="multi-extra-4"
-      /><input
-        class="static-multi-control visually-hidden"
-        type="checkbox"
-        id="multi-extra-5"
-      /><input
-        class="static-multi-control visually-hidden"
-        type="checkbox"
-        id="multi-extra-6"
-      />
-      <div
-        class="popup-head d-flex align-items-center justify-content-between border-bottom p-3"
-      >
-        <h2 id="multi-flight-popup-title" class="mb-0">Additional flights</h2>
-        <button
-          type="button"
-          popovertarget="multi-flight-popup"
-          aria-label="Close add flight"
-        >
-          ×
-        </button>
-      </div>
-      <form class="p-3" id="multi-flight-form">
-        <div id="multi-flight-list">
-          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <strong>Flight 2</strong
-              ><span id="multi-flight-count" class="text-secondary"
-                >Static itinerary</span
-              >
-            </div>
-            <div class="multi-popup-journey journey-grid border rounded-3">
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="origin"
-              >
-                <small>From</small><strong>Dubai</strong
-                ><span class="text-secondary"
-                  >DXB, Dubai International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="destination"
-              >
-                <small>To</small><strong>Islamabad</strong
-                ><span class="text-secondary"
-                  >ISB, Islamabad International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="departure-calendar"
-              >
-                <small
-                  >Departure
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>01 <span>Dec ’26</span></strong
-                ><span class="text-secondary">Tuesday</span>
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="cabin-picker"
-              >
-                <small
-                  >Cabin class
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>Economy</strong
-                ><span class="text-secondary">Choose your cabin</span>
-              </button>
-              <label
-                class="btn btn-outline-primary multi-popup-add"
-                for="multi-extra-3"
-                ><i class="bi bi-plus-lg"></i>Add flight</label
-              >
-              <button
-                class="btn btn-outline-secondary multi-popup-remove"
-                type="button"
-                disabled
-              >
-                <i class="bi bi-trash3"></i>Remove flight
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="static-extra-flight" id="extra-flight-3">
-          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <strong>Flight 3</strong
-              ><span class="text-secondary">Optional flight</span>
-            </div>
-            <div class="multi-popup-journey journey-grid border rounded-3">
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="origin"
-              >
-                <small>From</small><strong>Dubai</strong
-                ><span class="text-secondary"
-                  >DXB, Dubai International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="destination"
-              >
-                <small>To</small><strong>Islamabad</strong
-                ><span class="text-secondary"
-                  >ISB, Islamabad International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="departure-calendar"
-              >
-                <small
-                  >Departure
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>01 <span>Dec ’26</span></strong
-                ><span class="text-secondary">Tuesday</span>
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="cabin-picker"
-              >
-                <small
-                  >Cabin class
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>Economy</strong
-                ><span class="text-secondary">Choose your cabin</span>
-              </button>
-              <label
-                class="btn btn-outline-primary multi-popup-add"
-                for="multi-extra-4"
-                ><i class="bi bi-plus-lg"></i>Add flight</label
-              >
-              <label
-                class="btn btn-outline-secondary multi-popup-remove"
-                for="multi-extra-3"
-                ><i class="bi bi-trash3"></i>Remove flight</label
-              >
-            </div>
-          </div>
-        </div>
-        <div class="static-extra-flight" id="extra-flight-4">
-          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <strong>Flight 4</strong
-              ><span class="text-secondary">Optional flight</span>
-            </div>
-            <div class="multi-popup-journey journey-grid border rounded-3">
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="origin"
-              >
-                <small>From</small><strong>Dubai</strong
-                ><span class="text-secondary"
-                  >DXB, Dubai International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="destination"
-              >
-                <small>To</small><strong>Islamabad</strong
-                ><span class="text-secondary"
-                  >ISB, Islamabad International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="departure-calendar"
-              >
-                <small
-                  >Departure
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>01 <span>Dec ’26</span></strong
-                ><span class="text-secondary">Tuesday</span>
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="cabin-picker"
-              >
-                <small
-                  >Cabin class
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>Economy</strong
-                ><span class="text-secondary">Choose your cabin</span>
-              </button>
-              <label
-                class="btn btn-outline-primary multi-popup-add"
-                for="multi-extra-5"
-                ><i class="bi bi-plus-lg"></i>Add flight</label
-              >
-              <label
-                class="btn btn-outline-secondary multi-popup-remove"
-                for="multi-extra-4"
-                ><i class="bi bi-trash3"></i>Remove flight</label
-              >
-            </div>
-          </div>
-        </div>
-        <div class="static-extra-flight" id="extra-flight-5">
-          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <strong>Flight 5</strong
-              ><span class="text-secondary">Optional flight</span>
-            </div>
-            <div class="multi-popup-journey journey-grid border rounded-3">
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="origin"
-              >
-                <small>From</small><strong>Dubai</strong
-                ><span class="text-secondary"
-                  >DXB, Dubai International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="destination"
-              >
-                <small>To</small><strong>Islamabad</strong
-                ><span class="text-secondary"
-                  >ISB, Islamabad International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="departure-calendar"
-              >
-                <small
-                  >Departure
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>01 <span>Dec ’26</span></strong
-                ><span class="text-secondary">Tuesday</span>
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="cabin-picker"
-              >
-                <small
-                  >Cabin class
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>Economy</strong
-                ><span class="text-secondary">Choose your cabin</span>
-              </button>
-              <label
-                class="btn btn-outline-primary multi-popup-add"
-                for="multi-extra-6"
-                ><i class="bi bi-plus-lg"></i>Add flight</label
-              >
-              <label
-                class="btn btn-outline-secondary multi-popup-remove"
-                for="multi-extra-5"
-                ><i class="bi bi-trash3"></i>Remove flight</label
-              >
-            </div>
-          </div>
-        </div>
-        <div class="static-extra-flight" id="extra-flight-6">
-          <div class="multi-popup-flight border rounded-3 p-3 mb-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <strong>Flight 6</strong
-              ><span class="text-secondary">Optional flight</span>
-            </div>
-            <div class="multi-popup-journey journey-grid border rounded-3">
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="origin"
-              >
-                <small>From</small><strong>Dubai</strong
-                ><span class="text-secondary"
-                  >DXB, Dubai International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="destination"
-              >
-                <small>To</small><strong>Islamabad</strong
-                ><span class="text-secondary"
-                  >ISB, Islamabad International Airport</span
-                >
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="departure-calendar"
-              >
-                <small
-                  >Departure
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>01 <span>Dec ’26</span></strong
-                ><span class="text-secondary">Tuesday</span>
-              </button>
-              <button
-                class="journey-cell text-start"
-                type="button"
-                popovertarget="cabin-picker"
-              >
-                <small
-                  >Cabin class
-                  <i class="bi bi-chevron-down text-primary ms-1"></i></small
-                ><strong>Economy</strong
-                ><span class="text-secondary">Choose your cabin</span>
-              </button>
-
-              <label
-                class="btn btn-outline-secondary multi-popup-remove"
-                for="multi-extra-6"
-                ><i class="bi bi-trash3"></i>Remove flight</label
-              >
-            </div>
-          </div>
-        </div>
-        <div class="multi-popup-footer mt-3">
-          <button
-            class="btn btn-primary rounded-pill px-5 py-3 fw-bold multi-popup-done"
-            type="button"
-            popovertarget="multi-flight-popup"
-          >
-            DONE
-          </button>
-        </div>
-      </form>
     </div>
     <details class="photo-credits container">
       <summary>Aircraft photo credits</summary>
