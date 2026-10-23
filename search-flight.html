@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/search-flight.css" />
     <link rel="stylesheet" href="css/multi-city.css" />
+    <script src="components/multi-city.js" defer></script>
+    <script src="components/flight-card-selection.js" defer></script>
   </head>
   <body class="flight-results-page">
     <!-- This page is intentionally HTML/CSS only. Native radios, details and popovers own all UI state. -->
@@ -113,6 +115,10 @@
       <symbol id="icon-bag" viewBox="0 0 24 24">
         <rect x="4" y="7" width="16" height="14" rx="2" />
         <path d="M8 7V3h8v4M9 11v6m6-6v6" />
+      </symbol>
+      <symbol id="icon-ticket" viewBox="0 0 24 24">
+        <path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4V7Z" />
+        <path d="M14 7v10M8 12h2" />
       </symbol>
       <symbol id="icon-meal" viewBox="0 0 24 24">
         <path d="M4 3v7c0 3 6 3 6 0V3M7 3v18m11 0V3c-4 2-5 8 0 8" />
@@ -1111,24 +1117,24 @@
                       <label for="emirates-tab-details"
                         ><span class="desk-step">01</span
                         ><span
-                          ><strong>Your journey</strong
+                          ><strong>Flight itinerary</strong
                           ><small>Airports & timings</small></span
                         ><svg class="icon" aria-hidden="true">
                           <use href="#icon-plane" /></svg></label
                       ><label for="emirates-tab-summary"
                         ><span class="desk-step">02</span
                         ><span
-                          ><strong>The fare</strong
+                          ><strong>Fare summary</strong
                           ><small>A transparent quote</small></span
                         ><svg class="icon" aria-hidden="true">
                           <use href="#icon-coins" /></svg></label
                       ><label for="emirates-tab-packages"
                         ><span class="desk-step">03</span
                         ><span
-                          ><strong>Make it yours</strong
+                          ><strong>Fare package</strong
                           ><small>Choose your options</small></span
                         ><svg class="icon" aria-hidden="true">
-                          <use href="#icon-bag" /></svg
+                          <use href="#icon-ticket" /></svg
                       ></label>
                     </fieldset>
                     <div class="desk-content">
@@ -1148,6 +1154,7 @@
                                   <use href="#icon-takeoff" />
                                 </svg>
                                 Outbound flight</span
+                              ><time class="leg-day" datetime="2026-11-24">Tue, 24 Nov 2026</time
                               ><small>EK 613 · Economy</small>
                             </header>
                             <div class="leg-body">
@@ -1161,12 +1168,11 @@
                               </div>
                               <div class="leg-path">
                                 <div class="route-line">
-                                  <svg
-                                    class="icon plane-side"
-                                    aria-hidden="true"
-                                  >
-                                    <use href="#icon-plane" />
-                                  </svg>
+                                  <span class="plane-badge" aria-hidden="true">
+                                    <svg class="icon plane-side">
+                                      <use href="#icon-plane" />
+                                    </svg>
+                                  </span>
                                 </div>
                                 <strong>3h 40m</strong><span>Non-stop</span>
                               </div>
@@ -1178,10 +1184,10 @@
                                 ><small>Dubai International Airport</small
                                 ><span class="terminal">Terminal 3</span>
                               </div>
-                              <figure class="leg-photo">
+                              <figure class="leg-photo leg-airline-logo">
                                 <img
-                                  src="images/airlines/emirates-plane.jpg"
-                                  alt="Emirates aircraft"
+                                  src="images/airlines/emirates.png"
+                                  alt="Emirates logo"
                                   width="320"
                                   height="200"
                                   loading="lazy"
@@ -1295,10 +1301,7 @@
                               <div class="quote-route">
                                 <strong>ISB</strong>
                                 <div class="route-line">
-                                  <svg
-                                    class="icon plane-side"
-                                    aria-hidden="true"
-                                  >
+                                  <svg class="icon plane-side" aria-hidden="true">
                                     <use href="#icon-plane" />
                                   </svg>
                                 </div>
@@ -1638,10 +1641,6 @@
                     </button>
                   </div>
                 </div>
-                <div class="card-topline card-leg-heading">
-                  <span class="card-trip-type">Return flight</span
-                  ><span>FZ 337 · Economy</span>
-                </div>
                 <div
                   class="flight-card-main additional-flight-leg"
                   aria-label="Return flight from Dubai to Islamabad"
@@ -1649,12 +1648,12 @@
                   <div class="airline-identity">
                     <img
                       class="airline-logo"
-                      src="images/airlines/flydubai.png"
-                      alt="flydubai"
+                      src="images/airlines/qatar.png"
+                      alt="Qatar Airways"
                       width="160"
                       height="80"
                     />
-                    <span>flydubai</span><small>Boeing 737 MAX 8</small>
+                    <span>Qatar Airways</span><small>Boeing 777-300ER</small>
                   </div>
                   <div class="flight-time">
                     <strong>09:00</strong><b>Dubai <span>(DXB)</span></b>
@@ -1796,24 +1795,24 @@
                       <label for="flydubai-tab-details"
                         ><span class="desk-step">01</span
                         ><span
-                          ><strong>Your journey</strong
+                          ><strong>Flight itinerary</strong
                           ><small>Airports & timings</small></span
                         ><svg class="icon" aria-hidden="true">
                           <use href="#icon-plane" /></svg></label
                       ><label for="flydubai-tab-summary"
                         ><span class="desk-step">02</span
                         ><span
-                          ><strong>The fare</strong
+                          ><strong>Fare summary</strong
                           ><small>A transparent quote</small></span
                         ><svg class="icon" aria-hidden="true">
                           <use href="#icon-coins" /></svg></label
                       ><label for="flydubai-tab-packages"
                         ><span class="desk-step">03</span
                         ><span
-                          ><strong>Make it yours</strong
+                          ><strong>Fare package</strong
                           ><small>Choose your options</small></span
                         ><svg class="icon" aria-hidden="true">
-                          <use href="#icon-bag" /></svg
+                          <use href="#icon-ticket" /></svg
                       ></label>
                     </fieldset>
                     <div class="desk-content">
@@ -1833,6 +1832,7 @@
                                   <use href="#icon-takeoff" />
                                 </svg>
                                 Outbound flight</span
+                              ><time class="leg-day" datetime="2026-11-24">Tue, 24 Nov 2026</time
                               ><small>FZ 338 · Economy</small>
                             </header>
                             <div class="leg-body">
@@ -1846,12 +1846,11 @@
                               </div>
                               <div class="leg-path">
                                 <div class="route-line">
-                                  <svg
-                                    class="icon plane-side"
-                                    aria-hidden="true"
-                                  >
-                                    <use href="#icon-plane" />
-                                  </svg>
+                                  <span class="plane-badge" aria-hidden="true">
+                                    <svg class="icon plane-side">
+                                      <use href="#icon-plane" />
+                                    </svg>
+                                  </span>
                                 </div>
                                 <strong>3h 40m</strong><span>Non-stop</span>
                               </div>
@@ -1863,10 +1862,10 @@
                                 ><small>Dubai International Airport</small
                                 ><span class="terminal">Terminal 2</span>
                               </div>
-                              <figure class="leg-photo">
+                              <figure class="leg-photo leg-airline-logo">
                                 <img
-                                  src="images/airlines/fly-dubai-plane.jpg"
-                                  alt="flydubai aircraft"
+                                  src="images/airlines/flydubai.png"
+                                  alt="flydubai logo"
                                   width="320"
                                   height="200"
                                   loading="lazy"
@@ -1913,7 +1912,8 @@
                                   <use href="#icon-takeoff" />
                                 </svg>
                                 Return flight</span
-                              ><small>FZ 337 · Economy</small>
+                              ><time class="leg-day" datetime="2026-12-01">Tue, 1 Dec 2026</time
+                              ><small>QR 613 · Economy</small>
                             </header>
                             <div class="leg-body">
                               <div class="leg-airport">
@@ -1926,12 +1926,11 @@
                               </div>
                               <div class="leg-path">
                                 <div class="route-line">
-                                  <svg
-                                    class="icon plane-side"
-                                    aria-hidden="true"
-                                  >
-                                    <use href="#icon-plane" />
-                                  </svg>
+                                  <span class="plane-badge" aria-hidden="true">
+                                    <svg class="icon plane-side">
+                                      <use href="#icon-plane" />
+                                    </svg>
+                                  </span>
                                 </div>
                                 <strong>2h 40m</strong><span>Non-stop</span>
                               </div>
@@ -1943,15 +1942,15 @@
                                 ><small>Islamabad International Airport</small
                                 ><span class="terminal">Terminal 1</span>
                               </div>
-                              <figure class="leg-photo">
+                              <figure class="leg-photo leg-airline-logo">
                                 <img
-                                  src="images/airlines/fly-dubai-plane.jpg"
-                                  alt="flydubai aircraft"
+                                  src="images/airlines/qatar.png"
+                                  alt="Qatar Airways logo"
                                   width="320"
                                   height="200"
                                   loading="lazy"
                                 />
-                                <figcaption>Boeing 737 MAX 8</figcaption>
+                                <figcaption>Boeing 777-300ER</figcaption>
                               </figure>
                             </div>
                             <footer class="leg-perks">
@@ -2062,10 +2061,7 @@
                               <div class="quote-route">
                                 <strong>ISB</strong>
                                 <div class="route-line">
-                                  <svg
-                                    class="icon plane-side"
-                                    aria-hidden="true"
-                                  >
+                                  <svg class="icon plane-side" aria-hidden="true">
                                     <use href="#icon-plane" />
                                   </svg>
                                 </div>
@@ -2404,11 +2400,6 @@
                     </button>
                   </div>
                 </div>
-                <div class="card-topline card-leg-heading">
-                  <span class="card-trip-type">Flight 2</span
-                  ><span>QR 610 · Economy</span>
-                  <span class="card-leg-stay">2 nights in Doha</span>
-                </div>
                 <div
                   class="flight-card-main additional-flight-leg"
                   aria-label="Flight 2 from Doha to Karachi"
@@ -2416,12 +2407,12 @@
                   <div class="airline-identity">
                     <img
                       class="airline-logo"
-                      src="images/airlines/qatar.png"
-                      alt="Qatar Airways"
+                      src="images/airlines/flydubai.png"
+                      alt="flydubai"
                       width="160"
                       height="80"
                     />
-                    <span>Qatar Airways</span><small>Boeing 777-300ER</small>
+                    <span>flydubai</span><small>Boeing 737 MAX 8</small>
                   </div>
                   <div class="flight-time">
                     <strong>15:30</strong><b>Doha <span>(DOH)</span></b>
@@ -2441,11 +2432,6 @@
                     <small>Thu, 26 Nov 2026</small><small>Terminal 1</small>
                   </div>
                 </div>
-                <div class="card-topline card-leg-heading">
-                  <span class="card-trip-type">Flight 3</span
-                  ><span>FZ 332 · Economy</span>
-                  <span class="card-leg-stay">1 night in Karachi</span>
-                </div>
                 <div
                   class="flight-card-main additional-flight-leg"
                   aria-label="Flight 3 from Karachi to Dubai"
@@ -2453,12 +2439,12 @@
                   <div class="airline-identity">
                     <img
                       class="airline-logo"
-                      src="images/airlines/flydubai.png"
-                      alt="flydubai"
+                      src="images/airlines/qatar.png"
+                      alt="Qatar Airways"
                       width="160"
                       height="80"
                     />
-                    <span>flydubai</span><small>Boeing 737 MAX 8</small>
+                    <span>Qatar Airways</span><small>Boeing 777-300ER</small>
                   </div>
                   <div class="flight-time">
                     <strong>10:00</strong><b>Karachi <span>(KHI)</span></b>
@@ -2600,24 +2586,24 @@
                       <label for="qatar-tab-details"
                         ><span class="desk-step">01</span
                         ><span
-                          ><strong>Your journey</strong
+                          ><strong>Flight itinerary</strong
                           ><small>Airports & timings</small></span
                         ><svg class="icon" aria-hidden="true">
                           <use href="#icon-plane" /></svg></label
                       ><label for="qatar-tab-summary"
                         ><span class="desk-step">02</span
                         ><span
-                          ><strong>The fare</strong
+                          ><strong>Fare summary</strong
                           ><small>A transparent quote</small></span
                         ><svg class="icon" aria-hidden="true">
                           <use href="#icon-coins" /></svg></label
                       ><label for="qatar-tab-packages"
                         ><span class="desk-step">03</span
                         ><span
-                          ><strong>Make it yours</strong
+                          ><strong>Fare package</strong
                           ><small>Choose your options</small></span
                         ><svg class="icon" aria-hidden="true">
-                          <use href="#icon-bag" /></svg
+                          <use href="#icon-ticket" /></svg
                       ></label>
                     </fieldset>
                     <div class="desk-content">
@@ -2637,6 +2623,7 @@
                                   <use href="#icon-takeoff" />
                                 </svg>
                                 Outbound · Leg 1</span
+                              ><time class="leg-day" datetime="2026-11-24">Tue, 24 Nov 2026</time
                               ><small>QR 633 · Economy</small>
                             </header>
                             <div class="leg-body">
@@ -2650,12 +2637,11 @@
                               </div>
                               <div class="leg-path">
                                 <div class="route-line">
-                                  <svg
-                                    class="icon plane-side"
-                                    aria-hidden="true"
-                                  >
-                                    <use href="#icon-plane" />
-                                  </svg>
+                                  <span class="plane-badge" aria-hidden="true">
+                                    <svg class="icon plane-side">
+                                      <use href="#icon-plane" />
+                                    </svg>
+                                  </span>
                                 </div>
                                 <strong>4h 05m</strong><span>Non-stop</span>
                               </div>
@@ -2667,10 +2653,10 @@
                                 ><small>Hamad International Airport</small
                                 ><span class="terminal">Main terminal</span>
                               </div>
-                              <figure class="leg-photo">
+                              <figure class="leg-photo leg-airline-logo">
                                 <img
-                                  src="images/airlines/qatar-plane.jpg"
-                                  alt="Qatar Airways aircraft"
+                                  src="images/airlines/qatar.png"
+                                  alt="Qatar Airways logo"
                                   width="320"
                                   height="200"
                                   loading="lazy"
@@ -2717,7 +2703,8 @@
                                   <use href="#icon-takeoff" />
                                 </svg>
                                 Your next city · Leg 2</span
-                              ><small>QR 610 · Economy</small>
+                              ><time class="leg-day" datetime="2026-11-26">Thu, 26 Nov 2026</time
+                              ><small>FZ 610 · Economy</small>
                             </header>
                             <div class="leg-body">
                               <div class="leg-airport">
@@ -2730,12 +2717,11 @@
                               </div>
                               <div class="leg-path">
                                 <div class="route-line">
-                                  <svg
-                                    class="icon plane-side"
-                                    aria-hidden="true"
-                                  >
-                                    <use href="#icon-plane" />
-                                  </svg>
+                                  <span class="plane-badge" aria-hidden="true">
+                                    <svg class="icon plane-side">
+                                      <use href="#icon-plane" />
+                                    </svg>
+                                  </span>
                                 </div>
                                 <strong>2h 45m</strong><span>Non-stop</span>
                               </div>
@@ -2747,15 +2733,15 @@
                                 ><small>Jinnah International Airport</small
                                 ><span class="terminal">Terminal 1</span>
                               </div>
-                              <figure class="leg-photo">
+                              <figure class="leg-photo leg-airline-logo">
                                 <img
-                                  src="images/airlines/pia-plane.jpg"
-                                  alt="PIA aircraft"
+                                  src="images/airlines/flydubai.png"
+                                  alt="flydubai logo"
                                   width="320"
                                   height="200"
                                   loading="lazy"
                                 />
-                                <figcaption>Boeing 777-300ER</figcaption>
+                                <figcaption>Boeing 737 MAX 8</figcaption>
                               </figure>
                             </div>
                             <footer class="leg-perks">
@@ -2797,7 +2783,8 @@
                                   <use href="#icon-takeoff" />
                                 </svg>
                                 Final flight · Leg 3</span
-                              ><small>FZ 332 · Economy</small>
+                              ><time class="leg-day" datetime="2026-11-27">Fri, 27 Nov 2026</time
+                              ><small>QR 332 · Economy</small>
                             </header>
                             <div class="leg-body">
                               <div class="leg-airport">
@@ -2810,12 +2797,11 @@
                               </div>
                               <div class="leg-path">
                                 <div class="route-line">
-                                  <svg
-                                    class="icon plane-side"
-                                    aria-hidden="true"
-                                  >
-                                    <use href="#icon-plane" />
-                                  </svg>
+                                  <span class="plane-badge" aria-hidden="true">
+                                    <svg class="icon plane-side">
+                                      <use href="#icon-plane" />
+                                    </svg>
+                                  </span>
                                 </div>
                                 <strong>2h 15m</strong><span>Non-stop</span>
                               </div>
@@ -2827,15 +2813,15 @@
                                 ><small>Dubai International Airport</small
                                 ><span class="terminal">Terminal 2</span>
                               </div>
-                              <figure class="leg-photo">
+                              <figure class="leg-photo leg-airline-logo">
                                 <img
-                                  src="images/airlines/fly-dubai-plane.jpg"
-                                  alt="flydubai aircraft"
+                                  src="images/airlines/qatar.png"
+                                  alt="Qatar Airways logo"
                                   width="320"
                                   height="200"
                                   loading="lazy"
                                 />
-                                <figcaption>Boeing 737 MAX 8</figcaption>
+                                <figcaption>Boeing 777-300ER</figcaption>
                               </figure>
                             </div>
                             <footer class="leg-perks">

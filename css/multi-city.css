@@ -196,6 +196,11 @@ body:has(#trip-multi:checked) .mc-inline {
 .mc-inline #mc-count-6:checked ~ .mc-inline__heading [data-count="6"] { display: inline; }
 .mc-inline #mc-count-6:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 5) { display: block; }
 .mc-inline #mc-count-6:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 5) .mc-inline__actions { display: flex; }
+.mc-inline #mc-count-6:checked ~ .mc-inline__rows .mc-inline__action:not(.mc-inline__action--remove) {
+  opacity: .5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
 
 /* A growing form must increase the hero height instead of overflowing upwards. */
 body:has(#service-flights:checked) .travel-hero:has(#trip-multi:checked) {

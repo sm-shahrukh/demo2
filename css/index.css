@@ -4152,8 +4152,8 @@ body:has(#visa-processing-picker:popover-open)
     z-index: 30;
     top: 50%;
     right: 12px;
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     place-items: center;
     padding: 0;
     border: 1px solid var(--color-border);
@@ -4161,19 +4161,43 @@ body:has(#visa-processing-picker:popover-open)
     background: #fff;
     color: var(--color-primary);
     cursor: pointer;
-    font-size: 25px;
+    font-size: 22px;
+    line-height: 1;
     transform: translateY(-50%);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .home-navbar .mobile-auth-menu-trigger:hover,
   .home-navbar .mobile-auth-menu-trigger:focus-visible,
   .home-navbar .mobile-auth-menu-trigger:active {
     transform: translateY(-50%);
+    box-shadow: none;
+  }
+
+  .home-navbar .mobile-auth-menu-trigger > .mobile-menu-bars {
+    display: grid;
+    width: 18px;
+    gap: 4px;
+    pointer-events: none;
+  }
+
+  .home-navbar .mobile-auth-menu-trigger > .mobile-menu-bars > span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    pointer-events: none;
+    transform: none;
+    filter: none;
+    transition: none;
   }
 
   .home-navbar .mobile-auth-menu-panel[popover] {
     position: fixed;
-    inset: 0 0 0 auto;
+    inset: 0 auto 0 auto;
+    right: max(-310px, -86vw);
     display: none;
     flex-direction: column;
     width: min(310px, 86vw);
@@ -4189,9 +4213,9 @@ body:has(#visa-processing-picker:popover-open)
     background: #fff;
     box-shadow: -12px 0 36px rgb(20 43 83 / 18%);
     opacity: 0;
-    transform: translateX(100%);
+    transform: none;
     transition:
-      transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      right 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
       opacity 320ms ease,
       display 320ms allow-discrete,
       overlay 320ms allow-discrete;
@@ -4199,14 +4223,14 @@ body:has(#visa-processing-picker:popover-open)
 
   .home-navbar .mobile-auth-menu-panel[popover]:popover-open {
     display: flex;
+    right: 0;
     opacity: 1;
-    transform: translateX(0);
   }
 
   @starting-style {
     .home-navbar .mobile-auth-menu-panel[popover]:popover-open {
       opacity: 0;
-      transform: translateX(100%);
+      right: max(-310px, -86vw);
     }
   }
 
@@ -4256,15 +4280,16 @@ body:has(#visa-processing-picker:popover-open)
 
   .home-navbar .mobile-auth-drawer-heading button[popovertargetaction="hide"] {
     position: absolute;
-    z-index: 20;
+    z-index: 1000;
     top: 50%;
     right: 14px;
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
+    margin: 0;
     border: 1px solid var(--color-border);
     border-radius: 50%;
     background: #fff;
-    font-size: 18px;
+    font-size: 16px;
     transform: translateY(-50%);
   }
 
@@ -4278,6 +4303,22 @@ body:has(#visa-processing-picker:popover-open)
     .mobile-auth-drawer-heading
     button[popovertargetaction="hide"]:active {
     transform: translateY(-50%);
+  }
+
+  .home-navbar
+    .mobile-auth-drawer-heading
+    button[popovertargetaction="hide"] .bi,
+  .home-navbar
+    .mobile-auth-drawer-heading
+    button[popovertargetaction="hide"]:hover .bi,
+  .home-navbar
+    .mobile-auth-drawer-heading
+    button[popovertargetaction="hide"]:focus-visible .bi,
+  .home-navbar
+    .mobile-auth-drawer-heading
+    button[popovertargetaction="hide"]:active .bi {
+    transform: none;
+    filter: none;
   }
 
   .home-navbar .mobile-auth-drawer-links {
@@ -4501,6 +4542,8 @@ body:has(#service-visa:checked) .home-navbar label[for="service-visa"] {
     width: max-content;
     min-height: 34px;
     padding: 3px 10px !important;
+    position: relative;
+    top: 16px;
   }
   .static-panel .static-search-action .btn {
     display: inline-flex;
@@ -4511,7 +4554,8 @@ body:has(#service-visa:checked) .home-navbar label[for="service-visa"] {
     max-width: calc(100vw - 48px);
     margin-inline: auto;
     position: relative;
-    top: 48px;
+    top: 46px;
     z-index: 2;
   }
 }
+
