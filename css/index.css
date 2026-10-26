@@ -1353,6 +1353,31 @@ footer {
 .footer-grid {
   grid-template-columns: 1.7fr 0.8fr 0.9fr 1.2fr 1fr;
 }
+/* Share the desktop footer layout between the iframe and inline footer. */
+@media (min-width: 768px) {
+  footer > .container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--page-container-max-width);
+    margin-inline: auto;
+    padding-inline: var(--page-container-gutter);
+  }
+  footer .footer-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.7fr) minmax(0, 0.8fr) minmax(0, 0.9fr)
+      minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 24px;
+    padding-block: 24px;
+    align-items: start;
+  }
+  footer .footer-grid > div {
+    min-width: 0;
+    grid-column: auto;
+    grid-row: auto;
+    overflow-wrap: break-word;
+  }
+}
 .footer-grid h4 {
   font-size: var(--font-size-1-021rem);
 }

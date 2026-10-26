@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="728" height="124" viewBox="0 0 728 124" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#fcfdfc"/>
+    </linearGradient>
+    <mask id="perforations">
+      <rect width="728" height="124" fill="#fff"/>
+      <g fill="#000">
+        <circle cx="470" cy="17" r="2.7"/>
+        <circle cx="470" cy="29" r="2.7"/>
+        <circle cx="470" cy="41" r="2.7"/>
+        <circle cx="470" cy="53" r="2.7"/>
+        <circle cx="470" cy="65" r="2.7"/>
+        <circle cx="470" cy="77" r="2.7"/>
+        <circle cx="470" cy="89" r="2.7"/>
+        <circle cx="470" cy="101" r="2.7"/>
+        <circle cx="470" cy="113" r="2.7"/>
+      </g>
+    </mask>
+  </defs>
+  <!-- The edge itself turns into each notch; these are not circles over a rectangle. -->
+  <path d="M10 .75H460Q467 .75 470 7Q473 .75 480 .75H718Q727.25 .75 727.25 10V37C719 37 719 49 727.25 49V70C719 70 719 82 727.25 82V114Q727.25 123.25 718 123.25H480Q473 123.25 470 117Q467 123.25 460 123.25H10Q.75 123.25 .75 114V107C6 107 6 99 .75 99V90C8 88 8 77 .75 75V49C7 47 7 37 .75 35V29C6 29 6 21 .75 21V17C5 17 5 9 .75 9Q.75 .75 10 .75Z"
+    fill="url(#paper)" stroke="#e5eaec" stroke-width="1" mask="url(#perforations)"/>
+  <path d="M470 7V117" fill="none" stroke="#e0e6e8" stroke-width=".8" stroke-dasharray="1.5 4.5" mask="url(#perforations)"/>
+  <g fill="none" stroke="#e0e6e8" stroke-width=".8">
+    <circle cx="470" cy="17" r="2.7"/>
+    <circle cx="470" cy="29" r="2.7"/>
+    <circle cx="470" cy="41" r="2.7"/>
+    <circle cx="470" cy="53" r="2.7"/>
+    <circle cx="470" cy="65" r="2.7"/>
+    <circle cx="470" cy="77" r="2.7"/>
+    <circle cx="470" cy="89" r="2.7"/>
+    <circle cx="470" cy="101" r="2.7"/>
+    <circle cx="470" cy="113" r="2.7"/>
+  </g>
+</svg>

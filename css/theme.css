@@ -84,6 +84,11 @@
   --radius-control: 8px;
   --radius-card: 16px;
   --radius-popup: 16px;
+  --auth-popup-radius: 24px;
+  --auth-popup-padding: 32px;
+  --auth-popup-width: 540px;
+  --auth-popup-shadow: 0 24px 70px rgba(16, 35, 74, 0.28);
+  --auth-popup-backdrop: rgba(16, 35, 74, 0.62);
   --radius-dropdown: 12px;
   --radius-dropdown-item: 8px;
   --radius-section: 28px;

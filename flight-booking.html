@@ -1,0 +1,3151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Complete your journey | Sparrow Flights</title>
+    <link rel="icon" href="images/icon.png?v=2" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/flight-booking.css" />
+  </head>
+  <body class="booking-page">
+    <svg
+      class="bk-symbols"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <symbol id="bk-plane" viewBox="0 0 24 24">
+          <path d="m3 14 7-3-2-8 2-1 5 8 6-2 2 2-8 4-1 7-2 1-1-7-5 1Z" />
+        </symbol>
+        <symbol id="bk-user" viewBox="0 0 24 24">
+          <circle cx="12" cy="7" r="4" />
+          <path d="M4 22v-3a8 8 0 0 1 16 0v3" />
+        </symbol>
+        <symbol id="bk-seat" viewBox="0 0 24 24">
+          <path d="M5 3v9a4 4 0 0 0 4 4h9M8 4v7h9v4M9 16v5m-3 0h13m-1-5v5" />
+        </symbol>
+        <symbol id="bk-meal" viewBox="0 0 24 24">
+          <path
+            d="M4 2v7m3-7v7M1 2v7a3 3 0 0 0 6 0M4 12v10M16 2v20m0-20c-5 3-5 10 0 10"
+          />
+        </symbol>
+        <symbol id="bk-bag" viewBox="0 0 24 24">
+          <rect x="5" y="6" width="14" height="15" rx="2" />
+          <path d="M9 6V2h6v4M8 9v9m8-9v9M8 21v2m8-2v2" />
+        </symbol>
+        <symbol id="bk-mail" viewBox="0 0 24 24">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <path d="m2 5 10 8L22 5" />
+        </symbol>
+        <symbol id="bk-lock" viewBox="0 0 24 24">
+          <rect x="5" y="10" width="14" height="12" rx="2" />
+          <path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3" />
+        </symbol>
+        <symbol id="bk-card" viewBox="0 0 24 24">
+          <rect x="2" y="4" width="20" height="16" rx="3" />
+          <path d="M2 9h20M6 15h5" />
+        </symbol>
+        <symbol id="bk-bank" viewBox="0 0 24 24">
+          <path d="m2 8 10-6 10 6H2Zm3 3v8m7-8v8m7-8v8M2 22h20" />
+        </symbol>
+        <symbol id="bk-wallet" viewBox="0 0 24 24">
+          <path
+            d="M21 8V4H5a3 3 0 0 0 0 6h17v11H5a3 3 0 0 1-3-3V7m14 7h6v4h-6z"
+          />
+        </symbol>
+        <symbol id="bk-doc" viewBox="0 0 24 24">
+          <path d="M6 2h9l5 5v15H4V2h2Zm9 0v6h5M8 12h8m-8 4h8" />
+        </symbol>
+        <symbol id="bk-arrow" viewBox="0 0 24 24">
+          <path d="M3 12h18m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="bk-chevron-down" viewBox="0 0 24 24">
+          <path d="m6 9 6 6 6-6" />
+        </symbol>
+        <symbol id="bk-edit" viewBox="0 0 24 24">
+          <path d="m4 16 12-12 4 4L8 20l-5 1 1-5Zm10-10 4 4" />
+        </symbol>
+        <symbol id="bk-calendar" viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="17" rx="2" />
+          <path d="M7 2v6m10-6v6M3 11h18m-14 4h2m4 0h2" />
+        </symbol>
+        <symbol id="bk-check" viewBox="0 0 24 24">
+          <path d="m4 12 5 5L21 5" />
+        </symbol>
+        <symbol id="bk-info" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 11v7m0-12v1" />
+        </symbol>
+        <symbol id="bk-shield" viewBox="0 0 24 24">
+          <path d="m12 2 9 4v7c0 5-9 9-9 9s-9-4-9-9V6l9-4Z" />
+          <path d="m7 12 3 3 6-6" />
+        </symbol>
+        <symbol id="bk-download" viewBox="0 0 24 24">
+          <path d="M12 2v14m-5-5 5 5 5-5M4 18v4h16v-4" />
+        </symbol>
+        <symbol id="bk-cart" viewBox="0 0 24 24">
+          <path d="M2 3h3l3 13h11l3-9H6M9 20h1m7 0h1" />
+        </symbol>
+        <symbol id="bk-settings" viewBox="0 0 24 24">
+          <path
+            d="m9 2-1 4-4 1 1 4-3 3 3 3 4-1 3 3 3-3 4 1 1-4 3-3-3-3-4 1-3-3Z"
+          />
+          <circle cx="12" cy="12" r="3" />
+        </symbol>
+        <symbol id="bk-headset" viewBox="0 0 24 24">
+          <path d="M3 15v-3a9 9 0 0 1 18 0v6h-4v-7h4M3 11h4v7H3m18 0v4h-7" />
+        </symbol>
+        <symbol id="bk-refresh" viewBox="0 0 24 24">
+          <path d="M20 8a8 8 0 1 0 0 8M20 3v5h-5" />
+        </symbol>
+        <symbol id="bk-route-plane" viewBox="0 0 24 24">
+          <path d="M22 12c0-.6-.5-1-1.1-1H14L8 2H5l4 9H3L1 8H0l1 4-1 4h1l2-3h6l-4 9h3l6-9h6.9c.6 0 1.1-.4 1.1-1Z" />
+        </symbol>
+        <symbol id="bk-copy" viewBox="0 0 24 24">
+          <rect x="8" y="7" width="12" height="15" rx="2" />
+          <path d="M16 7V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4" />
+        </symbol>
+        <symbol id="bk-phone" viewBox="0 0 24 24">
+          <path d="m5 3 4 1 1 5-3 2a15 15 0 0 0 6 6l2-3 5 1 1 4c-1 5-9 2-14-3S0 4 5 3Z" />
+        </symbol>
+      </defs>
+    </svg>
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-travellers"
+      checked
+      aria-label="Travellers"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-addons"
+      aria-label="Add-ons"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-payment"
+      aria-label="Payment"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-complete"
+      aria-label="Booking confirmation"
+    />
+    <input class="state-radio" type="radio" name="booking-step" id="step-review" aria-label="Review traveller details" />
+    <iframe
+      class="booking-header-frame"
+      src="components/navbar.html"
+      title="Site navigation"
+      scrolling="no"
+    ></iframe>
+    <div class="booking-hero hero-addons">
+      <div class="hero-dubai"></div>
+      <div class="bk-container">
+        <h1>Personalise your flight</h1>
+        <p>A more comfortable journey, your way.</p>
+        <span class="hero-script"
+          >Better journeys.<br />Brighter tomorrow ↗</span
+        >
+      </div>
+    </div>
+    <div class="booking-hero hero-payment">
+      <div class="hero-dubai"></div>
+      <div class="bk-container">
+        <h1>One last step<span class="payment-hero-break"></span> to your next journey</h1>
+        <p>Secure payment and you’re all set for Dubai.</p>
+        <nav class="payment-progress" aria-label="Payment progress">
+          <label for="step-travellers"><span><svg class="bk-icon" aria-hidden="true"><use href="#bk-check" /></svg></span>Travellers</label>
+          <label for="step-addons"><span><svg class="bk-icon" aria-hidden="true"><use href="#bk-check" /></svg></span>Add-ons</label>
+          <label for="step-payment" aria-current="step"><span>3</span>Payment</label>
+        </nav>
+        <span class="hero-script">Same skies.<br />Brighter tomorrows</span>
+      </div>
+    </div>
+    <div class="booking-hero hero-confirm">
+      <div class="confirmation-skyline"></div>
+      <div class="bk-container">
+        <span class="success-mark"
+          ><svg class="bk-icon" aria-hidden="true"><use href="#bk-check" /></svg
+        ></span>
+        <h1>You’re going to Dubai.</h1>
+        <h2>Your flight is confirmed.</h2>
+        <p>
+          A sample confirmation is ready for<br /><strong data-contact-email
+            >ali.khan@example.com</strong
+          >
+          with your booking details.
+        </p>
+        <span class="hero-script">Same skies.<br />Brighter tomorrows.</span>
+      </div>
+    </div>
+    <main id="booking-main">
+      <header class="traveller-intro bk-container">
+        <div>
+          <a class="traveller-back-link" href="search-flight.html">
+            <svg class="bk-icon" aria-hidden="true"><use href="#bk-arrow" /></svg>
+            Back to flight results
+          </a>
+          <h2 id="travellers-title" tabindex="-1">Traveler details</h2>
+          <p>Save time, and you’re one step closer to Dubai.</p>
+        </div>
+        <div class="reservation-time">
+          <svg class="bk-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Reservation time <strong>20:00</strong></span>
+        </div>
+      </header>
+      <nav class="booking-steps" aria-label="Booking progress">
+        <a href="search-flight.html"><span>✓</span>Flight</a><i></i
+        ><label for="step-travellers"><span>2</span>Travellers</label><i></i
+        ><label for="step-addons"><span>3</span>Add-ons</label><i></i
+        ><label for="step-payment"><span>4</span>Payment</label>
+      </nav>
+      <section
+        class="booking-panel travellers-panel bk-container"
+        aria-labelledby="travellers-title"
+      >
+        <div class="traveller-layout">
+          <div>
+            <article class="bk-card your-flight">
+              <div class="card-heading">
+                <h3>
+                  <span class="icon-tile peach"
+                    ><svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-plane" /></svg></span
+                  >Your flight
+                </h3>
+                <a class="bk-outline small" href="search-flight.html"
+                  >Change flight ›</a
+                >
+              </div>
+              <div class="flight-ticket">
+                <div class="ticket-route">
+                  <div class="ticket-date">
+                    <b>24 Nov 2026</b><span>·</span>Non-stop<span>·</span>3h 40m
+                  </div>
+                  <div class="ticket-times">
+                    <div>
+                      <strong>08:30</strong><b>ISB</b><span>Islamabad</span
+                      ><small>Terminal 1</small>
+                    </div>
+                    <div class="route-track">
+                      <span
+                        ><svg
+                          class="bk-icon ticket-plane"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="m23 11-9-2-5-8H7l3 9-6-1-2-3H0l2 6-2 6h2l2-3 6-1-3 9h2l5-8 9-2Z"
+                          /></svg></span
+                      ><small>3h 40m<br />Non-stop</small>
+                    </div>
+                    <div>
+                      <strong>11:10</strong><b>DXB</b><span>Dubai</span
+                      ><small>Terminal 3</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="ticket-airline">
+                  <img
+                    class="ticket-emirates-logo"
+                    src="images/airlines/emirates.png"
+                    alt="Emirates"
+                  ><b>EK 615</b><small>Boeing 777-300ER</small
+                  ><span class="bk-pill">Economy · Essential</span>
+                </div>
+              </div>
+              <div class="flight-links">
+                <details>
+                  <summary>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-bag" /></svg
+                    >Baggage allowance
+                  </summary>
+                  <p>
+                    Each traveller: 7 kg cabin baggage and 23 kg checked baggage
+                    included in this static demo.
+                  </p>
+                </details>
+                <details>
+                  <summary>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-doc" /></svg
+                    >Fare rules
+                  </summary>
+                  <p>
+                    Sample Economy Essential fare. Changes may incur a fee. This
+                    demo does not issue tickets.
+                  </p>
+                </details>
+              </div>
+            </article>
+            <fieldset id="traveller-form" class="traveller-form">
+              <details class="bk-card traveller-card" open>
+                <summary>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-user" /></svg
+                  ><strong>Traveller 1</strong><span>Adult (18+ years)</span
+                  ><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg>
+                </summary>
+                <div class="traveller-fields">
+                  <div class="name-fields">
+                    <label
+                      >Title<select name="adult-title">
+                        <option>Mr</option>
+                        <option>Ms</option>
+                        <option>Mrs</option>
+                      </select></label
+                    ><label
+                      >First name (as per passport)<input
+                        name="adult-first"
+                        value="Ali"
+                        required
+                        maxlength="60" /></label
+                    ><label
+                      >Last name (as per passport)<input
+                        name="adult-last"
+                        value="Khan"
+                        required
+                        maxlength="60"
+                    /></label>
+                  </div>
+                  <div class="passport-fields">
+                    <label
+                      >Date of birth<input
+                        name="adult-dob"
+                        type="date"
+                        value="1990-02-15"
+                        max="2008-11-24"
+                        required /></label
+                    ><label
+                      >Nationality<select name="adult-nationality">
+                        <option>Pakistan</option>
+                        <option>United Kingdom</option>
+                        <option>United Arab Emirates</option>
+                        <option>Other</option>
+                      </select></label
+                    ><label
+                      >Passport number<input
+                        name="adult-passport"
+                        value="AB1234561"
+                        pattern="[A-Za-z0-9]{5,20}"
+                        required /></label
+                    ><label
+                      >Passport expiry date<input
+                        name="adult-expiry"
+                        type="date"
+                        value="2030-02-14"
+                        min="2026-11-25"
+                        required
+                    /></label>
+                  </div>
+                  <p class="bk-info">
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-info" /></svg
+                    ><span
+                      >Name, date of birth and passport details must match your
+                      travel document exactly.</span
+                    >
+                  </p>
+                </div>
+              </details>
+              <details class="bk-card traveller-card">
+                <summary>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-user" /></svg
+                  ><strong>Traveller 2</strong><span>Child (8 years)</span
+                  ><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg>
+                </summary>
+                <div class="traveller-fields">
+                  <div class="name-fields">
+                    <label
+                      >Title<select name="child-title">
+                        <option>Miss</option>
+                        <option>Master</option>
+                        <option>Mrs</option>
+                      </select></label
+                    ><label
+                      >First name (as per passport)<input
+                        name="child-first"
+                        value="Ayesha"
+                        required
+                        maxlength="60" /></label
+                    ><label
+                      >Last name (as per passport)<input
+                        name="child-last"
+                        value="Khan"
+                        required
+                        maxlength="60"
+                    /></label>
+                  </div>
+                  <div class="passport-fields">
+                    <label
+                      >Date of birth<input
+                        name="child-dob"
+                        type="date"
+                        value="2018-05-10"
+                        min="2014-11-25"
+                        max="2024-11-24"
+                        required /></label
+                    ><label
+                      >Nationality<select name="child-nationality">
+                        <option>Pakistan</option>
+                        <option>United Kingdom</option>
+                        <option>United Arab Emirates</option>
+                        <option>Other</option>
+                      </select></label
+                    ><label
+                      >Passport number<input
+                        name="child-passport"
+                        value="AB1234562"
+                        pattern="[A-Za-z0-9]{5,20}"
+                        required /></label
+                    ><label
+                      >Passport expiry date<input
+                        name="child-expiry"
+                        type="date"
+                        value="2030-02-14"
+                        min="2026-11-25"
+                        required
+                    /></label>
+                  </div>
+                  <p class="bk-info">
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-info" /></svg
+                    ><span
+                      >Name, date of birth and passport details must match your
+                      travel document exactly.</span
+                    >
+                  </p>
+                </div>
+              </details>
+              <fieldset class="bk-card contact-card">
+                <legend>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-mail" /></svg
+                  >Contact details
+                </legend>
+                <div class="contact-fields">
+                  <label
+                    >Email address<input
+                      name="email"
+                      type="email"
+                      value="ali.khan@example.com"
+                      required /></label
+                  ><label
+                    >Phone number
+                    <div class="phone-field">
+                      <select aria-label="Country calling code">
+                        <option>🇵🇰 +92</option>
+                        <option>🇦🇪 +971</option>
+                        <option>🇬🇧 +44</option></select
+                      ><input
+                        name="phone"
+                        type="tel"
+                        value="300 1234567"
+                        minlength="7"
+                        required
+                      /></div
+                  ></label>
+                </div>
+                <p class="field-note">
+                  We’ll show your sample booking confirmation on this page.
+                </p>
+              </fieldset>
+              <details class="bk-card optional-requests">
+                <summary>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-settings" /></svg
+                  ><span
+                    ><b>Optional requests <small>(if any)</small></b
+                    ><small
+                      >Seat preference, meal preference, special assistance and
+                      more</small
+                    ></span
+                  ><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg>
+                </summary>
+                <div class="optional-fields">
+                  <label
+                    >Special assistance<select>
+                      <option>No assistance required</option>
+                      <option>Wheelchair assistance</option>
+                      <option>Travelling with a child</option>
+                    </select></label
+                  >
+                  <p>
+                    Seats, meals and baggage can be selected in the next step.
+                  </p>
+                </div>
+              </details>
+            </fieldset>
+          </div>
+          <aside class="traveller-sidebar">
+            <div class="bk-card price-card">
+              <h3>
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-doc" /></svg
+                >Price summary
+              </h3>
+              <dl class="price-lines">
+                <div>
+                  <dt>Base fare (1 Adult + 1 Child)</dt>
+                  <dd>PKR 130,500</dd>
+                </div>
+                <div>
+                  <dt>Taxes and fees</dt>
+                  <dd>PKR 18,500</dd>
+                </div>
+                <div class="price-total">
+                  <dt>Base booking total</dt>
+                  <dd>PKR 149,000</dd>
+                </div>
+              </dl>
+              <label
+                class="bk-primary"
+                for="step-review"
+              >
+                Continue to add-ons
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-arrow" />
+                </svg>
+              </label>
+              <p class="secure-note">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-lock" /></svg
+                >Secure booking <span>·</span>No hidden charges
+              </p>
+            </div>
+            <div class="rewards-card">
+              <div>
+                <h3>A more<br />rewarding journey</h3>
+                <p>
+                  Join our Rewards for exclusive deals, member fares and more.
+                </p>
+                <a href="index.html#auth-register">Join for free →</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="mobile-checkout traveller-checkout">
+          <div>
+            <small>Base booking total</small><strong>PKR 149,000</strong>
+          </div>
+          <label
+            class="bk-primary"
+            for="step-review"
+          >
+            Continue to add-ons
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-arrow" />
+            </svg>
+          </label>
+        </div>
+      </section>
+      <label class="review-backdrop" for="step-travellers" aria-label="Close traveller review"></label>
+      <div id="traveller-review" class="bk-card review-popover" role="dialog" aria-modal="true" aria-labelledby="traveller-review-title">
+        <label
+          class="popover-close"
+          for="step-travellers"
+          aria-label="Close"
+        >
+          ×
+        </label>
+        <h3 id="traveller-review-title">
+          <svg class="bk-icon" aria-hidden="true"><use href="#bk-user" /></svg
+          >Review traveller details
+        </h3>
+        <p>Please confirm the details below. You can edit if needed.</p>
+        <div class="review-flight-summary">
+          <img class="review-flight-logo" src="images/airlines/emirates.png" alt="Emirates" />
+          <span><strong>EK 615</strong><small>Boeing 777-300ER</small></span>
+        </div>
+        <details class="review-person" open>
+          <summary>
+            <svg class="bk-icon" aria-hidden="true"><use href="#bk-user" /></svg
+            >Traveller 1<small>Adult</small>
+          </summary>
+          <dl>
+            <div>
+              <dt>Name</dt>
+              <dd data-person-name="adult">Ali Khan</dd>
+            </div>
+            <div>
+              <dt>Date of birth</dt>
+              <dd data-review="adult-dob">1990-02-15</dd>
+            </div>
+            <div>
+              <dt>Nationality</dt>
+              <dd data-review="adult-nationality">Pakistan</dd>
+            </div>
+            <div>
+              <dt>Passport number</dt>
+              <dd data-review="adult-passport">AB1234561</dd>
+            </div>
+            <div>
+              <dt>Passport expiry</dt>
+              <dd data-review="adult-expiry">2030-02-14</dd>
+            </div>
+          </dl>
+        </details>
+        <details class="review-person" open>
+          <summary>
+            <svg class="bk-icon" aria-hidden="true"><use href="#bk-user" /></svg
+            >Traveller 2<small>Child</small>
+          </summary>
+          <dl>
+            <div>
+              <dt>Name</dt>
+              <dd data-person-name="child">Ayesha Khan</dd>
+            </div>
+            <div>
+              <dt>Date of birth</dt>
+              <dd data-review="child-dob">2018-05-10</dd>
+            </div>
+            <div>
+              <dt>Nationality</dt>
+              <dd data-review="child-nationality">Pakistan</dd>
+            </div>
+            <div>
+              <dt>Passport number</dt>
+              <dd data-review="child-passport">AB1234562</dd>
+            </div>
+            <div>
+              <dt>Passport expiry</dt>
+              <dd data-review="child-expiry">2030-02-14</dd>
+            </div>
+          </dl>
+        </details>
+        <div class="review-actions">
+          <label
+            class="bk-outline"
+            for="step-travellers"
+          >
+            Edit details</label
+          ><label class="bk-primary" for="step-addons" data-confirm-travellers>
+            Confirm details
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-arrow" /></svg
+          ></label>
+        </div>
+      </div>
+      <section
+        class="booking-panel addons-panel bk-container"
+        aria-labelledby="addons-title"
+      >
+        <h2 class="visually-hidden" id="addons-title" tabindex="-1">
+          Personalise your flight
+        </h2>
+        <div class="route-banner">
+          <div>
+            <h3>Islamabad (ISB) <span>→</span> Dubai (DXB)</h3>
+            <p>
+              Tue, 24 Nov 2026 <span>·</span>1 Adult + 1
+              Child<span>·</span>Economy
+            </p>
+          </div>
+          <a class="bk-outline" href="search-flight.html"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-edit" /></svg
+            >Edit search</a
+          >
+          <div
+            class="route-airline-art"
+            role="img"
+            aria-label="Pakistan International Airlines aircraft, from supplied reference"
+          ></div>
+        </div>
+        <input
+          class="state-radio"
+          type="radio"
+          name="active-traveller"
+          id="person-adult"
+          checked
+          aria-label="Ali Khan, adult"
+        /><input
+          class="state-radio"
+          type="radio"
+          name="active-traveller"
+          id="person-child"
+          aria-label="Ayesha Khan, child"
+        />
+        <div class="passenger-switch">
+          <span>Choose traveller</span
+          ><label for="person-adult"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-user" /></svg
+            ><span data-person-name="adult">Ali Khan</span
+            ><small>Adult</small></label
+          ><label for="person-child"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-user" /></svg
+            ><span data-person-name="child">Ayesha Khan</span
+            ><small>Child</small></label
+          >
+        </div>
+        <section
+          class="traveller-options adult-options"
+          aria-label="Ali Khan add-ons"
+        >
+          <input
+            class="state-radio"
+            type="radio"
+            name="adult-category"
+            id="adult-seats"
+            checked
+            aria-label="Seats"
+          /><input
+            class="state-radio"
+            type="radio"
+            name="adult-category"
+            id="adult-meals"
+            aria-label="Meals"
+          /><input
+            class="state-radio"
+            type="radio"
+            name="adult-category"
+            id="adult-bags"
+            aria-label="Baggage"
+          />
+          <div class="addon-tabs">
+            <label for="adult-seats"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-seat" /></svg
+              ><span>Seats<small>Choose your seat</small></span></label
+            ><label for="adult-meals"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-meal" /></svg
+              ><span>Meals<small>Add a meal</small></span></label
+            ><label for="adult-bags"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-bag" /></svg
+              ><span>Baggage<small>Add extra baggage</small></span></label
+            ><label
+              class="bk-link skip-extras"
+              for="step-payment"
+              tabindex="0"
+              role="button"
+              >Skip extras
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-arrow" /></svg
+            ></label>
+          </div>
+          <div class="addon-columns">
+            <section class="bk-card seat-panel">
+              <div class="addon-heading">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-seat" />
+                </svg>
+                <div>
+                  <h2>Seats</h2>
+                  <p>Pick your preferred seat.</p>
+                </div>
+              </div>
+              <div class="passenger-profile">
+                <span class="person-avatar">A</span>
+                <div>
+                  <b><span data-person-name="adult">Ali Khan</span></b
+                  ><small>Adult</small>
+                </div>
+                <span class="seat-chip"
+                  ><span data-summary="adult-seat">No preference</span
+                  ><small data-person-seat-price="adult">PKR 0</small></span
+                >
+                <details class="mobile-passenger-picker">
+                  <summary aria-label="Switch traveller"><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg></summary>
+                  <div><label for="person-child">Ayesha Khan<small>Child (8 years)</small></label></div>
+                </details>
+              </div>
+              <div class="seat-legend">
+                <span><i></i>Available</span><span><i></i>Occupied</span
+                ><span><i></i>Extra legroom</span>
+              </div>
+              <div class="seat-map">
+                <div class="cabin-edge left"></div>
+                <div class="cabin-edge right"></div>
+                <div class="seat-row seat-letters">
+                  <span></span><span>A</span><span>B</span><span>C</span
+                  ><span></span><span>D</span><span>E</span><span>F</span>
+                </div>
+                <div class="seat-row">
+                  <span>10</span
+                  ><label class="seat-choice extra-legroom"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="10A"
+                      data-price="3500"
+                      data-label="10A"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 10A, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied extra-legroom"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="10B"
+                      data-price="3500"
+                      data-label="10B"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 10B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied extra-legroom"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="10C"
+                      data-price="3500"
+                      data-label="10C"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 10C, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice occupied extra-legroom"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="10D"
+                      data-price="3500"
+                      data-label="10D"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 10D, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied extra-legroom"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="10E"
+                      data-price="3500"
+                      data-label="10E"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 10E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice extra-legroom"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="10F"
+                      data-price="3500"
+                      data-label="10F"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 10F, PKR 3,500" /><span></span
+                  ></label>
+                </div>
+                <div class="seat-row">
+                  <span>11</span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="11A"
+                      data-price="3500"
+                      data-label="11A"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 11A, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="11B"
+                      data-price="3500"
+                      data-label="11B"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 11B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="11C"
+                      data-price="3500"
+                      data-label="11C"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 11C, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="11D"
+                      data-price="3500"
+                      data-label="11D"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 11D, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="11E"
+                      data-price="3500"
+                      data-label="11E"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 11E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="11F"
+                      data-price="3500"
+                      data-label="11F"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 11F, PKR 3,500" /><span></span
+                  ></label>
+                </div>
+                <div class="seat-row">
+                  <span>12</span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="12A"
+                      data-price="3500"
+                      data-label="12A"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 12A, PKR 3,500"
+                      checked /><span></span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="12B"
+                      data-price="3500"
+                      data-label="12B"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 12B, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="12C"
+                      data-price="3500"
+                      data-label="12C"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 12C, PKR 3,500" /><span></span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="12D"
+                      data-price="3500"
+                      data-label="12D"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 12D, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="12E"
+                      data-price="3500"
+                      data-label="12E"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 12E, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="12F"
+                      data-price="3500"
+                      data-label="12F"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 12F, occupied"
+                      disabled
+                    /><span>×</span></label
+                  >
+                </div>
+                <div class="seat-row">
+                  <span>13</span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="13A"
+                      data-price="3500"
+                      data-label="13A"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 13A, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="13B"
+                      data-price="3500"
+                      data-label="13B"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 13B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="13C"
+                      data-price="3500"
+                      data-label="13C"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 13C, PKR 3,500" /><span></span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="13D"
+                      data-price="3500"
+                      data-label="13D"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 13D, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="13E"
+                      data-price="3500"
+                      data-label="13E"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 13E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="13F"
+                      data-price="3500"
+                      data-label="13F"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 13F, occupied"
+                      disabled
+                    /><span>×</span></label
+                  >
+                </div>
+                <div class="seat-row">
+                  <span>14</span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="14A"
+                      data-price="3500"
+                      data-label="14A"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 14A, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="14B"
+                      data-price="3500"
+                      data-label="14B"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 14B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="14C"
+                      data-price="3500"
+                      data-label="14C"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 14C, PKR 3,500" /><span></span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="14D"
+                      data-price="3500"
+                      data-label="14D"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 14D, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="14E"
+                      data-price="3500"
+                      data-label="14E"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 14E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="14F"
+                      data-price="3500"
+                      data-label="14F"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 14F, PKR 3,500" /><span></span
+                  ></label>
+                </div>
+                <div class="seat-row">
+                  <span>15</span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="15A"
+                      data-price="3500"
+                      data-label="15A"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 15A, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="15B"
+                      data-price="3500"
+                      data-label="15B"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 15B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="15C"
+                      data-price="3500"
+                      data-label="15C"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 15C, PKR 3,500" /><span></span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="15D"
+                      data-price="3500"
+                      data-label="15D"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 15D, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="15E"
+                      data-price="3500"
+                      data-label="15E"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 15E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="15F"
+                      data-price="3500"
+                      data-label="15F"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 15F, PKR 3,500" /><span></span
+                  ></label>
+                </div>
+                <div class="seat-row">
+                  <span>16</span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="16A"
+                      data-price="3500"
+                      data-label="16A"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 16A, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="16B"
+                      data-price="3500"
+                      data-label="16B"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 16B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="16C"
+                      data-price="3500"
+                      data-label="16C"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 16C, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="16D"
+                      data-price="3500"
+                      data-label="16D"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 16D, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="16E"
+                      data-price="3500"
+                      data-label="16E"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 16E, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="adult-seat"
+                      value="16F"
+                      data-price="3500"
+                      data-label="16F"
+                      data-person="adult"
+                      data-kind="seat"
+                      aria-label="Ali Khan, seat 16F, occupied"
+                      disabled
+                    /><span>×</span></label
+                  >
+                </div>
+              </div>
+              <label class="none-option seat-none"
+                ><input
+                  type="radio"
+                  name="adult-seat"
+                  value="none"
+                  data-price="0"
+                  data-label="No preference"
+                  data-person="adult"
+                  data-kind="seat"
+                />No seat preference</label
+              >
+              <div class="seat-confirm">
+                <div>
+                  <small>Selected seat</small
+                  ><strong data-summary="adult-seat">No preference</strong
+                  ><span data-person-seat-price="adult">PKR 0</span>
+                </div>
+                <label
+                  class="bk-primary"
+                  for="adult-meals"
+                  tabindex="0"
+                  role="button"
+                  >Confirm seat</label
+                >
+              </div>
+            </section>
+            <section class="bk-card meal-panel">
+              <div class="addon-heading">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-meal" />
+                </svg>
+                <div>
+                  <h2>Meals</h2>
+                  <p>Enjoy a great meal on board.</p>
+                </div>
+              </div>
+              <label class="none-option"
+                ><input
+                  id="adult-meal-none"
+                  type="radio"
+                  name="adult-meal"
+                  value="none"
+                  data-price="0"
+                  data-label="No meal"
+                  data-person="adult"
+                  data-kind="meal"
+                  checked
+                />No meal <small>No additional charge</small></label
+              >
+              <div class="meal-grid">
+                <div class="meal-card">
+                  <label class="meal-select"
+                    ><input
+                      id="adult-meal-vegetarian"
+                      type="radio"
+                      name="adult-meal"
+                      value="vegetarian"
+                      data-price="1800"
+                      data-label="Vegetarian meal"
+                      data-person="adult"
+                      data-kind="meal"
+                    /><span
+                      class="meal-photo meal-photo-vegetarian"
+                      role="img"
+                      aria-label="Vegetarian meal"
+                    ></span
+                    ><strong>Vegetarian meal</strong
+                    ><small>Seasonal vegetables with rice</small></label
+                  >
+                  <div class="meal-price">
+                    <b>PKR 1,800</b>
+                    <div class="quantity">
+                      <label
+                        for="adult-meal-none"
+                        aria-label="Remove Vegetarian meal"
+                        >−</label
+                      ><span class="meal-count"></span
+                      ><label
+                        for="adult-meal-vegetarian"
+                        aria-label="Select Vegetarian meal"
+                        >+</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"
+                    ><input
+                      id="adult-meal-chicken"
+                      type="radio"
+                      name="adult-meal"
+                      value="chicken"
+                      data-price="2200"
+                      data-label="Chicken rice"
+                      data-person="adult"
+                      data-kind="meal"
+                    /><span
+                      class="meal-photo meal-photo-chicken"
+                      role="img"
+                      aria-label="Chicken rice"
+                    ></span
+                    ><strong>Chicken rice</strong
+                    ><small>Grilled chicken with spiced rice</small></label
+                  >
+                  <div class="meal-price">
+                    <b>PKR 2,200</b>
+                    <div class="quantity">
+                      <label
+                        for="adult-meal-none"
+                        aria-label="Remove Chicken rice"
+                        >−</label
+                      ><span class="meal-count"></span
+                      ><label
+                        for="adult-meal-chicken"
+                        aria-label="Select Chicken rice"
+                        >+</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"
+                    ><input
+                      id="adult-meal-sandwich"
+                      type="radio"
+                      name="adult-meal"
+                      value="sandwich"
+                      data-price="1500"
+                      data-label="Chicken sandwich"
+                      data-person="adult"
+                      data-kind="meal"
+                    /><span
+                      class="meal-photo meal-photo-sandwich"
+                      role="img"
+                      aria-label="Chicken sandwich"
+                    ></span
+                    ><strong>Chicken sandwich</strong
+                    ><small>Freshly made sandwich</small></label
+                  >
+                  <div class="meal-price">
+                    <b>PKR 1,500</b>
+                    <div class="quantity">
+                      <label
+                        for="adult-meal-none"
+                        aria-label="Remove Chicken sandwich"
+                        >−</label
+                      ><span class="meal-count"></span
+                      ><label
+                        for="adult-meal-sandwich"
+                        aria-label="Select Chicken sandwich"
+                        >+</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"
+                    ><input
+                      id="adult-meal-fruit"
+                      type="radio"
+                      name="adult-meal"
+                      value="fruit"
+                      data-price="1200"
+                      data-label="Fresh fruit plate"
+                      data-person="adult"
+                      data-kind="meal"
+                    /><span
+                      class="meal-photo meal-photo-fruit"
+                      role="img"
+                      aria-label="Fresh fruit plate"
+                    ></span
+                    ><strong>Fresh fruit plate</strong
+                    ><small>Seasonal fruits</small></label
+                  >
+                  <div class="meal-price">
+                    <b>PKR 1,200</b>
+                    <div class="quantity">
+                      <label
+                        for="adult-meal-none"
+                        aria-label="Remove Fresh fruit plate"
+                        >−</label
+                      ><span class="meal-count"></span
+                      ><label
+                        for="adult-meal-fruit"
+                        aria-label="Select Fresh fruit plate"
+                        >+</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <label
+                class="bk-primary mobile-addon-confirm"
+                for="adult-bags"
+                tabindex="0"
+                role="button"
+                >Confirm meal
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-arrow" /></svg
+              ></label>
+            </section>
+            <section class="bk-card baggage-panel">
+              <div class="addon-heading">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" />
+                </svg>
+                <div>
+                  <h2>Baggage</h2>
+                  <p>Add extra baggage for a worry-free journey.</p>
+                </div>
+              </div>
+              <div class="included-bags">
+                <div>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-bag" /></svg
+                  ><span
+                    ><b>Included</b><small>Cabin baggage</small
+                    ><strong>7 kg</strong><small>(1 piece)</small></span
+                  >
+                </div>
+                <div>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-bag" /></svg
+                  ><span
+                    ><b>Included</b><small>Checked baggage</small
+                    ><strong>23 kg</strong><small>(1 piece)</small></span
+                  >
+                </div>
+              </div>
+              <h3 class="extra-bag-title">Need more checked baggage?</h3>
+              <label class="none-option"
+                ><input
+                  type="radio"
+                  name="adult-baggage"
+                  value="none"
+                  data-price="0"
+                  data-label="No extra baggage"
+                  data-person="adult"
+                  data-kind="baggage"
+                  checked
+                />No extra baggage</label
+              ><label class="baggage-option"
+                ><input
+                  type="radio"
+                  name="adult-baggage"
+                  value="5"
+                  data-price="4500"
+                  data-label="+ 5 kg extra baggage"
+                  data-person="adult"
+                  data-kind="baggage"
+                /><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg
+                ><span><strong>+ 5 kg</strong><small>Total 28 kg</small></span
+                ><b>PKR 4,500</b></label
+              ><label class="baggage-option"
+                ><input
+                  type="radio"
+                  name="adult-baggage"
+                  value="10"
+                  data-price="8000"
+                  data-label="+ 10 kg extra baggage"
+                  data-person="adult"
+                  data-kind="baggage"
+                /><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg
+                ><span><strong>+ 10 kg</strong><small>Total 33 kg</small></span
+                ><b>PKR 8,000</b></label
+              ><label class="baggage-option"
+                ><input
+                  type="radio"
+                  name="adult-baggage"
+                  value="15"
+                  data-price="11000"
+                  data-label="+ 15 kg extra baggage"
+                  data-person="adult"
+                  data-kind="baggage"
+                /><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg
+                ><span><strong>+ 15 kg</strong><small>Total 38 kg</small></span
+                ><b>PKR 11,000</b></label
+              ><label
+                class="bk-primary mobile-addon-confirm"
+                for="step-payment"
+                tabindex="0"
+                role="button"
+                >Confirm baggage
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-arrow" /></svg
+              ></label>
+            </section>
+          </div>
+          <div class="mobile-addon-shortcuts">
+            <label for="adult-meals"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-meal" /></svg
+              ><span class="mobile-shortcut-copy">Meals<small>Add a meal</small></span
+              ><span class="mobile-shortcut-photo meal" aria-hidden="true"></span
+              ><span class="mobile-shortcut-arrow">›</span></label
+            ><label for="adult-bags"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-bag" /></svg
+              ><span class="mobile-shortcut-copy">Baggage<small>Add extra baggage</small></span
+              ><span class="mobile-shortcut-photo baggage" aria-hidden="true"></span
+              ><span class="mobile-shortcut-arrow">›</span></label
+            >
+          </div>
+        </section>
+        <section
+          class="traveller-options child-options"
+          aria-label="Ayesha Khan add-ons"
+        >
+          <input
+            class="state-radio"
+            type="radio"
+            name="child-category"
+            id="child-seats"
+            checked
+            aria-label="Seats"
+          /><input
+            class="state-radio"
+            type="radio"
+            name="child-category"
+            id="child-meals"
+            aria-label="Meals"
+          /><input
+            class="state-radio"
+            type="radio"
+            name="child-category"
+            id="child-bags"
+            aria-label="Baggage"
+          />
+          <div class="addon-tabs">
+            <label for="child-seats"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-seat" /></svg
+              ><span>Seats<small>Choose your seat</small></span></label
+            ><label for="child-meals"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-meal" /></svg
+              ><span>Meals<small>Add a meal</small></span></label
+            ><label for="child-bags"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-bag" /></svg
+              ><span>Baggage<small>Add extra baggage</small></span></label
+            ><label
+              class="bk-link skip-extras"
+              for="step-payment"
+              tabindex="0"
+              role="button"
+              >Skip extras
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-arrow" /></svg
+            ></label>
+          </div>
+          <div class="addon-columns">
+            <section class="bk-card seat-panel">
+              <div class="addon-heading">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-seat" />
+                </svg>
+                <div>
+                  <h2>Seats</h2>
+                  <p>Pick your preferred seat for a more comfortable flight.</p>
+                </div>
+              </div>
+              <div class="passenger-profile">
+                <span class="person-avatar">A</span>
+                <div>
+                  <b><span data-person-name="child">Ayesha Khan</span></b
+                  ><small>Child</small>
+                </div>
+                <span class="seat-chip"
+                  ><span data-summary="child-seat">No preference</span
+                  ><small data-person-seat-price="child">PKR 0</small></span
+                >
+                <details class="mobile-passenger-picker">
+                  <summary aria-label="Switch traveller"><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg></summary>
+                  <div><label for="person-adult">Ali Khan<small>Adult (18+)</small></label></div>
+                </details>
+              </div>
+              <div class="seat-legend">
+                <span><i></i>Available</span><span><i></i>Occupied</span
+                ><span><i></i>Extra legroom</span>
+              </div>
+              <div class="seat-map">
+                <div class="cabin-edge left"></div>
+                <div class="cabin-edge right"></div>
+                <div class="seat-row seat-letters">
+                  <span></span><span>A</span><span>B</span><span>C</span
+                  ><span></span><span>D</span><span>E</span><span>F</span>
+                </div>
+                <div class="seat-row">
+                  <span>10</span
+                  ><label class="seat-choice extra-legroom"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="10A"
+                      data-price="3500"
+                      data-label="10A"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 10A, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied extra-legroom"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="10B"
+                      data-price="3500"
+                      data-label="10B"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 10B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied extra-legroom"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="10C"
+                      data-price="3500"
+                      data-label="10C"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 10C, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice occupied extra-legroom"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="10D"
+                      data-price="3500"
+                      data-label="10D"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 10D, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied extra-legroom"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="10E"
+                      data-price="3500"
+                      data-label="10E"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 10E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice extra-legroom"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="10F"
+                      data-price="3500"
+                      data-label="10F"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 10F, PKR 3,500" /><span></span
+                  ></label>
+                </div>
+                <div class="seat-row">
+                  <span>11</span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="11A"
+                      data-price="3500"
+                      data-label="11A"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 11A, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="11B"
+                      data-price="3500"
+                      data-label="11B"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 11B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="11C"
+                      data-price="3500"
+                      data-label="11C"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 11C, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="11D"
+                      data-price="3500"
+                      data-label="11D"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 11D, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="11E"
+                      data-price="3500"
+                      data-label="11E"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 11E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="11F"
+                      data-price="3500"
+                      data-label="11F"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 11F, PKR 3,500" /><span></span
+                  ></label>
+                </div>
+                <div class="seat-row">
+                  <span>12</span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="12A"
+                      data-price="3500"
+                      data-label="12A"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 12A, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="12B"
+                      data-price="3500"
+                      data-label="12B"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 12B, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="12C"
+                      data-price="3500"
+                      data-label="12C"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 12C, PKR 3,500" /><span></span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="12D"
+                      data-price="3500"
+                      data-label="12D"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 12D, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="12E"
+                      data-price="3500"
+                      data-label="12E"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 12E, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="12F"
+                      data-price="3500"
+                      data-label="12F"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 12F, occupied"
+                      disabled
+                    /><span>×</span></label
+                  >
+                </div>
+                <div class="seat-row">
+                  <span>13</span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="13A"
+                      data-price="3500"
+                      data-label="13A"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 13A, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="13B"
+                      data-price="3500"
+                      data-label="13B"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 13B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="13C"
+                      data-price="3500"
+                      data-label="13C"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 13C, PKR 3,500" /><span></span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="13D"
+                      data-price="3500"
+                      data-label="13D"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 13D, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="13E"
+                      data-price="3500"
+                      data-label="13E"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 13E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="13F"
+                      data-price="3500"
+                      data-label="13F"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 13F, occupied"
+                      disabled
+                    /><span>×</span></label
+                  >
+                </div>
+                <div class="seat-row">
+                  <span>14</span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="14A"
+                      data-price="3500"
+                      data-label="14A"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 14A, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="14B"
+                      data-price="3500"
+                      data-label="14B"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 14B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="14C"
+                      data-price="3500"
+                      data-label="14C"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 14C, PKR 3,500" /><span></span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="14D"
+                      data-price="3500"
+                      data-label="14D"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 14D, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="14E"
+                      data-price="3500"
+                      data-label="14E"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 14E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="14F"
+                      data-price="3500"
+                      data-label="14F"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 14F, PKR 3,500" /><span></span
+                  ></label>
+                </div>
+                <div class="seat-row">
+                  <span>15</span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="15A"
+                      data-price="3500"
+                      data-label="15A"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 15A, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="15B"
+                      data-price="3500"
+                      data-label="15B"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 15B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="15C"
+                      data-price="3500"
+                      data-label="15C"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 15C, PKR 3,500" /><span></span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="15D"
+                      data-price="3500"
+                      data-label="15D"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 15D, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="15E"
+                      data-price="3500"
+                      data-label="15E"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 15E, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="15F"
+                      data-price="3500"
+                      data-label="15F"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 15F, PKR 3,500" /><span></span
+                  ></label>
+                </div>
+                <div class="seat-row">
+                  <span>16</span
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="16A"
+                      data-price="3500"
+                      data-label="16A"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 16A, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="16B"
+                      data-price="3500"
+                      data-label="16B"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 16B, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="16C"
+                      data-price="3500"
+                      data-label="16C"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 16C, occupied"
+                      disabled
+                    /><span>×</span></label
+                  ><span class="seat-aisle"></span
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="16D"
+                      data-price="3500"
+                      data-label="16D"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 16D, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="16E"
+                      data-price="3500"
+                      data-label="16E"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 16E, PKR 3,500" /><span></span></label
+                  ><label class="seat-choice occupied"
+                    ><input
+                      type="radio"
+                      name="child-seat"
+                      value="16F"
+                      data-price="3500"
+                      data-label="16F"
+                      data-person="child"
+                      data-kind="seat"
+                      aria-label="Ayesha Khan, seat 16F, occupied"
+                      disabled
+                    /><span>×</span></label
+                  >
+                </div>
+              </div>
+              <label class="none-option seat-none"
+                ><input
+                  type="radio"
+                  name="child-seat"
+                  value="none"
+                  data-price="0"
+                  data-label="No preference"
+                  data-person="child"
+                  data-kind="seat"
+                  checked
+                />No seat preference</label
+              >
+              <div class="seat-confirm">
+                <div>
+                  <small>Selected seat</small
+                  ><strong data-summary="child-seat">No preference</strong
+                  ><span data-person-seat-price="child">PKR 0</span>
+                </div>
+                <label
+                  class="bk-primary"
+                  for="child-meals"
+                  tabindex="0"
+                  role="button"
+                  >Confirm seat</label
+                >
+              </div>
+            </section>
+            <section class="bk-card meal-panel">
+              <div class="addon-heading">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-meal" />
+                </svg>
+                <div>
+                  <h2>Meals</h2>
+                  <p>A tasty meal for your little traveller.</p>
+                </div>
+              </div>
+              <label class="none-option"
+                ><input
+                  id="child-meal-none"
+                  type="radio"
+                  name="child-meal"
+                  value="none"
+                  data-price="0"
+                  data-label="No meal"
+                  data-person="child"
+                  data-kind="meal"
+                  checked
+                />No meal <small>No additional charge</small></label
+              >
+              <div class="meal-grid">
+                <div class="meal-card">
+                  <label class="meal-select"
+                    ><input
+                      id="child-meal-vegetarian"
+                      type="radio"
+                      name="child-meal"
+                      value="vegetarian"
+                      data-price="1800"
+                      data-label="Vegetarian meal"
+                      data-person="child"
+                      data-kind="meal"
+                    /><span
+                      class="meal-photo meal-photo-vegetarian"
+                      role="img"
+                      aria-label="Vegetarian meal"
+                    ></span
+                    ><strong>Vegetarian meal</strong
+                    ><small>Seasonal vegetables with rice</small></label
+                  >
+                  <div class="meal-price">
+                    <b>PKR 1,800</b>
+                    <div class="quantity">
+                      <label
+                        for="child-meal-none"
+                        aria-label="Remove Vegetarian meal"
+                        >−</label
+                      ><span class="meal-count"></span
+                      ><label
+                        for="child-meal-vegetarian"
+                        aria-label="Select Vegetarian meal"
+                        >+</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"
+                    ><input
+                      id="child-meal-chicken"
+                      type="radio"
+                      name="child-meal"
+                      value="chicken"
+                      data-price="1500"
+                      data-label="Child chicken rice"
+                      data-person="child"
+                      data-kind="meal"
+                    /><span
+                      class="meal-photo meal-photo-chicken"
+                      role="img"
+                      aria-label="Child chicken rice"
+                    ></span
+                    ><strong>Child chicken rice</strong
+                    ><small
+                      >Mild chicken and rice for little travellers</small
+                    ></label
+                  >
+                  <div class="meal-price">
+                    <b>PKR 1,500</b>
+                    <div class="quantity">
+                      <label
+                        for="child-meal-none"
+                        aria-label="Remove Child chicken rice"
+                        >−</label
+                      ><span class="meal-count"></span
+                      ><label
+                        for="child-meal-chicken"
+                        aria-label="Select Child chicken rice"
+                        >+</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"
+                    ><input
+                      id="child-meal-sandwich"
+                      type="radio"
+                      name="child-meal"
+                      value="sandwich"
+                      data-price="1500"
+                      data-label="Chicken sandwich"
+                      data-person="child"
+                      data-kind="meal"
+                    /><span
+                      class="meal-photo meal-photo-sandwich"
+                      role="img"
+                      aria-label="Chicken sandwich"
+                    ></span
+                    ><strong>Chicken sandwich</strong
+                    ><small>Freshly made sandwich</small></label
+                  >
+                  <div class="meal-price">
+                    <b>PKR 1,500</b>
+                    <div class="quantity">
+                      <label
+                        for="child-meal-none"
+                        aria-label="Remove Chicken sandwich"
+                        >−</label
+                      ><span class="meal-count"></span
+                      ><label
+                        for="child-meal-sandwich"
+                        aria-label="Select Chicken sandwich"
+                        >+</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"
+                    ><input
+                      id="child-meal-fruit"
+                      type="radio"
+                      name="child-meal"
+                      value="fruit"
+                      data-price="1200"
+                      data-label="Fresh fruit plate"
+                      data-person="child"
+                      data-kind="meal"
+                    /><span
+                      class="meal-photo meal-photo-fruit"
+                      role="img"
+                      aria-label="Fresh fruit plate"
+                    ></span
+                    ><strong>Fresh fruit plate</strong
+                    ><small>Seasonal fruits</small></label
+                  >
+                  <div class="meal-price">
+                    <b>PKR 1,200</b>
+                    <div class="quantity">
+                      <label
+                        for="child-meal-none"
+                        aria-label="Remove Fresh fruit plate"
+                        >−</label
+                      ><span class="meal-count"></span
+                      ><label
+                        for="child-meal-fruit"
+                        aria-label="Select Fresh fruit plate"
+                        >+</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <label
+                class="bk-primary mobile-addon-confirm"
+                for="child-bags"
+                tabindex="0"
+                role="button"
+                >Confirm meal
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-arrow" /></svg
+              ></label>
+            </section>
+            <section class="bk-card baggage-panel">
+              <div class="addon-heading">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" />
+                </svg>
+                <div>
+                  <h2>Baggage</h2>
+                  <p>Add extra baggage for a worry-free journey.</p>
+                </div>
+              </div>
+              <div class="included-bags">
+                <div>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-bag" /></svg
+                  ><span
+                    ><b>Included</b><small>Cabin baggage</small
+                    ><strong>7 kg</strong><small>(1 piece)</small></span
+                  >
+                </div>
+                <div>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-bag" /></svg
+                  ><span
+                    ><b>Included</b><small>Checked baggage</small
+                    ><strong>23 kg</strong><small>(1 piece)</small></span
+                  >
+                </div>
+              </div>
+              <h3 class="extra-bag-title">Need more checked baggage?</h3>
+              <label class="none-option"
+                ><input
+                  type="radio"
+                  name="child-baggage"
+                  value="none"
+                  data-price="0"
+                  data-label="No extra baggage"
+                  data-person="child"
+                  data-kind="baggage"
+                  checked
+                />No extra baggage</label
+              ><label class="baggage-option"
+                ><input
+                  type="radio"
+                  name="child-baggage"
+                  value="5"
+                  data-price="4500"
+                  data-label="+ 5 kg extra baggage"
+                  data-person="child"
+                  data-kind="baggage"
+                /><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg
+                ><span><strong>+ 5 kg</strong><small>Total 28 kg</small></span
+                ><b>PKR 4,500</b></label
+              ><label class="baggage-option"
+                ><input
+                  type="radio"
+                  name="child-baggage"
+                  value="10"
+                  data-price="8000"
+                  data-label="+ 10 kg extra baggage"
+                  data-person="child"
+                  data-kind="baggage"
+                /><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg
+                ><span><strong>+ 10 kg</strong><small>Total 33 kg</small></span
+                ><b>PKR 8,000</b></label
+              ><label class="baggage-option"
+                ><input
+                  type="radio"
+                  name="child-baggage"
+                  value="15"
+                  data-price="11000"
+                  data-label="+ 15 kg extra baggage"
+                  data-person="child"
+                  data-kind="baggage"
+                /><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg
+                ><span><strong>+ 15 kg</strong><small>Total 38 kg</small></span
+                ><b>PKR 11,000</b></label
+              ><label
+                class="bk-primary mobile-addon-confirm"
+                for="step-payment"
+                tabindex="0"
+                role="button"
+                >Confirm baggage
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-arrow" /></svg
+              ></label>
+            </section>
+          </div>
+          <div class="mobile-addon-shortcuts">
+            <label for="child-meals"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-meal" /></svg
+              ><span class="mobile-shortcut-copy">Meals<small>Add a meal</small></span
+              ><span class="mobile-shortcut-photo meal" aria-hidden="true"></span
+              ><span class="mobile-shortcut-arrow">›</span></label
+            ><label for="child-bags"
+              ><svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-bag" /></svg
+              ><span class="mobile-shortcut-copy">Baggage<small>Add extra baggage</small></span
+              ><span class="mobile-shortcut-photo baggage" aria-hidden="true"></span
+              ><span class="mobile-shortcut-arrow">›</span></label
+            >
+          </div>
+        </section>
+        <details class="extras-review bk-card">
+          <summary>
+            <svg class="bk-icon" aria-hidden="true"><use href="#bk-doc" /></svg
+            >Review everyone’s extras<span>Adult + Child</span>
+          </summary>
+          <div>
+            <div class="extras-person">
+              <strong><span data-person-name="adult">Ali Khan</span></strong
+              ><small>Adult</small>
+              <p>
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-seat" /></svg
+                ><span data-summary="adult-seat">No preference</span>
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-meal" /></svg
+                ><span data-summary="adult-meal">No meal</span>
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg
+                ><span data-summary="adult-baggage">No extra baggage</span>
+              </p>
+            </div>
+            <div class="extras-person">
+              <strong><span data-person-name="child">Ayesha Khan</span></strong
+              ><small>Child</small>
+              <p>
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-seat" /></svg
+                ><span data-summary="child-seat">No preference</span>
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-meal" /></svg
+                ><span data-summary="child-meal">No meal</span>
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg
+                ><span data-summary="child-baggage">No extra baggage</span>
+              </p>
+            </div>
+          </div>
+        </details>
+        <div class="extras-checkout">
+          <div>
+            <svg class="bk-icon" aria-hidden="true"><use href="#bk-cart" /></svg
+            ><span
+              ><strong>Your extras</strong
+              ><small>1 item | Total</small></span
+            >
+          </div>
+          <strong>PKR 3,500</strong><label
+            class="bk-primary"
+            for="step-payment"
+            tabindex="0"
+            role="button"
+            >Continue to payment
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-arrow" /></svg
+          ></label>
+        </div>
+      </section>
+      <section
+        id="payment-panel"
+        class="booking-panel payment-panel bk-container"
+        aria-labelledby="payment-title"
+      >
+        <h2 class="visually-hidden" id="payment-title" tabindex="-1">
+          Payment
+        </h2>
+        <details class="mobile-trip-summary bk-card" open>
+          <summary><strong>Trip summary</strong><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg></summary>
+          <div>
+            <b>ISB → DXB</b>
+            <p>Tue, 24 Nov 2026 · 1 Adult + 1 Child · Economy</p>
+            <strong>PKR 149,000</strong>
+          </div>
+        </details>
+        <div id="payment-form" class="payment-form">
+          <input
+            class="state-radio"
+            type="radio"
+            name="payment-method"
+            id="method-card"
+            checked
+            aria-label="Credit or debit card"
+          /><input
+            class="state-radio"
+            type="radio"
+            name="payment-method"
+            id="method-bank"
+            aria-label="Bank transfer"
+          /><input
+            class="state-radio"
+            type="radio"
+            name="payment-method"
+            id="method-wallet"
+            aria-label="Wallet"
+          />
+          <div class="payment-layout">
+            <aside class="payment-method-column">
+              <h2>Choose a payment method</h2>
+              <div class="payment-methods">
+                <label for="method-card"
+                  ><span class="icon-tile"
+                    ><svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-card" /></svg></span
+                  ><span
+                    ><strong>Credit or debit card</strong
+                    ><small>Visa, Mastercard, Amex, etc.</small></span
+                  ><b>›</b></label
+                ><label for="method-bank"
+                  ><span class="icon-tile"
+                    ><svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-bank" /></svg></span
+                  ><span
+                    ><strong>Bank transfer</strong
+                    ><small>Pay via local bank (PKR)</small></span
+                  ><b>›</b></label
+                ><label for="method-wallet"
+                  ><span class="icon-tile"
+                    ><svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-wallet" /></svg></span
+                  ><span
+                    ><strong>Wallet</strong
+                    ><small class="wallet-desktop-caption">Use your wallet balance</small><small class="wallet-mobile-caption">Balance: <b>PKR 12,500</b></small></span
+                  ><b>›</b></label
+                >
+              </div>
+              <div class="wallet-card">
+                <h3>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-wallet" /></svg
+                  ><span>Your Sparrow wallet<strong>PKR 12,500 <svg class="bk-icon" aria-hidden="true"><use href="#bk-info" /></svg></strong></span>
+                </h3>
+                <label class="wallet-toggle"><input type="checkbox" id="use-wallet" aria-label="Use wallet balance" /><span aria-hidden="true"></span>Use wallet balance</label>
+                <p>Available balance will be applied<br />to your booking.</p>
+                <details>
+                  <summary>View details</summary>
+                  <p>
+                    Demo wallet credit. The remaining amount is simulated; no
+                    funds are transferred.
+                  </p>
+                </details>
+              </div>
+            </aside>
+            <div class="payment-main">
+              <div class="bk-card payment-details">
+                <div class="card-method">
+                  <div class="card-heading">
+                    <h2><span class="payment-card-title-desktop">Pay with credit or debit card</span><span class="payment-card-title-mobile">Card details</span></h2>
+                    <img class="card-brands" src="images/payment-card-brands.svg" alt="Visa, Mastercard, American Express, UnionPay" width="158" height="24" />
+                  </div>
+                  <p class="field-note">
+                    Your payment information is encrypted and secure.
+                  </p>
+                  <div class="payment-fields">
+                    <label
+                      >Name on card<input
+                        value="Ali Khan"
+                        placeholder="e.g. Ali Raza"
+                        readonly
+                        aria-label="Name on card" /></label
+                    ><label
+                      >Card number
+                      <div class="card-input">
+                        <input
+                          value="4242 4242 4242 4242"
+                          placeholder="0000 0000 0000 0000"
+                          readonly
+                          aria-label="Card number"
+                        /><svg class="bk-icon" aria-hidden="true">
+                          <use href="#bk-card" />
+                        </svg></div
+                    ></label>
+                    <div class="card-small-fields">
+                      <label
+                        >Expiry date<input value="12 / 30" placeholder="MM / YY" readonly /></label
+                      ><label>CVC<span class="card-input"><input value="123" placeholder="e.g. 123" readonly /><svg class="bk-icon" aria-hidden="true"><use href="#bk-info" /></svg></span></label
+                      ><label
+                        >Billing country<select>
+                          <option>Pakistan</option>
+                          <option>United Arab Emirates</option>
+                          <option>United Kingdom</option>
+                        </select></label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="bank-method">
+                  <h2>Pay by bank transfer</h2>
+                  <p>
+                    Try a local bank transfer using this sample payment
+                    instruction.
+                  </p>
+                  <dl class="price-lines">
+                    <div>
+                      <dt>Bank</dt>
+                      <dd>Demo Bank</dd>
+                    </div>
+                    <div>
+                      <dt>Reference</dt>
+                      <dd>BK7X2P</dd>
+                    </div>
+                    <div>
+                      <dt>Amount</dt>
+                      <dd>PKR 149,000</dd>
+                    </div>
+                  </dl>
+                  <p class="bk-info">
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-info" /></svg
+                    >No transfer is required. Continue to simulate payment.
+                  </p>
+                </div>
+                <div class="wallet-method">
+                  <h2>Pay with your wallet</h2>
+                  <p>Your demo wallet has PKR 12,500 available.</p>
+                  <p class="bk-info">
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-wallet" /></svg
+                    >Wallet payment is a static display example.
+                  </p>
+                </div>
+                <label class="consent"
+                  ><input type="checkbox" name="consent" id="consent" required /><span
+                    >I agree to the
+                    <button type="button" class="payment-policy-link" popovertarget="payment-policies">Fare Conditions</button> and
+                    <button type="button" class="payment-policy-link" popovertarget="payment-policies">Privacy Policy</button><span class="consent-authorization"> and confirm
+                    that I am authorized to use this payment method.</span></span
+                  ></label
+                >
+                <button class="bk-primary payment-pay-disabled" type="button" disabled>
+                  <svg class="bk-icon" aria-hidden="true"><use href="#bk-lock" /></svg>
+                  Pay PKR 149,000
+                  <svg class="bk-icon" aria-hidden="true"><use href="#bk-arrow" /></svg>
+                </button>
+                <label
+                  class="bk-primary pay-button"
+                  for="step-complete"
+                  tabindex="0"
+                  role="button"
+                >
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-lock" /></svg
+                  >Pay PKR 149,000<svg
+                    class="bk-icon"
+                    aria-hidden="true"
+                  >
+                    <use href="#bk-arrow" />
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <aside class="payment-sidebar">
+              <div class="bk-card">
+                <div class="card-heading">
+                  <h2>Your booking summary</h2>
+                  <label
+                    class="bk-link"
+                    for="step-addons"
+                    tabindex="0"
+                    role="button"
+                    ><svg class="bk-icon" aria-hidden="true"><use href="#bk-edit" /></svg>Edit</label>
+                </div>
+                <h3>Flight to Dubai</h3>
+                <div class="payment-summary-card">
+                  <div class="summary-ticket">
+                  <img class="summary-airline-mark" src="images/airlines/emirates-tail-mark.svg" alt="Emirates" />
+                  <div>
+                    <b>ISB <small>08:30</small></b
+                    ><span class="summary-route-track"
+                      >
+                      <svg class="bk-icon" aria-hidden="true">
+                        <use href="#bk-route-plane" />
+                      </svg></span
+                    ><b>DXB <small>11:10</small></b>
+                  </div>
+                  <p><span>Islamabad</span><span>3h 40m</span><span>Dubai</span></p>
+                  <small>Tue, 24 Nov 2026 · 1 Adult + 1 Child · Economy</small>
+                </div>
+                <dl class="price-lines">
+                  <div>
+                    <dt>Base fare</dt>
+                    <dd>PKR 130,500</dd>
+                  </div>
+                  <div>
+                    <dt>Taxes and fees</dt>
+                    <dd>PKR 18,500</dd>
+                  </div>
+                  <div class="price-total">
+                    <dt>Total amount</dt>
+                    <dd>PKR 149,000</dd>
+                  </div>
+                </dl>
+                </div>
+              </div>
+              <div class="bk-card payment-help">
+                <details id="fare-conditions">
+                  <summary>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-doc" /></svg
+                    >Fare conditions<svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg>
+                  </summary>
+                  <p>Sample Economy fare. No ticket is issued in this demo.</p>
+                  <p id="privacy-details">Your sample entries stay on this page and are not sent to a server.</p>
+                </details>
+                <details>
+                  <summary>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-headset" /></svg
+                    >Need help with payment?<svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg>
+                  </summary>
+                  <p>
+                    Select a payment method and agree to the fare conditions to continue.
+                  </p>
+                </details>
+              </div>
+              <div class="payment-protection">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-shield" />
+                </svg>
+                <div>
+                  <strong>Your payment is protected</strong>
+                  <p>
+                    We use industry-standard encryption to keep your information safe and secure.
+                  </p>
+                </div>
+              </div>
+              <details class="bk-card payment-extras">
+                <summary>Traveller extras</summary>
+                <div class="extras-person">
+                  <strong><span data-person-name="adult">Ali Khan</span></strong
+                  ><small>Adult</small>
+                  <p>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-seat" /></svg
+                    ><span data-summary="adult-seat">No preference</span>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-meal" /></svg
+                    ><span data-summary="adult-meal">No meal</span>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-bag" /></svg
+                    ><span data-summary="adult-baggage">No extra baggage</span>
+                  </p>
+                </div>
+                <div class="extras-person">
+                  <strong
+                    ><span data-person-name="child">Ayesha Khan</span></strong
+                  ><small>Child</small>
+                  <p>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-seat" /></svg
+                    ><span data-summary="child-seat">No preference</span>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-meal" /></svg
+                    ><span data-summary="child-meal">No meal</span>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="#bk-bag" /></svg
+                    ><span data-summary="child-baggage">No extra baggage</span>
+                  </p>
+                </div>
+              </details>
+            </aside>
+          </div>
+          <div class="mobile-checkout payment-checkout">
+            <div>
+              <small>Total amount</small><strong>PKR 149,000</strong>
+            </div>
+            <button class="bk-primary payment-mobile-pay-disabled" type="button" disabled>
+              <svg class="bk-icon" aria-hidden="true"><use href="#bk-lock" /></svg>
+              Pay now
+              <svg class="bk-icon" aria-hidden="true"><use href="#bk-arrow" /></svg>
+            </button>
+            <label
+              class="bk-primary payment-mobile-pay"
+              for="step-complete"
+              tabindex="0"
+              role="button"
+            >
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-lock" /></svg
+              >Pay now
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-arrow" />
+              </svg>
+            </label>
+          </div>
+        </div>
+        <div class="bk-card review-popover payment-policy-popover" id="payment-policies" popover="auto">
+          <button type="button" class="popover-close" popovertarget="payment-policies" popovertargetaction="hide" aria-label="Close payment policies">×</button>
+          <h3>Fare Conditions &amp; Privacy Policy</h3>
+          <p>This static booking uses sample fares and traveller details. No ticket is issued and no payment is collected. Your entries stay on this page and are not sent to a server.</p>
+        </div>
+      </section>
+      <section class="payment-status-examples bk-container" aria-label="Payment status examples">
+        <article class="payment-status-example payment-processing-example">
+          <span class="status-spinner-disc" aria-hidden="true"><span class="processing-spinner"></span></span>
+          <div class="status-copy">
+            <h2>Processing your payment</h2>
+            <p>Please do not close this page. We are securely processing your payment with your bank.</p>
+          </div>
+          <ul>
+            <li class="status-done">Connecting to your bank</li>
+            <li class="status-current">Verifying payment details</li>
+            <li>Finalising your booking</li>
+            <li class="status-note"><small>This usually takes a few seconds.</small></li>
+          </ul>
+        </article>
+        <article class="payment-status-example payment-failed-example">
+          <span class="error-icon" aria-hidden="true">!</span>
+          <div class="status-copy">
+            <h2>Payment unsuccessful</h2>
+            <p>We couldn’t process your payment right now.<br />This could be due to a bank issue or incorrect details.</p>
+            <div class="error-actions">
+              <a class="bk-primary" href="#payment-panel"><svg class="bk-icon" aria-hidden="true"><use href="#bk-refresh" /></svg>Try again</a>
+              <a class="bk-outline" href="#payment-panel">Choose another method</a>
+            </div>
+          </div>
+          <aside class="payment-error-help">
+            <b>Need help?</b>
+            <p><svg class="bk-icon" aria-hidden="true"><use href="#bk-card" /></svg>Check your card details</p>
+            <p><svg class="bk-icon" aria-hidden="true"><use href="#bk-wallet" /></svg>Ensure sufficient balance</p>
+            <p><svg class="bk-icon" aria-hidden="true"><use href="#bk-headset" /></svg>Try a different payment method</p>
+            <p><svg class="bk-icon" aria-hidden="true"><use href="#bk-phone" /></svg>Contact your bank</p>
+          </aside>
+        </article>
+      </section>
+      <div id="payment-error" class="payment-status-card error">
+        <span class="error-icon">!</span>
+        <div>
+          <h2>Payment unsuccessful</h2>
+          <p>
+            We couldn’t process your demo payment.<br />Try again or choose
+            another method.
+          </p>
+          <div class="error-actions">
+            <a class="bk-primary" href="#payment-panel">Try another payment</a>
+            <label
+              class="bk-outline"
+              for="step-payment"
+              tabindex="0"
+              role="button"
+              >Choose another method</label
+            >
+          </div>
+        </div>
+        <div class="payment-error-help">
+          <b>Need help?</b>
+          <p>Check your card details</p>
+          <p>Ensure sufficient balance</p>
+          <p>Try a different payment method</p>
+          <p>Contact your bank</p>
+        </div>
+      </div>
+      <section
+        class="confirmation bk-container"
+        aria-labelledby="confirmation-title"
+      >
+        <h2 class="visually-hidden" id="confirmation-title" tabindex="-1">
+          Booking confirmation
+        </h2>
+        <article class="confirmation-ticket bk-card" id="booking-ticket">
+          <div class="confirmation-ticket-top">
+            <div>
+              <span class="confirmation-airline-mark"><img src="images/airlines/emirates.png" alt="Emirates" /></span><span
+                ><strong>Emirates</strong
+                ><small>EK 615 · Economy Class</small></span
+              >
+            </div>
+            <span class="bk-pill">Confirmed</span>
+            <div class="booking-reference">
+              <span><small>Booking reference</small><span class="booking-reference-code"><b>BK7X2P</b><svg class="bk-icon" aria-hidden="true"><use href="#bk-copy" /></svg></span></span
+              ><span class="sample-badge">SAMPLE</span>
+            </div>
+          </div>
+          <div class="confirmation-ticket-body">
+            <div class="confirmation-route">
+              <div>
+                <small>Tue, 24 Nov 2026</small><strong>08:30</strong
+                ><b>Islamabad (ISB)</b
+                ><small>Islamabad International Airport</small>
+              </div>
+              <div class="route-track">
+                <span
+                  ><svg class="bk-icon" aria-hidden="true">
+                    <use href="#bk-route-plane" /></svg></span
+                ><small>3h 40m<br />Non-stop</small>
+              </div>
+              <div>
+                <small>Tue, 24 Nov 2026</small><strong>11:10</strong
+                ><b>Dubai (DXB)</b><small>Dubai International Airport</small>
+              </div>
+            </div>
+            <div class="confirmation-passengers">
+              <small>Passengers</small
+              ><b
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-user" /></svg
+                ><span data-person-name="adult">Ali Khan</span></b
+              ><b
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-user" /></svg
+                ><span data-person-name="child">Ayesha Khan</span></b
+              ><small>1 Adult · 1 Child · Economy Class</small>
+            </div>
+            <div class="confirmation-paid">
+              <small>Total paid</small><strong>PKR 149,000</strong
+              ><small
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-card" /></svg
+                >via Credit Card</small
+              >
+            </div>
+          </div>
+        </article>
+        <div class="confirmation-actions">
+          <a
+            class="bk-primary static-download"
+            href="data:text/plain;charset=utf-8,Sparrow%20Flights%20sample%20itinerary%0A24%20Nov%202026%0AISB%2008%3A30%20%E2%86%92%20DXB%2011%3A10%0AAli%20Khan%20(Adult)%0AAyesha%20Khan%20(Child)%0ADemo%20only%20%E2%80%94%20no%20ticket%20issued"
+            download="Sparrow-sample-itinerary.txt"
+          >
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-download" /></svg
+            >Download itinerary</a
+          ><a class="bk-outline" href="#booking-ticket"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-calendar" /></svg
+            >View booking</a
+          >
+        </div>
+        <details class="bk-card confirmation-extras">
+          <summary>View traveller seats, meals and baggage</summary>
+          <div class="extras-person">
+            <strong><span data-person-name="adult">Ali Khan</span></strong
+            ><small>Adult</small>
+            <p>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-seat" /></svg
+              ><span data-summary="adult-seat">No preference</span>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-meal" /></svg
+              ><span data-summary="adult-meal">No meal</span>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-bag" /></svg
+              ><span data-summary="adult-baggage">No extra baggage</span>
+            </p>
+          </div>
+          <div class="extras-person">
+            <strong><span data-person-name="child">Ayesha Khan</span></strong
+            ><small>Child</small>
+            <p>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-seat" /></svg
+              ><span data-summary="child-seat">No preference</span>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-meal" /></svg
+              ><span data-summary="child-meal">No meal</span>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="#bk-bag" /></svg
+              ><span data-summary="child-baggage">No extra baggage</span>
+            </p>
+          </div>
+        </details>
+        <div class="section-heading confirmation-next">
+          <h2>What happens next?</h2>
+          <p>A few important things before your trip to Dubai.</p>
+        </div>
+        <div class="next-cards">
+          <details class="bk-card">
+            <summary>
+              <span class="round-icon"
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-doc" /></svg></span
+              ><span
+                ><strong>Check your documents</strong
+                ><small
+                  >Make sure your passport is valid for your trip.</small
+                ></span
+              ><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg>
+            </summary>
+            <p>Check passport and entry requirements for both travellers.</p>
+          </details>
+          <details class="bk-card">
+            <summary>
+              <span class="round-icon"
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-bag" /></svg></span
+              ><span
+                ><strong>Review baggage</strong
+                ><small
+                  >Review your included baggage allowance and restricted
+                  items.</small
+                ></span
+              ><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg>
+            </summary>
+            <p>
+              Each traveller has 7 kg cabin and 23 kg checked baggage, plus any
+              selected extras.
+            </p>
+          </details>
+          <details class="bk-card">
+            <summary>
+              <span class="round-icon"
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="#bk-plane" /></svg></span
+              ><span
+                ><strong>Check in with your airline</strong
+                ><small
+                  >Check your airline’s online check-in window before
+                  departure.</small
+                ></span
+              ><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg>
+            </summary>
+            <p>This sample itinerary is not a valid travel ticket.</p>
+          </details>
+        </div>
+        <div class="bk-card email-confirmation">
+          <span class="round-icon peach"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-mail" /></svg
+          ></span>
+          <div>
+            <h3>Your confirmation is ready</h3>
+            <p>
+              Sample booking details for
+              <b data-contact-email>ali.khan@example.com</b>. No email has been
+              sent.
+            </p>
+          </div>
+          <a href="index.html#contact">Need help? <b>Contact support →</b></a>
+        </div>
+        <div class="trip-upsell">
+          <div>
+            <h2>Make your Dubai trip even better</h2>
+            <p>Add these to your booking and enjoy a smoother journey.</p>
+          </div>
+          <a href="index.html#destinations"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-calendar" /></svg
+            ><span><b>Hotels</b><small>Explore stays</small></span
+            >›</a
+          ><a href="index.html#destinations"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="#bk-plane" /></svg
+            ><span><b>Things to do</b><small>Top attractions</small></span
+            >›</a
+          ><a href="index.html#contact"
+            ><svg class="bk-icon" aria-hidden="true"><use href="#bk-bag" /></svg
+            ><span><b>Airport transfer</b><small>Easy arrival</small></span
+            >›</a
+          >
+        </div>
+        <p class="demo-endnote">
+          Static demo · PKR 149,000 base fare · selected extras are listed above
+          · no payment taken or ticket issued.
+          <a href="search-flight.html">Search another flight →</a>
+        </p>
+      </section>
+    </main>
+    <iframe
+      class="booking-footer-frame"
+      src="components/footer.html"
+      title="Site footer"
+      scrolling="no"
+      loading="lazy"
+    ></iframe>
+  </body>
+</html>

@@ -182,6 +182,7 @@
   -webkit-text-fill-color: var(--color-primary) !important;
 }
 
+@media (max-width: 767px) {
   .footer-component footer {
     padding-block: 0;
   }
@@ -3609,5 +3610,20 @@ body:has(
   .flight-results-page .flight-card .flight-price strong small {
     font-size: 14px;
   }
+}
+
+/* Keep each itinerary's top edge and trip tag in sync while the card is active. */
+.flight-results-page .itinerary-one:is(:hover, :focus-within, .is-result-card-selected),
+.flight-results-page .itinerary-round:is(:hover, :focus-within, .is-result-card-selected),
+.flight-results-page .itinerary-multi:is(:hover, :focus-within, .is-result-card-selected) {
+  border-top-color: var(--trip-accent);
+}
+.flight-results-page .itinerary-one:is(:hover, :focus-within, .is-result-card-selected) > .card-topline:not(.card-leg-heading) .card-trip-type,
+.flight-results-page .itinerary-round:is(:hover, :focus-within, .is-result-card-selected) > .card-topline:not(.card-leg-heading) .card-trip-type,
+.flight-results-page .itinerary-multi:is(:hover, :focus-within, .is-result-card-selected) > .card-topline:not(.card-leg-heading) .card-trip-type {
+  border-color: var(--trip-accent);
+  background: linear-gradient(115deg, color-mix(in srgb, var(--trip-accent) 78%, white), var(--trip-accent));
+  color: #fff;
+  box-shadow: 0 3px 9px color-mix(in srgb, var(--trip-accent) 28%, transparent);
 }
 

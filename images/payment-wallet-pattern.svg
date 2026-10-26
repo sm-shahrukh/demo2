@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="240" viewBox="0 0 140 240" aria-hidden="true">
+  <defs>
+    <path id="wallet-leaf" d="M0 0C-18-1-27-12-23-26-8-24 1-16 0 0Z"/>
+    <path id="wallet-petal" d="M0 0C-14-9-18-22-9-33 3-25 8-13 0 0Z"/>
+  </defs>
+  <g fill="none" stroke="#c8bc77" stroke-opacity=".29" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M143 248C99 220 72 193 82 157c8-29 31-41 27-70-4-29-29-39-24-65 3-17 15-26 30-29"/>
+    <path d="M140 241c-17-29-14-53-1-69M85 168c-21-3-37-14-41-31-4-16 7-30 22-27 14 3 12 24 0 23-8 0-10-10-4-13M108 101c22-8 32-25 28-39-4-13-19-17-25-7-6 9 2 19 9 14M87 34c-17 3-26 15-24 27 3 12 16 15 22 6 4-6-1-14-7-11"/>
+    <path d="M93 206c-17-18-34-19-45-8-10 11-5 24 5 24 9 0 11-11 5-14M93 147c17 0 30-9 32-20 3-11-7-18-14-12-6 5-2 14 4 12"/>
+    <g fill="#c8bc77" fill-opacity=".14">
+      <use href="#wallet-leaf" transform="translate(109 222) rotate(-19)"/>
+      <use href="#wallet-leaf" transform="translate(83 183) rotate(63)"/>
+      <use href="#wallet-leaf" transform="translate(84 163) rotate(-43) scale(.8)"/>
+      <use href="#wallet-leaf" transform="translate(101 126) rotate(126) scale(.87)"/>
+      <use href="#wallet-leaf" transform="translate(109 89) rotate(-35)"/>
+      <use href="#wallet-leaf" transform="translate(94 55) rotate(62) scale(.72)"/>
+      <use href="#wallet-leaf" transform="translate(92 14) rotate(118) scale(.83)"/>
+    </g>
+    <g transform="translate(123 167)" fill="#c8bc77" fill-opacity=".09">
+      <use href="#wallet-petal"/>
+      <use href="#wallet-petal" transform="rotate(60)"/>
+      <use href="#wallet-petal" transform="rotate(120)"/>
+      <use href="#wallet-petal" transform="rotate(180)"/>
+      <use href="#wallet-petal" transform="rotate(240)"/>
+      <use href="#wallet-petal" transform="rotate(300)"/>
+      <circle r="7"/>
+      <circle r="3" fill-opacity=".3"/>
+    </g>
+    <g transform="translate(116 21) scale(.65)" fill="#c8bc77" fill-opacity=".08">
+      <use href="#wallet-petal"/>
+      <use href="#wallet-petal" transform="rotate(72)"/>
+      <use href="#wallet-petal" transform="rotate(144)"/>
+      <use href="#wallet-petal" transform="rotate(216)"/>
+      <use href="#wallet-petal" transform="rotate(288)"/>
+      <circle r="6"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="158" height="24" viewBox="0 0 158 24" role="img" aria-label="Visa, Mastercard, American Express and UnionPay">
+  <text x="0" y="18" fill="#0735b5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic" font-weight="900" letter-spacing="-1">VISA</text>
+  <g aria-label="Mastercard">
+    <circle cx="60" cy="12" r="9" fill="#eb001b"/>
+    <circle cx="71" cy="12" r="9" fill="#f79e1b"/>
+    <path d="M65.5 4.88a8.98 8.98 0 0 0 0 14.24 8.98 8.98 0 0 0 0-14.24Z" fill="#ff5f00"/>
+  </g>
+  <g transform="translate(94 2)" aria-label="American Express">
+    <rect width="25" height="20" rx="1" fill="#0077c8"/>
+    <path d="M0 15 25 0v4L0 19Z" fill="#54b7eb" opacity=".34"/>
+    <text x="12.5" y="8.6" fill="#fff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="4.1" font-weight="800" letter-spacing="-.12">AMERICAN</text>
+    <text x="12.5" y="13.1" fill="#fff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="4.4" font-weight="800" letter-spacing="-.15">EXPRESS</text>
+  </g>
+  <g transform="translate(132 2)" aria-label="UnionPay">
+    <defs><clipPath id="unionpay-card-clip"><rect width="26" height="20" rx="1.5"/></clipPath></defs>
+    <g clip-path="url(#unionpay-card-clip)">
+      <rect width="26" height="20" fill="#087e8b"/>
+      <path d="M0 0h11L5 20H0Z" fill="#e52d38"/>
+      <path d="M11 0h9l-6 20H5Z" fill="#0872b9"/>
+      <path d="M20 0h6v20H14Z" fill="#078d78"/>
+    </g>
+    <text x="13" y="9" fill="#fff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="5.8" font-weight="700" font-style="italic" letter-spacing="-.3">UnionPay</text>
+    <text x="13" y="15.8" fill="#fff" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="5" font-weight="700">银联</text>
+  </g>
+</svg>
