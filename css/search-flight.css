@@ -3623,27 +3623,60 @@ body:has(
 
 /* Trip-colored side and bottom borders appear only during hover or selection. */
 .flight-results-page .itinerary-one:is(:hover, :focus-within, .is-result-card-selected) {
-  border-left-color: var(--color-border) !important;
-  border-right-color: var(--color-border) !important;
-  border-bottom-color: var(--color-border) !important;
-  border-left-width: 2px;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
+  border-left-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-right-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-bottom-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
 }
 .flight-results-page .itinerary-multi:is(:hover, :focus-within, .is-result-card-selected) {
-  border-left-color: var(--color-border) !important;
-  border-right-color: var(--color-border) !important;
-  border-bottom-color: var(--color-border) !important;
-  border-left-width: 2px;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
+  border-left-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-right-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-bottom-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
 }
 .flight-results-page .itinerary-round:is(:hover, :focus-within, .is-result-card-selected) {
-  border-left-color: var(--color-border) !important;
-  border-right-color: var(--color-border) !important;
-  border-bottom-color: var(--color-border) !important;
-  border-left-width: 2px;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
+  border-left-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-right-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-bottom-color: color-mix(in srgb, var(--trip-accent) 58%, white) !important;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
 }
 
+/* Keep compact flight cards balanced on narrow screens. */
+@media (max-width: 767px) {
+  .flight-results-page .itinerary-one > .flight-card-main:not(.additional-flight-leg),
+  .flight-results-page .itinerary-round > .flight-card-main:not(.additional-flight-leg),
+  .flight-results-page .itinerary-multi > .flight-card-main:not(.additional-flight-leg) {
+    grid-template-columns: minmax(0, 1fr) minmax(88px, 0.78fr) minmax(0, 1fr);
+    column-gap: 14px;
+    padding-inline: 14px;
+  }
+  .flight-results-page .itinerary-one > .flight-card-main:not(.additional-flight-leg) > .airline-identity,
+  .flight-results-page .itinerary-round > .flight-card-main:not(.additional-flight-leg) > .airline-identity,
+  .flight-results-page .itinerary-multi > .flight-card-main:not(.additional-flight-leg) > .airline-identity {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0;
+  }
+  .flight-results-page .flight-card-main > .airline-identity .airline-logo {
+    width: 108px;
+    height: 42px;
+    object-fit: contain;
+  }
+  .flight-results-page .flight-card-main > .airline-identity > span,
+  .flight-results-page .flight-card-main > .airline-identity > small {
+    display: none;
+  }
+  .flight-results-page .flight-duration,
+  .flight-results-page .route-line {
+    width: 100%;
+    min-width: 0;
+  }
+}
