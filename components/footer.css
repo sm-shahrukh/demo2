@@ -105,6 +105,7 @@ body.footer-component {
   }
   .footer-component .footer-grid {
     padding-bottom: 0 !important;
+    row-gap: 16px !important;
   }
   .footer-component .footer-bottom {
     flex-wrap: wrap;
@@ -130,6 +131,9 @@ body.footer-component {
   }
   .footer-component .footer-grid > div:nth-child(5) {
     grid-column: 2;
+  }
+  .footer-component .footer-grid > div:not(:first-child) > a {
+    margin-top: 5px;
   }
   .footer-component .footer-grid > div:nth-child(4) a {
     white-space: normal;

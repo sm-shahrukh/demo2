@@ -806,7 +806,7 @@ body:has(#trip-one:checked) #return-trigger {
     border-color 180ms;
 }
 .flight-results-page .flight-card:hover {
-  border-color: #b8c9e7;
+  border-color: var(--color-border);
   box-shadow: 0 8px 24px #142b5a12;
 }
 .flight-results-page .card-topline {
@@ -938,11 +938,13 @@ body:has(#trip-one:checked) #return-trigger {
       no-repeat;
 }
 .flight-results-page .route-line .icon {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  width: 26px;
-  height: 26px;
-  padding: 4px;
+  left: 50%;
+  translate: -50% 0;
+  width: 38px;
+  height: 32px;
+  padding: 6px;
   background: white;
 }
 .flight-results-page .flight-price {
@@ -1445,10 +1447,18 @@ body:has(#trip-one:checked) #return-trigger {
   justify-content: center;
   overflow: hidden;
   padding: 10px;
-  border: 1px solid #dce5f4;
-  border-radius: 7px;
-  background: linear-gradient(140deg, #f1f5fd, #fff);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: transparent;
   box-shadow: 0 3px 10px rgb(20 43 83 / 7%);
+}
+.flight-results-page .leg-photo.leg-airline-logo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../images/aircraft-info-card-frame.svg") center / 100% 100% no-repeat;
+  pointer-events: none;
 }
 .flight-results-page .leg-airline-logo img {
   position: relative;
@@ -1579,10 +1589,19 @@ body:has(#trip-one:checked) #return-trigger {
 }
 .flight-results-page .boarding-quote {
   position: relative;
+  isolation: isolate;
   padding: 15px;
-  border: 1px solid #c7d4e9;
-  border-radius: 12px;
-  background: linear-gradient(140deg, #f1f5fd, #fff);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.flight-results-page .boarding-quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../images/fare-summary-ticket-frame.svg") center / 100% 100% no-repeat;
+  pointer-events: none;
 }
 .flight-results-page .quote-top {
   display: flex;
@@ -1612,31 +1631,6 @@ body:has(#trip-one:checked) #return-trigger {
 }
 .flight-results-page .quote-route .route-line {
   flex: 1;
-}
-.flight-results-page .quote-perforation {
-  position: relative;
-  margin: 0 -16px 13px;
-  height: 1px;
-  border-top: 1px dashed #b6c8e3;
-}
-.flight-results-page .quote-perforation::before,
-.flight-results-page .quote-perforation::after {
-  content: "";
-  position: absolute;
-  top: -7px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 1px solid #c7d4e9;
-  background: white;
-}
-.flight-results-page .quote-perforation::before {
-  left: -7px;
-  border-left-color: transparent;
-}
-.flight-results-page .quote-perforation::after {
-  right: -7px;
-  border-right-color: transparent;
 }
 .flight-results-page .boarding-quote > p {
   margin: 0 0 5px;
@@ -1696,7 +1690,7 @@ body:has(#trip-one:checked) #return-trigger {
   transition: var(--transition-interactive);
 }
 .flight-results-page .fare-option:hover {
-  border-color: #b8c9e7;
+  border-color: var(--color-border);
   transform: translateY(-2px);
 }
 .flight-results-page .fare-option-head {
@@ -3010,7 +3004,7 @@ body:has(
 .flight-results-page .itinerary-round,
 .flight-results-page .itinerary-multi {
   overflow: hidden;
-  border-color: #d8e2f1;
+  border-color: var(--color-border);
 }
 .flight-results-page .itinerary-one {
   border-top: 3px solid #4770b7;
@@ -3109,7 +3103,7 @@ body:has(
 .flight-results-page .itinerary-multi {
   position: relative;
   box-shadow: 0 8px 24px rgb(24 47 85 / 7%);
-  border: 1px solid #d8e2f1;
+  border: 1px solid var(--color-border);
   border-top: 3px solid var(--trip-accent);
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
@@ -3625,5 +3619,31 @@ body:has(
   background: linear-gradient(115deg, color-mix(in srgb, var(--trip-accent) 78%, white), var(--trip-accent));
   color: #fff;
   box-shadow: 0 3px 9px color-mix(in srgb, var(--trip-accent) 28%, transparent);
+}
+
+/* Trip-colored side and bottom borders appear only during hover or selection. */
+.flight-results-page .itinerary-one:is(:hover, :focus-within, .is-result-card-selected) {
+  border-left-color: var(--color-border) !important;
+  border-right-color: var(--color-border) !important;
+  border-bottom-color: var(--color-border) !important;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+}
+.flight-results-page .itinerary-multi:is(:hover, :focus-within, .is-result-card-selected) {
+  border-left-color: var(--color-border) !important;
+  border-right-color: var(--color-border) !important;
+  border-bottom-color: var(--color-border) !important;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+}
+.flight-results-page .itinerary-round:is(:hover, :focus-within, .is-result-card-selected) {
+  border-left-color: var(--color-border) !important;
+  border-right-color: var(--color-border) !important;
+  border-bottom-color: var(--color-border) !important;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
 }
 

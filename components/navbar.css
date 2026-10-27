@@ -2,7 +2,7 @@ body.navbar-component {
   margin: 0;
   width: 100%;
   overflow: hidden;
-  padding-bottom: 8px;
+  padding-bottom: 0;
 }
 
 /* Keep the shared header layout working when the CDN utility sheet is offline. */

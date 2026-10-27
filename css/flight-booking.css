@@ -5,8 +5,10 @@
   --bk-line: var(--color-border); --bk-page: var(--color-page); --bk-pale: var(--color-selected-bg); --bk-peach: var(--color-feature-icon-red-bg);
   --bk-top-accent: var(--color-brand-blue-light);
   --bk-chevron-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  display:flex; flex-direction:column; min-height:100vh;
   margin: 0; background: var(--bk-page); color: var(--bk-ink); font: var(--font-size-base)/var(--line-height-base) var(--font-body);
 }
+.booking-page #booking-main { flex:1 0 auto; }
 .booking-page * { box-sizing: border-box; }
 .booking-page h1, .booking-page h2, .booking-page h3, .booking-page p { margin: 0; }
 .booking-page h2 { font-size: var(--font-size-section-title-desktop); line-height: 1.2; }
@@ -25,8 +27,8 @@
 .booking-page .bk-symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
 .booking-page .bk-icon { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; vertical-align: middle; }
 .booking-page .bk-container { width: calc(100% - 24px); max-width: 1320px; margin-inline: auto; }
-.booking-page .booking-header-frame { display:block; width:100%; height:106px; border:0; }
-.booking-page .booking-footer-frame { display:block; width:100%; height:300px; border:0; }
+.booking-page .booking-header-frame { display:block; width:100%; height:98px; border:0; }
+.booking-page .booking-footer-frame { display:block; width:100%; height:270px; border:0; }
 .booking-page .booking-header { background: var(--color-surface); }
 .booking-page .header-inner { display: flex; align-items: center; gap: 64px; min-height: 74px; }
 .booking-page .booking-brand img { width: 150px; height: 50px; object-fit: contain; display: block; }
@@ -86,9 +88,9 @@
 .booking-page .card-heading h3 { display:flex; align-items:center; gap:14px; }
 .booking-page .bk-primary, .booking-page .bk-outline { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:46px; padding:11px 20px; border-radius:8px; border:1px solid transparent; font-size:var(--font-size-button); font-weight:600; text-decoration:none; white-space:nowrap; }
 .booking-page .bk-primary { background:var(--color-primary); color:white; }
-.booking-page .bk-primary:hover { background:var(--bk-teal-dark); text-decoration:none; }
+.booking-page .bk-primary:hover { background-color:var(--bk-teal-dark); text-decoration:none; }
 .booking-page .bk-outline { background:white; color:var(--bk-teal); border-color:var(--color-border); }
-.booking-page .bk-outline:hover { background:var(--color-feature-bg); text-decoration:none; }
+.booking-page .bk-outline:hover { background-color:var(--color-feature-bg); text-decoration:none; }
 .booking-page .bk-outline.small { min-height:34px; padding:6px 12px; font-size:var(--font-size-button); border-color:var(--bk-line); }
 .booking-page .bk-link { display:inline-flex; gap:10px; align-items:center; color:var(--bk-teal); font-size:var(--font-size-flight-caption); background:transparent; border:0; }
 .booking-page .bk-link .bk-icon { width:17px; height:17px; }
@@ -119,6 +121,11 @@
 .booking-page .route-track > span::after { content:""; position:absolute; right:0; top:calc(50% - 2px); width:4px; height:4px; background:var(--color-border); transform:rotate(45deg); }
 .booking-page .route-track .bk-icon { width:3.3cqw; height:3.3cqw; position:relative; margin-left:3.5cqw; color:var(--color-primary); background:transparent; }
 .booking-page .ticket-plane { fill:currentColor; stroke:none; }
+@media (min-width:768px) {
+  .booking-page .flight-ticket .route-track >span { background-image:repeating-linear-gradient(to right,var(--color-border) 0 3px,transparent 3px 5px),repeating-linear-gradient(to right,var(--color-border) 0 3px,transparent 3px 5px); background-position:left center,right center; background-size:calc(50% - 1.65cqw - 6px) 1px; background-repeat:no-repeat; }
+  .booking-page .flight-ticket .route-track >span::before { top:calc(50% - 2px); left:0; right:auto; width:4px; height:4px; border:0; background:var(--color-border); transform:rotate(45deg); }
+  .booking-page .flight-ticket .route-track .ticket-plane { position:absolute; top:50%; left:50%; margin:0; transform:translate(-50%,-50%); background:transparent; box-shadow:none; }
+}
 .booking-page .route-track small { display:block; font-size:var(--font-size-flight-caption); line-height:1.4; color:var(--color-text); }
 .booking-page .ticket-airline { display:flex; flex-direction:column; align-items:start; justify-content:center; gap:.3cqw; padding:1.35cqw 3.4cqw; border-left:0; }
 .booking-page .ticket-emirates-logo { display:block; flex-shrink:0; width:9cqw; height:7.2cqw; object-fit:contain; object-position:left center; }
@@ -157,7 +164,13 @@
 .booking-page .optional-requests small { font-size:var(--font-size-flight-micro); }
 .booking-page .optional-fields { padding-top:15px; }
 .booking-page .optional-fields p { font-size:var(--font-size-flight-micro); margin-top:10px; }
-.booking-page .traveller-sidebar { padding-top:0; position:sticky; top:15px; }
+.booking-page .traveller-sidebar { padding-top:0; position:static; }
+.booking-page .price-summary-shell { padding:24px; border:1px solid var(--bk-line); border-radius:13px; background:var(--color-surface); }
+.booking-page .price-summary-shell:is(:hover,:focus-within) { border-color:var(--color-border); }
+.booking-page .traveller-sidebar .price-card { position:relative; isolation:isolate; border:0; background:transparent; box-shadow:none; }
+.booking-page .traveller-sidebar .price-card:hover { border:0; border-color:transparent; box-shadow:none; }
+.booking-page .traveller-sidebar .price-card::before { content:""; position:absolute; inset:0; z-index:-1; background:url('../images/fare-summary-ticket-frame.svg') center / 100% 100% no-repeat; pointer-events:none; }
+.booking-page .travellers-panel .bk-card:not(.price-card):is(:hover,:focus-within) { border-color:var(--color-border); }
 .booking-page .price-card h3 { display:flex; align-items:center; gap:10px; font-size:var(--font-size-flight-small); }
 .booking-page .price-card h3 .bk-icon { width:18px; color:var(--bk-teal); }
 .booking-page .price-lines { margin:20px 0 12px; font-size:var(--font-size-flight-caption); }
@@ -649,7 +662,7 @@
 .booking-page .hero-confirm .hero-script { font-size:var(--font-size-20px); }
 }
 @media (max-width:767px) {
-.booking-page { padding-bottom:80px; font-size:var(--font-size-flight-caption); }
+.booking-page { padding-bottom:90px; font-size:var(--font-size-flight-caption); }
 .booking-page .bk-container { width:calc(100% - 28px); }
 .booking-page .booking-header { padding:0 6px; }
 .booking-page .header-inner { width:100%; min-height:70px; gap:18px; }
@@ -686,7 +699,7 @@
 .booking-page .booking-steps i { margin-top:-18px; min-width:15px; }
 .booking-page .booking-steps [for]::after { display:none; }
 .booking-page .traveller-layout { display:block; }
-.booking-page .traveller-intro { min-height:0; margin:8px 0 18px; padding:19px 16px; border-radius:12px; gap:8px; }
+ .booking-page .traveller-intro { width:calc(100% - 48px); max-width:640px; min-height:0; margin:8px auto 18px; padding:19px 16px; border-radius:12px; gap:8px; }
 .booking-page .traveller-back-link { gap:4px; font-size:var(--font-size-flight-micro); }
 .booking-page .traveller-back-link .bk-icon { width:15px; height:15px; }
 .booking-page .traveller-intro h2 { margin:9px 0 4px; font-size:var(--font-size-18px); }
@@ -705,23 +718,27 @@
 .booking-page .bk-outline.small { font-size:var(--font-size-button); border:0; padding:0; min-height:26px; }
 .booking-page .your-flight .card-heading .bk-outline { font-size:0; }
 .booking-page .your-flight .card-heading .bk-outline::after { content:"Edit ›"; font-size:var(--font-size-button); }
-.booking-page .flight-ticket { display:grid; grid-template-columns:46px 1fr; padding:12px; border:1px solid var(--bk-line); border-radius:9px; background:var(--color-feature-bg); gap:10px; }
-.booking-page .flight-ticket::before { display:none; }
-.booking-page .ticket-route { grid-column:2; grid-row:1; min-height:0; padding:0; border:0; }
+.booking-page .flight-ticket { display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:auto auto; padding:12px; border:0; border-radius:0; background:transparent; gap:8px; }
+.booking-page .flight-ticket::before { display:block; }
+.booking-page .flight-ticket::before { background-image:url('../images/mobile-booking-ticket-frame.svg'); }
+.booking-page .ticket-route { grid-column:1; grid-row:2; min-height:0; padding:0; border:0; }
 .booking-page .ticket-route::before, .booking-page .ticket-route::after { display:none; }
 .booking-page .ticket-date { display:none; }
 .booking-page .ticket-airline { display:contents; }
-.booking-page .ticket-airline img, .booking-page .ticket-airline .ticket-emirates-logo { width:60px; height:46px; grid-column:1; grid-row:1; align-self:start; }
+.booking-page .ticket-airline img, .booking-page .ticket-airline .ticket-emirates-logo { width:84px; height:36px; grid-column:1; grid-row:1; align-self:start; justify-self:start; }
 .booking-page .ticket-airline::after { display:none; }
 .booking-page .ticket-airline >b, .booking-page .ticket-airline>small { display:none; }
-.booking-page .ticket-airline .bk-pill { grid-column:2; width:max-content; font-size:var(--font-size-flight-micro); }
-.booking-page .ticket-times { grid-template-columns:1fr 38px 1fr; gap:8px; align-items:start; }
+.booking-page .ticket-airline .bk-pill { grid-column:1; grid-row:3; justify-self:start; width:max-content; margin-top:0; font-size:var(--font-size-flight-micro); }
+.booking-page .ticket-times { grid-template-columns:minmax(0,1fr) minmax(64px,.8fr) minmax(0,1fr); gap:8px; align-items:start; }
 .booking-page .ticket-times strong { font-size:var(--font-size-18px); }
 .booking-page .ticket-times b { font-size:var(--font-size-flight-micro); }
 .booking-page .ticket-times >div>span, .booking-page .ticket-times >div>small { display:none; }
 .booking-page .ticket-times .route-track { padding-top:1px; }
+.booking-page .ticket-times .route-track >span { display:flex; align-items:center; justify-content:center; height:24px; margin:0; }
+.booking-page .ticket-times .route-track >span::before { left:0; right:0; }
+.booking-page .ticket-times .route-track >span::after { top:calc(50% - 2px); left:0; right:0; width:100%; height:4px; border-radius:0; background:radial-gradient(circle,var(--color-border) 2px,transparent 2.5px) left/4px 4px no-repeat,radial-gradient(circle,var(--color-border) 2px,transparent 2.5px) right/4px 4px no-repeat; transform:none; }
 .booking-page .ticket-times .route-track small { display:none; }
-.booking-page .ticket-times .route-track .bk-icon { width:20px; height:20px; }
+.booking-page .ticket-times .route-track .bk-icon { position:absolute; left:50%; width:28px; height:24px; margin:0; padding:4px; background:var(--color-surface); translate:-50% 0; }
 .booking-page .ticket-route::after { content:"24 Nov 2026 · Non-stop · 3h 40m"; display:block; position:static; width:auto; height:auto; border:0; border-radius:0; font-size:var(--font-size-flight-micro); color:var(--bk-muted); margin-top:8px; background:none; }
 .booking-page .flight-links { display:none; }
 .booking-page .traveller-card { padding:0; }
@@ -1045,7 +1062,7 @@
 .booking-page .bk-link:hover, .booking-page .booking-steps a:hover, .booking-page .traveller-back-link:hover { color:var(--color-accent); }
 .booking-page .bk-card, .booking-page .payment-methods >label, .booking-page .seat-choice, .booking-page .meal-select, .booking-page .baggage-option, .booking-page .next-cards details { transition:var(--transition-interactive); }
 .booking-page .bk-card { border-radius:var(--radius-card); box-shadow:var(--shadow-card); }
-.booking-page .bk-card:not(.review-popover):hover, .booking-page .payment-methods >label:hover, .booking-page .meal-select:hover, .booking-page .baggage-option:hover { border-color:var(--color-primary); box-shadow:var(--shadow-brand-card-hover); }
+.booking-page .bk-card:not(.review-popover):hover, .booking-page .payment-methods >label:hover, .booking-page .meal-select:hover, .booking-page .baggage-option:hover { border-color:var(--color-border); box-shadow:var(--shadow-brand-card-hover); }
 .booking-page :is(.review-popover, .payment-status-card) {
   width:min(var(--auth-popup-width),calc(100% - 32px)); padding:var(--auth-popup-padding);
   border:1px solid var(--color-dropdown-border); border-radius:var(--auth-popup-radius);
@@ -1079,7 +1096,7 @@
   transition:var(--transition-interactive);
 }
 .booking-page input:not([type=radio]):not([type=checkbox]):hover, .booking-page select:hover { border-color:var(--color-primary); background:var(--color-field-hover); }
-.booking-page input:not([type=radio]):not([type=checkbox]):focus, .booking-page select:focus { outline:0; border-color:var(--color-focus); background:var(--color-surface); box-shadow:var(--shadow-focus); }
+.booking-page input:not([type=radio]):not([type=checkbox]):focus, .booking-page select:focus { outline:0; border-color:var(--color-border-focus); background:var(--color-surface); box-shadow:var(--shadow-focus); }
 .booking-page input::placeholder { color:var(--color-muted); opacity:1; }
 .booking-page .card-input .bk-icon { top:50%; transform:translateY(-50%); }
 
@@ -1109,12 +1126,15 @@
 .booking-page label:has(>select:hover)::after, .booking-page label:has(>select:focus)::after,
 .booking-page .phone-field:has(select:hover)::after, .booking-page .phone-field:has(select:focus)::after { background:var(--color-accent); }
 .booking-page label:has(>select:open)::after, .booking-page .phone-field:has(select:open)::after { transform:rotate(180deg); }
-.booking-page :is(.your-flight, .traveller-card, .contact-card, .optional-requests, .price-card, .payment-details, .payment-sidebar, .addon-columns >section, .review-popover, .payment-status-card) { border-top:3px solid var(--bk-top-accent); }
-.booking-page .bk-card:is(.your-flight, .traveller-card, .contact-card, .optional-requests, .price-card, .payment-details, .addon-columns >section):is(:hover,:focus-within) { border-top-color:var(--bk-top-accent); }
+/* In the traveller section, reserve the colored top accent for the price summary. */
+.booking-page :is(.price-card, .payment-details, .payment-sidebar, .addon-columns >section, .review-popover, .payment-status-card) { border-top:3px solid var(--bk-top-accent); }
+.booking-page .bk-card:is(.price-card, .payment-details, .addon-columns >section):is(:hover,:focus-within) { border-top-color:var(--bk-top-accent); }
+/* Keep the fare ticket visually still; the padded white shell carries hover feedback. */
+.booking-page .traveller-sidebar .price-summary-shell .price-card:is(:hover,:focus-within) { border:0; background:transparent; box-shadow:none; }
 .booking-page .mobile-passenger-picker >div { border-top:3px solid var(--bk-top-accent); border-radius:var(--radius-dropdown); background:var(--color-dropdown-surface); box-shadow:var(--shadow-dropdown); }
 .booking-page .mobile-passenger-picker label:is(:hover,:focus-visible) { color:var(--color-primary); background:var(--color-dropdown-selected); }
 .booking-page .review-popover:popover-open { animation:booking-review-drawer-in 360ms var(--button-sweep-easing) both; }
-.booking-page .booking-footer-frame { margin-top:24px; }
+.booking-page .booking-footer-frame { flex:0 0 auto; margin-top:auto; }
 @media (min-width:576px) { .booking-page .bk-container { max-width:540px; } }
 @media (min-width:768px) { .booking-page .bk-container { max-width:720px; } }
 @media (min-width:992px) { .booking-page .bk-container { max-width:960px; } }
@@ -1122,7 +1142,7 @@
 @media (min-width:1400px) { .booking-page .bk-container { max-width:1320px; } }
 @media (max-width:767px) {
   .booking-page .booking-header-frame { height:104px; }
-  .booking-page .booking-footer-frame { height:580px; margin-top:16px; }
+  .booking-page .booking-footer-frame { height:460px; margin-top:0; }
   .booking-page .extras-checkout { display:grid; grid-template-columns:minmax(95px,1fr) minmax(0,1.5fr); gap:2px 12px; }
   .booking-page .extras-checkout >div { grid-column:1; grid-row:1; }
   .booking-page .extras-checkout >strong { grid-column:1; grid-row:2; margin-left:28px; font-size:var(--font-size-flight-small); }

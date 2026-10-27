@@ -183,7 +183,8 @@ footer .footer-logo-brand {
   padding-bottom: var(--space-44px) !important;
 }
 .static-panel {
-  display: block;
+  /* Inactive services must not reserve space for an expanded multi-city form. */
+  display: none;
   grid-area: 1 / 1;
   min-width: 0;
   visibility: hidden;
@@ -192,6 +193,7 @@ footer .footer-logo-brand {
 #service-flights:checked ~ main .flight-panel,
 #service-umrah:checked ~ main .umrah-panel,
 #service-visa:checked ~ main .visa-panel {
+  display: block;
   visibility: visible;
   pointer-events: auto;
 }

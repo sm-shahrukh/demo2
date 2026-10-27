@@ -196,7 +196,7 @@
 }
 .auth-form input:focus {
   outline: 2px solid rgba(7, 143, 148, 0.2);
-  border-color: var(--color-primary);
+  border-color: var(--color-border-focus);
 }
 .auth-submit {
   border: 0;

@@ -18,7 +18,8 @@
   --color-muted: #65728a;
   --color-surface: #ffffff;
   --color-page: #f6f8fc;
-  --color-border: #dce3ef;
+  --color-border: #b8c9e7;
+  --color-border-focus: #4b70bb;
   --color-warning: #e3a008;
   --color-focus: var(--color-primary);
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -172,10 +173,10 @@
   --color-nav-hover: var(--color-brand-blue-dark);
   --color-nav-hover-soft: #35558f;
   --color-icon-shadow: #142b5a33;
-  --color-border-strong: #9aa8c0;
+  --color-border-strong: var(--color-border);
   --color-selected-bg: #eaf0fb;
   --color-white: var(--color-surface);
-  --color-divider: #e2e7f0;
+  --color-divider: var(--color-border);
   --color-label: #34415a;
   --color-caption: #65728a;
   --color-fare-selected: #eef3fc;
@@ -680,6 +681,14 @@ summary:hover .bi {
   background: var(--color-surface);
   border-radius: var(--radius-card);
 }
+
+/* Keep hover feedback visible even when a page overrides the button background sweep. */
+button:not(:disabled):hover,
+.btn:not(:disabled):hover,
+.theme-button:hover,
+a[role="button"]:hover {
+  filter: brightness(.9) !important;
+}
 @media (max-width: 767px) {
   :root {
     --font-size-base: var(--font-size-body-mobile);
@@ -710,8 +719,13 @@ summary:hover .bi {
 }
 .form-control:focus,
 .form-select:focus {
-  border-color: var(--color-focus);
+  border-color: var(--color-border-focus);
   box-shadow: var(--shadow-focus);
+}
+input:not([type="radio"]):not([type="checkbox"]):focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-border-focus) !important;
 }
 .form-check-input:checked {
   background-color: var(--color-primary);
