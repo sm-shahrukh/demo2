@@ -147,6 +147,20 @@
       title="Site navigation"
       scrolling="no"
     ></iframe>
+    <header class="addons-intro bk-container">
+      <div>
+        <a class="traveller-back-link" href="search-flight.html">
+          <svg class="bk-icon" aria-hidden="true"><use href="#bk-arrow" /></svg>
+          Back to flight results
+        </a>
+        <h2 id="addons-intro-title" tabindex="-1">Add-ons</h2>
+        <p>Customize your journey with seats, meals, and baggage.</p>
+      </div>
+      <div class="reservation-time">
+        <svg class="bk-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Reservation time <strong>20:00</strong></span>
+      </div>
+    </header>
     <div class="booking-hero hero-addons">
       <div class="hero-dubai"></div>
       <div class="bk-container">
@@ -1472,6 +1486,22 @@
                     </div>
                   </div>
                 </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="adult-meal-pasta" type="radio" name="adult-meal" value="pasta" data-price="1900" data-label="Pasta primavera" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-vegetarian" role="img" aria-label="Pasta primavera"></span><strong>Pasta primavera</strong><small>Garden vegetables with pasta</small></label>
+                  <div class="meal-price"><b>PKR 1,900</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Pasta primavera">−</label><span class="meal-count"></span><label for="adult-meal-pasta" aria-label="Select Pasta primavera">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="adult-meal-wrap" type="radio" name="adult-meal" value="wrap" data-price="1700" data-label="Chicken wrap" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-sandwich" role="img" aria-label="Chicken wrap"></span><strong>Chicken wrap</strong><small>Herb chicken with greens</small></label>
+                  <div class="meal-price"><b>PKR 1,700</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Chicken wrap">−</label><span class="meal-count"></span><label for="adult-meal-wrap" aria-label="Select Chicken wrap">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="adult-meal-salad" type="radio" name="adult-meal" value="salad" data-price="1300" data-label="Garden salad" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-fruit" role="img" aria-label="Garden salad"></span><strong>Garden salad</strong><small>Fresh greens and vegetables</small></label>
+                  <div class="meal-price"><b>PKR 1,300</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Garden salad">−</label><span class="meal-count"></span><label for="adult-meal-salad" aria-label="Select Garden salad">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="adult-meal-dessert" type="radio" name="adult-meal" value="dessert" data-price="1100" data-label="Fruit dessert" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-fruit" role="img" aria-label="Fruit dessert"></span><strong>Fruit dessert</strong><small>Seasonal fruit with yoghurt</small></label>
+                  <div class="meal-price"><b>PKR 1,100</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Fruit dessert">−</label><span class="meal-count"></span><label for="adult-meal-dessert" aria-label="Select Fruit dessert">+</label></div></div>
+                </div>
               </div>
               <label
                 class="bk-primary mobile-addon-confirm"
@@ -1562,6 +1592,12 @@
                   <use href="#bk-bag" /></svg
                 ><span><strong>+ 15 kg</strong><small>Total 38 kg</small></span
                 ><b>PKR 11,000</b></label
+              ><label class="baggage-option"
+                ><input type="radio" name="adult-baggage" value="20" data-price="14000" data-label="+ 20 kg extra baggage" data-person="adult" data-kind="baggage" /><svg class="bk-icon" aria-hidden="true"><use href="#bk-bag" /></svg
+                ><span><strong>+ 20 kg</strong><small>Total 43 kg</small></span><b>PKR 14,000</b></label
+              ><label class="baggage-option"
+                ><input type="radio" name="adult-baggage" value="25" data-price="17000" data-label="+ 25 kg extra baggage" data-person="adult" data-kind="baggage" /><svg class="bk-icon" aria-hidden="true"><use href="#bk-bag" /></svg
+                ><span><strong>+ 25 kg</strong><small>Total 48 kg</small></span><b>PKR 17,000</b></label
               ><label
                 class="bk-primary mobile-addon-confirm"
                 for="step-payment"
@@ -2460,6 +2496,12 @@
                   <use href="#bk-bag" /></svg
                 ><span><strong>+ 15 kg</strong><small>Total 38 kg</small></span
                 ><b>PKR 11,000</b></label
+              ><label class="baggage-option"
+                ><input type="radio" name="child-baggage" value="20" data-price="14000" data-label="+ 20 kg extra baggage" data-person="child" data-kind="baggage" /><svg class="bk-icon" aria-hidden="true"><use href="#bk-bag" /></svg
+                ><span><strong>+ 20 kg</strong><small>Total 43 kg</small></span><b>PKR 14,000</b></label
+              ><label class="baggage-option"
+                ><input type="radio" name="child-baggage" value="25" data-price="17000" data-label="+ 25 kg extra baggage" data-person="child" data-kind="baggage" /><svg class="bk-icon" aria-hidden="true"><use href="#bk-bag" /></svg
+                ><span><strong>+ 25 kg</strong><small>Total 48 kg</small></span><b>PKR 17,000</b></label
               ><label
                 class="bk-primary mobile-addon-confirm"
                 for="step-payment"
@@ -3149,5 +3191,29 @@
       scrolling="no"
       loading="lazy"
     ></iframe>
+    <script src="components/booking-seats.js" defer></script>
+    <script>
+      document.querySelectorAll(".meal-panel, .baggage-panel").forEach((panel) => {
+        let startY = 0;
+        let startScroll = 0;
+        panel.addEventListener("pointerdown", (event) => {
+          if (event.target.closest("input, button, .quantity label")) return;
+          startY = event.clientY;
+          startScroll = panel.scrollTop;
+          panel.setPointerCapture(event.pointerId);
+          panel.classList.add("is-dragging");
+        });
+        panel.addEventListener("pointermove", (event) => {
+          if (!panel.hasPointerCapture(event.pointerId)) return;
+          panel.scrollTop = startScroll - (event.clientY - startY);
+        });
+        const stopDragging = (event) => {
+          if (panel.hasPointerCapture(event.pointerId)) panel.releasePointerCapture(event.pointerId);
+          panel.classList.remove("is-dragging");
+        };
+        panel.addEventListener("pointerup", stopDragging);
+        panel.addEventListener("pointercancel", stopDragging);
+      });
+    </script>
   </body>
 </html>

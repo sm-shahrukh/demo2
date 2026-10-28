@@ -3392,8 +3392,26 @@ body:has(
   font-size: var(--font-size-flight-micro);
 }
 .flight-results-page .itinerary-leg .route-line::before {
+  left:10px;
+  right:10px;
   border-top: 1.5px dashed #91a9d1;
   background: none;
+}
+.flight-results-page .itinerary-leg .route-line::after {
+  top:calc(50% - 2px);
+  left:10px;
+  right:10px;
+  width:auto;
+  height:4px;
+  background:
+    radial-gradient(circle, #8ca2c6 2px, transparent 2.5px) left/4px 4px no-repeat,
+    radial-gradient(circle, #8ca2c6 2px, transparent 2.5px) right/4px 4px no-repeat;
+  transform:none;
+}
+@media (min-width:768px) {
+  .flight-results-page .itinerary-leg > .leg-body {
+    grid-template-columns:minmax(125px,1fr) minmax(190px,1.25fr) minmax(125px,1fr) 180px;
+  }
 }
 .flight-results-page .itinerary-leg .route-line .plane-badge {
   position: relative;
@@ -3645,6 +3663,12 @@ body:has(
   border-left-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
+}
+
+@media (min-width:768px) {
+  .flight-results-page .itinerary-leg > .leg-body {
+    grid-template-columns:minmax(125px,1fr) minmax(190px,1.25fr) minmax(125px,1fr) 180px;
+  }
 }
 
 /* Keep compact flight cards balanced on narrow screens. */
