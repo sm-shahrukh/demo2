@@ -147,20 +147,6 @@
       title="Site navigation"
       scrolling="no"
     ></iframe>
-    <header class="addons-intro bk-container">
-      <div>
-        <a class="traveller-back-link" href="search-flight.html">
-          <svg class="bk-icon" aria-hidden="true"><use href="#bk-arrow" /></svg>
-          Back to flight results
-        </a>
-        <h2 id="addons-intro-title" tabindex="-1">Add-ons</h2>
-        <p>Customize your journey with seats, meals, and baggage.</p>
-      </div>
-      <div class="reservation-time">
-        <svg class="bk-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <span>Reservation time <strong>20:00</strong></span>
-      </div>
-    </header>
     <div class="booking-hero hero-addons">
       <div class="hero-dubai"></div>
       <div class="bk-container">
@@ -202,6 +188,20 @@
       </div>
     </div>
     <main id="booking-main">
+      <header class="addons-intro bk-container">
+        <div>
+          <a class="traveller-back-link" href="search-flight.html">
+            <svg class="bk-icon" aria-hidden="true"><use href="#bk-arrow" /></svg>
+            Back to flight results
+          </a>
+          <h2 id="addons-intro-title" tabindex="-1">Add-ons</h2>
+          <p>Customize your journey with seats, meals, and baggage.</p>
+        </div>
+        <div class="reservation-time">
+          <svg class="bk-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Reservation time <strong>20:00</strong></span>
+        </div>
+      </header>
       <header class="traveller-intro bk-container">
         <div>
           <a class="traveller-back-link" href="search-flight.html">
@@ -210,6 +210,20 @@
           </a>
           <h2 id="travellers-title" tabindex="-1">Traveler details</h2>
           <p>Save time, and you’re one step closer to Dubai.</p>
+        </div>
+        <div class="reservation-time">
+          <svg class="bk-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Reservation time <strong>20:00</strong></span>
+        </div>
+      </header>
+      <header class="payment-intro bk-container">
+        <div>
+          <a class="traveller-back-link" href="search-flight.html">
+            <svg class="bk-icon" aria-hidden="true"><use href="#bk-arrow" /></svg>
+            Back to flight results
+          </a>
+          <h2 id="payment-title" tabindex="-1">Payment</h2>
+          <p>Pay securely to confirm your journey.</p>
         </div>
         <div class="reservation-time">
           <svg class="bk-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -587,7 +601,7 @@
         <details class="review-person">
           <summary>
             <svg class="bk-icon" aria-hidden="true"><use href="#bk-user" /></svg
-            >Traveller 1<small>Adult</small>
+            ><span data-person-name="adult">Ali Khan</span><small>Adult</small>
           </summary>
           <dl>
             <div>
@@ -615,7 +629,7 @@
         <details class="review-person">
           <summary>
             <svg class="bk-icon" aria-hidden="true"><use href="#bk-user" /></svg
-            >Traveller 2<small>Child</small>
+            ><span data-person-name="child">Ayesha Khan</span><small>Child</small>
           </summary>
           <dl>
             <div>
@@ -660,25 +674,7 @@
         <h2 class="visually-hidden" id="addons-title" tabindex="-1">
           Personalise your flight
         </h2>
-        <div class="route-banner">
-          <div>
-            <h3>Islamabad (ISB) <span>→</span> Dubai (DXB)</h3>
-            <p>
-              Tue, 24 Nov 2026 <span>·</span>1 Adult + 1
-              Child<span>·</span>Economy
-            </p>
-          </div>
-          <a class="bk-outline" href="search-flight.html"
-            ><svg class="bk-icon" aria-hidden="true">
-              <use href="#bk-edit" /></svg
-            >Edit search</a
-          >
-          <div
-            class="route-airline-art"
-            role="img"
-            aria-label="Pakistan International Airlines aircraft, from supplied reference"
-          ></div>
-        </div>
+        <div class="extras-selector">
         <input
           class="state-radio"
           type="radio"
@@ -693,19 +689,52 @@
           id="person-child"
           aria-label="Ayesha Khan, child"
         />
-        <div class="passenger-switch">
-          <span>Choose traveller</span
-          ><label for="person-adult"
-            ><svg class="bk-icon" aria-hidden="true">
-              <use href="#bk-user" /></svg
-            ><span data-person-name="adult">Ali Khan</span
-            ><small>Adult</small></label
-          ><label for="person-child"
-            ><svg class="bk-icon" aria-hidden="true">
-              <use href="#bk-user" /></svg
-            ><span data-person-name="child">Ayesha Khan</span
-            ><small>Child</small></label
-          >
+        <input
+          class="state-radio"
+          type="radio"
+          name="active-flight-leg"
+          id="leg-outbound"
+          checked
+          aria-label="Leg 1, Islamabad to Dubai"
+        /><input
+          class="state-radio"
+          type="radio"
+          name="active-flight-leg"
+          id="leg-return"
+          aria-label="Leg 2, Dubai to Islamabad"
+        />
+          <div class="extras-selector-top">
+            <div class="extras-leg-options" role="group" aria-label="Select flight leg">
+              <label class="extras-leg" for="leg-outbound">
+                <span class="extras-leg-meta"><span><i aria-hidden="true"></i>Leg 1</span><time datetime="2026-11-24">24 Nov 2026</time></span>
+                <span class="extras-leg-route"><strong>ISB</strong><span class="extras-leg-track"><svg class="bk-icon" aria-hidden="true"><use href="#bk-route-plane" /></svg></span><strong>DXB</strong></span>
+                <span class="extras-leg-cities"><span>Islamabad</span><span>Dubai</span></span>
+              </label>
+              <label class="extras-leg" for="leg-return">
+                <span class="extras-leg-meta"><span><i aria-hidden="true"></i>Leg 2</span><time datetime="2026-12-01">1 Dec 2026</time></span>
+                <span class="extras-leg-route"><strong>DXB</strong><span class="extras-leg-track"><svg class="bk-icon" aria-hidden="true"><use href="#bk-route-plane" /></svg></span><strong>ISB</strong></span>
+                <span class="extras-leg-cities"><span>Dubai</span><span>Islamabad</span></span>
+              </label>
+            </div>
+            <div class="extras-trip-tools">
+              <span>2 travelers · Economy</span>
+              <a class="bk-outline" href="search-flight.html"><svg class="bk-icon" aria-hidden="true"><use href="#bk-edit" /></svg>Edit search</a>
+            </div>
+          </div>
+          <div class="extras-selector-bottom">
+            <div class="extras-people" role="group" aria-label="Select traveler">
+              <span class="extras-people-caption">Traveler</span>
+              <label for="person-adult">
+                <span class="extras-person-avatar" data-person-initials="adult" aria-hidden="true">AK</span>
+                <span class="extras-person-copy"><strong data-person-name="adult">Ali Khan</strong><small>Adult</small></span>
+              </label>
+              <label for="person-child">
+                <span class="extras-person-avatar" data-person-initials="child" aria-hidden="true">AK</span>
+                <span class="extras-person-copy"><strong data-person-name="child">Ayesha Khan</strong><small>Child</small></span>
+              </label>
+            </div>
+            <p class="extras-context" aria-live="polite"><span>Extras for <strong data-active-person-label>Ali Khan</strong></span><span data-active-leg-label>Leg 1 · ISB → DXB</span></p>
+          </div>
         </div>
         <section
           class="traveller-options adult-options"
@@ -785,6 +814,23 @@
                 ><span><i></i>Extra legroom</span>
               </div>
               <div class="seat-map">
+                <div class="aircraft-shell" aria-hidden="true">
+                  <div class="aircraft-wing aircraft-wing-left"><i class="aircraft-engine"></i></div>
+                  <div class="aircraft-wing aircraft-wing-right"><i class="aircraft-engine"></i></div>
+                  <div class="aircraft-tail-wing aircraft-tail-wing-left"></div>
+                  <div class="aircraft-tail-wing aircraft-tail-wing-right"></div>
+                  <div class="aircraft-fuselage">
+                    <div class="aircraft-window-strip aircraft-window-strip-left"></div>
+                    <div class="aircraft-window-strip aircraft-window-strip-right"></div>
+                    <div class="aircraft-cockpit"><i></i><i></i></div>
+                    <div class="aircraft-front-galley"><span>WC</span><span>GALLEY</span></div>
+                    <i class="aircraft-exit aircraft-exit-front-left"></i><i class="aircraft-exit aircraft-exit-front-right"></i>
+                    <i class="aircraft-exit aircraft-exit-middle-left"></i><i class="aircraft-exit aircraft-exit-middle-right"></i>
+                    <i class="aircraft-exit aircraft-exit-rear-left"></i><i class="aircraft-exit aircraft-exit-rear-right"></i>
+                    <div class="aircraft-rear-galley">REAR GALLEY</div>
+                  </div>
+                  <div class="aircraft-tail-fin"><i></i></div>
+                </div>
                 <div class="cabin-edge left"></div>
                 <div class="cabin-edge right"></div>
                 <div class="seat-row seat-letters">
@@ -1502,6 +1548,22 @@
                   <label class="meal-select"><input id="adult-meal-dessert" type="radio" name="adult-meal" value="dessert" data-price="1100" data-label="Fruit dessert" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-fruit" role="img" aria-label="Fruit dessert"></span><strong>Fruit dessert</strong><small>Seasonal fruit with yoghurt</small></label>
                   <div class="meal-price"><b>PKR 1,100</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Fruit dessert">−</label><span class="meal-count"></span><label for="adult-meal-dessert" aria-label="Select Fruit dessert">+</label></div></div>
                 </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="adult-meal-biryani" type="radio" name="adult-meal" value="biryani" data-price="2400" data-label="Chicken biryani" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-chicken" role="img" aria-label="Chicken biryani"></span><strong>Chicken biryani</strong><small>Fragrant rice with spiced chicken</small></label>
+                  <div class="meal-price"><b>PKR 2,400</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Chicken biryani">−</label><span class="meal-count"></span><label for="adult-meal-biryani" aria-label="Select Chicken biryani">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="adult-meal-fish" type="radio" name="adult-meal" value="fish" data-price="2600" data-label="Grilled fish" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-chicken" role="img" aria-label="Grilled fish"></span><strong>Grilled fish</strong><small>Herb-seasoned fish with vegetables</small></label>
+                  <div class="meal-price"><b>PKR 2,600</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Grilled fish">−</label><span class="meal-count"></span><label for="adult-meal-fish" aria-label="Select Grilled fish">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="adult-meal-omelette" type="radio" name="adult-meal" value="omelette" data-price="1600" data-label="Cheese omelette" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-vegetarian" role="img" aria-label="Cheese omelette"></span><strong>Cheese omelette</strong><small>Cheese omelette with breakfast sides</small></label>
+                  <div class="meal-price"><b>PKR 1,600</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Cheese omelette">−</label><span class="meal-count"></span><label for="adult-meal-omelette" aria-label="Select Cheese omelette">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="adult-meal-pancakes" type="radio" name="adult-meal" value="pancakes" data-price="1400" data-label="Pancakes with fruit" data-person="adult" data-kind="meal" /><span class="meal-photo meal-photo-fruit" role="img" aria-label="Pancakes with fruit"></span><strong>Pancakes with fruit</strong><small>Soft pancakes with seasonal fruit</small></label>
+                  <div class="meal-price"><b>PKR 1,400</b><div class="quantity"><label for="adult-meal-none" aria-label="Remove Pancakes with fruit">−</label><span class="meal-count"></span><label for="adult-meal-pancakes" aria-label="Select Pancakes with fruit">+</label></div></div>
+                </div>
               </div>
               <label
                 class="bk-primary mobile-addon-confirm"
@@ -1703,6 +1765,23 @@
                 ><span><i></i>Extra legroom</span>
               </div>
               <div class="seat-map">
+                <div class="aircraft-shell" aria-hidden="true">
+                  <div class="aircraft-wing aircraft-wing-left"><i class="aircraft-engine"></i></div>
+                  <div class="aircraft-wing aircraft-wing-right"><i class="aircraft-engine"></i></div>
+                  <div class="aircraft-tail-wing aircraft-tail-wing-left"></div>
+                  <div class="aircraft-tail-wing aircraft-tail-wing-right"></div>
+                  <div class="aircraft-fuselage">
+                    <div class="aircraft-window-strip aircraft-window-strip-left"></div>
+                    <div class="aircraft-window-strip aircraft-window-strip-right"></div>
+                    <div class="aircraft-cockpit"><i></i><i></i></div>
+                    <div class="aircraft-front-galley"><span>WC</span><span>GALLEY</span></div>
+                    <i class="aircraft-exit aircraft-exit-front-left"></i><i class="aircraft-exit aircraft-exit-front-right"></i>
+                    <i class="aircraft-exit aircraft-exit-middle-left"></i><i class="aircraft-exit aircraft-exit-middle-right"></i>
+                    <i class="aircraft-exit aircraft-exit-rear-left"></i><i class="aircraft-exit aircraft-exit-rear-right"></i>
+                    <div class="aircraft-rear-galley">REAR GALLEY</div>
+                  </div>
+                  <div class="aircraft-tail-fin"><i></i></div>
+                </div>
                 <div class="cabin-edge left"></div>
                 <div class="cabin-edge right"></div>
                 <div class="seat-row seat-letters">
@@ -2406,6 +2485,38 @@
                     </div>
                   </div>
                 </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="child-meal-pasta" type="radio" name="child-meal" value="pasta" data-price="1600" data-label="Pasta primavera" data-person="child" data-kind="meal" /><span class="meal-photo meal-photo-vegetarian" role="img" aria-label="Pasta primavera"></span><strong>Pasta primavera</strong><small>Garden vegetables with pasta</small></label>
+                  <div class="meal-price"><b>PKR 1,600</b><div class="quantity"><label for="child-meal-none" aria-label="Remove Pasta primavera">−</label><span class="meal-count"></span><label for="child-meal-pasta" aria-label="Select Pasta primavera">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="child-meal-wrap" type="radio" name="child-meal" value="wrap" data-price="1500" data-label="Chicken wrap" data-person="child" data-kind="meal" /><span class="meal-photo meal-photo-sandwich" role="img" aria-label="Chicken wrap"></span><strong>Chicken wrap</strong><small>Herb chicken with greens</small></label>
+                  <div class="meal-price"><b>PKR 1,500</b><div class="quantity"><label for="child-meal-none" aria-label="Remove Chicken wrap">−</label><span class="meal-count"></span><label for="child-meal-wrap" aria-label="Select Chicken wrap">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="child-meal-salad" type="radio" name="child-meal" value="salad" data-price="1100" data-label="Garden salad" data-person="child" data-kind="meal" /><span class="meal-photo meal-photo-fruit" role="img" aria-label="Garden salad"></span><strong>Garden salad</strong><small>Fresh greens and vegetables</small></label>
+                  <div class="meal-price"><b>PKR 1,100</b><div class="quantity"><label for="child-meal-none" aria-label="Remove Garden salad">−</label><span class="meal-count"></span><label for="child-meal-salad" aria-label="Select Garden salad">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="child-meal-dessert" type="radio" name="child-meal" value="dessert" data-price="900" data-label="Fruit dessert" data-person="child" data-kind="meal" /><span class="meal-photo meal-photo-fruit" role="img" aria-label="Fruit dessert"></span><strong>Fruit dessert</strong><small>Seasonal fruit with yoghurt</small></label>
+                  <div class="meal-price"><b>PKR 900</b><div class="quantity"><label for="child-meal-none" aria-label="Remove Fruit dessert">−</label><span class="meal-count"></span><label for="child-meal-dessert" aria-label="Select Fruit dessert">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="child-meal-biryani" type="radio" name="child-meal" value="biryani" data-price="1900" data-label="Chicken biryani" data-person="child" data-kind="meal" /><span class="meal-photo meal-photo-chicken" role="img" aria-label="Chicken biryani"></span><strong>Chicken biryani</strong><small>Fragrant rice with spiced chicken</small></label>
+                  <div class="meal-price"><b>PKR 1,900</b><div class="quantity"><label for="child-meal-none" aria-label="Remove Chicken biryani">−</label><span class="meal-count"></span><label for="child-meal-biryani" aria-label="Select Chicken biryani">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="child-meal-fish" type="radio" name="child-meal" value="fish" data-price="2100" data-label="Grilled fish" data-person="child" data-kind="meal" /><span class="meal-photo meal-photo-chicken" role="img" aria-label="Grilled fish"></span><strong>Grilled fish</strong><small>Herb-seasoned fish with vegetables</small></label>
+                  <div class="meal-price"><b>PKR 2,100</b><div class="quantity"><label for="child-meal-none" aria-label="Remove Grilled fish">−</label><span class="meal-count"></span><label for="child-meal-fish" aria-label="Select Grilled fish">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="child-meal-omelette" type="radio" name="child-meal" value="omelette" data-price="1300" data-label="Cheese omelette" data-person="child" data-kind="meal" /><span class="meal-photo meal-photo-vegetarian" role="img" aria-label="Cheese omelette"></span><strong>Cheese omelette</strong><small>Cheese omelette with breakfast sides</small></label>
+                  <div class="meal-price"><b>PKR 1,300</b><div class="quantity"><label for="child-meal-none" aria-label="Remove Cheese omelette">−</label><span class="meal-count"></span><label for="child-meal-omelette" aria-label="Select Cheese omelette">+</label></div></div>
+                </div>
+                <div class="meal-card">
+                  <label class="meal-select"><input id="child-meal-pancakes" type="radio" name="child-meal" value="pancakes" data-price="1100" data-label="Pancakes with fruit" data-person="child" data-kind="meal" /><span class="meal-photo meal-photo-fruit" role="img" aria-label="Pancakes with fruit"></span><strong>Pancakes with fruit</strong><small>Soft pancakes with seasonal fruit</small></label>
+                  <div class="meal-price"><b>PKR 1,100</b><div class="quantity"><label for="child-meal-none" aria-label="Remove Pancakes with fruit">−</label><span class="meal-count"></span><label for="child-meal-pancakes" aria-label="Select Pancakes with fruit">+</label></div></div>
+                </div>
               </div>
               <label
                 class="bk-primary mobile-addon-confirm"
@@ -2572,28 +2683,76 @@
             <svg class="bk-icon" aria-hidden="true"><use href="#bk-cart" /></svg
             ><span
               ><strong>Your extras</strong
-              ><small>1 item | Total</small></span
+              ><small data-extras-count>1 item · Total</small></span
             >
           </div>
-          <strong>PKR 3,500</strong><label
+          <strong data-extras-total>PKR 3,500</strong><button
+            type="button"
             class="bk-primary"
-            for="step-payment"
-            tabindex="0"
-            role="button"
+            popovertarget="addons-confirmation"
             >Continue to payment
             <svg class="bk-icon" aria-hidden="true">
               <use href="#bk-arrow" /></svg
-          ></label>
+          ></button>
         </div>
       </section>
+      <div id="addons-confirmation" class="bk-card review-popover addons-confirmation" popover="auto" role="dialog" aria-modal="true" aria-labelledby="addons-confirmation-title">
+        <button type="button" class="popover-close" popovertarget="addons-confirmation" popovertargetaction="hide" aria-label="Close extras review">×</button>
+        <h3 id="addons-confirmation-title"><svg class="bk-icon" aria-hidden="true"><use href="#bk-doc" /></svg>Confirm your extras</h3>
+        <p>Review everyone’s seats, meals, and baggage for both flight legs before payment.</p>
+        <section class="addons-confirmation-person" aria-label="Adult traveler extras">
+          <h4><span data-person-name="adult">Ali Khan</span><small>Adult</small></h4>
+          <div class="addons-confirmation-legs">
+            <section class="review-leg-extras" data-review-person="adult" data-review-leg="outbound" aria-label="Ali Khan, leg 1 extras">
+              <div class="review-leg-heading"><strong>Leg 1 · ISB → DXB</strong><small>24 Nov 2026</small></div>
+              <dl>
+                <div><dt>Seat</dt><dd data-review-extra="seat">No preference</dd></div>
+                <div><dt>Meal</dt><dd data-review-extra="meal">No meal</dd></div>
+                <div><dt>Baggage</dt><dd data-review-extra="baggage">No extra baggage</dd></div>
+              </dl>
+            </section>
+            <section class="review-leg-extras" data-review-person="adult" data-review-leg="return" aria-label="Ali Khan, leg 2 extras">
+              <div class="review-leg-heading"><strong>Leg 2 · DXB → ISB</strong><small>1 Dec 2026</small></div>
+              <dl>
+                <div><dt>Seat</dt><dd data-review-extra="seat">No preference</dd></div>
+                <div><dt>Meal</dt><dd data-review-extra="meal">No meal</dd></div>
+                <div><dt>Baggage</dt><dd data-review-extra="baggage">No extra baggage</dd></div>
+              </dl>
+            </section>
+          </div>
+        </section>
+        <section class="addons-confirmation-person" aria-label="Child traveler extras">
+          <h4><span data-person-name="child">Ayesha Khan</span><small>Child</small></h4>
+          <div class="addons-confirmation-legs">
+            <section class="review-leg-extras" data-review-person="child" data-review-leg="outbound" aria-label="Ayesha Khan, leg 1 extras">
+              <div class="review-leg-heading"><strong>Leg 1 · ISB → DXB</strong><small>24 Nov 2026</small></div>
+              <dl>
+                <div><dt>Seat</dt><dd data-review-extra="seat">No preference</dd></div>
+                <div><dt>Meal</dt><dd data-review-extra="meal">No meal</dd></div>
+                <div><dt>Baggage</dt><dd data-review-extra="baggage">No extra baggage</dd></div>
+              </dl>
+            </section>
+            <section class="review-leg-extras" data-review-person="child" data-review-leg="return" aria-label="Ayesha Khan, leg 2 extras">
+              <div class="review-leg-heading"><strong>Leg 2 · DXB → ISB</strong><small>1 Dec 2026</small></div>
+              <dl>
+                <div><dt>Seat</dt><dd data-review-extra="seat">No preference</dd></div>
+                <div><dt>Meal</dt><dd data-review-extra="meal">No meal</dd></div>
+                <div><dt>Baggage</dt><dd data-review-extra="baggage">No extra baggage</dd></div>
+              </dl>
+            </section>
+          </div>
+        </section>
+        <div class="addons-confirmation-total"><span>Extras total</span><strong data-extras-total>PKR 3,500</strong></div>
+        <div class="review-actions">
+          <button type="button" class="bk-outline" popovertarget="addons-confirmation" popovertargetaction="hide">Edit extras</button>
+          <button type="button" class="bk-primary" data-confirm-extras>Confirm &amp; continue<svg class="bk-icon" aria-hidden="true"><use href="#bk-arrow" /></svg></button>
+        </div>
+      </div>
       <section
         id="payment-panel"
         class="booking-panel payment-panel bk-container"
         aria-labelledby="payment-title"
       >
-        <h2 class="visually-hidden" id="payment-title" tabindex="-1">
-          Payment
-        </h2>
         <details class="mobile-trip-summary bk-card" open>
           <summary><strong>Trip summary</strong><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="#bk-chevron-down" /></svg></summary>
           <div>
@@ -2779,7 +2938,7 @@
               </div>
             </div>
             <aside class="payment-sidebar">
-              <div class="bk-card">
+              <div class="bk-card payment-booking-summary">
                 <div class="card-heading">
                   <h2>Your booking summary</h2>
                   <label
@@ -3191,9 +3350,10 @@
       scrolling="no"
       loading="lazy"
     ></iframe>
+    <script src="components/booking-addons.js" defer></script>
     <script src="components/booking-seats.js" defer></script>
     <script>
-      document.querySelectorAll(".meal-panel, .baggage-panel").forEach((panel) => {
+      window.attachAddonPanelDrag = (panel) => {
         let startY = 0;
         let startScroll = 0;
         panel.addEventListener("pointerdown", (event) => {
@@ -3213,7 +3373,8 @@
         };
         panel.addEventListener("pointerup", stopDragging);
         panel.addEventListener("pointercancel", stopDragging);
-      });
+      };
+      document.querySelectorAll(".meal-panel, .baggage-panel").forEach(window.attachAddonPanelDrag);
     </script>
   </body>
 </html>
