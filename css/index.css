@@ -3788,7 +3788,7 @@ footer .footer-logo-brand {
     margin-bottom: 0;
   }
   .shared-footer-frame {
-    height: 488px;
+    height: 456px;
     margin-top: 16px;
     margin-bottom: 0;
   }
@@ -4223,15 +4223,18 @@ body:has(#visa-processing-picker:popover-open)
 
   .home-navbar .mobile-auth-menu-panel[popover] {
     position: fixed;
-    inset: 0 auto 0 auto;
+    top: 0;
+    bottom: auto;
+    left: auto;
     right: max(-310px, -86vw);
     display: none;
     flex-direction: column;
     width: min(310px, 86vw);
-    height: 100vh;
-    height: 100dvh;
-    max-height: 100vh;
-    max-height: 100dvh;
+    height: auto;
+    height: max-content;
+    min-height: 0;
+    max-height: calc(100vh - 16px);
+    max-height: calc(100dvh - 16px);
     margin: 0;
     padding: 0;
     overflow-y: auto;
@@ -4279,13 +4282,18 @@ body:has(#visa-processing-picker:popover-open)
   .home-navbar .mobile-auth-drawer-heading {
     position: relative;
     display: flex;
-    min-height: 68px;
+    height: max-content;
+    min-height: max-content;
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
     border-bottom: 1px solid var(--color-border);
     color: var(--color-primary);
     font-size: 18px;
+  }
+
+  .home-navbar .mobile-auth-menu-panel[popover] > * {
+    flex: 0 0 auto;
   }
 
   .home-navbar .mobile-auth-drawer-heading button {
@@ -4300,8 +4308,7 @@ body:has(#visa-processing-picker:popover-open)
     font-size: 20px;
   }
 
-  .home-navbar:has(#mobile-auth-drawer:popover-open)
-    .mobile-auth-menu-trigger {
+  .home-navbar:has(#mobile-auth-drawer:popover-open) .mobile-auth-menu-trigger {
     visibility: hidden;
   }
 
@@ -4334,16 +4341,20 @@ body:has(#visa-processing-picker:popover-open)
 
   .home-navbar
     .mobile-auth-drawer-heading
-    button[popovertargetaction="hide"] .bi,
+    button[popovertargetaction="hide"]
+    .bi,
   .home-navbar
     .mobile-auth-drawer-heading
-    button[popovertargetaction="hide"]:hover .bi,
+    button[popovertargetaction="hide"]:hover
+    .bi,
   .home-navbar
     .mobile-auth-drawer-heading
-    button[popovertargetaction="hide"]:focus-visible .bi,
+    button[popovertargetaction="hide"]:focus-visible
+    .bi,
   .home-navbar
     .mobile-auth-drawer-heading
-    button[popovertargetaction="hide"]:active .bi {
+    button[popovertargetaction="hide"]:active
+    .bi {
     transform: none;
     filter: none;
   }
@@ -4424,11 +4435,13 @@ body:has(#service-visa:checked) .home-navbar label[for="service-visa"] {
     margin-top: 6px !important;
     margin-bottom: 0 !important;
   }
-  .static-booking .journey-grid:not(.service-journey-grid)
+  .static-booking
+    .journey-grid:not(.service-journey-grid)
     > .journey-cell:nth-of-type(1) {
     padding-right: 28px;
   }
-  .static-booking .journey-grid:not(.service-journey-grid)
+  .static-booking
+    .journey-grid:not(.service-journey-grid)
     > .journey-cell:nth-of-type(2) {
     padding-left: 28px;
   }
@@ -4564,7 +4577,8 @@ body:has(#service-visa:checked) .home-navbar label[for="service-visa"] {
   body:has(#service-flights:checked)
     .flight-panel
     > .d-flex:has(> .travel-assurance)
-    > .travel-assurance + button {
+    > .travel-assurance
+    + button {
     justify-self: center;
     width: max-content;
     min-height: 34px;
@@ -4585,4 +4599,3 @@ body:has(#service-visa:checked) .home-navbar label[for="service-visa"] {
     z-index: 2;
   }
 }
-

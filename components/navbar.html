@@ -15,15 +15,30 @@
     />
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="../components/navbar.css" />
+    <link rel="stylesheet" href="../components/footer.css" media="not all" />
+    <link rel="stylesheet" href="../css/add-ons.css" media="not all" />
+    <link rel="stylesheet" href="../css/auth.css" media="not all" />
+    <link
+      rel="stylesheet"
+      href="../css/booking-confirmation.css"
+      media="not all"
+    />
+    <link rel="stylesheet" href="../css/flight-booking.css" media="not all" />
+    <link rel="stylesheet" href="../css/multi-city.css" media="not all" />
+    <link rel="stylesheet" href="../css/my-bookings.css" media="not all" />
+    <link rel="stylesheet" href="../css/payment.css" media="not all" />
+    <link rel="stylesheet" href="../css/search-flight.css" media="not all" />
+    <link rel="stylesheet" href="../css/travellers.css" media="not all" />
   </head>
-  <body class="navbar-component">
+  <body class="navbar-component home-navbar">
+    <span id="guest-header" aria-hidden="true"></span>
     <div class="welcome-strip text-center text-white">
       Your journey begins with Sparrow Flights.
       <a
         class="text-white text-decoration-underline ms-2"
         href="../index.html#booking"
-        target="_parent"
+        target="_top"
         >Find your next flight</a
       >
     </div>
@@ -35,7 +50,7 @@
           href="../index.html"
           class="brand logo-brand me-lg-4"
           aria-label="Sparrow Flights home"
-          target="_parent"
+          target="_top"
         >
           <img
             class="brand-logo-image"
@@ -51,7 +66,7 @@
             class="nav-service is-current"
             data-service="flights"
             href="../index.html#booking"
-            target="_parent"
+            target="_top"
             ><i class="bi bi-airplane" aria-hidden="true"></i
             ><span>Flights</span></a
           >
@@ -59,7 +74,7 @@
             class="nav-service"
             data-service="umrah"
             href="../index.html#booking"
-            target="_parent"
+            target="_top"
             ><i class="bi bi-moon-stars" aria-hidden="true"></i
             ><span>Umrah</span></a
           >
@@ -67,15 +82,87 @@
             class="nav-service"
             data-service="visa"
             href="../index.html#booking"
-            target="_parent"
+            target="_top"
             ><i class="bi bi-passport" aria-hidden="true"></i
             ><span>Visa</span></a
           >
         </nav>
+        <div class="guest-header-controls">
+          <div
+            class="auth-entry-actions d-flex align-items-center gap-2 ms-lg-2"
+          >
+            <a
+              class="nav-auth-button nav-auth-login theme-button"
+              href="../index.html#auth-login"
+              target="_top"
+              >Log in</a
+            >
+            <a
+              class="nav-auth-button nav-auth-start theme-button"
+              href="../index.html#auth-signup"
+              target="_top"
+              >Get Started</a
+            >
+          </div>
+          <button
+            class="mobile-auth-menu-trigger"
+            type="button"
+            popovertarget="mobile-auth-drawer"
+            aria-label="Open navigation menu"
+          >
+            <span class="mobile-menu-bars" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <nav
+            class="mobile-auth-menu-panel"
+            id="mobile-auth-drawer"
+            popover="auto"
+            aria-label="Mobile navigation menu"
+          >
+            <div class="mobile-auth-drawer-heading">
+              <strong>Menu</strong>
+              <button
+                type="button"
+                popovertarget="mobile-auth-drawer"
+                popovertargetaction="hide"
+                aria-label="Close navigation menu"
+              >
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="mobile-auth-drawer-links">
+              <a
+                href="../index.html#about"
+                target="_top"
+                class="mobile-auth-page-link"
+                >About us</a
+              >
+              <a
+                href="../index.html#contact"
+                target="_top"
+                class="mobile-auth-page-link"
+                >Contact us</a
+              >
+              <a
+                href="../index.html#auth-login"
+                target="_top"
+                class="nav-auth-button nav-auth-login theme-button"
+                >Log in</a
+              >
+              <a
+                href="../index.html#auth-signup"
+                target="_top"
+                class="nav-auth-button nav-auth-start theme-button"
+                >Get Started</a
+              >
+            </div>
+          </nav>
+        </div>
         <a
           class="header-action signed-in-nav d-none d-lg-flex"
-          href="../index.html#contact"
-          target="_parent"
+          href="../my-bookings.html"
+          target="_top"
           ><i class="bi bi-suitcase fs-4 text-primary" aria-hidden="true"></i
           ><span
             ><strong>My trips</strong><small>Manage your bookings</small></span
@@ -84,7 +171,7 @@
         <a
           class="header-action wishlist signed-in-nav d-none d-xl-flex"
           href="../index.html#offers"
-          target="_parent"
+          target="_top"
           ><i class="bi bi-heart-fill fs-4 text-danger" aria-hidden="true"></i
           ><span
             ><strong>Wishlist</strong><small>Save your favourites</small></span
@@ -93,7 +180,7 @@
         <a
           class="account-action signed-in-nav position-relative ms-2"
           href="../index.html#contact"
-          target="_parent"
+          target="_top"
           aria-label="My account"
         >
           <img src="../images/demo-profile.jpg" alt="" width="40" height="40" />

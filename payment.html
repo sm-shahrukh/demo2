@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment | Sparrow Flights</title>
+    <link rel="icon" href="images/icon.png?v=2" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/flight-booking.css" />
+  <link rel="stylesheet" href="css/payment.css" />
+<link rel="stylesheet" href="components/footer.css" media="not all" />
+<link rel="stylesheet" href="components/navbar.css" media="not all" />
+<link rel="stylesheet" href="css/add-ons.css" media="not all" />
+<link rel="stylesheet" href="css/auth.css" media="not all" />
+<link rel="stylesheet" href="css/booking-confirmation.css" media="not all" />
+<link rel="stylesheet" href="css/index.css" media="not all" />
+<link rel="stylesheet" href="css/multi-city.css" media="not all" />
+<link rel="stylesheet" href="css/my-bookings.css" media="not all" />
+<link rel="stylesheet" href="css/search-flight.css" media="not all" />
+<link rel="stylesheet" href="css/travellers.css" media="not all" />
+</head>
+<body class="booking-page" data-page="payment">
+<input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-travellers"
+      aria-label="Travellers"
+    />
+<input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-addons"
+      aria-label="Add-ons"
+    />
+<input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-payment" checked
+      aria-label="Payment"
+    />
+<input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-complete"
+      aria-label="Booking confirmation"
+    />
+<input class="state-radio" type="radio" name="booking-step" id="step-review" aria-label="Review traveller details" />
+<iframe
+      class="booking-header-frame"
+      src="components/navbar.html"
+      title="Site navigation"
+      scrolling="no"
+    ></iframe>
+
+<main id="booking-main">
+<header class="payment-intro bk-container">
+        <div>
+          <a class="traveller-back-link" href="search-flight.html">
+            <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-arrow" /></svg>
+            Back to flight results
+          </a>
+          <h2 id="payment-title" tabindex="-1">Payment</h2>
+          <p>Pay securely to confirm your journey.</p>
+        </div>
+        <div class="reservation-time">
+          <svg class="bk-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Reservation time <strong>20:00</strong></span>
+        </div>
+      </header>
+<nav class="booking-steps" aria-label="Booking progress">
+        <a href="search-flight.html"><span>✓</span>Flight</a><i></i
+        ><label for="step-travellers" data-booking-navigation="step-travellers"><span>2</span>Travellers</label><i></i
+        ><label for="step-addons" data-booking-navigation="step-addons"><span>3</span>Add-ons</label><i></i
+        ><label for="step-payment" data-booking-navigation="step-payment"><span>4</span>Payment</label>
+      </nav>
+<section
+        id="payment-panel"
+        class="booking-panel payment-panel bk-container"
+        aria-labelledby="payment-title"
+      >
+        <details class="mobile-trip-summary bk-card" open>
+          <summary><strong>Trip summary</strong><svg class="bk-icon bk-chevron" aria-hidden="true"><use href="components/booking-icons.svg#bk-chevron-down" /></svg></summary>
+          <div>
+            <b>ISB → DXB</b>
+            <p>Tue, 24 Nov 2026 · 1 Adult + 1 Child · Economy</p>
+            <strong>PKR 149,000</strong>
+          </div>
+        </details>
+        <div id="payment-form" class="payment-form">
+          <input
+            class="state-radio"
+            type="radio"
+            name="payment-method"
+            id="method-card"
+            checked
+            aria-label="Credit or debit card"
+          /><input
+            class="state-radio"
+            type="radio"
+            name="payment-method"
+            id="method-bank"
+            aria-label="Bank transfer"
+          /><input
+            class="state-radio"
+            type="radio"
+            name="payment-method"
+            id="method-wallet"
+            aria-label="Wallet"
+          />
+          <div class="payment-layout">
+            <aside class="payment-method-column">
+              <h2>Choose a payment method</h2>
+              <div class="payment-methods">
+                <label for="method-card"
+                  ><span class="icon-tile"
+                    ><svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-card" /></svg></span
+                  ><span
+                    ><strong>Credit or debit card</strong
+                    ><small>Visa, Mastercard, Amex, etc.</small></span
+                  ><b>›</b></label
+                ><label for="method-bank"
+                  ><span class="icon-tile"
+                    ><svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-bank" /></svg></span
+                  ><span
+                    ><strong>Bank transfer</strong
+                    ><small>Pay via local bank (PKR)</small></span
+                  ><b>›</b></label
+                ><label for="method-wallet"
+                  ><span class="icon-tile"
+                    ><svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-wallet" /></svg></span
+                  ><span
+                    ><strong>Wallet</strong
+                    ><small class="wallet-desktop-caption">Use your wallet balance</small><small class="wallet-mobile-caption">Balance: <b>PKR 12,500</b></small></span
+                  ><b>›</b></label
+                >
+              </div>
+              <div class="wallet-card">
+                <h3>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-wallet" /></svg
+                  ><span>Your Sparrow wallet<strong>PKR 12,500 <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-info" /></svg></strong></span>
+                </h3>
+                <label class="wallet-toggle"><input type="checkbox" id="use-wallet" aria-label="Use wallet balance" /><span aria-hidden="true"></span>Use wallet balance</label>
+                <p>Available balance will be applied<br />to your booking.</p>
+                <details>
+                  <summary>View details</summary>
+                  <p>
+                    Demo wallet credit. The remaining amount is simulated; no
+                    funds are transferred.
+                  </p>
+                </details>
+              </div>
+            </aside>
+            <div class="payment-main">
+              <div class="bk-card payment-details">
+                <div class="card-method">
+                  <div class="card-heading">
+                    <h2><span class="payment-card-title-desktop">Pay with credit or debit card</span><span class="payment-card-title-mobile">Card details</span></h2>
+                    <img class="card-brands" src="images/payment-card-brands.svg" alt="Visa, Mastercard, American Express, UnionPay" width="158" height="24" />
+                  </div>
+                  <p class="field-note">
+                    Your payment information is encrypted and secure.
+                  </p>
+                  <div class="payment-fields">
+                    <label
+                      >Name on card<input
+                        value="Ali Khan"
+                        placeholder="e.g. Ali Raza"
+                        readonly
+                        aria-label="Name on card" /></label
+                    ><label
+                      >Card number
+                      <div class="card-input">
+                        <input
+                          value="4242 4242 4242 4242"
+                          placeholder="0000 0000 0000 0000"
+                          readonly
+                          aria-label="Card number"
+                        /><svg class="bk-icon" aria-hidden="true">
+                          <use href="components/booking-icons.svg#bk-card" />
+                        </svg></div
+                    ></label>
+                    <div class="card-small-fields">
+                      <label
+                        >Expiry date<input value="12 / 30" placeholder="MM / YY" readonly /></label
+                      ><label>CVC<span class="card-input"><input value="123" placeholder="e.g. 123" readonly /><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-info" /></svg></span></label
+                      ><label
+                        >Billing country<select>
+                          <option>Pakistan</option>
+                          <option>United Arab Emirates</option>
+                          <option>United Kingdom</option>
+                        </select></label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="bank-method">
+                  <h2>Pay by bank transfer</h2>
+                  <p>
+                    Try a local bank transfer using this sample payment
+                    instruction.
+                  </p>
+                  <dl class="price-lines">
+                    <div>
+                      <dt>Bank</dt>
+                      <dd>Demo Bank</dd>
+                    </div>
+                    <div>
+                      <dt>Reference</dt>
+                      <dd>BK7X2P</dd>
+                    </div>
+                    <div>
+                      <dt>Amount</dt>
+                      <dd>PKR 149,000</dd>
+                    </div>
+                  </dl>
+                  <p class="bk-info">
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-info" /></svg
+                    >No transfer is required. Continue to simulate payment.
+                  </p>
+                </div>
+                <div class="wallet-method">
+                  <h2>Pay with your wallet</h2>
+                  <p>Your demo wallet has PKR 12,500 available.</p>
+                  <p class="bk-info">
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-wallet" /></svg
+                    >Wallet payment is a static display example.
+                  </p>
+                </div>
+                <label class="consent"
+                  ><input type="checkbox" name="consent" id="consent" required /><span
+                    >I agree to the
+                    <button type="button" class="payment-policy-link" popovertarget="payment-policies">Fare Conditions</button> and
+                    <button type="button" class="payment-policy-link" popovertarget="payment-policies">Privacy Policy</button><span class="consent-authorization"> and confirm
+                    that I am authorized to use this payment method.</span></span
+                  ></label
+                >
+                <button class="bk-primary payment-pay-disabled" type="button" disabled>
+                  <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-lock" /></svg>
+                  Pay PKR 149,000
+                  <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-arrow" /></svg>
+                </button>
+                <label
+                  class="bk-primary pay-button"
+                  for="step-complete" data-booking-navigation="step-complete"
+                  tabindex="0"
+                  role="button"
+                >
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-lock" /></svg
+                  >Pay PKR 149,000<svg
+                    class="bk-icon"
+                    aria-hidden="true"
+                  >
+                    <use href="components/booking-icons.svg#bk-arrow" />
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <aside class="payment-sidebar">
+              <div class="bk-card payment-booking-summary">
+                <div class="card-heading">
+                  <h2>Your booking summary</h2>
+                  <label
+                    class="bk-link"
+                    for="step-addons" data-booking-navigation="step-addons"
+                    tabindex="0"
+                    role="button"
+                    ><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-edit" /></svg>Edit</label>
+                </div>
+                <h3>Flight to Dubai</h3>
+                <div class="payment-summary-card">
+                  <div class="summary-ticket">
+                  <img class="summary-airline-mark" src="images/airlines/emirates-tail-mark.svg" alt="Emirates" />
+                  <div>
+                    <b>ISB <small>08:30</small></b
+                    ><span class="summary-route-track"
+                      >
+                      <svg class="bk-icon" aria-hidden="true">
+                        <use href="components/booking-icons.svg#bk-route-plane" />
+                      </svg></span
+                    ><b>DXB <small>11:10</small></b>
+                  </div>
+                  <p><span>Islamabad</span><span>3h 40m</span><span>Dubai</span></p>
+                  <small>Tue, 24 Nov 2026 · 1 Adult + 1 Child · Economy</small>
+                </div>
+                <dl class="price-lines">
+                  <div>
+                    <dt>Base fare</dt>
+                    <dd>PKR 130,500</dd>
+                  </div>
+                  <div>
+                    <dt>Taxes and fees</dt>
+                    <dd>PKR 18,500</dd>
+                  </div>
+                  <div class="price-total">
+                    <dt>Total amount</dt>
+                    <dd>PKR 149,000</dd>
+                  </div>
+                </dl>
+                </div>
+              </div>
+              <div class="bk-card payment-help">
+                <details id="fare-conditions">
+                  <summary>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-doc" /></svg
+                    >Fare conditions<svg class="bk-icon bk-chevron" aria-hidden="true"><use href="components/booking-icons.svg#bk-chevron-down" /></svg>
+                  </summary>
+                  <p>Sample Economy fare. No ticket is issued in this demo.</p>
+                  <p id="privacy-details">Your sample entries stay on this page and are not sent to a server.</p>
+                </details>
+                <details>
+                  <summary>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-headset" /></svg
+                    >Need help with payment?<svg class="bk-icon bk-chevron" aria-hidden="true"><use href="components/booking-icons.svg#bk-chevron-down" /></svg>
+                  </summary>
+                  <p>
+                    Select a payment method and agree to the fare conditions to continue.
+                  </p>
+                </details>
+              </div>
+              <div class="payment-protection">
+                <svg class="bk-icon" aria-hidden="true">
+                  <use href="components/booking-icons.svg#bk-shield" />
+                </svg>
+                <div>
+                  <strong>Your payment is protected</strong>
+                  <p>
+                    We use industry-standard encryption to keep your information safe and secure.
+                  </p>
+                </div>
+              </div>
+              <details class="bk-card payment-extras">
+                <summary>Traveller extras</summary>
+                <div class="extras-person">
+                  <strong><span data-person-name="adult">Ali Khan</span></strong
+                  ><small>Adult</small>
+                  <p>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-seat" /></svg
+                    ><span data-summary="adult-seat">No preference</span>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-meal" /></svg
+                    ><span data-summary="adult-meal">No meal</span>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-bag" /></svg
+                    ><span data-summary="adult-baggage">No extra baggage</span>
+                  </p>
+                </div>
+                <div class="extras-person">
+                  <strong
+                    ><span data-person-name="child">Ayesha Khan</span></strong
+                  ><small>Child</small>
+                  <p>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-seat" /></svg
+                    ><span data-summary="child-seat">No preference</span>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-meal" /></svg
+                    ><span data-summary="child-meal">No meal</span>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-bag" /></svg
+                    ><span data-summary="child-baggage">No extra baggage</span>
+                  </p>
+                </div>
+              </details>
+            </aside>
+          </div>
+          <div class="mobile-checkout payment-checkout">
+            <div>
+              <small>Total amount</small><strong>PKR 149,000</strong>
+            </div>
+            <button class="bk-primary payment-mobile-pay-disabled" type="button" disabled>
+              <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-lock" /></svg>
+              Pay now
+              <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-arrow" /></svg>
+            </button>
+            <label
+              class="bk-primary payment-mobile-pay"
+              for="step-complete" data-booking-navigation="step-complete"
+              tabindex="0"
+              role="button"
+            >
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-lock" /></svg
+              >Pay now
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-arrow" />
+              </svg>
+            </label>
+          </div>
+        </div>
+        <div class="bk-card review-popover payment-policy-popover" id="payment-policies" popover="auto">
+          <button type="button" class="popover-close" popovertarget="payment-policies" popovertargetaction="hide" aria-label="Close payment policies">×</button>
+          <h3>Fare Conditions &amp; Privacy Policy</h3>
+          <p>This static booking uses sample fares and traveller details. No ticket is issued and no payment is collected. Your entries stay on this page and are not sent to a server.</p>
+        </div>
+      </section>
+<section class="payment-status-examples bk-container" aria-label="Payment status examples">
+        <article class="payment-status-example payment-processing-example">
+          <span class="status-spinner-disc" aria-hidden="true"><span class="processing-spinner"></span></span>
+          <div class="status-copy">
+            <h2>Processing your payment</h2>
+            <p>Please do not close this page. We are securely processing your payment with your bank.</p>
+          </div>
+          <ul>
+            <li class="status-done">Connecting to your bank</li>
+            <li class="status-current">Verifying payment details</li>
+            <li>Finalising your booking</li>
+            <li class="status-note"><small>This usually takes a few seconds.</small></li>
+          </ul>
+        </article>
+        <article class="payment-status-example payment-failed-example">
+          <span class="error-icon" aria-hidden="true">!</span>
+          <div class="status-copy">
+            <h2>Payment unsuccessful</h2>
+            <p>We couldn’t process your payment right now.<br />This could be due to a bank issue or incorrect details.</p>
+            <div class="error-actions">
+              <a class="bk-primary" href="#payment-panel"><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-refresh" /></svg>Try again</a>
+              <a class="bk-outline" href="#payment-panel">Choose another method</a>
+            </div>
+          </div>
+          <aside class="payment-error-help">
+            <b>Need help?</b>
+            <p><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-card" /></svg>Check your card details</p>
+            <p><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-wallet" /></svg>Ensure sufficient balance</p>
+            <p><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-headset" /></svg>Try a different payment method</p>
+            <p><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-phone" /></svg>Contact your bank</p>
+          </aside>
+        </article>
+      </section>
+<div id="payment-error" class="payment-status-card error">
+        <span class="error-icon">!</span>
+        <div>
+          <h2>Payment unsuccessful</h2>
+          <p>
+            We couldn’t process your demo payment.<br />Try again or choose
+            another method.
+          </p>
+          <div class="error-actions">
+            <a class="bk-primary" href="#payment-panel">Try another payment</a>
+            <label
+              class="bk-outline"
+              for="step-payment" data-booking-navigation="step-payment"
+              tabindex="0"
+              role="button"
+              >Choose another method</label
+            >
+          </div>
+        </div>
+        <div class="payment-error-help">
+          <b>Need help?</b>
+          <p>Check your card details</p>
+          <p>Ensure sufficient balance</p>
+          <p>Try a different payment method</p>
+          <p>Contact your bank</p>
+        </div>
+      </div>
+</main>
+<iframe
+      class="booking-footer-frame"
+      src="components/footer.html"
+      title="Site footer"
+      scrolling="no"
+      loading="lazy"
+    ></iframe>
+<script src="components/booking-flow.js" defer></script>
+<script src="components/navbar-embed.js" defer></script>
+</body>
+</html>

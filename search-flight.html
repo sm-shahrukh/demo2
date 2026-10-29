@@ -17,12 +17,24 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     />
+
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/search-flight.css" />
     <link rel="stylesheet" href="css/multi-city.css" />
-    <script src="components/multi-city.js" defer></script>
-    <script src="components/flight-card-selection.js" defer></script>
+    <link rel="stylesheet" href="components/footer.css" media="not all" />
+    <link rel="stylesheet" href="components/navbar.css" media="not all" />
+    <link rel="stylesheet" href="css/add-ons.css" media="not all" />
+    <link rel="stylesheet" href="css/auth.css" media="not all" />
+    <link
+      rel="stylesheet"
+      href="css/booking-confirmation.css"
+      media="not all"
+    />
+    <link rel="stylesheet" href="css/flight-booking.css" media="not all" />
+    <link rel="stylesheet" href="css/my-bookings.css" media="not all" />
+    <link rel="stylesheet" href="css/payment.css" media="not all" />
+    <link rel="stylesheet" href="css/travellers.css" media="not all" />
   </head>
   <body class="flight-results-page">
     <!-- This page is intentionally HTML/CSS only. Native radios, details and popovers own all UI state. -->
@@ -138,86 +150,12 @@
       </symbol>
     </svg>
 
-    <div class="navbar-component static-navbar">
-      <div class="welcome-strip text-center text-white">
-        Your journey begins with Sparrow Flights.
-        <a
-          class="text-white text-decoration-underline ms-2"
-          href="index.html#booking"
-          >Find your next flight</a
-        >
-      </div>
-      <header class="travel-header bg-white sticky-top shadow-sm">
-        <div
-          class="container d-flex align-items-center gap-3 flex-wrap flex-lg-nowrap"
-        >
-          <a
-            href="index.html"
-            class="brand logo-brand me-lg-4"
-            aria-label="Sparrow Flights home"
-          >
-            <img
-              class="brand-logo-image"
-              src="images/logo.jpeg"
-              alt="Sparrow Flights"
-            />
-          </a>
-          <nav
-            class="travel-nav d-flex align-self-stretch gap-4 me-auto"
-            aria-label="Travel services"
-          >
-            <a
-              class="nav-service is-current"
-              data-service="flights"
-              href="index.html#booking"
-              ><i class="bi bi-airplane" aria-hidden="true"></i
-              ><span>Flights</span></a
-            >
-            <a
-              class="nav-service"
-              data-service="umrah"
-              href="index.html#booking"
-              ><i class="bi bi-moon-stars" aria-hidden="true"></i
-              ><span>Umrah</span></a
-            >
-            <a class="nav-service" data-service="visa" href="index.html#booking"
-              ><i class="bi bi-passport" aria-hidden="true"></i
-              ><span>Visa</span></a
-            >
-          </nav>
-          <a
-            class="header-action signed-in-nav d-none d-lg-flex"
-            href="index.html#contact"
-            ><i class="bi bi-suitcase fs-4 text-primary" aria-hidden="true"></i
-            ><span
-              ><strong>My trips</strong
-              ><small>Manage your bookings</small></span
-            ></a
-          >
-          <a
-            class="header-action wishlist signed-in-nav d-none d-xl-flex"
-            href="index.html#offers"
-            ><i class="bi bi-heart-fill fs-4 text-danger" aria-hidden="true"></i
-            ><span
-              ><strong>Wishlist</strong
-              ><small>Save your favourites</small></span
-            ></a
-          >
-
-          <a
-            class="account-action signed-in-nav position-relative ms-2"
-            href="index.html#contact"
-            aria-label="My account"
-          >
-            <img src="images/demo-profile.jpg" alt="" width="40" height="40" />
-            <span class="d-none d-md-block"
-              ><strong>My account</strong><small>Ali Ahmed</small></span
-            >
-            <i class="bi bi-chevron-down ms-1" aria-hidden="true"></i>
-          </a>
-        </div>
-      </header>
-    </div>
+    <iframe
+      class="shared-navbar-frame static-navbar"
+      src="components/navbar.html"
+      title="Site navigation"
+      scrolling="no"
+    ></iframe>
     <main>
       <section class="results-hero">
         <div class="container">
@@ -1551,7 +1489,7 @@
 
                       <small>All taxes included</small>
                     </div>
-                    <a class="btn btn-primary" href="flight-booking.html">
+                    <a class="btn btn-primary" href="travellers.html">
                       Next: Travellers
                       <svg class="icon" aria-hidden="true">
                         <use href="#icon-like" />
@@ -2310,7 +2248,7 @@
 
                       <small>All taxes included</small>
                     </div>
-                    <a class="btn btn-primary" href="flight-booking.html">
+                    <a class="btn btn-primary" href="travellers.html">
                       Next: Travellers
                       <svg class="icon" aria-hidden="true">
                         <use href="#icon-like" />
@@ -3180,7 +3118,7 @@
                       </div>
                       <small>All taxes included</small>
                     </div>
-                    <a class="btn btn-primary" href="flight-booking.html">
+                    <a class="btn btn-primary" href="travellers.html">
                       Next: Travellers
                       <svg class="icon" aria-hidden="true">
                         <use href="#icon-like" />
@@ -3198,62 +3136,12 @@
         </div>
       </div>
     </main>
-    <div class="footer-component">
-      <footer id="contact">
-        <div class="container footer-grid d-grid gap-4 py-4">
-          <div id="about">
-            <a
-              href="index.html"
-              class="brand logo-brand footer-logo-brand"
-              aria-label="Sparrow Flights home"
-            >
-              <img
-                class="brand-logo-image"
-                src="images/logo.jpeg"
-                alt="Sparrow Flights"
-              />
-            </a>
-            <p>Journeys for a brighter tomorrow.</p>
-          </div>
-          <div>
-            <h4>About</h4>
-            <a href="index.html#about">Our story</a
-            ><a href="index.html#about">Careers</a
-            ><a href="index.html#destinations">Media</a>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <a href="index.html#contact">Get in touch</a
-            ><a href="index.html#contact">Branch locations</a
-            ><a href="index.html#contact">Feedback</a>
-          </div>
-          <div>
-            <h4>Support</h4>
-            <a href="index.html#contact">Help centre</a
-            ><a href="index.html#contact">Change or cancel booking</a
-            ><a href="index.html#contact">Baggage information</a>
-          </div>
-          <div>
-            <h4>Follow us</h4>
-            <div class="socials d-flex gap-3 fs-5">
-              <a href="#contact" aria-label="Facebook"
-                ><i class="bi bi-facebook"></i></a
-              ><a href="#contact" aria-label="Instagram"
-                ><i class="bi bi-instagram"></i></a
-              ><a href="#contact" aria-label="YouTube"
-                ><i class="bi bi-youtube"></i></a
-              ><a href="#contact" aria-label="LinkedIn"
-                ><i class="bi bi-linkedin"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="container footer-bottom">
-          <span>&copy; 2026 Sparrow Flights. The calm journey.</span
-          ><span>Static preview &middot; Illustrative offers and fares.</span>
-        </div>
-      </footer>
-    </div>
+    <iframe
+      class="shared-footer-frame"
+      src="components/footer.html"
+      title="Site footer"
+      scrolling="no"
+    ></iframe>
     <nav
       class="bottom-nav justify-content-around bg-white border-top py-2"
       aria-label="Mobile navigation"
@@ -4182,5 +4070,7 @@
         >. Photos are displayed cropped to fit.
       </p>
     </details>
+
+    <script src="components/navbar-embed.js" defer></script>
   </body>
 </html>

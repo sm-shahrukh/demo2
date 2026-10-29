@@ -71,7 +71,10 @@ body:has(#trip-multi:checked) .mc-inline {
 }
 .mc-inline .mc-inline__fields {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(150px, .75fr) minmax(270px, auto);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(
+      150px,
+      0.75fr
+    ) minmax(270px, auto);
   align-items: end;
   gap: 12px;
 }
@@ -171,33 +174,105 @@ body:has(#trip-multi:checked) .mc-inline {
   border-color: var(--color-border);
   color: var(--color-muted);
 }
-.mc-inline #mc-count-2:checked ~ .mc-inline__rows [data-flight="2"] .mc-inline__action--remove {
-  opacity: .5;
+.mc-inline
+  #mc-count-2:checked
+  ~ .mc-inline__rows
+  [data-flight="2"]
+  .mc-inline__action--remove {
+  opacity: 0.5;
   pointer-events: none;
   cursor: not-allowed;
 }
 .mc-inline .mc-inline__action:disabled {
-  opacity: .5;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 /* Native radio state keeps the row count between two and six without JavaScript. */
-.mc-inline #mc-count-2:checked ~ .mc-inline__heading [data-count="2"] { display: inline; }
-.mc-inline #mc-count-2:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 1) { display: block; }
-.mc-inline #mc-count-2:checked ~ .mc-inline__rows [data-flight="2"] .mc-inline__actions { display: flex; }
-.mc-inline #mc-count-3:checked ~ .mc-inline__heading [data-count="3"] { display: inline; }
-.mc-inline #mc-count-3:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 2) { display: block; }
-.mc-inline #mc-count-3:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 2) .mc-inline__actions { display: flex; }
-.mc-inline #mc-count-4:checked ~ .mc-inline__heading [data-count="4"] { display: inline; }
-.mc-inline #mc-count-4:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 3) { display: block; }
-.mc-inline #mc-count-4:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 3) .mc-inline__actions { display: flex; }
-.mc-inline #mc-count-5:checked ~ .mc-inline__heading [data-count="5"] { display: inline; }
-.mc-inline #mc-count-5:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 4) { display: block; }
-.mc-inline #mc-count-5:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 4) .mc-inline__actions { display: flex; }
-.mc-inline #mc-count-6:checked ~ .mc-inline__heading [data-count="6"] { display: inline; }
-.mc-inline #mc-count-6:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 5) { display: block; }
-.mc-inline #mc-count-6:checked ~ .mc-inline__rows .mc-inline__row:nth-child(-n + 5) .mc-inline__actions { display: flex; }
-.mc-inline #mc-count-6:checked ~ .mc-inline__rows .mc-inline__action:not(.mc-inline__action--remove) {
-  opacity: .5;
+.mc-inline #mc-count-2:checked ~ .mc-inline__heading [data-count="2"] {
+  display: inline;
+}
+.mc-inline
+  #mc-count-2:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 1) {
+  display: block;
+}
+.mc-inline
+  #mc-count-2:checked
+  ~ .mc-inline__rows
+  [data-flight="2"]
+  .mc-inline__actions {
+  display: flex;
+}
+.mc-inline #mc-count-3:checked ~ .mc-inline__heading [data-count="3"] {
+  display: inline;
+}
+.mc-inline
+  #mc-count-3:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 2) {
+  display: block;
+}
+.mc-inline
+  #mc-count-3:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 2)
+  .mc-inline__actions {
+  display: flex;
+}
+.mc-inline #mc-count-4:checked ~ .mc-inline__heading [data-count="4"] {
+  display: inline;
+}
+.mc-inline
+  #mc-count-4:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 3) {
+  display: block;
+}
+.mc-inline
+  #mc-count-4:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 3)
+  .mc-inline__actions {
+  display: flex;
+}
+.mc-inline #mc-count-5:checked ~ .mc-inline__heading [data-count="5"] {
+  display: inline;
+}
+.mc-inline
+  #mc-count-5:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 4) {
+  display: block;
+}
+.mc-inline
+  #mc-count-5:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 4)
+  .mc-inline__actions {
+  display: flex;
+}
+.mc-inline #mc-count-6:checked ~ .mc-inline__heading [data-count="6"] {
+  display: inline;
+}
+.mc-inline
+  #mc-count-6:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 5) {
+  display: block;
+}
+.mc-inline
+  #mc-count-6:checked
+  ~ .mc-inline__rows
+  .mc-inline__row:nth-child(-n + 5)
+  .mc-inline__actions {
+  display: flex;
+}
+.mc-inline
+  #mc-count-6:checked
+  ~ .mc-inline__rows
+  .mc-inline__action:not(.mc-inline__action--remove) {
+  opacity: 0.5;
   pointer-events: none;
   cursor: not-allowed;
 }
@@ -217,7 +292,7 @@ body:has(#service-flights:checked) .travel-hero:has(#trip-multi:checked) {
 }
 @media (max-width: 1199px) {
   .mc-inline .mc-inline__fields {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(150px, .8fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(150px, 0.8fr);
   }
   .mc-inline .mc-inline__actions {
     grid-column: 1 / -1;
@@ -253,5 +328,7 @@ body:has(#service-flights:checked) .travel-hero:has(#trip-multi:checked) {
   }
 }
 @media (max-width: 359px) {
-  .mc-inline .mc-inline__fields { grid-template-columns: minmax(0, 1fr); }
+  .mc-inline .mc-inline__fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

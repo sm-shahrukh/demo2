@@ -19,23 +19,35 @@ body.footer-component {
   gap: 24px;
   padding-block: 24px;
 }
-.footer-component .footer-grid > div { min-width: 0; }
+.footer-component .footer-grid > div {
+  min-width: 0;
+}
 .footer-component .footer-grid > div:not(:first-child) > a {
   display: block;
   margin-top: 8px;
 }
-.footer-component .footer-grid p { margin: 10px 0 0; }
+.footer-component .footer-grid p {
+  margin: 10px 0 0;
+}
 @media (min-width: 1200px) {
-  .footer-component .container { max-width: 1140px; }
+  .footer-component .container {
+    max-width: 1140px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .footer-component .container { max-width: 720px; }
+  .footer-component .container {
+    max-width: 720px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .footer-component .container { max-width: 960px; }
+  .footer-component .container {
+    max-width: 960px;
+  }
 }
 @media (min-width: 1400px) {
-  .footer-component .container { max-width: 1320px; }
+  .footer-component .container {
+    max-width: 1320px;
+  }
 }
 
 .footer-component footer {

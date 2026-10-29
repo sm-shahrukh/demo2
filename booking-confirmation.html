@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Booking confirmation | Sparrow Flights</title>
+    <link rel="icon" href="images/icon.png?v=2" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/flight-booking.css" />
+    <link rel="stylesheet" href="css/booking-confirmation.css" />
+    <link rel="stylesheet" href="components/footer.css" media="not all" />
+    <link rel="stylesheet" href="components/navbar.css" media="not all" />
+    <link rel="stylesheet" href="css/add-ons.css" media="not all" />
+    <link rel="stylesheet" href="css/auth.css" media="not all" />
+    <link rel="stylesheet" href="css/index.css" media="not all" />
+    <link rel="stylesheet" href="css/multi-city.css" media="not all" />
+    <link rel="stylesheet" href="css/my-bookings.css" media="not all" />
+    <link rel="stylesheet" href="css/payment.css" media="not all" />
+    <link rel="stylesheet" href="css/search-flight.css" media="not all" />
+    <link rel="stylesheet" href="css/travellers.css" media="not all" />
+  </head>
+  <body class="booking-page" data-page="booking-confirmation">
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-travellers"
+      aria-label="Travellers"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-addons"
+      aria-label="Add-ons"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-payment"
+      aria-label="Payment"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-complete"
+      checked
+      aria-label="Booking confirmation"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-review"
+      aria-label="Review traveller details"
+    />
+    <iframe
+      class="booking-header-frame"
+      src="components/navbar.html"
+      title="Site navigation"
+      scrolling="no"
+    ></iframe>
+    <div class="booking-hero hero-confirm">
+      <div class="confirmation-skyline"></div>
+      <div class="bk-container">
+        <span class="success-mark"
+          ><svg class="bk-icon" aria-hidden="true">
+            <use href="components/booking-icons.svg#bk-check" /></svg
+        ></span>
+        <h1>You’re going to Dubai.</h1>
+        <h2>Your flight is confirmed.</h2>
+        <p>
+          A sample confirmation is ready for<br /><strong data-contact-email
+            >ali.khan@example.com</strong
+          >
+          with your booking details.
+        </p>
+        <span class="hero-script">Same skies.<br />Brighter tomorrows.</span>
+      </div>
+    </div>
+    <main id="booking-main">
+      <nav class="booking-steps" aria-label="Booking progress">
+        <a href="search-flight.html"><span>✓</span>Flight</a><i></i
+        ><label for="step-travellers" data-booking-navigation="step-travellers"
+          ><span>2</span>Travellers</label
+        ><i></i
+        ><label for="step-addons" data-booking-navigation="step-addons"
+          ><span>3</span>Add-ons</label
+        ><i></i
+        ><label for="step-payment" data-booking-navigation="step-payment"
+          ><span>4</span>Payment</label
+        >
+      </nav>
+      <section
+        class="confirmation bk-container"
+        aria-labelledby="confirmation-title"
+      >
+        <h2 class="visually-hidden" id="confirmation-title" tabindex="-1">
+          Booking confirmation
+        </h2>
+        <article class="confirmation-ticket bk-card" id="booking-ticket">
+          <div class="confirmation-ticket-top">
+            <div>
+              <span class="confirmation-airline-mark"
+                ><img src="images/airlines/emirates.png" alt="Emirates" /></span
+              ><span
+                ><strong>Emirates</strong
+                ><small>EK 615 · Economy Class</small></span
+              >
+            </div>
+            <span class="bk-pill">Confirmed</span>
+            <div class="booking-reference">
+              <span
+                ><small>Booking reference</small
+                ><span class="booking-reference-code"
+                  ><b>BK7X2P</b
+                  ><svg class="bk-icon" aria-hidden="true">
+                    <use
+                      href="components/booking-icons.svg#bk-copy"
+                    /></svg></span></span
+              ><span class="sample-badge">SAMPLE</span>
+            </div>
+          </div>
+          <div class="confirmation-ticket-body">
+            <div class="confirmation-route">
+              <div>
+                <small>Tue, 24 Nov 2026</small><strong>08:30</strong
+                ><b>Islamabad (ISB)</b
+                ><small>Islamabad International Airport</small>
+              </div>
+              <div class="route-track">
+                <span
+                  ><svg class="bk-icon" aria-hidden="true">
+                    <use
+                      href="components/booking-icons.svg#bk-route-plane"
+                    /></svg></span
+                ><small>3h 40m<br />Non-stop</small>
+              </div>
+              <div>
+                <small>Tue, 24 Nov 2026</small><strong>11:10</strong
+                ><b>Dubai (DXB)</b><small>Dubai International Airport</small>
+              </div>
+            </div>
+            <div class="confirmation-passengers">
+              <small>Passengers</small
+              ><b
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="components/booking-icons.svg#bk-user" /></svg
+                ><span data-person-name="adult">Ali Khan</span></b
+              ><b
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="components/booking-icons.svg#bk-user" /></svg
+                ><span data-person-name="child">Ayesha Khan</span></b
+              ><small>1 Adult · 1 Child · Economy Class</small>
+            </div>
+            <div class="confirmation-paid">
+              <small>Total paid</small><strong>PKR 149,000</strong
+              ><small
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="components/booking-icons.svg#bk-card" /></svg
+                >via Credit Card</small
+              >
+            </div>
+          </div>
+        </article>
+        <div class="confirmation-actions">
+          <a
+            class="bk-primary static-download"
+            href="data:text/plain;charset=utf-8,Sparrow%20Flights%20sample%20itinerary%0A24%20Nov%202026%0AISB%2008%3A30%20%E2%86%92%20DXB%2011%3A10%0AAli%20Khan%20(Adult)%0AAyesha%20Khan%20(Child)%0ADemo%20only%20%E2%80%94%20no%20ticket%20issued"
+            download="Sparrow-sample-itinerary.txt"
+          >
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-download" /></svg
+            >Download itinerary</a
+          ><a class="bk-outline" href="#booking-ticket"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-calendar" /></svg
+            >View booking</a
+          >
+        </div>
+        <details class="bk-card confirmation-extras">
+          <summary>View traveller seats, meals and baggage</summary>
+          <div class="extras-person">
+            <strong><span data-person-name="adult">Ali Khan</span></strong
+            ><small>Adult</small>
+            <p>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-seat" /></svg
+              ><span data-summary="adult-seat">No preference</span>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-meal" /></svg
+              ><span data-summary="adult-meal">No meal</span>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-bag" /></svg
+              ><span data-summary="adult-baggage">No extra baggage</span>
+            </p>
+          </div>
+          <div class="extras-person">
+            <strong><span data-person-name="child">Ayesha Khan</span></strong
+            ><small>Child</small>
+            <p>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-seat" /></svg
+              ><span data-summary="child-seat">No preference</span>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-meal" /></svg
+              ><span data-summary="child-meal">No meal</span>
+              <svg class="bk-icon" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-bag" /></svg
+              ><span data-summary="child-baggage">No extra baggage</span>
+            </p>
+          </div>
+        </details>
+        <div class="section-heading confirmation-next">
+          <h2>What happens next?</h2>
+          <p>A few important things before your trip to Dubai.</p>
+        </div>
+        <div class="next-cards">
+          <details class="bk-card">
+            <summary>
+              <span class="round-icon"
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="components/booking-icons.svg#bk-doc" /></svg></span
+              ><span
+                ><strong>Check your documents</strong
+                ><small
+                  >Make sure your passport is valid for your trip.</small
+                ></span
+              ><svg class="bk-icon bk-chevron" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-chevron-down" />
+              </svg>
+            </summary>
+            <p>Check passport and entry requirements for both travellers.</p>
+          </details>
+          <details class="bk-card">
+            <summary>
+              <span class="round-icon"
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use href="components/booking-icons.svg#bk-bag" /></svg></span
+              ><span
+                ><strong>Review baggage</strong
+                ><small
+                  >Review your included baggage allowance and restricted
+                  items.</small
+                ></span
+              ><svg class="bk-icon bk-chevron" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-chevron-down" />
+              </svg>
+            </summary>
+            <p>
+              Each traveller has 7 kg cabin and 23 kg checked baggage, plus any
+              selected extras.
+            </p>
+          </details>
+          <details class="bk-card">
+            <summary>
+              <span class="round-icon"
+                ><svg class="bk-icon" aria-hidden="true">
+                  <use
+                    href="components/booking-icons.svg#bk-plane"
+                  /></svg></span
+              ><span
+                ><strong>Check in with your airline</strong
+                ><small
+                  >Check your airline’s online check-in window before
+                  departure.</small
+                ></span
+              ><svg class="bk-icon bk-chevron" aria-hidden="true">
+                <use href="components/booking-icons.svg#bk-chevron-down" />
+              </svg>
+            </summary>
+            <p>This sample itinerary is not a valid travel ticket.</p>
+          </details>
+        </div>
+        <div class="bk-card email-confirmation">
+          <span class="round-icon peach"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-mail" /></svg
+          ></span>
+          <div>
+            <h3>Your confirmation is ready</h3>
+            <p>
+              Sample booking details for
+              <b data-contact-email>ali.khan@example.com</b>. No email has been
+              sent.
+            </p>
+          </div>
+          <a href="index.html#contact">Need help? <b>Contact support →</b></a>
+        </div>
+        <div class="trip-upsell">
+          <div>
+            <h2>Make your Dubai trip even better</h2>
+            <p>Add these to your booking and enjoy a smoother journey.</p>
+          </div>
+          <a href="index.html#destinations"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-calendar" /></svg
+            ><span><b>Hotels</b><small>Explore stays</small></span
+            >›</a
+          ><a href="index.html#destinations"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-plane" /></svg
+            ><span><b>Things to do</b><small>Top attractions</small></span
+            >›</a
+          ><a href="index.html#contact"
+            ><svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-bag" /></svg
+            ><span><b>Airport transfer</b><small>Easy arrival</small></span
+            >›</a
+          >
+        </div>
+        <p class="demo-endnote">
+          Static demo · PKR 149,000 base fare · selected extras are listed above
+          · no payment taken or ticket issued.
+          <a href="search-flight.html">Search another flight →</a>
+        </p>
+      </section>
+    </main>
+    <iframe
+      class="booking-footer-frame"
+      src="components/footer.html"
+      title="Site footer"
+      scrolling="no"
+      loading="lazy"
+    ></iframe>
+    <script src="components/booking-flow.js" defer></script>
+<script src="components/navbar-embed.js" defer></script>
+  </body>
+</html>

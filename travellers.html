@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Traveler details | Sparrow Flights</title>
+    <link rel="icon" href="images/icon.png?v=2" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/flight-booking.css" />
+    <link rel="stylesheet" href="css/travellers.css" />
+    <link rel="stylesheet" href="components/footer.css" media="not all" />
+    <link rel="stylesheet" href="components/navbar.css" media="not all" />
+    <link rel="stylesheet" href="css/add-ons.css" media="not all" />
+    <link rel="stylesheet" href="css/auth.css" media="not all" />
+    <link
+      rel="stylesheet"
+      href="css/booking-confirmation.css"
+      media="not all"
+    />
+    <link rel="stylesheet" href="css/index.css" media="not all" />
+    <link rel="stylesheet" href="css/multi-city.css" media="not all" />
+    <link rel="stylesheet" href="css/my-bookings.css" media="not all" />
+    <link rel="stylesheet" href="css/payment.css" media="not all" />
+    <link rel="stylesheet" href="css/search-flight.css" media="not all" />
+  </head>
+  <body class="booking-page" data-page="travellers">
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-travellers"
+      checked
+      aria-label="Travellers"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-addons"
+      aria-label="Add-ons"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-payment"
+      aria-label="Payment"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-complete"
+      aria-label="Booking confirmation"
+    />
+    <input
+      class="state-radio"
+      type="radio"
+      name="booking-step"
+      id="step-review"
+      aria-label="Review traveller details"
+    />
+    <iframe
+      class="booking-header-frame"
+      src="components/navbar.html"
+      title="Site navigation"
+      scrolling="no"
+    ></iframe>
+
+    <main id="booking-main">
+      <header class="traveller-intro bk-container">
+        <div>
+          <a class="traveller-back-link" href="search-flight.html">
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-arrow" />
+            </svg>
+            Back to flight results
+          </a>
+          <h2 id="travellers-title" tabindex="-1">Traveler details</h2>
+          <p>Save time, and you’re one step closer to Dubai.</p>
+        </div>
+        <div class="reservation-time">
+          <svg class="bk-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+          </svg>
+          <span>Reservation time <strong>20:00</strong></span>
+        </div>
+      </header>
+      <nav class="booking-steps" aria-label="Booking progress">
+        <a href="search-flight.html"><span>✓</span>Flight</a><i></i
+        ><label for="step-travellers" data-booking-navigation="step-travellers"
+          ><span>2</span>Travellers</label
+        ><i></i
+        ><label for="step-addons" data-booking-navigation="step-addons"
+          ><span>3</span>Add-ons</label
+        ><i></i
+        ><label for="step-payment" data-booking-navigation="step-payment"
+          ><span>4</span>Payment</label
+        >
+      </nav>
+      <section
+        class="booking-panel travellers-panel bk-container"
+        aria-labelledby="travellers-title"
+      >
+        <div class="traveller-layout">
+          <div>
+            <article class="bk-card your-flight">
+              <div class="card-heading">
+                <h3>
+                  <span class="icon-tile peach"
+                    ><svg class="bk-icon" aria-hidden="true">
+                      <use
+                        href="components/booking-icons.svg#bk-plane"
+                      /></svg></span
+                  >Your flight
+                </h3>
+                <a class="bk-outline small" href="search-flight.html"
+                  >Change flight ›</a
+                >
+              </div>
+              <div class="flight-ticket">
+                <div class="ticket-route">
+                  <div class="ticket-date">
+                    <b>24 Nov 2026</b><span>·</span>Non-stop<span>·</span>3h 40m
+                  </div>
+                  <div class="ticket-times">
+                    <div>
+                      <strong>08:30</strong><b>ISB</b><span>Islamabad</span
+                      ><small>Terminal 1</small>
+                    </div>
+                    <div class="route-track">
+                      <span
+                        ><svg
+                          class="bk-icon ticket-plane"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="m23 11-9-2-5-8H7l3 9-6-1-2-3H0l2 6-2 6h2l2-3 6-1-3 9h2l5-8 9-2Z"
+                          /></svg></span
+                      ><small>3h 40m<br />Non-stop</small>
+                    </div>
+                    <div>
+                      <strong>11:10</strong><b>DXB</b><span>Dubai</span
+                      ><small>Terminal 3</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="ticket-airline">
+                  <img
+                    class="ticket-emirates-logo"
+                    src="images/airlines/emirates.png"
+                    alt="Emirates"
+                  /><b>EK 615</b><small>Boeing 777-300ER</small
+                  ><span class="bk-pill">Economy · Essential</span>
+                </div>
+              </div>
+              <div class="flight-links">
+                <details>
+                  <summary>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-bag" /></svg
+                    >Baggage allowance
+                  </summary>
+                  <p>
+                    Each traveller: 7 kg cabin baggage and 23 kg checked baggage
+                    included in this static demo.
+                  </p>
+                </details>
+                <details>
+                  <summary>
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-doc" /></svg
+                    >Fare rules
+                  </summary>
+                  <p>
+                    Sample Economy Essential fare. Changes may incur a fee. This
+                    demo does not issue tickets.
+                  </p>
+                </details>
+              </div>
+            </article>
+            <fieldset id="traveller-form" class="traveller-form">
+              <details class="bk-card traveller-card" open>
+                <summary>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-user" /></svg
+                  ><strong>Traveller 1</strong><span>Adult (18+ years)</span
+                  ><svg class="bk-icon bk-chevron" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-chevron-down" />
+                  </svg>
+                </summary>
+                <div class="traveller-fields">
+                  <div class="name-fields">
+                    <label
+                      >Title<select name="adult-title">
+                        <option>Mr</option>
+                        <option>Ms</option>
+                        <option>Mrs</option>
+                      </select></label
+                    ><label
+                      >First name (as per passport)<input
+                        name="adult-first"
+                        value="Ali"
+                        required
+                        maxlength="60" /></label
+                    ><label
+                      >Last name (as per passport)<input
+                        name="adult-last"
+                        value="Khan"
+                        required
+                        maxlength="60"
+                    /></label>
+                  </div>
+                  <div class="passport-fields">
+                    <label
+                      >Date of birth<input
+                        name="adult-dob"
+                        type="date"
+                        value="1990-02-15"
+                        max="2008-11-24"
+                        required /></label
+                    ><label
+                      >Nationality<select name="adult-nationality">
+                        <option>Pakistan</option>
+                        <option>United Kingdom</option>
+                        <option>United Arab Emirates</option>
+                        <option>Other</option>
+                      </select></label
+                    ><label
+                      >Passport number<input
+                        name="adult-passport"
+                        value="AB1234561"
+                        pattern="[A-Za-z0-9]{5,20}"
+                        required /></label
+                    ><label
+                      >Passport expiry date<input
+                        name="adult-expiry"
+                        type="date"
+                        value="2030-02-14"
+                        min="2026-11-25"
+                        required
+                    /></label>
+                  </div>
+                  <p class="bk-info">
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-info" /></svg
+                    ><span
+                      >Name, date of birth and passport details must match your
+                      travel document exactly.</span
+                    >
+                  </p>
+                </div>
+              </details>
+              <details class="bk-card traveller-card">
+                <summary>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-user" /></svg
+                  ><strong>Traveller 2</strong><span>Child (8 years)</span
+                  ><svg class="bk-icon bk-chevron" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-chevron-down" />
+                  </svg>
+                </summary>
+                <div class="traveller-fields">
+                  <div class="name-fields">
+                    <label
+                      >Title<select name="child-title">
+                        <option>Miss</option>
+                        <option>Master</option>
+                        <option>Mrs</option>
+                      </select></label
+                    ><label
+                      >First name (as per passport)<input
+                        name="child-first"
+                        value="Ayesha"
+                        required
+                        maxlength="60" /></label
+                    ><label
+                      >Last name (as per passport)<input
+                        name="child-last"
+                        value="Khan"
+                        required
+                        maxlength="60"
+                    /></label>
+                  </div>
+                  <div class="passport-fields">
+                    <label
+                      >Date of birth<input
+                        name="child-dob"
+                        type="date"
+                        value="2018-05-10"
+                        min="2014-11-25"
+                        max="2024-11-24"
+                        required /></label
+                    ><label
+                      >Nationality<select name="child-nationality">
+                        <option>Pakistan</option>
+                        <option>United Kingdom</option>
+                        <option>United Arab Emirates</option>
+                        <option>Other</option>
+                      </select></label
+                    ><label
+                      >Passport number<input
+                        name="child-passport"
+                        value="AB1234562"
+                        pattern="[A-Za-z0-9]{5,20}"
+                        required /></label
+                    ><label
+                      >Passport expiry date<input
+                        name="child-expiry"
+                        type="date"
+                        value="2030-02-14"
+                        min="2026-11-25"
+                        required
+                    /></label>
+                  </div>
+                  <p class="bk-info">
+                    <svg class="bk-icon" aria-hidden="true">
+                      <use href="components/booking-icons.svg#bk-info" /></svg
+                    ><span
+                      >Name, date of birth and passport details must match your
+                      travel document exactly.</span
+                    >
+                  </p>
+                </div>
+              </details>
+              <fieldset class="bk-card contact-card">
+                <legend>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-mail" /></svg
+                  >Contact details
+                </legend>
+                <div class="contact-fields">
+                  <label
+                    >Email address<input
+                      name="email"
+                      type="email"
+                      value="ali.khan@example.com"
+                      required /></label
+                  ><label
+                    >Phone number
+                    <div class="phone-field">
+                      <select aria-label="Country calling code">
+                        <option>🇵🇰 +92</option>
+                        <option>🇦🇪 +971</option>
+                        <option>🇬🇧 +44</option></select
+                      ><input
+                        name="phone"
+                        type="tel"
+                        value="300 1234567"
+                        minlength="7"
+                        required
+                      /></div
+                  ></label>
+                </div>
+                <p class="field-note">
+                  We’ll show your sample booking confirmation on this page.
+                </p>
+              </fieldset>
+              <details class="bk-card optional-requests">
+                <summary>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-settings" /></svg
+                  ><span
+                    ><b>Optional requests <small>(if any)</small></b
+                    ><small
+                      >Seat preference, meal preference, special assistance and
+                      more</small
+                    ></span
+                  ><svg class="bk-icon bk-chevron" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-chevron-down" />
+                  </svg>
+                </summary>
+                <div class="optional-fields">
+                  <label
+                    >Special assistance<select>
+                      <option>No assistance required</option>
+                      <option>Wheelchair assistance</option>
+                      <option>Travelling with a child</option>
+                    </select></label
+                  >
+                  <p>
+                    Seats, meals and baggage can be selected in the next step.
+                  </p>
+                </div>
+              </details>
+            </fieldset>
+          </div>
+          <aside class="traveller-sidebar">
+            <div class="price-summary-shell">
+              <div class="bk-card price-card">
+                <h3>
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-doc" /></svg
+                  >Price summary
+                </h3>
+                <dl class="price-lines">
+                  <div>
+                    <dt>Base fare (1 Adult + 1 Child)</dt>
+                    <dd>PKR 130,500</dd>
+                  </div>
+                  <div>
+                    <dt>Taxes and fees</dt>
+                    <dd>PKR 18,500</dd>
+                  </div>
+                  <div class="price-total">
+                    <dt>Base booking total</dt>
+                    <dd>PKR 149,000</dd>
+                  </div>
+                </dl>
+                <label class="bk-primary" for="step-review">
+                  Continue to add-ons
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-arrow" />
+                  </svg>
+                </label>
+                <p class="secure-note">
+                  <svg class="bk-icon" aria-hidden="true">
+                    <use href="components/booking-icons.svg#bk-lock" /></svg
+                  >Secure booking <span>·</span>No hidden charges
+                </p>
+              </div>
+            </div>
+            <div class="rewards-card">
+              <div>
+                <h3>A more<br />rewarding journey</h3>
+                <p>
+                  Join our Rewards for exclusive deals, member fares and more.
+                </p>
+                <a href="index.html#auth-register">Join for free →</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="mobile-checkout traveller-checkout">
+          <div>
+            <small>Base booking total</small><strong>PKR 149,000</strong>
+          </div>
+          <label class="bk-primary" for="step-review">
+            Continue to add-ons
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-arrow" />
+            </svg>
+          </label>
+        </div>
+      </section>
+      <label
+        class="review-backdrop"
+        for="step-travellers"
+        data-booking-navigation="step-travellers"
+        aria-label="Close traveller review"
+      ></label>
+      <div
+        id="traveller-review"
+        class="bk-card review-popover"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="traveller-review-title"
+      >
+        <label
+          class="popover-close"
+          for="step-travellers"
+          data-booking-navigation="step-travellers"
+          aria-label="Close"
+        >
+          ×
+        </label>
+        <h3 id="traveller-review-title">
+          <svg class="bk-icon" aria-hidden="true">
+            <use href="components/booking-icons.svg#bk-user" /></svg
+          >Review traveller details
+        </h3>
+        <p>Please confirm the details below. You can edit if needed.</p>
+        <div class="review-flight-summary">
+          <img
+            class="review-flight-logo"
+            src="images/airlines/emirates.png"
+            alt="Emirates"
+          />
+          <span><strong>EK 615</strong><small>Boeing 777-300ER</small></span>
+        </div>
+        <details class="review-person">
+          <summary>
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-user" /></svg
+            ><span data-person-name="adult">Ali Khan</span><small>Adult</small>
+          </summary>
+          <dl>
+            <div>
+              <dt>Name</dt>
+              <dd data-person-name="adult">Ali Khan</dd>
+            </div>
+            <div>
+              <dt>Date of birth</dt>
+              <dd data-review="adult-dob">1990-02-15</dd>
+            </div>
+            <div>
+              <dt>Nationality</dt>
+              <dd data-review="adult-nationality">Pakistan</dd>
+            </div>
+            <div>
+              <dt>Passport number</dt>
+              <dd data-review="adult-passport">AB1234561</dd>
+            </div>
+            <div>
+              <dt>Passport expiry</dt>
+              <dd data-review="adult-expiry">2030-02-14</dd>
+            </div>
+          </dl>
+        </details>
+        <details class="review-person">
+          <summary>
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-user" /></svg
+            ><span data-person-name="child">Ayesha Khan</span
+            ><small>Child</small>
+          </summary>
+          <dl>
+            <div>
+              <dt>Name</dt>
+              <dd data-person-name="child">Ayesha Khan</dd>
+            </div>
+            <div>
+              <dt>Date of birth</dt>
+              <dd data-review="child-dob">2018-05-10</dd>
+            </div>
+            <div>
+              <dt>Nationality</dt>
+              <dd data-review="child-nationality">Pakistan</dd>
+            </div>
+            <div>
+              <dt>Passport number</dt>
+              <dd data-review="child-passport">AB1234562</dd>
+            </div>
+            <div>
+              <dt>Passport expiry</dt>
+              <dd data-review="child-expiry">2030-02-14</dd>
+            </div>
+          </dl>
+        </details>
+        <div class="review-actions">
+          <label
+            class="bk-outline"
+            for="step-travellers"
+            data-booking-navigation="step-travellers"
+          >
+            Edit details</label
+          ><label
+            class="bk-primary"
+            for="step-addons"
+            data-booking-navigation="step-addons"
+            data-confirm-travellers
+          >
+            Confirm details
+            <svg class="bk-icon" aria-hidden="true">
+              <use href="components/booking-icons.svg#bk-arrow" /></svg
+          ></label>
+        </div>
+      </div>
+    </main>
+    <iframe
+      class="booking-footer-frame"
+      src="components/footer.html"
+      title="Site footer"
+      scrolling="no"
+      loading="lazy"
+    ></iframe>
+    <script src="components/booking-flow.js" defer></script>
+<script src="components/navbar-embed.js" defer></script>
+  </body>
+</html>

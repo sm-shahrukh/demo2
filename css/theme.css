@@ -687,7 +687,7 @@ button:not(:disabled):hover,
 .btn:not(:disabled):hover,
 .theme-button:hover,
 a[role="button"]:hover {
-  filter: brightness(.9) !important;
+  filter: brightness(0.9) !important;
 }
 @media (max-width: 767px) {
   :root {
@@ -838,5 +838,28 @@ textarea:focus {
     --flight-route-icon-size: 32px;
     --flight-route-icon-padding: 4px;
     --flight-search-action-width: 204px;
+  }
+}
+
+/* Shared component frames use the same fixed responsive height on every page. */
+.shared-navbar-frame,
+.shared-footer-frame {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+.shared-navbar-frame {
+  height: 96px;
+}
+.shared-footer-frame {
+  height: 248px;
+}
+@media (max-width: 767px) {
+  .shared-navbar-frame {
+    height: 90px;
+  }
+  .shared-footer-frame {
+    height: 456px;
+    margin-top: 16px;
   }
 }

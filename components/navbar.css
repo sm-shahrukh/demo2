@@ -37,32 +37,61 @@ body.navbar-component {
   display: flex;
   align-items: center;
 }
-.navbar-component .auth-entry-actions { gap: 8px; }
+.navbar-component .auth-entry-actions {
+  gap: 8px;
+}
 .navbar-component .welcome-strip,
-.navbar-component .welcome-strip a { color: var(--color-on-primary); }
-.navbar-component .welcome-strip a { margin-left: 8px; text-decoration: underline; }
-.navbar-component .travel-header { background: var(--color-surface); }
-.navbar-component .account-action { margin-left: auto; }
-.navbar-component .d-none { display: none !important; }
-.navbar-component .d-lg-flex { display: none !important; }
+.navbar-component .welcome-strip a {
+  color: var(--color-on-primary);
+}
+.navbar-component .welcome-strip a {
+  margin-left: 8px;
+  text-decoration: underline;
+}
+.navbar-component .travel-header {
+  background: var(--color-surface);
+}
+.navbar-component .account-action {
+  margin-left: auto;
+}
+.navbar-component .d-none {
+  display: none !important;
+}
+.navbar-component .d-lg-flex {
+  display: none !important;
+}
 @media (min-width: 768px) {
-  .navbar-component .d-md-block { display: block !important; }
+  .navbar-component .d-md-block {
+    display: block !important;
+  }
 }
 @media (min-width: 992px) {
-  .navbar-component .d-lg-flex { display: flex !important; }
+  .navbar-component .d-lg-flex {
+    display: flex !important;
+  }
 }
 @media (min-width: 1200px) {
-  .navbar-component .container { max-width: 1140px; }
-  .navbar-component .d-xl-flex { display: flex !important; }
+  .navbar-component .container {
+    max-width: 1140px;
+  }
+  .navbar-component .d-xl-flex {
+    display: flex !important;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .navbar-component .container { max-width: 720px; }
+  .navbar-component .container {
+    max-width: 720px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .navbar-component .container { max-width: 960px; }
+  .navbar-component .container {
+    max-width: 960px;
+  }
 }
 @media (min-width: 1400px) {
-  .navbar-component .container { max-width: 1320px; }
+  .navbar-component .container {
+    max-width: 1320px;
+  }
 }
 
 .navbar-component .travel-header {
@@ -201,5 +230,26 @@ body.navbar-component {
     width: 100%;
     justify-content: center;
   }
-  .navbar-component .auth-entry-actions { margin-left: auto; }
+  .navbar-component .auth-entry-actions {
+    margin-left: auto;
+  }
+}
+
+.navbar-component .guest-header-controls {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.navbar-component:has(#guest-header:target) .signed-in-nav {
+  display: none !important;
+}
+.navbar-component:has(#guest-header:target) .guest-header-controls {
+  display: flex;
+}
+.navbar-component #guest-header {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }

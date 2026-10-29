@@ -1,0 +1,22 @@
+/* Existing My trips content, presented as an independent page. */
+.my-bookings-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.my-bookings-page .my-bookings-content {
+  flex: 1;
+  padding: 32px 14px;
+}
+.my-bookings-page .my-bookings-card {
+  position: relative;
+  inset: auto;
+  max-height: none;
+  margin: 0 auto;
+}
+.my-bookings-page .my-bookings-close {
+  color: inherit;
+  font-size: var(--font-size-1-984rem);
+  line-height: 1;
+  text-decoration: none;
+}
