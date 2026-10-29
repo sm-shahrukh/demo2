@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/payment.css" media="not all" />
     <link rel="stylesheet" href="css/travellers.css" media="not all" />
   </head>
-  <body class="flight-results-page">
+  <body class="flight-results-page" data-mobile-nav>
     <!-- This page is intentionally HTML/CSS only. Native radios, details and popovers own all UI state. -->
     <input
       class="state-control"
@@ -3142,15 +3142,12 @@
       title="Site footer"
       scrolling="no"
     ></iframe>
-    <nav
-      class="bottom-nav justify-content-around bg-white border-top py-2"
-      aria-label="Mobile navigation"
-    >
-      <a href="index.html#booking"><i class="bi bi-house-fill"></i>Explore</a
-      ><a href="index.html#destinations"><i class="bi bi-suitcase"></i>Trips</a
-      ><a href="index.html#offers"><i class="bi bi-gift"></i>Rewards</a
-      ><a href="index.html#auth-login"><i class="bi bi-person"></i>Account</a>
-    </nav>
+    <iframe
+      class="shared-bottom-nav-frame"
+      src="components/mobile-navigation.html#nav-explore"
+      title="Mobile navigation"
+      scrolling="no"
+    ></iframe>
     <div
       class="popup airport-picker rounded-4 border shadow-lg"
       popover="auto"

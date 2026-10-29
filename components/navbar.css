@@ -253,3 +253,17 @@ body.navbar-component {
   height: 0;
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .navbar-component:has(#guest-header:target) .guest-header-controls {
+    display: flex;
+  }
+  .navbar-component:has(#guest-header:target) .signed-in-nav {
+    display: none !important;
+  }
+  .navbar-component:not(:has(#guest-header:target)) .guest-header-controls {
+    display: none !important;
+  }
+  .navbar-component:not(:has(#guest-header:target)) .signed-in-nav.account-action {
+    display: flex !important;
+  }
+}

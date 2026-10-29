@@ -498,9 +498,21 @@
 
 /* Reusable defaults for every Bootstrap button, card, form and popup. */
 body {
+  margin: 0;
   font-family: var(--font-body);
   color: var(--color-text);
   background: var(--color-page);
+}
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 h1,
 h2,
@@ -851,15 +863,58 @@ textarea:focus {
 .shared-navbar-frame {
   height: 96px;
 }
+iframe.shared-navbar-frame,
+.booking-page > iframe.booking-header-frame {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  flex-shrink: 0;
+  background: var(--color-surface);
+}
+html {
+  scroll-padding-top: var(--site-header-height, 110px);
+}
+body.site-menu-open {
+  overflow: hidden;
+}
+body.site-menu-open::before {
+  content: "";
+  display: block;
+  height: var(--site-header-height, 110px);
+  flex: 0 0 var(--site-header-height, 110px);
+}
+.shared-bottom-nav-frame {
+  display: none;
+}
 .shared-footer-frame {
   height: 248px;
 }
 @media (max-width: 767px) {
+  body[data-mobile-nav] {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom)) !important;
+  }
+  .shared-bottom-nav-frame {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 100;
+    display: block;
+    width: 100%;
+    height: calc(72px + env(safe-area-inset-bottom));
+    border: 0;
+    background: var(--color-surface);
+  }
   .shared-navbar-frame {
     height: 90px;
   }
   .shared-footer-frame {
     height: 456px;
     margin-top: 16px;
+  }
+}
+@media print {
+  iframe.shared-navbar-frame,
+  .booking-page > iframe.booking-header-frame,
+  .shared-bottom-nav-frame {
+    display: none !important;
   }
 }

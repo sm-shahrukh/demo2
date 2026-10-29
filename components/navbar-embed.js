@@ -14,29 +14,52 @@
     border: "0",
   };
 
+  let headerObserver;
+  let syncFrame = () => {};
   const bindDrawer = () => {
-    const drawer = frame.contentDocument?.getElementById("mobile-auth-drawer");
-    if (!drawer || drawer.dataset.frameResizeBound) return Boolean(drawer);
+    const doc = frame.contentDocument;
+    const header = doc?.querySelector(".travel-header");
+    const drawer = doc?.getElementById("mobile-auth-drawer");
+    if (!header || !drawer || drawer.dataset.frameResizeBound) return;
     drawer.dataset.frameResizeBound = "true";
 
-    const syncFrame = () => {
-      if (!matchMedia("(max-width: 767px)").matches) return;
-      if (drawer.matches(":popover-open")) {
+    const sizeHeader = () => {
+      const height = Math.ceil(header.getBoundingClientRect().bottom);
+      document.documentElement.style.setProperty("--site-header-height", `${height}px`);
+      if (!drawer.matches(":popover-open")) frame.style.height = `${height}px`;
+    };
+    const collapseFrame = () => {
+      document.body.classList.remove("site-menu-open");
+      Object.keys(expandedStyles).forEach(name => frame.style.removeProperty(name));
+      sizeHeader();
+    };
+    syncFrame = () => {
+      const open = matchMedia("(max-width: 767px)").matches && drawer.matches(":popover-open");
+      doc.querySelector(".mobile-auth-menu-trigger")?.setAttribute("aria-expanded", String(open));
+      if (open) {
+        document.body.classList.add("site-menu-open");
         Object.entries(expandedStyles).forEach(([name, value]) =>
           frame.style.setProperty(name, value, "important"),
         );
       } else {
-        Object.keys(expandedStyles).forEach(name => frame.style.removeProperty(name));
+        if (drawer.matches(":popover-open")) drawer.hidePopover();
+        collapseFrame();
       }
     };
 
+    headerObserver?.disconnect();
+    headerObserver = new ResizeObserver(sizeHeader);
+    headerObserver.observe(header);
+    const strip = doc.querySelector(".welcome-strip");
+    if (strip) headerObserver.observe(strip);
+    sizeHeader();
     drawer.addEventListener("toggle", syncFrame);
-    frame.contentDocument.addEventListener("click", event => {
+    doc.addEventListener("click", event => {
       const link = event.target.closest('a[target="_top"][href]');
       if (link && drawer.contains(link)) {
         event.preventDefault();
         if (drawer.matches(":popover-open")) drawer.hidePopover();
-        Object.keys(expandedStyles).forEach(name => frame.style.removeProperty(name));
+        collapseFrame();
         window.location.assign(link.href);
         return;
       }
@@ -44,17 +67,12 @@
         requestAnimationFrame(syncFrame);
       }
     });
-    frame.contentDocument.addEventListener("keydown", event => {
+    doc.addEventListener("keydown", event => {
       if (event.key === "Escape") setTimeout(syncFrame);
     });
-    return true;
   };
 
   frame.addEventListener("load", bindDrawer);
-  if (!bindDrawer()) {
-    const retry = setInterval(() => {
-      if (bindDrawer()) clearInterval(retry);
-    }, 100);
-    setTimeout(() => clearInterval(retry), 10000);
-  }
+  window.addEventListener("resize", () => syncFrame());
+  bindDrawer();
 })();

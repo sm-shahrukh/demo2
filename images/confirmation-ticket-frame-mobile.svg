@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="mobile-ticket-blue-white" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eaf1ff"/>
+      <stop offset="0.76" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <path d="M16 .75H344Q359.25.75 359.25 16V344Q359.25 359.25 344 359.25H16Q.75 359.25 .75 344V16Q.75.75 16 .75Z" fill="url(#mobile-ticket-blue-white)" stroke="#b7cdfb" stroke-width="1.5"/>
+</svg>

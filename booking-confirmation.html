@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/search-flight.css" media="not all" />
     <link rel="stylesheet" href="css/travellers.css" media="not all" />
   </head>
-  <body class="booking-page" data-page="booking-confirmation">
+  <body class="booking-page" data-page="booking-confirmation" data-mobile-nav>
     <input
       class="state-radio"
       type="radio"
@@ -72,7 +72,7 @@
         <h1>You’re going to Dubai.</h1>
         <h2>Your flight is confirmed.</h2>
         <p>
-          A sample confirmation is ready for<br /><strong data-contact-email
+          A sample confirmation is ready for <strong data-contact-email
             >ali.khan@example.com</strong
           >
           with your booking details.
@@ -100,17 +100,21 @@
         <h2 class="visually-hidden" id="confirmation-title" tabindex="-1">
           Booking confirmation
         </h2>
-        <article class="confirmation-ticket bk-card" id="booking-ticket">
+        <article
+          class="confirmation-ticket bk-card"
+          id="booking-ticket"
+          aria-label="Confirmed flight ticket"
+        >
           <div class="confirmation-ticket-top">
-            <div>
+            <div class="confirmation-airline">
               <span class="confirmation-airline-mark"
                 ><img src="images/airlines/emirates.png" alt="Emirates" /></span
-              ><span
+              ><span class="confirmation-airline-copy"
                 ><strong>Emirates</strong
                 ><small>EK 615 · Economy Class</small></span
               >
             </div>
-            <span class="bk-pill">Confirmed</span>
+            <span class="bk-pill"><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-check" /></svg>Confirmed</span>
             <div class="booking-reference">
               <span
                 ><small>Booking reference</small
@@ -125,22 +129,23 @@
           </div>
           <div class="confirmation-ticket-body">
             <div class="confirmation-route">
-              <div>
-                <small>Tue, 24 Nov 2026</small><strong>08:30</strong
+              <div class="confirmation-airport is-departure">
+                <small class="confirmation-date"><span>Tue, </span>24 Nov 2026</small><strong>08:30</strong
                 ><b>Islamabad (ISB)</b
-                ><small>Islamabad International Airport</small>
+                ><small class="confirmation-airport-name">Islamabad International Airport</small>
               </div>
               <div class="route-track">
-                <span
-                  ><svg class="bk-icon" aria-hidden="true">
-                    <use
-                      href="components/booking-icons.svg#bk-route-plane"
-                    /></svg></span
-                ><small>3h 40m<br />Non-stop</small>
+                <small>3h 40m</small>
+                <div class="confirmation-route-line" aria-hidden="true">
+                  <span class="confirmation-route-dash"></span>
+                  <svg class="bk-icon confirmation-plane"><use href="components/booking-icons.svg#bk-route-plane" /></svg>
+                  <span class="confirmation-route-dash"></span>
+                </div>
+                <small>Non-stop</small>
               </div>
-              <div>
-                <small>Tue, 24 Nov 2026</small><strong>11:10</strong
-                ><b>Dubai (DXB)</b><small>Dubai International Airport</small>
+              <div class="confirmation-airport is-arrival">
+                <small class="confirmation-date"><span>Tue, </span>24 Nov 2026</small><strong>11:10</strong
+                ><b>Dubai (DXB)</b><small class="confirmation-airport-name">Dubai International Airport</small>
               </div>
             </div>
             <div class="confirmation-passengers">
@@ -326,6 +331,12 @@
       loading="lazy"
     ></iframe>
     <script src="components/booking-flow.js" defer></script>
-<script src="components/navbar-embed.js" defer></script>
+    <iframe
+      class="shared-bottom-nav-frame"
+      src="components/mobile-navigation.html#nav-trips"
+      title="Mobile navigation"
+      scrolling="no"
+    ></iframe>
+    <script src="components/navbar-embed.js" defer></script>
   </body>
 </html>

@@ -4363,6 +4363,7 @@ body:has(#visa-processing-picker:popover-open)
     display: grid;
     gap: 10px;
     padding: 16px;
+    height: 100%;
   }
 
   .home-navbar .mobile-auth-menu-panel .nav-auth-button {

@@ -1550,9 +1550,10 @@
     gap: 5px;
   }
   .booking-page .card-brands {
-    width: 124px;
-    clip-path: inset(0 21% 0 0);
-    margin-right: -26px;
+    width: 98px;
+    max-width: 35%;
+    clip-path: none;
+    margin-right: 0;
   }
   .booking-page .payment-fields {
     gap: 10px;

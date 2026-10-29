@@ -5611,3 +5611,40 @@
   ) !important;
   color: var(--color-accent) !important;
 }
+@media (max-width: 767px) {
+  .booking-page #booking-main .baggage-option {
+    display: grid;
+    grid-template-columns: 19px 34px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+  }
+  .booking-page #booking-main .baggage-option > input[type="radio"] {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .booking-page #booking-main .baggage-option::before {
+    grid-column: 2;
+    grid-row: 1;
+    width: 34px;
+    height: 48px;
+  }
+  .booking-page #booking-main .baggage-option > span {
+    grid-column: 3;
+    grid-row: 1;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  .booking-page #booking-main .baggage-option > span strong,
+  .booking-page #booking-main .baggage-option > span small {
+    white-space: nowrap;
+  }
+  .booking-page #booking-main .baggage-option > b {
+    grid-column: 4;
+    grid-row: 1;
+    margin-left: 0;
+    white-space: nowrap;
+  }
+}

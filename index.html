@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/search-flight.css" media="not all" />
     <link rel="stylesheet" href="css/travellers.css" media="not all" />
   </head>
-  <body>
+  <body data-mobile-nav>
     <input
       class="visually-hidden service-choice"
       type="radio"
@@ -1438,17 +1438,12 @@
       style="display: block; border: 0"
     ></iframe>
 
-    <nav
-      class="bottom-nav justify-content-around bg-white border-top py-2"
-      aria-label="Mobile navigation"
-    >
-      <a href="#booking"><i class="bi bi-house-fill"></i>Explore</a
-      ><a href="#destinations"><i class="bi bi-suitcase"></i>Trips</a
-      ><a href="#offers"><i class="bi bi-gift"></i>Rewards</a
-      ><button popovertarget="account">
-        <i class="bi bi-person"></i>Account
-      </button>
-    </nav>
+    <iframe
+      class="shared-bottom-nav-frame"
+      src="components/mobile-navigation.html#nav-explore"
+      title="Mobile navigation"
+      scrolling="no"
+    ></iframe>
     <div class="popup rounded-4 border shadow-lg" popover id="travellers">
       <div
         class="popup-head d-flex align-items-center justify-content-between border-bottom p-4"
