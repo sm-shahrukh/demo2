@@ -1,0 +1,113 @@
+/* Scoped info pages layout and shared brand styling for Sparrow Flights */
+:root {
+  --info-ink: var(--color-brand-blue, #1d3a78);
+  --info-heading: var(--color-brand-blue-dark, #142b5a);
+  --info-muted: var(--color-muted, #65728a);
+  --info-border: var(--color-border, #b8c9e7);
+  --info-border-focus: var(--color-border-focus, #4b70bb);
+  --info-accent: var(--color-accent, #ed1c2e);
+  --info-bg: var(--color-page, #f6f8fc);
+  --info-card-bg: var(--color-surface, #ffffff);
+  --info-badge-bg: var(--color-feature-icon-blue, #eaf0fb);
+}
+
+.info-page {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--info-ink);
+  background-color: var(--info-bg);
+}
+
+.info-page *,
+.info-page *::before,
+.info-page *::after {
+  box-sizing: border-box;
+}
+
+html:has(.info-page) {
+  height: auto;
+  overflow-y: auto;
+  overflow-x: clip;
+}
+
+.info-main {
+  padding: 32px 0 48px;
+}
+
+.info-wrap {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+@media (min-width: 768px) {
+  .info-wrap {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .info-wrap {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .info-wrap {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .info-wrap {
+    max-width: 1320px;
+  }
+}
+
+.info-page :is(h1, h2, h3, p) {
+  margin-top: 0;
+}
+
+.info-page :is(h1, h2, h3) {
+  color: var(--info-heading);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.info-page p {
+  color: var(--info-muted);
+  line-height: var(--line-height-base, 1.5);
+}
+
+/* Eyebrow badge matching index.css brand style */
+.info-page .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: var(--color-accent, #ed1c2e);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.info-page .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-accent, #ed1c2e);
+  flex-shrink: 0;
+}
+
+/* Base button and focus outline */
+.info-page a:focus-visible,
+.info-page button:focus-visible,
+.info-page input:focus-visible,
+.info-page select:focus-visible,
+.info-page textarea:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus, 0 0 0 3px #1d3a7830);
+}

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact us | Sparrow Flights</title>
+    <link rel="icon" href="images/icon.png?v=2" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="components/navbar.css" media="not all" />
+    <link rel="stylesheet" href="components/footer.css" media="not all" />
+    <link rel="stylesheet" href="components/mobile-navigation.css" media="not all" />
+    <link rel="stylesheet" href="css/add-ons.css" media="not all" />
+    <link rel="stylesheet" href="css/auth.css" media="not all" />
+    <link rel="stylesheet" href="css/booking-confirmation.css" media="not all" />
+    <link rel="stylesheet" href="css/flight-booking.css" media="not all" />
+    <link rel="stylesheet" href="css/index.css" media="not all" />
+    <link rel="stylesheet" href="css/multi-city.css" media="not all" />
+    <link rel="stylesheet" href="css/my-bookings.css" media="not all" />
+    <link rel="stylesheet" href="css/payment.css" media="not all" />
+    <link rel="stylesheet" href="css/search-flight.css" media="not all" />
+    <link rel="stylesheet" href="css/travellers.css" media="not all" />
+    <link rel="stylesheet" href="css/about-us.css" media="not all" />
+    <link rel="stylesheet" href="css/info-pages.css" />
+    <link rel="stylesheet" href="css/contact-us.css" />
+  </head>
+  <body class="info-page contact-page" data-mobile-nav>
+    <iframe
+      class="shared-navbar-frame static-navbar"
+      src="components/navbar.html"
+      title="Site navigation"
+      scrolling="no"
+    ></iframe>
+    <main class="info-main">
+      <div class="info-wrap">
+        <section class="contact-heading">
+          <p class="eyebrow">CONTACT US</p>
+          <h1>A real person. A little guidance.</h1>
+          <p>
+            Have a question about your booking or need some travel advice? We’re
+            here to help, with friendly support and practical answers.
+          </p>
+        </section>
+        <section class="contact-options" aria-label="Contact options">
+          <a class="contact-option" href="#contact-form"
+            ><span class="value-icon"><i class="bi bi-headset"></i></span
+            ><span
+              ><strong>Booking support</strong
+              ><small
+                >Help with existing bookings, changes and cancellations.</small
+              ></span
+            ><i class="bi bi-chevron-right"></i
+          ></a>
+          <a class="contact-option" href="#contact-form"
+            ><span class="value-icon"><i class="bi bi-envelope"></i></span
+            ><span
+              ><strong>General enquiries</strong
+              ><small
+                >Questions about our services, travel options or
+                partnerships.</small
+              ></span
+            ><i class="bi bi-chevron-right"></i
+          ></a>
+          <a class="contact-option" href="#office-details"
+            ><span class="value-icon"><i class="bi bi-geo-alt"></i></span
+            ><span
+              ><strong>Visit our office</strong
+              ><small
+                >Come say hello to our Islamabad office. We’d be happy to assist you.</small
+              ></span
+            ><i class="bi bi-chevron-right"></i
+          ></a>
+        </section>
+        <section class="contact-workspace">
+          <form
+            class="contact-form"
+            id="contact-form"
+            action="mailto:support@sparrowflights.com"
+            method="post"
+            enctype="text/plain"
+          >
+            <h2>Send us a message</h2>
+            <p>
+              Fill out the form and we’ll get back to you as soon as possible.
+            </p>
+            <div class="form-fields">
+              <label
+                >Full name<input
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Ali Khan"
+                  required
+              /></label>
+              <label
+                >Email<input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="ali.khan@example.com"
+                  required
+              /></label>
+              <label
+                >Topic<select name="topic">
+                  <option>Booking support</option>
+                  <option>General enquiry</option>
+                  <option>Changes and cancellations</option>
+                  <option>Feedback</option>
+                </select></label
+              >
+              <label
+                > <span>Booking reference <em>(optional)</em></span
+                ><input name="booking-reference" placeholder="e.g. BK12345678"
+              /></label>
+              <label class="message-field"
+                >Message<textarea
+                  name="message"
+                  rows="4"
+                  maxlength="500"
+                  placeholder="I need help changing my flight date from Islamabad to Dubai, booked for 24 Nov 2026."
+                  required
+                ></textarea>
+              </label>
+            </div>
+            <button class="theme-button send-button" type="submit">
+              Send message <i class="bi bi-arrow-right"></i>
+            </button>
+          </form>
+          <aside class="office-card" id="office-details">
+            <svg class="office-photo office-photo-desktop" viewBox="726 368 370 202" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Faisal Mosque, Islamabad"><image href="images/demo/03-Contact-Us.png" width="1536" height="1024" /></svg>
+            <svg class="office-photo office-photo-mobile" viewBox="1210 770 272 61" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Faisal Mosque, Islamabad"><image href="images/demo/03-Contact-Us.png" width="1536" height="1024" /></svg>
+            <input class="office-toggle" type="checkbox" id="office-toggle" />
+            <label class="office-mobile-heading" for="office-toggle"><i class="bi bi-buildings" aria-hidden="true"></i> Office details <i class="bi bi-chevron-right" aria-hidden="true"></i></label>
+            <div class="office-content">
+              <h2>Office details</h2>
+              <div class="office-detail">
+                <i class="bi bi-geo-alt"></i
+                ><span
+                  ><strong>Islamabad</strong
+                  ><small>Our office is located in Islamabad.</small></span
+                >
+                <i class="bi bi-chevron-right"></i>
+              </div>
+              <div class="office-detail">
+                <i class="bi bi-clock"></i
+                ><span
+                  ><strong>Office hours</strong
+                  ><small
+                    >Monday – Friday, 9:00 AM – 6:00 PM<br />(excluding public
+                    holidays)</small
+                  ></span
+                >
+                <i class="bi bi-chevron-right"></i>
+              </div>
+              <a class="office-detail directions-link" href="https://www.google.com/maps/search/?api=1&query=Islamabad" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-buildings"></i><span><strong>Get directions</strong><small>Find us on the map for easy navigation.</small></span><i class="bi bi-chevron-right"></i>
+              </a>
+            </div>
+          </aside>
+        </section>
+        <section class="faq-section">
+          <div class="faq-intro">
+            <p class="eyebrow">FREQUENTLY ASKED QUESTIONS</p>
+            <h2>Common questions,<br />clear answers.</h2>
+            <p>
+              Find answers to common questions about bookings, changes, baggage,
+              and refunds.
+            </p>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>
+                How can I change my booking?<i class="bi bi-chevron-down"></i>
+              </summary>
+              <p>
+                You can request changes to your booking by contacting our support team. Availability and fare differences may apply depending on your ticket type and airline policy.
+              </p>
+            </details>
+            <details>
+              <summary>
+                What is your baggage policy?<i class="bi bi-chevron-down"></i>
+              </summary>
+              <p>
+                Your baggage allowance is shown in your itinerary and depends on
+                the airline and fare you selected.
+              </p>
+            </details>
+            <details>
+              <summary>
+                How do I request a refund?<i class="bi bi-chevron-down"></i>
+              </summary>
+              <p>
+                Contact us with your booking reference. We’ll explain the
+                applicable fare rules and next steps.
+              </p>
+            </details>
+            <details>
+              <summary>
+                How long does a refund take?<i class="bi bi-chevron-down"></i>
+              </summary>
+              <p>
+                Timing depends on airline approval and your payment provider.
+                Our team can help you check the request status.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Can I change the name on my ticket?<i
+                  class="bi bi-chevron-down"
+                ></i>
+              </summary>
+              <p>
+                Name correction rules vary by airline. Contact support as soon
+                as possible so we can review your ticket conditions.
+              </p>
+            </details>
+          </div>
+        </section>
+      </div>
+    </main>
+    <iframe
+      class="shared-footer-frame"
+      src="components/footer.html"
+      title="Site footer"
+      scrolling="no"
+      loading="lazy"
+    ></iframe>
+    <iframe
+      class="shared-bottom-nav-frame"
+      src="components/mobile-navigation.html#nav-account"
+      title="Mobile navigation"
+      scrolling="no"
+    ></iframe>
+    <script src="components/navbar-embed.js" defer></script>
+  </body>
+</html>
