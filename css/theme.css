@@ -910,6 +910,15 @@ body.site-menu-open::before {
     height: 456px;
     margin-top: 16px;
   }
+  body.account-page .shared-footer-frame {
+    height: 450px !important;
+    margin-top: 8px !important;
+  }
+}
+@media (max-width: 380px) {
+  body.account-page .shared-footer-frame {
+    height: 480px !important;
+  }
 }
 @media print {
   iframe.shared-navbar-frame,
@@ -917,4 +926,401 @@ body.site-menu-open::before {
   .shared-bottom-nav-frame {
     display: none !important;
   }
+}
+
+
+/* Account-page design tokens. Update these values here to theme all account pages. */
+:root {
+  --account-color-001b3930: #001b3930;
+  --account-color-002f3b10: #002f3b10;
+  --account-color-00525420: #00525420;
+  --account-color-005b641a: #005b641a;
+  --account-color-00666b25: #00666b25;
+  --account-color-00888b20: #00888b20;
+  --account-color-008d9570: #008d9570;
+  --account-color-032536ee: #032536ee;
+  --account-color-063248b8: #063248b8;
+  --account-color-09364e10: #09364e10;
+  --account-color-0a27321a: #0a27321a;
+  --account-color-0b283e55: #0b283e55;
+  --account-color-0d2f3320: #0d2f3320;
+  --account-color-10292075: #10292075;
+  --account-color-102c3610: #102c3610;
+  --account-color-122f3408: #122f3408;
+  --account-color-14332a08: #14332a08;
+  --account-color-14392c20: #14392c20;
+  --account-color-152734c9: #152734c9;
+  --account-color-152a3010: #152a3010;
+  --account-color-15304220: #15304220;
+  --account-color-172d20b8: #172d20b8;
+  --account-color-172f3105: #172f3105;
+  --account-color-17302920: #17302920;
+  --account-color-17332604: #17332604;
+  --account-color-17332608: #17332608;
+  --account-color-182d22b5: #182d22b5;
+  --account-color-18312c04: #18312c04;
+  --account-color-18373304: #18373304;
+  --account-color-1a2f3010: #1a2f3010;
+  --account-color-1c3f3310: #1c3f3310;
+  --account-color-5d677d20: #5d677d20;
+  --account-color-dff1ed8c: #dff1ed8c;
+  --account-color-eef3f4e8: #eef3f4e8;
+  --account-color-ffffff96: #ffffff96;
+  --account-color-ffffffa6: #ffffffa6;
+  --account-color-ffffffb8: #ffffffb8;
+  --account-color-ffffffbc: #ffffffbc;
+  --account-color-ffffffc4: #ffffffc4;
+  --account-color-ffffffec: #ffffffec;
+  --account-color-ffffffed: #ffffffed;
+  --account-color-ffffffef: #ffffffef;
+  --account-color-002d3d: #002d3d;
+  --account-color-003846: #003846;
+  --account-color-003b48: #003b48;
+  --account-color-004b5a: #004b5a;
+  --account-color-005869: #005869;
+  --account-color-005b70: #005b70;
+  --account-color-005e73: #005e73;
+  --account-color-006472: #006472;
+  --account-color-006b33: #006b33;
+  --account-color-006d58: #006d58;
+  --account-color-007760: #007760;
+  --account-color-007889: #007889;
+  --account-color-007a7c: #007a7c;
+  --account-color-007b83: #007b83;
+  --account-color-007b84: #007b84;
+  --account-color-007d83: #007d83;
+  --account-color-007d85: #007d85;
+  --account-color-008189: #008189;
+  --account-color-008385: #008385;
+  --account-color-008388: #008388;
+  --account-color-008788: #008788;
+  --account-color-00878e: #00878e;
+  --account-color-008888: #008888;
+  --account-color-00888b: #00888b;
+  --account-color-008b71: #008b71;
+  --account-color-008c90: #008c90;
+  --account-color-008c92: #008c92;
+  --account-color-008d93: #008d93;
+  --account-color-008e91: #008e91;
+  --account-color-008f95: #008f95;
+  --account-color-009392: #009392;
+  --account-color-00a3a8: #00a3a8;
+  --account-color-00bba4: #00bba4;
+  --account-color-00d88e: #00d88e;
+  --account-color-021d2b: #021d2b;
+  --account-color-02b99c: #02b99c;
+  --account-color-04556c: #04556c;
+  --account-color-052b3e: #052b3e;
+  --account-color-062439: #062439;
+  --account-color-06956c: #06956c;
+  --account-color-073047: #073047;
+  --account-color-092e3c: #092e3c;
+  --account-color-0a203b: #0a203b;
+  --account-color-0c4c3e: #0c4c3e;
+  --account-color-0c5764: #0c5764;
+  --account-color-112742: #112742;
+  --account-color-11293d: #11293d;
+  --account-color-142b47: #142b47;
+  --account-color-152b43: #152b43;
+  --account-color-152c43: #152c43;
+  --account-color-173d53: #173d53;
+  --account-color-1b5367: #1b5367;
+  --account-color-1b5765: #1b5765;
+  --account-color-213e5d: #213e5d;
+  --account-color-22364d: #22364d;
+  --account-color-243751: #243751;
+  --account-color-252b23: #252b23;
+  --account-color-273e51: #273e51;
+  --account-color-2f6e5c: #2f6e5c;
+  --account-color-345d73: #345d73;
+  --account-color-382414: #382414;
+  --account-color-3e5571: #3e5571;
+  --account-color-435575: #435575;
+  --account-color-496582: #496582;
+  --account-color-4b5671: #4b5671;
+  --account-color-4d5671: #4d5671;
+  --account-color-4d9ba0: #4d9ba0;
+  --account-color-526078: #526078;
+  --account-color-526381: #526381;
+  --account-color-52708b: #52708b;
+  --account-color-536079: #536079;
+  --account-color-546075: #546075;
+  --account-color-56798b: #56798b;
+  --account-color-576d87: #576d87;
+  --account-color-58aeb4: #58aeb4;
+  --account-color-5b6e86: #5b6e86;
+  --account-color-5b7390: #5b7390;
+  --account-color-5c647a: #5c647a;
+  --account-color-5c657e: #5c657e;
+  --account-color-5c6880: #5c6880;
+  --account-color-5c7490: #5c7490;
+  --account-color-5d7692: #5d7692;
+  --account-color-5e7390: #5e7390;
+  --account-color-5f6a79: #5f6a79;
+  --account-color-60728b: #60728b;
+  --account-color-615b65: #615b65;
+  --account-color-61758c: #61758c;
+  --account-color-646b7e: #646b7e;
+  --account-color-64708a: #64708a;
+  --account-color-64728a: #64728a;
+  --account-color-64748a: #64748a;
+  --account-color-64788e: #64788e;
+  --account-color-657087: #657087;
+  --account-color-65718a: #65718a;
+  --account-color-65738b: #65738b;
+  --account-color-65748b: #65748b;
+  --account-color-65758b: #65758b;
+  --account-color-657a92: #657a92;
+  --account-color-667f99: #667f99;
+  --account-color-6b260a: #6b260a;
+  --account-color-6d7f98: #6d7f98;
+  --account-color-6e829c: #6e829c;
+  --account-color-70869c: #70869c;
+  --account-color-72849a: #72849a;
+  --account-color-818593: #818593;
+  --account-color-8796a6: #8796a6;
+  --account-color-8aabae: #8aabae;
+  --account-color-8fb5bf: #8fb5bf;
+  --account-color-91a0ad: #91a0ad;
+  --account-color-a6c8c3: #a6c8c3;
+  --account-color-a84b00: #a84b00;
+  --account-color-a87d5e: #a87d5e;
+  --account-color-acb7c5: #acb7c5;
+  --account-color-b14724: #b14724;
+  --account-color-b21b0d: #b21b0d;
+  --account-color-b51d14: #b51d14;
+  --account-color-b6a47d: #b6a47d;
+  --account-color-bfcbd0: #bfcbd0;
+  --account-color-c5cdd3: #c5cdd3;
+  --account-color-c6e8d9: #c6e8d9;
+  --account-color-c7e9d7: #c7e9d7;
+  --account-color-d32c19: #d32c19;
+  --account-color-d4a07c: #d4a07c;
+  --account-color-d4dce3: #d4dce3;
+  --account-color-d5dadb: #d5dadb;
+  --account-color-d5dde2: #d5dde2;
+  --account-color-d6e5e8: #d6e5e8;
+  --account-color-d7dfdc: #d7dfdc;
+  --account-color-d7dfe3: #d7dfe3;
+  --account-color-daf0ec: #daf0ec;
+  --account-color-dbe1e5: #dbe1e5;
+  --account-color-dce2e7: #dce2e7;
+  --account-color-dce4e4: #dce4e4;
+  --account-color-dce4e7: #dce4e7;
+  --account-color-dce6ec: #dce6ec;
+  --account-color-ddf3e8: #ddf3e8;
+  --account-color-dfe4e5: #dfe4e5;
+  --account-color-dff2e7: #dff2e7;
+  --account-color-dffaf0: #dffaf0;
+  --account-color-e0e4e4: #e0e4e4;
+  --account-color-e0f8f4: #e0f8f4;
+  --account-color-e1e6e7: #e1e6e7;
+  --account-color-e1e6e8: #e1e6e8;
+  --account-color-e2e7e6: #e2e7e6;
+  --account-color-e2e7e8: #e2e7e8;
+  --account-color-e2e8eb: #e2e8eb;
+  --account-color-e2e9e8: #e2e9e8;
+  --account-color-e3e9e7: #e3e9e7;
+  --account-color-e3f6ec: #e3f6ec;
+  --account-color-e4e8ec: #e4e8ec;
+  --account-color-e4e9e4: #e4e9e4;
+  --account-color-e4e9e6: #e4e9e6;
+  --account-color-e4e9e8: #e4e9e8;
+  --account-color-e4ecee: #e4ecee;
+  --account-color-e4f3f1: #e4f3f1;
+  --account-color-e5bb94: #e5bb94;
+  --account-color-e5e9e5: #e5e9e5;
+  --account-color-e5eae8: #e5eae8;
+  --account-color-e5eaec: #e5eaec;
+  --account-color-e5f4ed: #e5f4ed;
+  --account-color-e6eae6: #e6eae6;
+  --account-color-e6ebed: #e6ebed;
+  --account-color-e6ebf4: #e6ebf4;
+  --account-color-e6f6f3: #e6f6f3;
+  --account-color-e7e9e6: #e7e9e6;
+  --account-color-e7e9eb: #e7e9eb;
+  --account-color-e7ebea: #e7ebea;
+  --account-color-e7ece9: #e7ece9;
+  --account-color-e7f5f2: #e7f5f2;
+  --account-color-e8ecee: #e8ecee;
+  --account-color-e9ecef: #e9ecef;
+  --account-color-ed2f38: #ed2f38;
+  --account-color-edf0eb: #edf0eb;
+  --account-color-edf2f1: #edf2f1;
+  --account-color-edf2f4: #edf2f4;
+  --account-color-edf3f4: #edf3f4;
+  --account-color-edf3f5: #edf3f5;
+  --account-color-edf5f3: #edf5f3;
+  --account-color-eeeae9: #eeeae9;
+  --account-color-eef3fc: var(--color-fare-selected);
+  --account-color-eef4f2: #eef4f2;
+  --account-color-eef4f3: #eef4f3;
+  --account-color-eff4f3: #eff4f3;
+  --account-color-effbfa: #effbfa;
+  --account-color-f0e6e1: #f0e6e1;
+  --account-color-f0f2f3: #f0f2f3;
+  --account-color-f0f5f4: #f0f5f4;
+  --account-color-f1922f: #f1922f;
+  --account-color-f1dfd6: #f1dfd6;
+  --account-color-f1f3f5: #f1f3f5;
+  --account-color-f1f4f5: #f1f4f5;
+  --account-color-f1f4fa: #f1f4fa;
+  --account-color-f2f6f3: #f2f6f3;
+  --account-color-f4f7f4: #f4f7f4;
+  --account-color-f5efea: #f5efea;
+  --account-color-f5f7f5: #f5f7f5;
+  --account-color-f5f7f8: #f5f7f8;
+  --account-color-f6efec: #f6efec;
+  --account-color-f6f8f6: #f6f8f6;
+  --account-color-f6f9f6: #f6f9f6;
+  --account-color-f7f9f7: #f7f9f7;
+  --account-color-f7f9f8: #f7f9f8;
+  --account-color-f9fcfc: #f9fcfc;
+  --account-color-fafbf9: #fafbf9;
+  --account-color-fafcfb: #fafcfb;
+  --account-color-ffa14d: #ffa14d;
+  --account-color-ffa168: #ffa168;
+  --account-color-ffa571: #ffa571;
+  --account-color-ffb153: #ffb153;
+  --account-color-ffb780: #ffb780;
+  --account-color-ffba7a: #ffba7a;
+  --account-color-ffe4e2: #ffe4e2;
+  --account-color-ffedeb: #ffedeb;
+  --account-color-fff0dc: #fff0dc;
+  --account-color-fff8: #fff8;
+  --account-color-fff: var(--color-white);
+  --account-font-size-0-8125rem: 0.8125rem;
+  --account-font-size-0-9375rem: 0.9375rem;
+  --account-font-size-1-05rem: 1.05rem;
+  --account-font-size-1-0625rem: 1.0625rem;
+  --account-font-size-1-125rem: 1.125rem;
+  --account-font-size-1-1875rem: 1.1875rem;
+  --account-font-size-1-25rem: 1.25rem;
+  --account-font-size-1-2rem: 1.2rem;
+  --account-font-size-1-35rem: 1.35rem;
+  --account-font-size-1-4375rem: 1.4375rem;
+  --account-font-size-1-5rem: 1.5rem;
+  --account-font-size-1-75rem: 1.75rem;
+  --account-font-size-1-9rem: 1.9rem;
+  --account-font-size-10px: var(--font-size-10px);
+  --account-font-size-11px: var(--font-size-11px);
+  --account-font-size-12px: var(--font-size-12px);
+  --account-font-size-13px: var(--font-size-small);
+  --account-font-size-14px: var(--font-size-body-mobile);
+  --account-font-size-15px: var(--font-size-button-desktop);
+  --account-font-size-16px: var(--font-size-button-mobile);
+  --account-font-size-17px: var(--font-size-heading-3-tablet);
+  --account-font-size-18px: var(--font-size-dropdown-heading);
+  --account-font-size-19px: var(--font-size-mobile-search-value);
+  --account-font-size-1rem: 1rem;
+  --account-font-size-2-35vw: 2.35vw;
+  --account-font-size-2-5rem: 2.5rem;
+  --account-font-size-20px: var(--font-size-heading-2-mobile);
+  --account-font-size-21px: var(--font-size-21px);
+  --account-font-size-22px: var(--font-size-heading-1-mobile);
+  --account-font-size-23px: var(--font-size-23px);
+  --account-font-size-24px: var(--font-size-24px);
+  --account-font-size-25px: var(--font-size-heading-1-tablet);
+  --account-font-size-26px: var(--font-size-26px);
+  --account-font-size-27px: 27px;
+  --account-font-size-28px: var(--font-size-28px);
+  --account-font-size-29px: 29px;
+  --account-font-size-3-5vw: 3.5vw;
+  --account-font-size-30px: 30px;
+  --account-font-size-31px: 31px;
+  --account-font-size-33px: 33px;
+  --account-font-size-36px: 36px;
+  --account-font-size-37px: 37px;
+  --account-font-size-40px: 40px;
+  --account-font-size-41px: 41px;
+  --account-font-size-49px: 49px;
+  --account-font-size-53px: 53px;
+  --account-font-size-5px: 5px;
+  --account-font-size-64px: 64px;
+  --account-font-size-6px: 6px;
+  --account-font-size-7px: var(--font-size-7px);
+  --account-font-size-8px: var(--font-size-8px);
+  --account-font-size-9px: var(--font-size-9px);
+  --account-button-min-height: 42px;
+  --account-button-padding-y: var(--button-padding-y);
+  --account-button-padding-x: var(--button-padding-x);
+  --account-button-gap: 11px;
+  --account-button-radius: var(--radius-control);
+  --account-button-font-family: var(--font-body);
+  --account-button-font-size: var(--font-size-button);
+  --account-button-font-weight: var(--font-weight-semibold);
+  --account-button-background: var(--gradient-3);
+  --account-button-color: var(--color-on-primary);
+  --account-button-hover-background: var(--color-button-hover);
+  --account-button-transition: var(--transition-interactive);
+  --account-button-small-min-height: 32px;
+  --account-button-small-padding-y: 7px;
+  --account-button-small-padding-x: 14px;
+  --account-button-small-font-size: var(--font-size-small);
+  --font-weight-regular: var(--font-weight-normal);
+}
+
+
+/* Account-page buttons use the same tokens and interactions on every page. */
+body.account-page[class*="page-"] .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--account-button-gap);
+  min-height: var(--account-button-min-height);
+  padding: var(--account-button-padding-y) var(--account-button-padding-x);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--account-button-radius);
+  background: var(--account-button-background);
+  color: var(--account-button-color);
+  font-family: var(--account-button-font-family);
+  font-size: var(--account-button-font-size);
+  font-weight: var(--account-button-font-weight);
+  line-height: var(--line-height-base);
+  transition: var(--account-button-transition);
+}
+body.account-page[class*="page-"] .button:hover {
+  border-color: var(--color-button-hover);
+  background: var(--account-button-hover-background);
+  color: var(--color-on-primary);
+  transform: var(--button-hover-transform);
+  box-shadow: var(--shadow-button-hover);
+  filter: none;
+}
+body.account-page[class*="page-"] .button-outline {
+  border-color: var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+}
+body.account-page[class*="page-"] .button-outline:hover {
+  border-color: var(--color-button-hover);
+  background: var(--color-button-hover);
+  color: var(--color-on-primary);
+}
+body.account-page[class*="page-"] :is(.button-white, .button-subtle) {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+body.account-page[class*="page-"] .button-danger {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-primary);
+}
+body.account-page[class*="page-"] .button-small {
+  min-height: var(--account-button-small-min-height);
+  padding: var(--account-button-small-padding-y) var(--account-button-small-padding-x);
+  font-size: var(--account-button-small-font-size);
+}
+body.account-page[class*="page-"] .button:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus);
+}
+body.account-page[class*="page-"] .app-shell,
+body.account-page[class*="page-"] .app-shell * {
+  font-family: var(--font-body);
+}
+body.account-page[class*="page-"] .app-shell :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-heading);
 }

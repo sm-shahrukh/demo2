@@ -1,0 +1,710 @@
+/* Loyalty & Rewards. Self-contained stylesheet; every selector is scoped to this page. */
+ 
+ 
+.page-rewards  
+
+.page-rewards{ --ink:var(--account-color-0a203b); --muted:var(--account-color-5c6880); --teal:var(--account-color-00888b); --line:var(--account-color-e1e6e7); --surface:var(--account-color-fff); margin:0; color:var(--ink); background:var(--account-color-f6f8f6); font:var(--account-font-size-15px)/1.45 'Segoe UI',Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+.page-rewards, .page-rewards *{ box-sizing:border-box; }
+.page-rewards button, .page-rewards input, .page-rewards select{ font: inherit; }
+.page-rewards a{ color:inherit; text-decoration:none; }
+.page-rewards button, .page-rewards a, .page-rewards input, .page-rewards select{ -webkit-tap-highlight-color:transparent; }
+.page-rewards button{ cursor:pointer; }
+.page-rewards button:disabled{ cursor:not-allowed; opacity:.55; }
+.page-rewards :focus-visible{ outline:3px solid var(--account-color-00a3a8); outline-offset:4px; }
+.page-rewards h1, .page-rewards h2, .page-rewards h3, .page-rewards h4, .page-rewards p{ margin:0; }
+.page-rewards h1, .page-rewards h2, .page-rewards h3, .page-rewards h4{ line-height:1.2; letter-spacing:-.025em; }
+.page-rewards .icon{ display:inline-block; width:22px; height:22px; flex:none; vertical-align:middle; }
+.page-rewards .icon-button{ display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border:0; padding:6px; background:transparent; color:var(--ink); border-radius:50%; }
+.page-rewards .icon-button:hover{ background:var(--account-color-eef4f3); }
+.page-rewards .app-shell{ max-width:1440px; min-height:100vh; margin:0 auto; background:linear-gradient(125deg,var(--account-color-fafbf9),var(--account-color-f4f7f4)); }
+.page-rewards .skip-link{ position:fixed; top:-60px; left:20px; z-index:100; background:var(--color-surface); padding:10px; }
+.page-rewards .skip-link:focus{ top:10px; }
+.page-rewards .site-header{ height:80px; display:flex; align-items:center; gap:60px; padding:0 40px; border-bottom:1px solid var(--color-border); background:var(--account-color-ffffffb8); }
+.page-rewards .brand{ flex:none; display:inline-flex; align-items:center; gap:9px; font:bold var(--account-font-size-37px)/.85 Georgia,'Times New Roman',serif; letter-spacing:-1.7px; color:var(--account-color-062439); }
+.page-rewards .brand small{ display:block; text-align:center; font:var(--account-font-size-8px)/1.5 var(--font-body); letter-spacing:2.35px; margin-top:6px; }
+.page-rewards .brand>svg{ width:43px; height:43px; }
+.page-rewards .primary-nav{ display:flex; gap:38px; align-items:center; }
+.page-rewards .primary-nav a{ display:flex; align-items:center; gap:13px; white-space:nowrap; }
+.page-rewards .primary-nav a:hover{ color:var(--teal); }
+.page-rewards .header-actions{ margin-left:auto; display:flex; align-items:center; gap:24px; position:relative; }
+.page-rewards .currency{ display:flex; align-items:center; gap:13px; border:0; background:transparent; color:var(--ink); padding:9px 13px; font-size: var(--account-font-size-14px); }
+.page-rewards .currency .icon, .page-rewards .header-user>.icon{ width:13px; height:13px; }
+.page-rewards .currency-menu{ position:absolute; right:140px; top:50px; z-index:12; min-width:210px; padding:6px; background:var(--color-surface); border:1px solid var(--line); border-radius:10px; box-shadow:0 10px 30px var(--account-color-0a27321a); }
+.page-rewards .currency-menu button{ display:block; width:100%; padding:8px 12px; border:0; background:var(--color-surface); text-align:left; color:var(--ink); }
+.page-rewards .currency-menu button:hover{ background:var(--account-color-e7f5f2); }
+.page-rewards .header-user{ display:flex; align-items:center; gap:12px; white-space:nowrap; font-size: var(--account-font-size-14px); }
+.page-rewards .header-user b{ font-weight: var(--font-weight-500); }
+.page-rewards .header-user small{ display:block; font-size: var(--account-font-size-12px); color:var(--muted); margin-top:3px; }
+.page-rewards .avatar{ width:43px; height:43px; border:2px solid var(--account-color-d7dfdc); border-radius:50%; flex:none; }
+.page-rewards .art{ display:block; position:relative; overflow:hidden; }
+.page-rewards .art-window{ display:block; position:absolute; inset:0; width:100%; height:100%; overflow:hidden; }
+.page-rewards .art img{ display:block; position:absolute; inset:0; width:100%; height:100%; max-width:100%; object-fit:cover; object-position:center; pointer-events:none; }
+.page-rewards .sidebar{ min-width:0; }
+.page-rewards .side-link{ display:flex; align-items:center; gap:20px; min-height:51px; padding:12px 14px; border-radius:10px; color:var(--account-color-112742); }
+.page-rewards .side-link:hover{ background:var(--account-color-edf5f3); }
+.page-rewards .side-link.is-active{ background:linear-gradient(110deg,var(--account-color-e4f3f1),var(--account-color-daf0ec)); color:var(--account-color-003846); font-weight: var(--font-weight-semibold); }
+.page-rewards .side-link .icon{ width:25px; height:25px; }
+.page-rewards .sign-out{ margin-top:10px; }
+.page-rewards .button{ min-height:42px; display:inline-flex; justify-content:center; align-items:center; gap:11px; padding:10px 20px; border-radius:9px; border:1px solid transparent; background:linear-gradient(115deg,var(--account-color-00878e),var(--account-color-008385)); color:var(--color-on-primary); font-weight: var(--font-weight-semibold); font-size: var(--account-font-size-14px); line-height:1.3; text-align:center; transition:background .15s,box-shadow .15s; }
+.page-rewards .button:hover{ box-shadow:0 4px 13px var(--account-color-00666b25); filter:brightness(.97); }
+.page-rewards .button .icon{ width:19px; height:19px; }
+.page-rewards .button-outline{ background:transparent; color:var(--account-color-007d85); border-color:var(--account-color-58aeb4); }
+.page-rewards .button-white{ background:var(--account-color-f9fcfc); color:var(--account-color-004b5a); box-shadow:0 2px 4px var(--account-color-002f3b10); }
+.page-rewards .button-plain{ background:transparent; color:inherit; }
+.page-rewards .button-subtle{ background:var(--account-color-f0f2f3); color:var(--ink); border-color:var(--account-color-dfe4e5); }
+.page-rewards .button-small{ min-height:32px; padding:7px 14px; font-size: var(--account-font-size-12px); }
+.page-rewards .button-danger{ background:var(--account-color-ffa571); color:var(--account-color-6b260a); }
+.page-rewards .text-link{ border:0; background:transparent; color:var(--account-color-008189); text-decoration:underline; padding:0; font: inherit; cursor:pointer; }
+.page-rewards .badge{ display:inline-flex; align-items:center; gap:6px; padding:4px 12px; border-radius:20px; font-size: var(--account-font-size-12px); line-height:1.4; white-space:nowrap; }
+.page-rewards .badge .icon{ width:15px; height:15px; }
+.page-rewards .badge-confirmed{ background:var(--account-color-e0f8f4); color:var(--account-color-006472); }
+.page-rewards .badge-done{ background:var(--account-color-dff2e7); color:var(--account-color-006b33); }
+.page-rewards .badge-pending{ background:var(--account-color-fff0dc); color:var(--account-color-a84b00); }
+.page-rewards .badge-payment{ background:var(--account-color-ffedeb); color:var(--account-color-b21b0d); }
+.page-rewards .badge-credit{ background:var(--account-color-e5f4ed); color:var(--account-color-006d58); }
+.page-rewards .badge-redeemed{ background:var(--account-color-ffe4e2); color:var(--account-color-b51d14); }
+.page-rewards .card{ background:var(--account-color-ffffffec); border:1px solid var(--account-color-e7ebea); border-radius:14px; box-shadow:0 3px 12px var(--account-color-18312c04); }
+.page-rewards .muted{ color:var(--muted); }
+.page-rewards .field{ display:flex; flex-direction:column; gap:6px; min-width:0; color:var(--account-color-142b47); font-size: var(--account-font-size-12px); }
+.page-rewards .field input, .page-rewards .field select{ width:100%; min-width:0; height:39px; border:1px solid var(--account-color-d7dfe3); border-radius:6px; background:var(--account-color-ffffffa6); color:var(--account-color-112742); padding:8px 12px; }
+.page-rewards input::placeholder{ color:var(--account-color-818593); opacity:1; }
+.page-rewards .field select{ appearance:none; padding-right:30px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%230a2940' stroke-width='1.3'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-size:12px; background-position:right 12px center; }
+.page-rewards .field input:focus, .page-rewards .field select:focus{ border-color:var(--teal); outline:2px solid var(--account-color-00888b20); }
+.page-rewards .mobile-nav, .page-rewards .mobile-menu, .page-rewards .profile-menu, .page-rewards .header-bell, .page-rewards .mobile-chevron{ display:none; }
+.page-rewards .dialog{ width:min(440px,calc(100% - 28px)); max-height:calc(100dvh - 40px); overflow:auto; padding:23px; border:1px solid var(--color-border); border-radius:17px; background:var(--account-color-fff); color:var(--ink); box-shadow:0 20px 80px var(--account-color-001b3930); }
+.page-rewards .dialog::backdrop{ background:var(--account-color-0b283e55); backdrop-filter:blur(3px); }
+.page-rewards .dialog-heading{ display:flex; justify-content:space-between; align-items:center; margin-bottom:17px; gap:12px; }
+.page-rewards .dialog-heading h2{ font-size: var(--account-font-size-19px); }
+.page-rewards .dialog-heading .icon-button{ width:28px; height:28px; color:var(--account-color-64748a); }
+.page-rewards .dialog .field{ margin-bottom:14px; }
+.page-rewards .dialog-actions{ display:flex; gap:10px; margin-top:20px; }
+.page-rewards .dialog-actions>.button{ flex:1; }
+.page-rewards .dialog-form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 14px; }
+.page-rewards .toast{ position:fixed; bottom:22px; right:24px; max-width:400px; z-index:60; padding:15px 20px; color:var(--account-color-0c4c3e); background:var(--account-color-e3f6ec); border:1px solid var(--account-color-c6e8d9); border-radius:12px; box-shadow:0 7px 25px var(--account-color-14392c20); }
+.page-rewards .toast[hidden]{ display:none; }
+.page-rewards .notification-empty{ padding:15px 0; font-weight: var(--font-weight-semibold); }
+.page-rewards .notification-empty p{ font-weight: var(--font-weight-normal); color:var(--muted); margin-top:8px; }
+@media (max-width:1100px) {
+ .page-rewards .site-header{ gap:35px; padding:0 25px; }
+ .page-rewards .primary-nav{ gap:23px; font-size: var(--account-font-size-14px); }
+ .page-rewards .header-actions{ gap:15px; }
+ .page-rewards .header-user{ gap:9px; }
+}
+@media (max-width:760px) {
+ .page-rewards{ font-size: var(--account-font-size-14px); background:var(--account-color-f7f9f7); }
+ .page-rewards .app-shell{ min-height:100dvh; padding-bottom:76px; }
+ .page-rewards .site-header{ height:74px; padding:0 19px; gap:15px; background:var(--account-color-fff); }
+ .page-rewards .brand{ font-size: var(--account-font-size-30px); letter-spacing:-1.3px; }
+ .page-rewards .brand small{ font-size: var(--account-font-size-6px); letter-spacing:1.8px; margin-top:5px; }
+ .page-rewards .brand>svg{ width:31px; height:31px; }
+.page-rewards .primary-nav, .page-rewards .header-user>span:not(.avatar), .page-rewards .header-user>.icon{ display:none; }
+ .page-rewards .header-actions{ gap:12px; }
+ .page-rewards .header-user .avatar{ width:37px; height:37px; }
+ .page-rewards .header-bell{ display:inline-flex; }
+ .page-rewards .currency{ display:none; }
+ .page-rewards .mobile-nav{ display:flex; justify-content:space-around; align-items:start; position:fixed; z-index:20; left:0; right:0; bottom:0; min-height:72px; padding:11px 6px max(12px,env(safe-area-inset-bottom)); border:1px solid var(--account-color-e3e9e7); background:var(--account-color-ffffffef); backdrop-filter:blur(12px); border-radius:11px 11px 0 0; }
+ .page-rewards .mobile-nav a{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; min-width:49px; font-size: var(--account-font-size-11px); color:var(--account-color-546075); }
+ .page-rewards .mobile-nav .icon{ width:22px; height:22px; }
+ .page-rewards .mobile-nav .is-active{ color:var(--account-color-00888b); font-weight: var(--font-weight-semibold); }
+ .page-rewards .mobile-nav .is-active .icon{ stroke-width:2; }
+ .page-rewards .side-link{ min-height:40px; }
+ .page-rewards .dialog{ padding:18px; }
+ .page-rewards .toast{ left:14px; right:14px; bottom:87px; max-width:none; font-size: var(--account-font-size-13px); }
+ .page-rewards .button{ min-height:40px; font-size: var(--account-font-size-13px); padding:10px 15px; }
+ .page-rewards .button-small{ min-height:31px; padding:6px 12px; font-size: var(--account-font-size-12px); }
+}
+@media (prefers-reduced-motion:reduce) { .page-rewards *, .page-rewards *::before, .page-rewards *::after{ scroll-behavior:auto!important; transition:none!important; } }
+
+.page-rewards .art-alex{ aspect-ratio:61/61; }
+
+.page-rewards .art-bookingAlex{ aspect-ratio:84/84; }
+
+.page-rewards .art-ayaan{ aspect-ratio:31/32; }
+
+.page-rewards .art-upcoming{ aspect-ratio:229/205; }
+
+.page-rewards .art-completed{ aspect-ratio:229/183; }
+
+.page-rewards .art-upcomingMobile{ aspect-ratio:265/95; }
+
+.page-rewards .art-completedMobile{ aspect-ratio:265/81; }
+
+.page-rewards .art-detailCity{ aspect-ratio:288/94; }
+
+.page-rewards .art-adventure{ aspect-ratio:220/110; }
+
+.page-rewards .art-bookingAd{ aspect-ratio:189/241; }
+
+.page-rewards .art-walletHero{ aspect-ratio:550/192; }
+
+.page-rewards .art-taj{ aspect-ratio:178/158; }
+
+.page-rewards .art-luggage{ aspect-ratio:110/109; }
+
+.page-rewards .art-lake{ aspect-ratio:108/109; }
+
+.page-rewards .art-rewardHero{ aspect-ratio:499/198; }
+
+.page-rewards .art-rewardAd{ aspect-ratio:127/183; }
+
+.page-rewards .art-profileHero{ aspect-ratio:786/118; }
+
+.page-rewards .art-profileAd{ aspect-ratio:101/53; }
+
+.page-rewards .overview-heading{ margin-bottom:20px; }
+.page-rewards .overview-heading h1{ font-size: var(--font-size-page-title-desktop); margin-bottom:7px; }
+.page-rewards .overview-heading p{ color:var(--color-muted); }
+.page-rewards .overview-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.page-rewards .overview-card h2{ font-size: var(--font-size-section-title-desktop); margin-bottom:10px; }
+.page-rewards .overview-card p{ min-height:50px; color:var(--color-muted); margin-bottom:14px; }
+@media(max-width:760px) { .page-rewards .overview-grid{ grid-template-columns:1fr; gap:12px; } .page-rewards .overview-heading h1{ font-size: var(--font-size-heading-1-mobile); } .page-rewards .overview-card p{ min-height:0; } }
+
+.page-rewards .help-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+.page-rewards .help-question{ padding:16px 0; border-top:1px solid var(--line); }
+.page-rewards .help-question p{ margin-top:6px; color:var(--muted); }
+.page-rewards .empty-bookings[hidden], .page-rewards .trip-card[hidden]{ display:none!important; }
+.page-rewards .booking-tabs [data-booking-tab].is-active{ color:var(--color-primary); border-color:var(--color-primary); }
+@media(max-width:760px) { .page-rewards .help-actions{ flex-direction:column; } .page-rewards .help-actions .button{ width:100%; } }
+
+.page-rewards .site-header{ height:77px; padding:0 40px; gap:78px; }
+.page-rewards .site-header .brand{ font-size: var(--account-font-size-37px); }
+.page-rewards .site-header .currency{ border:1px solid var(--account-color-e2e7e6); border-radius:10px; padding:10px 17px; }
+.page-rewards .header-user{ border-left:1px solid var(--account-color-e7e9e6); padding-left:16px; }
+.page-rewards .rewards-layout{ display:grid; grid-template-columns:194px minmax(0,1fr); gap:18px; padding:0 14px 22px 16px; }
+.page-rewards .rewards-sidebar{ margin-top:9px; border:1px solid var(--account-color-e5e9e5); border-radius:17px; background:var(--account-color-ffffffbc); height:max-content; padding:9px 0 0; overflow:hidden; }
+.page-rewards .rewards-sidebar .side-link{ border-radius:10px; font-size: var(--account-font-size-13px); padding:13px 17px; gap:17px; min-height:50px; }
+.page-rewards .rewards-sidebar .side-link .icon{ width:20px; height:20px; }
+.page-rewards .rewards-sidebar .is-active{ border-left:2px solid var(--account-color-008788); }
+.page-rewards .sidebar-help{ display:flex; gap:17px; align-items:center; padding:22px 17px; border-top:1px solid var(--account-color-e4e9e6); margin-top:12px; font-size: var(--account-font-size-13px); }
+.page-rewards .sidebar-help small{ display:block; font-size: var(--account-font-size-12px); color:var(--account-color-61758c); margin-top:3px; }
+.page-rewards .rewards-main{ min-width:0; }
+.page-rewards .rewards-mobile-title{ display:none; }
+.page-rewards .rewards-hero{ height:256px; position:relative; overflow:hidden; border-radius:14px; background:linear-gradient(95deg,var(--account-color-052b3e),var(--account-color-345d73) 65%,var(--account-color-8aabae)); color:var(--color-on-primary); }
+.page-rewards .rewards-hero>.art{ position:absolute; width:66%; top:50%; right:0; transform:translateY(-50%); }
+.page-rewards .rewards-hero::after{ content:''; position:absolute; inset:0; background:linear-gradient(90deg,var(--account-color-032536ee) 2%,var(--account-color-063248b8) 35%,transparent 70%); }
+.page-rewards .rewards-hero-content{ position:relative; z-index:1; padding:48px 44px 25px; }
+.page-rewards .rewards-hero h1{ font: var(--account-font-size-49px)/.98 Georgia,serif; letter-spacing:-1.2px; margin-bottom:15px; }
+.page-rewards .rewards-hero p{ font-size: var(--account-font-size-18px); line-height:1.4; }
+.page-rewards .rewards-overview{ display:grid; grid-template-columns:41% minmax(0,1fr); gap:16px 19px; margin:16px 0 21px; }
+.page-rewards .loyalty-card{ position:relative; overflow:hidden; grid-row:span 2; min-height:282px; padding:26px 28px 22px; border-radius:17px; color:var(--color-on-primary); background:radial-gradient(ellipse at 100% 0%,var(--account-color-1b5765),var(--account-color-073047) 68%,var(--account-color-021d2b)); box-shadow:0 3px 10px var(--account-color-0d2f3320); }
+.page-rewards .loyalty-card-top{ display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1; }
+.page-rewards .loyalty-card .brand{ position:relative; font-size: var(--account-font-size-31px); color:var(--account-color-fff); font-weight: var(--font-weight-normal); letter-spacing:-1.2px; pointer-events:none; }
+.page-rewards .loyalty-card .brand::before{ content:''; position:absolute; width:40px; height:15px; left:20px; top:-10px; background:linear-gradient(155deg,transparent 46%,var(--account-color-ffb780) 47%,var(--account-color-ffb780) 53%,transparent 54%) left center/50% 100% no-repeat,linear-gradient(205deg,transparent 46%,var(--account-color-ffb780) 47%,var(--account-color-ffb780) 53%,transparent 54%) right center/50% 100% no-repeat; }
+.page-rewards .loyalty-card .brand small{ font-size: var(--account-font-size-7px); letter-spacing:2px; margin-top:4px; }
+.page-rewards .member-tier{ border:1px solid var(--account-color-8fb5bf); border-radius:23px; padding:8px 27px; font-size: var(--account-font-size-15px); line-height:1.2; }
+.page-rewards .loyalty-points{ display:flex; align-items:baseline; gap:11px; margin-top:32px; font-size: var(--account-font-size-18px); position:relative; z-index:1; }
+.page-rewards .loyalty-points strong{ font: 700 var(--account-font-size-64px)/1 Georgia,serif; letter-spacing:-1.5px; }
+.page-rewards .loyalty-art{ position:absolute; left:0; right:0; bottom:39px; width:100%; height:150px; opacity:.9; }
+.page-rewards .loyalty-card-bottom{ display:flex; justify-content:space-between; margin-top:65px; font-size: var(--account-font-size-14px); position:relative; z-index:1; }
+.page-rewards .loyalty-card-bottom small{ display:block; font-size: var(--account-font-size-12px); margin-top:3px; }
+.page-rewards .loyalty-card-bottom>span:last-child{ font-size: var(--account-font-size-12px); text-align:right; }
+.page-rewards .milestone-card{ display:flex; align-items:center; gap:20px; padding:19px; align-self:end; min-height:116px; }
+.page-rewards .milestone-card{ flex-direction:row; }
+.page-rewards .milestone-icon{ display:flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:50%; background:var(--account-color-eef3fc); color:var(--color-primary); flex:none; }
+.page-rewards .milestone-icon .icon{ width:31px; height:31px; stroke-width:2; }
+.page-rewards .milestone-copy{ flex:1; }
+.page-rewards .milestone-label{ display:flex; justify-content:space-between; gap:10px; margin-bottom:9px; font-size:var(--font-size-base); font-family:var(--font-body); }
+.page-rewards .milestone-label b{ font-size:var(--font-size-20px); }
+.page-rewards .milestone-label>span:last-child{ color:var(--color-muted); font-size:var(--font-size-14px); white-space:nowrap; }
+.page-rewards .progress-track{ height:12px; border-radius:8px; background:var(--account-color-e6ebf4); overflow:hidden; }
+.page-rewards .progress-track span{ display:block; height:100%; width:36%; background:var(--gradient-3); border-radius:8px; }
+.page-rewards .milestone-copy>p{ color:var(--color-muted); font-size:var(--font-size-14px); margin-top:8px; font-family:var(--font-body); }
+.page-rewards .how-card{ padding:17px 20px; min-height:141px; }
+.page-rewards .how-card h2{ font-size:var(--font-size-23px); margin-bottom:16px; font-family:var(--font-heading); }
+.page-rewards .how-steps{ display:flex; align-items:flex-start; gap:12px; }
+.page-rewards .how-step{ display:flex; gap:12px; align-items:center; flex:1; }
+.page-rewards .how-icon{ width:55px; height:55px; border-radius:50%; background:var(--account-color-eef3fc); color:var(--color-primary); display:flex; align-items:center; justify-content:center; flex:none; }
+.page-rewards .how-icon .icon{ width:27px; height:27px; }
+.page-rewards .how-step strong{ font-size:var(--font-size-16px); font-weight:var(--font-weight-semibold); font-family:var(--font-body); }
+.page-rewards .how-step p{ font-size:var(--font-size-14px); color:var(--color-muted); margin-top:3px; font-family:var(--font-body); }
+.page-rewards .how-steps>.icon{ align-self:center; width:18px; color:var(--color-muted); }
+.page-rewards .redeem-heading{ margin-bottom:17px; }
+.page-rewards .redeem-heading h2{ font-size: var(--account-font-size-23px); margin-bottom:3px; }
+.page-rewards .redeem-heading p{ font-size: var(--account-font-size-15px); color:var(--account-color-5b7390); }
+.page-rewards .redeem-heading>a{ display:none; }
+.page-rewards .voucher-grid{ display:grid; grid-template-columns:1.08fr 1fr 1.05fr; gap:20px; }
+.page-rewards .voucher{ position:relative; display:block; padding:0; border:1px solid var(--account-color-dce4e7); border-radius:16px; background:var(--account-color-fff); color:var(--ink); text-align:left; box-shadow:0 3px 10px var(--account-color-18373304); overflow:visible; }
+.page-rewards .voucher::before, .page-rewards .voucher::after{ content:''; position:absolute; top:43px; width:15px; height:32px; background:radial-gradient(circle at 0 25%,var(--account-color-f4f7f4) 7px,transparent 7.5px),radial-gradient(circle at 0 75%,var(--account-color-f4f7f4) 7px,transparent 7.5px); filter:drop-shadow(1px 0 0 var(--account-color-dce4e7)); z-index:1; }
+.page-rewards .voucher::before{ left:-1px; }
+.page-rewards .voucher::after{ right:-1px; transform:rotate(180deg); }
+.page-rewards .voucher-popular{ border:2px solid var(--account-color-008c90); background:linear-gradient(125deg,var(--account-color-effbfa),var(--account-color-e6f6f3)); box-shadow:0 3px 9px var(--account-color-005b641a); }
+.page-rewards .voucher-popular::before, .page-rewards .voucher-popular::after{ filter:drop-shadow(1px 0 0 var(--account-color-008c90)); }
+.page-rewards .popular-label{ position:absolute; right:-1px; top:-7px; padding:4px 12px; background:linear-gradient(var(--account-color-ffb153),var(--account-color-f1922f)); color:var(--account-color-fff); border-radius:5px 12px 5px 5px; font-size: var(--account-font-size-13px); }
+.page-rewards .voucher-body{ display:flex; align-items:flex-start; gap:26px; padding:23px 26px 14px; }
+.page-rewards .voucher-icon{ width:59px; height:59px; border-radius:13px; flex:none; display:flex; justify-content:center; align-items:center; background:var(--account-color-eef3fc); color:var(--color-primary); }
+.page-rewards .voucher-icon .icon{ width:29px; height:29px; fill:currentColor; stroke-width:.5; transform:rotate(-15deg); }
+.page-rewards .voucher:not(.voucher-popular) .voucher-icon{ background:var(--account-color-eef3fc); color:var(--color-primary); }
+.page-rewards .voucher-value{ display:flex; flex-direction:column; gap:3px; }
+.page-rewards .voucher-value strong{ font-size: var(--account-font-size-20px); font-weight: var(--font-weight-semibold); white-space:nowrap; }
+.page-rewards .voucher-value>span{ color:var(--account-color-5d7692); font-size: var(--account-font-size-16px); }
+.page-rewards .voucher-value>b{ font-size: var(--account-font-size-15px); font-weight: var(--font-weight-semibold); margin-top:5px; white-space:nowrap; }
+.page-rewards .voucher-chevron{ position:absolute; right:24px; top:50px; width:36px; height:36px; border:1px solid var(--account-color-d6e5e8); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.page-rewards .voucher-chevron .icon{ width:18px; height:18px; }
+.page-rewards .voucher-footer{ display:flex; align-items:center; gap:10px; padding:11px 24px; border-top:1px solid var(--account-color-edf2f1); color:var(--account-color-52708b); font-size: var(--account-font-size-12px); border-radius:0 0 14px 14px; }
+.page-rewards .voucher-popular .voucher-footer{ background:var(--account-color-dff1ed8c); color:var(--account-color-005869); }
+.page-rewards .voucher-footer .icon{ width:15px; height:15px; }
+.page-rewards .voucher-disabled{ color:var(--account-color-8796a6); background:var(--account-color-f5f7f8); box-shadow:none; }
+.page-rewards .voucher-disabled .voucher-value>span{ color:var(--account-color-acb7c5); }
+.page-rewards .voucher-disabled .voucher-icon{ background:var(--account-color-f1f3f5)!important; color:var(--account-color-91a0ad)!important; }
+.page-rewards .voucher-disabled .voucher-chevron{ background:var(--account-color-e9ecef); border:0; }
+.page-rewards .voucher-disabled .voucher-footer{ color:var(--account-color-d32c19); }
+.page-rewards .rewards-lower{ display:grid; grid-template-columns:1.9fr 1fr; gap:18px; margin-top:20px; }
+.page-rewards .points-history{ padding:16px 13px 9px; min-width:0; }
+.page-rewards .history-title{ display:flex; justify-content:space-between; align-items:center; margin:0 0 12px; gap:15px; }
+.page-rewards .history-title h2{ font-size: var(--account-font-size-22px); }
+.page-rewards .history-title a{ font-size: var(--account-font-size-13px); color:var(--account-color-007b83); white-space:nowrap; }
+.page-rewards .points-table{ border-collapse:collapse; width:100%; font-size: var(--account-font-size-12px); }
+.page-rewards .points-table th{ text-align:left; font-weight: var(--font-weight-500); background:var(--account-color-f1f4f5); padding:9px 12px; border-bottom:1px solid var(--account-color-e2e8eb); }
+.page-rewards .points-table th:first-child{ border-radius:9px 0 0 9px; }
+.page-rewards .points-table th:last-child{ border-radius:0 9px 9px 0; }
+.page-rewards .points-table td{ padding:7px 12px; border-bottom:1px solid var(--account-color-e8ecee); color:var(--account-color-496582); }
+.page-rewards .points-table tr:last-child td{ border-bottom:0; }
+.page-rewards .points-table td:first-child{ white-space:nowrap; }
+.page-rewards .points-table td:nth-child(4), .page-rewards .points-table td:nth-child(5), .page-rewards .points-table th:nth-child(4), .page-rewards .points-table th:nth-child(5){ text-align:right; }
+.page-rewards .points-table .badge{ font-size: var(--account-font-size-11px); padding:3px 8px; }
+.page-rewards .rewards-ad{ position:relative; border-radius:15px; overflow:hidden; min-height:220px; background:linear-gradient(135deg,var(--account-color-615b65),var(--account-color-d4a07c) 50%,var(--account-color-152c43)); color:var(--color-on-primary); }
+.page-rewards .rewards-ad>.art{ position:absolute; width:52%; right:0; top:0; }
+.page-rewards .rewards-ad::after{ content:''; position:absolute; inset:0; background:linear-gradient(90deg,var(--account-color-152734c9),transparent 90%); }
+.page-rewards .rewards-ad>div{ position:relative; z-index:1; padding:52px 23px 18px; }
+.page-rewards .rewards-ad h3{ font: var(--account-font-size-26px)/1.08 Georgia,serif; margin-bottom:9px; }
+.page-rewards .rewards-ad p{ font-size: var(--account-font-size-13px); margin-bottom:15px; max-width:230px; }
+.page-rewards .rewards-terms{ display:flex; align-items:center; gap:10px; font-size: var(--account-font-size-12px); color:var(--account-color-70869c); margin:16px 0 0; }
+.page-rewards .rewards-terms .icon{ width:16px; height:16px; }
+.page-rewards .redeem-choice{ display:flex; align-items:center; gap:18px; margin-bottom:17px; }
+.page-rewards .redeem-choice .voucher-icon{ background:var(--account-color-eef3fc); color:var(--color-primary); }
+.page-rewards .redeem-choice h3{ font-size: var(--account-font-size-20px); margin-bottom:2px; }
+.page-rewards .redeem-choice p{ color:var(--account-color-5c7490); font-size: var(--account-font-size-14px); }
+.page-rewards .redeem-summary{ margin:0; }
+.page-rewards .redeem-summary>div{ display:flex; align-items:center; justify-content:space-between; gap:15px; padding:6px 0; border-bottom:1px solid var(--account-color-e5eaec); font-size: var(--account-font-size-14px); }
+.page-rewards .redeem-summary>div:last-child{ border:0; }
+.page-rewards .redeem-summary dt{ color:var(--account-color-667f99); }
+.page-rewards .redeem-summary dd{ margin:0; }
+.page-rewards .mobile-redemption{ display:none; }
+.page-rewards .reward-success{ display:none; }
+.page-rewards .history-page{ padding-top:25px; }
+.page-rewards .history-page>h1{ font-size: var(--account-font-size-30px); margin-bottom:7px; }
+.page-rewards .history-page>p{ color:var(--account-color-657a92); margin-bottom:20px; }
+.page-rewards .history-page .points-history{ margin-top:20px; }
+.page-rewards .history-page .loyalty-card{ max-width:490px; }
+.page-rewards .history-page .history-title nav{ display:flex; gap:8px; }
+.page-rewards .history-page .history-title nav a{ padding:6px 12px; border-radius:20px; background:var(--account-color-eff4f3); }
+.page-rewards .history-page .history-title nav .is-active{ background:var(--account-color-008888); color:var(--color-on-primary); }
+.page-rewards .back-link{ display:inline-block; margin-bottom:16px; color:var(--account-color-008388); font-size: var(--account-font-size-13px); }
+@media(min-width:761px) and (max-width:1250px) {
+ .page-rewards .site-header{ height:60px; padding:0 32px; gap:62px; }
+ .page-rewards .site-header .brand{ font-size: var(--account-font-size-31px); }
+ .page-rewards .rewards-layout{ grid-template-columns:139px minmax(0,1fr); gap:13px; padding:0 11px 18px 13px; }
+ .page-rewards .rewards-sidebar .side-link{ font-size: var(--account-font-size-11px); gap:13px; padding:10px 13px; min-height:40px; }
+ .page-rewards .rewards-sidebar .side-link .icon{ width:17px; height:17px; }
+ .page-rewards .sidebar-help{ font-size: var(--account-font-size-11px); padding:20px 13px; gap:13px; }
+ .page-rewards .sidebar-help small{ font-size: var(--account-font-size-10px); }
+ .page-rewards .rewards-hero{ height:201px; }
+ .page-rewards .rewards-hero-content{ padding:39px 35px 22px; }
+ .page-rewards .rewards-hero h1{ font-size: var(--account-font-size-40px); margin-bottom:12px; }
+ .page-rewards .rewards-hero p{ font-size: var(--account-font-size-15px); }
+ .page-rewards .rewards-overview{ gap:13px 15px; margin-top:12px; margin-bottom:17px; }
+ .page-rewards .loyalty-card{ min-height:225px; padding:20px 24px 17px; }
+ .page-rewards .loyalty-card .brand{ font-size: var(--account-font-size-26px); }
+ .page-rewards .member-tier{ font-size: var(--account-font-size-13px); padding:7px 23px; }
+ .page-rewards .loyalty-points{ margin-top:24px; font-size: var(--account-font-size-16px); }
+ .page-rewards .loyalty-points strong{ font-size: var(--account-font-size-53px); }
+ .page-rewards .loyalty-card-bottom{ margin-top:48px; font-size: var(--account-font-size-12px); }
+ .page-rewards .loyalty-card-bottom small, .page-rewards .loyalty-card-bottom>span:last-child{ font-size: var(--account-font-size-10px); }
+ .page-rewards .milestone-card{ gap:16px; padding:15px; min-height:93px; }
+ .page-rewards .milestone-icon{ width:58px; height:58px; }
+ .page-rewards .milestone-label{ font-size: var(--account-font-size-13px); margin-bottom:6px; }
+ .page-rewards .milestone-label b{ font-size: var(--account-font-size-17px); }
+ .page-rewards .milestone-label>span:last-child{ font-size: var(--account-font-size-12px); }
+ .page-rewards .milestone-copy>p{ font-size: var(--account-font-size-10px); margin-top:6px; }
+ .page-rewards .progress-track{ height:10px; }
+ .page-rewards .how-card{ min-height:112px; padding:13px 16px; }
+ .page-rewards .how-card h2{ font-size: var(--account-font-size-16px); margin-bottom:13px; }
+ .page-rewards .how-steps{ gap:10px; }
+ .page-rewards .how-step{ gap:9px; }
+ .page-rewards .how-icon{ width:44px; height:44px; }
+ .page-rewards .how-icon .icon{ width:23px; height:23px; }
+ .page-rewards .how-step strong{ font-size:var(--font-size-14px); }
+ .page-rewards .how-step p{ font-size:var(--font-size-12px); }
+ .page-rewards .redeem-heading h2{ font-size: var(--account-font-size-19px); }
+ .page-rewards .redeem-heading p{ font-size: var(--account-font-size-13px); }
+ .page-rewards .voucher-grid{ gap:16px; }
+ .page-rewards .voucher-body{ padding:17px 23px 11px; gap:24px; }
+ .page-rewards .voucher-icon{ width:48px; height:48px; }
+ .page-rewards .voucher-value strong{ font-size: var(--account-font-size-17px); }
+ .page-rewards .voucher-value>span{ font-size: var(--account-font-size-14px); }
+ .page-rewards .voucher-value>b{ font-size: var(--account-font-size-13px); }
+ .page-rewards .voucher-chevron{ width:30px; height:30px; right:21px; top:39px; }
+ .page-rewards .voucher-footer{ padding:9px 20px; font-size: var(--account-font-size-10px); }
+ .page-rewards .popular-label{ font-size: var(--account-font-size-11px); }
+ .page-rewards .rewards-lower{ gap:15px; margin-top:16px; }
+ .page-rewards .points-history{ padding:13px 10px 7px; }
+ .page-rewards .history-title h2{ font-size: var(--account-font-size-18px); }
+ .page-rewards .history-title{ margin-bottom:9px; }
+ .page-rewards .history-title a{ font-size: var(--account-font-size-11px); }
+ .page-rewards .points-table{ font-size: var(--account-font-size-10px); }
+ .page-rewards .points-table th{ padding:7px 9px; }
+ .page-rewards .points-table td{ padding:6px 9px; }
+ .page-rewards .points-table .badge{ font-size: var(--account-font-size-9px); }
+ .page-rewards .rewards-ad{ min-height:185px; }
+ .page-rewards .rewards-ad>div{ padding:44px 20px 15px; }
+ .page-rewards .rewards-ad h3{ font-size: var(--account-font-size-22px); }
+ .page-rewards .rewards-ad p{ font-size: var(--account-font-size-11px); }
+ .page-rewards .rewards-terms{ font-size: var(--account-font-size-10px); }
+}
+@media(min-width:761px) and (max-width:1000px) {
+ .page-rewards .site-header{ gap:35px; padding:0 25px; }
+ .page-rewards .rewards-layout{ grid-template-columns:145px minmax(0,1fr); }
+ .page-rewards .rewards-overview{ grid-template-columns:1fr 1fr; }
+ .page-rewards .how-steps{ flex-wrap:wrap; gap:5px; }
+ .page-rewards .how-icon{ width:27px; height:27px; }
+ .page-rewards .how-step p{ display:none; }
+ .page-rewards .how-steps>.icon{ width:12px; }
+ .page-rewards .how-step{ flex:none; gap:5px; }
+ .page-rewards .milestone-icon{ width:35px; height:35px; }
+ .page-rewards .milestone-label{ font-size:var(--font-size-14px); flex-wrap:wrap; }
+ .page-rewards .milestone-label b{ font-size: var(--account-font-size-15px); }
+ .page-rewards .voucher-body{ padding:18px 14px; gap:12px; }
+ .page-rewards .voucher-icon{ width:33px; height:40px; }
+ .page-rewards .voucher-value strong{ font-size: var(--account-font-size-15px); }
+ .page-rewards .voucher-value>span{ font-size: var(--account-font-size-12px); }
+ .page-rewards .voucher-chevron{ display:none; }
+ .page-rewards .voucher-footer{ padding:9px 12px; gap:6px; }
+}
+@media(max-width:760px) {
+ .page-rewards .site-header{ height:70px; padding:0 19px; gap:15px; }
+ .page-rewards .site-header .brand{ font-size: var(--account-font-size-27px); }
+ .page-rewards .header-user{ padding:0; border:0; }
+ .page-rewards .header-user .avatar{ width:32px; height:32px; }
+ .page-rewards .header-actions{ gap:12px; }
+ .page-rewards .rewards-layout{ display:block; padding:0 17px 12px; }
+ .page-rewards .rewards-hero{ display:none; }
+ .page-rewards .rewards-mobile-title{ display:block; font-size: var(--account-font-size-23px); margin:1px 0 10px; font-weight: var(--font-weight-semibold); }
+ .page-rewards .rewards-overview{ display:block; margin:0 0 18px; }
+ .page-rewards .loyalty-card{ min-height:183px; border-radius:15px; padding:19px 18px 15px; }
+ .page-rewards .loyalty-card .brand{ font-size: var(--account-font-size-27px); }
+ .page-rewards .loyalty-card .brand small{ font-size: var(--account-font-size-5px); letter-spacing:1.7px; }
+ .page-rewards .member-tier{ font-size: var(--account-font-size-12px); padding:7px 20px; }
+ .page-rewards .loyalty-points{ margin-top:20px; font-size: var(--account-font-size-16px); gap:9px; }
+ .page-rewards .loyalty-points strong{ font-size: var(--account-font-size-41px); letter-spacing:-.7px; }
+ .page-rewards .loyalty-art{ height:118px; bottom:20px; }
+ .page-rewards .loyalty-card-bottom{ margin-top:29px; font-size: var(--account-font-size-14px); }
+ .page-rewards .loyalty-card-bottom small{ display:none; }
+ .page-rewards .loyalty-card-bottom>span:last-child{ font-size: var(--account-font-size-11px); align-self:end; }
+ .page-rewards .milestone-card{ padding:10px 9px; gap:10px; margin-top:13px; border-radius:14px; min-height:64px; }
+ .page-rewards .milestone-icon{ width:41px; height:41px; }
+ .page-rewards .milestone-icon .icon{ width:23px; height:23px; }
+ .page-rewards .milestone-label{ font-size:var(--font-size-14px); margin-bottom:6px; gap:5px; font-family:var(--font-body); }
+ .page-rewards .milestone-label b{ font-size:var(--font-size-14px); font-weight:var(--font-weight-semibold); }
+ .page-rewards .milestone-label>span:last-child{ font-size:var(--font-size-12px); color:var(--color-muted); }
+ .page-rewards .milestone-label .points-word{ display:none; }
+ .page-rewards .progress-track{ height:8px; }
+ .page-rewards .milestone-copy>p, .page-rewards .how-card{ display:none; }
+ .page-rewards .redeem-heading{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+ .page-rewards .redeem-heading h2{ font-size: var(--account-font-size-18px); margin:0; }
+ .page-rewards .redeem-heading p{ display:none; }
+ .page-rewards .redeem-heading>a{ display:block; color:var(--account-color-007d83); font-size: var(--account-font-size-13px); }
+ .page-rewards .voucher-grid{ grid-template-columns:1fr; gap:10px; padding:0 5px; }
+ .page-rewards .voucher{ border-radius:15px; min-height:89px; }
+ .page-rewards .voucher-popular{ border-width:1px; }
+ .page-rewards .voucher::before, .page-rewards .voucher::after{ top:36px; height:20px; width:8px; background:radial-gradient(circle at 0 25%,var(--account-color-f4f7f4) 3px,transparent 3.5px),radial-gradient(circle at 0 75%,var(--account-color-f4f7f4) 3px,transparent 3.5px); }
+ .page-rewards .popular-label{ left:8px; right:auto; top:-8px; font-size: var(--account-font-size-11px); padding:2px 9px; border-radius:5px; }
+ .page-rewards .voucher-body{ padding:13px 18px; gap:23px; align-items:center; }
+ .page-rewards .voucher-icon, .page-rewards .voucher:not(.voucher-popular) .voucher-icon{ width:38px; height:42px; background:transparent; }
+ .page-rewards .voucher-icon .icon{ width:28px; height:28px; }
+ .page-rewards .voucher:not(.voucher-popular) .voucher-icon{ color:var(--color-primary); }
+ .page-rewards .voucher-value{ gap:0; }
+ .page-rewards .voucher-value strong{ font-size: var(--account-font-size-17px); }
+ .page-rewards .voucher-value>span{ font-size: var(--account-font-size-13px); }
+ .page-rewards .voucher-value>b{ font-size: var(--account-font-size-12px); margin-top:3px; }
+ .page-rewards .voucher-chevron{ display:flex; right:14px; top:29px; width:28px; height:28px; }
+ .page-rewards .voucher-chevron .icon{ width:16px; height:16px; }
+ .page-rewards .voucher-footer{ display:none; }
+ .page-rewards .voucher-disabled .voucher-footer{ display:flex; position:absolute; bottom:10px; right:8px; border:0; padding:0; font-size: var(--account-font-size-9px); gap:4px; }
+ .page-rewards .voucher-disabled .voucher-footer .icon{ width:12px; height:12px; }
+ .page-rewards .voucher-disabled .voucher-icon{ background:transparent!important; }
+ .page-rewards .rewards-lower, .page-rewards .rewards-terms{ display:none; }
+ .page-rewards .mobile-redemption{ display:block; position:relative; padding:16px; margin:0 -1px; border-radius:15px; box-shadow:0 4px 14px var(--account-color-1c3f3310); }
+ .page-rewards .mobile-redemption[hidden]{ display:none; }
+ .page-rewards .mobile-redemption .dialog-heading{ margin:0 0 4px; }
+ .page-rewards .mobile-redemption .dialog-heading h2{ font-size: var(--account-font-size-18px); }
+ .page-rewards .mobile-redemption .dialog-heading .icon-button{ width:24px; height:24px; }
+ .page-rewards .redeem-choice{ margin-bottom:6px; gap:18px; }
+ .page-rewards .redeem-choice .voucher-icon{ background:var(--account-color-eef3fc); color:var(--color-primary); width:58px; height:58px; border-radius:12px; }
+ .page-rewards .redeem-choice h3{ font-size: var(--account-font-size-20px); }
+ .page-rewards .redeem-choice p{ font-size: var(--account-font-size-14px); }
+ .page-rewards .redeem-summary>div{ font-size: var(--account-font-size-13px); padding:5px 0; }
+ .page-rewards .mobile-redemption .dialog-actions{ margin-top:12px; }
+ .page-rewards .mobile-redemption .button{ min-height:37px; }
+ .page-rewards .reward-success:not([hidden]){ display:flex; gap:14px; align-items:center; margin-top:9px; padding:13px; background:var(--account-color-ddf3e8); border:1px solid var(--account-color-c7e9d7); border-radius:14px; }
+ .page-rewards .reward-success>.icon{ background:var(--account-color-06956c); color:var(--color-on-primary); padding:4px; border-radius:50%; width:25px; height:25px; }
+ .page-rewards .reward-success b{ font-size: var(--account-font-size-12px); font-weight: var(--font-weight-semibold); }
+ .page-rewards .reward-success small{ display:block; font-size: var(--account-font-size-11px); color:var(--account-color-2f6e5c); margin-top:2px; }
+ .page-rewards .reward-success .icon-button{ margin-left:auto; width:22px; height:22px; }
+ .page-rewards .history-page{ padding-top:14px; }
+ .page-rewards .history-page>h1{ font-size: var(--account-font-size-24px); }
+ .page-rewards .history-page .points-history{ padding:14px 10px; }
+ .page-rewards .history-page .history-title{ flex-wrap:wrap; gap:12px; }
+ .page-rewards .history-title h2{ font-size: var(--account-font-size-20px); }
+ .page-rewards .history-title nav a{ font-size: var(--account-font-size-12px); }
+ .page-rewards .points-table{ font-size: var(--account-font-size-11px); }
+ .page-rewards .points-table td, .page-rewards .points-table th{ padding:9px 5px; }
+ .page-rewards .points-table td:nth-child(3), .page-rewards .points-table th:nth-child(3), .page-rewards .points-table td:nth-child(5), .page-rewards .points-table th:nth-child(5){ display:none; }
+}
+
+
+
+.page-rewards{ --ink:var(--color-text); --muted:var(--color-muted); --teal:var(--color-primary); --line:var(--color-border); --surface:var(--color-surface); color:var(--color-text); background:var(--color-page); font-family:var(--font-body); font-size: var(--font-size-base); line-height:var(--line-height-base); }
+.page-rewards .app-shell{ width:100%; max-width:var(--page-container-max-width,1320px); padding-bottom:0; background:var(--color-page); }
+.page-rewards .brand.logo-brand{ display:block; width:var(--brand-logo-width); height:var(--brand-logo-height); overflow:hidden; color:var(--color-primary); font-size: initial; letter-spacing:normal; }
+.page-rewards .brand-logo-image{ display:block; width:100%; height:100%; object-fit:contain; object-position:left center; }
+.page-rewards h1, .page-rewards h2, .page-rewards h3, .page-rewards h4, .page-rewards h5{ font-family:var(--font-heading); color:var(--color-primary); }
+.page-rewards .button{ min-height:42px; border:1px solid var(--color-primary); border-radius:var(--radius-control); background:var(--gradient-3); color:var(--color-on-primary); font-family:var(--font-body); font-size: var(--font-size-button); font-weight:var(--font-weight-semibold); line-height:var(--line-height-base); transition:var(--transition-interactive); }
+.page-rewards .button:hover{ color:var(--color-on-primary); background:var(--color-button-hover); border-color:var(--color-button-hover); transform:var(--button-hover-transform); box-shadow:var(--shadow-button-hover); filter:none; }
+.page-rewards .button-outline{ background:transparent; color:var(--color-primary); border-color:var(--color-primary); }
+.page-rewards .button-outline:hover{ background:var(--color-button-hover); color:var(--color-on-primary); }
+.page-rewards .button-white, .page-rewards .button-subtle{ background:var(--color-surface); color:var(--color-primary); border-color:var(--color-border); }
+.page-rewards .button-danger{ background:var(--color-accent); color:var(--color-on-primary); border-color:var(--color-accent); }
+.page-rewards .side-link.is-active{ color:var(--color-on-primary); background:var(--gradient-3); }
+.page-rewards .side-link{ color:var(--color-text); }
+.page-rewards .profile-layout, .page-rewards .booking-layout, .page-rewards .wallet-layout, .page-rewards .rewards-layout{ background:var(--color-page); }
+.page-rewards .text-link{ color:var(--color-primary); }
+
+/* Voucher cards are interactive but stay visually still on hover. */
+.page-rewards .voucher,
+.page-rewards .voucher:hover,
+.page-rewards .voucher:active {
+  transform: none !important;
+  filter: none !important;
+}
+.page-rewards .voucher:hover {
+  box-shadow: 0 3px 10px var(--account-color-18373304);
+}
+.page-rewards .voucher-popular:hover {
+  box-shadow: 0 3px 9px var(--account-color-005b641a);
+}
+.page-rewards .voucher-disabled:hover {
+  box-shadow: none;
+}
+.page-rewards .voucher-icon .icon {
+  fill: currentColor;
+  stroke: none;
+}
+.page-rewards .voucher-chevron .icon,
+.page-rewards .voucher-footer .icon {
+  fill: none;
+  stroke: currentColor;
+}
+.page-rewards .field{ color:var(--color-text); font-family:var(--font-body); font-size: var(--account-font-size-14px); }
+.page-rewards .field input, .page-rewards .field select, .page-rewards .input-with-icon input, .page-rewards .verified-input input, .page-rewards .phone-input input{ padding:var(--control-padding-y) var(--control-padding-x); border:1px solid var(--color-border); border-radius:var(--radius-control); background:var(--color-surface); color:var(--color-text); font-family:var(--font-body); font-size: var(--font-size-base); }
+.page-rewards .field input:focus, .page-rewards .field select:focus{ border-color:var(--color-border-focus); box-shadow:var(--shadow-focus); }
+.page-rewards .profile-card, .page-rewards .trip-card, .page-rewards .wallet-card, .page-rewards .rewards-card, .page-rewards .booking-card, .page-rewards .transaction-card{ border-color:var(--color-border); border-radius:var(--radius-card); background:var(--color-surface); }
+
+
+/* Standalone account artwork; independent of demo screenshots. */
+.page-rewards .profile-hero > .art,
+.page-rewards .profile-ad > .art,
+.page-rewards .booking-ad > .art,
+.page-rewards .rewards-hero > .art,
+.page-rewards .rewards-ad > .art {
+  inset:0;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  transform:none;
+}
+.page-rewards .profile-ad > .art,
+.page-rewards .booking-ad > .art,
+.page-rewards .rewards-ad > .art { opacity:.45; }
+.page-rewards .art-profileHero img { object-position:center 45%; }
+
+.page-rewards .profile-hero-content h1 { color:var(--color-on-primary); }
+
+
+/* Shared account typography: rewards */
+.page-rewards, .page-rewards * { font-family: var(--font-body); }
+.page-rewards :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+.page-rewards :is(h1) { font-size: clamp(1.9rem, 2.35vw, 2.5rem); }
+.page-rewards :is(h2) { font-size: var(--account-font-size-1-75rem); }
+.page-rewards :is(h3) { font-size: var(--account-font-size-1-35rem); }
+.page-rewards :is(h4, h5, h6) { font-size: var(--account-font-size-1-125rem); }
+.page-rewards :is(button, input, select, textarea) { font-family: var(--font-body); }
+@media (max-width: 767.98px) {
+  .page-rewards :is(h1) { font-size: var(--account-font-size-1-75rem); }
+  .page-rewards :is(h2) { font-size: var(--account-font-size-1-35rem); }
+  .page-rewards :is(h3) { font-size: var(--account-font-size-1-2rem); }
+  .page-rewards :is(h4, h5, h6) { font-size: var(--account-font-size-1-05rem); }
+}
+
+
+/* Compact mobile account menu: rewards */
+@media (max-width: 760px) {
+  .page-rewards :is(.profile-sidebar, .rewards-sidebar) {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 16px;
+  }
+  .page-rewards :is(.profile-sidebar, .rewards-sidebar) nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .page-rewards :is(.profile-sidebar, .rewards-sidebar) .side-link {
+    display: flex;
+    min-width: 0;
+    min-height: 54px;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 10px;
+    font-size: clamp(12px, 3.5vw, 14px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+  .page-rewards :is(.profile-sidebar, .rewards-sidebar) .side-link .icon {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+  }
+  .page-rewards :is(.profile-sidebar, .rewards-sidebar) .side-link.is-active {
+    color: var(--color-on-primary);
+    background: var(--gradient-3);
+  }
+}
+
+
+/* Account sidebar typography normalization: rewards */
+.page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) .side-link {
+  font-family: var(--font-body);
+  font-size: var(--font-size-16px);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.35;
+}
+.page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) .side-link.is-active {
+  font-weight: var(--font-weight-semibold);
+}
+@media (max-width: 1250px) {
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) .side-link {
+    font-size: var(--font-size-14px);
+  }
+}
+
+
+/* Account heading scale matched to site: rewards */
+body.page-rewards .app-shell :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-heading);
+  line-height: 1.22;
+}
+body.page-rewards .app-shell h1 { font-size: var(--account-font-size-1-75rem); }
+body.page-rewards .app-shell h2 { font-size: var(--account-font-size-1-4375rem); }
+body.page-rewards .app-shell h3 { font-size: var(--account-font-size-1-1875rem); }
+body.page-rewards .app-shell h4 { font-size: var(--account-font-size-1-0625rem); }
+body.page-rewards .app-shell :is(h5, h6) { font-size: var(--account-font-size-1rem); }
+@media (max-width: 767.98px) {
+  body.page-rewards .app-shell h1 { font-size: var(--account-font-size-1-5rem); }
+  body.page-rewards .app-shell h2 { font-size: var(--account-font-size-1-25rem); }
+  body.page-rewards .app-shell h3 { font-size: var(--account-font-size-1-125rem); }
+  body.page-rewards .app-shell h4 { font-size: var(--account-font-size-1rem); }
+}
+
+
+/* Keep account navigation available on every mobile page: rewards */
+@media (max-width: 760px) {
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) {
+    display: block !important;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 16px;
+    padding: 7px;
+    border: 1px solid var(--account-color-e7ece9);
+    border-radius: 16px;
+    background: var(--account-color-fff);
+    box-shadow: 0 4px 16px var(--account-color-14332a08);
+  }
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) :is(.sidebar-profile, .profile-ad, .booking-ad, .sidebar-help) {
+    display: none !important;
+  }
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) nav {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) .side-link {
+    display: flex;
+    min-width: 0;
+    min-height: 54px;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-14px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    transform: none;
+    box-shadow: none;
+  }
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) .side-link:hover {
+    border-color: transparent;
+    background: var(--account-color-f1f4fa);
+    color: var(--color-text);
+    transform: none;
+    box-shadow: none;
+  }
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) .side-link.is-active,
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) .side-link.is-active:hover {
+    border-color: transparent;
+    background: var(--gradient-3);
+    color: var(--color-on-primary);
+    font-weight: var(--font-weight-semibold);
+  }
+  .page-rewards :is(.profile-sidebar, .booking-sidebar, .rewards-sidebar) .side-link .icon {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+  }
+}
+
+
+/* Full-width account banner and shared desktop content alignment: rewards */
+.page-rewards .app-shell {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+.page-rewards .app-shell > :is(.profile-layout, .booking-layout, .rewards-layout, .wallet-layout) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--page-container-max-width, 1320px);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 761px) {
+  .page-rewards .app-shell > .profile-hero {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+  }
+  .page-rewards .profile-hero-content {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--page-container-max-width, 1320px);
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media (min-width: 761px) and (max-width: 1250px) {
+  .page-rewards .profile-hero-content { padding-left: 19px; padding-right: 19px; }
+}
+@media (min-width: 761px) and (max-width: 1000px) {
+  .page-rewards .profile-hero-content { padding-left: 17px; padding-right: 17px; }
+}

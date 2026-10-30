@@ -20,21 +20,30 @@
 
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="components/navbar.css" />
+    
     <link rel="stylesheet" href="css/auth.css" />
     <link rel="stylesheet" href="css/multi-city.css" />
-    <link rel="stylesheet" href="components/footer.css" media="not all" />
-    <link rel="stylesheet" href="css/add-ons.css" media="not all" />
-    <link
-      rel="stylesheet"
-      href="css/booking-confirmation.css"
-      media="not all"
-    />
-    <link rel="stylesheet" href="css/flight-booking.css" media="not all" />
-    <link rel="stylesheet" href="css/my-bookings.css" media="not all" />
-    <link rel="stylesheet" href="css/payment.css" media="not all" />
-    <link rel="stylesheet" href="css/search-flight.css" media="not all" />
-    <link rel="stylesheet" href="css/travellers.css" media="not all" />
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   </head>
   <body data-mobile-nav>
     <input
@@ -897,7 +906,7 @@
           >
             <a href="#destinations"
               ><i class="bi bi-compass text-primary me-2"></i>Where to go</a
-            ><a href="my-bookings.html">
+            ><a href="account-pages/my-bookings.html">
               <i class="bi bi-suitcase text-primary me-2"></i>My trips</a
             ><button popovertarget="support">
               <i class="bi bi-headset text-primary me-2"></i>Travel assistance</button
@@ -2986,6 +2995,127 @@
         </button>
       </div>
     </div>
-    <script src="components/navbar-embed.js" defer></script>
-  </body>
+    
+  <script>
+(() => {
+  const frame = [...document.querySelectorAll("iframe")].find(iframe =>
+    (iframe.getAttribute("src") || "").includes("navbar.html"),
+  );
+  if (!frame) return;
+
+  const expandedStyles = {
+    position: "fixed",
+    inset: "0",
+    width: "100vw",
+    height: "100dvh",
+    "max-height": "100dvh",
+    "z-index": "10000",
+    border: "0",
+  };
+
+  let headerObserver;
+  let syncFrame = () => {};
+  const bindDrawer = () => {
+    const doc = frame.contentDocument;
+    const header = doc?.querySelector(".travel-header");
+    const drawer = doc?.getElementById("mobile-auth-drawer");
+    if (!header || !drawer || drawer.dataset.frameResizeBound) return;
+    drawer.dataset.frameResizeBound = "true";
+
+    const sizeHeader = () => {
+      const height = Math.ceil(header.getBoundingClientRect().bottom);
+      document.documentElement.style.setProperty("--site-header-height", `${height}px`);
+      if (!drawer.matches(":popover-open")) frame.style.height = `${height}px`;
+    };
+    const collapseFrame = () => {
+      document.body.classList.remove("site-menu-open");
+      Object.keys(expandedStyles).forEach(name => frame.style.removeProperty(name));
+      sizeHeader();
+    };
+    syncFrame = () => {
+      const open = matchMedia("(max-width: 767px)").matches && drawer.matches(":popover-open");
+      doc.querySelector(".mobile-auth-menu-trigger")?.setAttribute("aria-expanded", String(open));
+      if (open) {
+        document.body.classList.add("site-menu-open");
+        Object.entries(expandedStyles).forEach(([name, value]) =>
+          frame.style.setProperty(name, value, "important"),
+        );
+      } else {
+        if (drawer.matches(":popover-open")) drawer.hidePopover();
+        collapseFrame();
+      }
+    };
+
+    headerObserver?.disconnect();
+    headerObserver = new ResizeObserver(sizeHeader);
+    headerObserver.observe(header);
+    const strip = doc.querySelector(".welcome-strip");
+    if (strip) headerObserver.observe(strip);
+    sizeHeader();
+    drawer.addEventListener("toggle", syncFrame);
+    doc.addEventListener("click", event => {
+      const link = event.target.closest('a[target="_top"][href]');
+      if (link && drawer.contains(link)) {
+        event.preventDefault();
+        if (drawer.matches(":popover-open")) drawer.hidePopover();
+        collapseFrame();
+        window.location.assign(link.href);
+        return;
+      }
+      if (event.target.closest('[popovertarget="mobile-auth-drawer"]')) {
+        requestAnimationFrame(syncFrame);
+      }
+    });
+    doc.addEventListener("keydown", event => {
+      if (event.key === "Escape") setTimeout(syncFrame);
+    });
+  };
+
+  frame.addEventListener("load", bindDrawer);
+  window.addEventListener("resize", () => syncFrame());
+  bindDrawer();
+})();
+</script>
+<script>
+  (() => {
+    const choices = document.querySelectorAll('input[name="service"]');
+    const frame = document.querySelector(".shared-navbar-frame");
+    const syncServiceUnderline = () => {
+      const name = document.querySelector('input[name="service"]:checked')?.id.replace("service-", "");
+      if (!name) return;
+      const doc = frame?.contentDocument;
+      if (!doc) return;
+      doc.querySelectorAll(".travel-nav .nav-service").forEach((link) => {
+        const active = link.dataset.service === name;
+        link.classList.toggle("is-current", active);
+        if (active) link.setAttribute("aria-current", "page");
+        else link.removeAttribute("aria-current");
+      });
+    };
+    choices.forEach((choice) => choice.addEventListener("change", syncServiceUnderline));
+    frame?.addEventListener("load", syncServiceUnderline);
+    syncServiceUnderline();
+  })();
+</script>
+<script>
+  (() => {
+    const frame = document.querySelector(".shared-footer-frame");
+    if (!frame) return;
+    const fitMobileFooter = () => {
+      if (!matchMedia("(max-width: 767px)").matches) {
+        frame.style.removeProperty("height");
+        return;
+      }
+      const footer = frame.contentDocument?.querySelector("footer");
+      if (footer) frame.style.height = `${Math.ceil(footer.getBoundingClientRect().height)}px`;
+    };
+    frame.addEventListener("load", () => {
+      fitMobileFooter();
+      const footer = frame.contentDocument?.querySelector("footer");
+      if (footer && "ResizeObserver" in window) new ResizeObserver(fitMobileFooter).observe(footer);
+    });
+    window.addEventListener("resize", fitMobileFooter);
+  })();
+</script>
+</body>
 </html>
