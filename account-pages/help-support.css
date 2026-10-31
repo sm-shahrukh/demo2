@@ -735,3 +735,229 @@ body.page-help-support .app-shell :is(h5, h6) { font-size: var(--account-font-si
 @media (min-width: 761px) and (max-width: 1000px) {
   .page-help-support .profile-hero-content { padding-left: 17px; padding-right: 17px; }
 }
+
+
+/* Wallet-inspired account styling for help-support; values come from theme.css. */
+.page-help-support {
+  color: var(--color-text);
+  background: var(--color-page);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+.page-help-support .app-shell { max-width: none; min-height: 0; background: var(--color-page); }
+.page-help-support .profile-layout,
+.page-help-support .rewards-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  border-radius: 0;
+  background: var(--color-page);
+}
+.page-help-support .booking-layout {
+  grid-template-columns: 250px minmax(0, 1fr) minmax(270px, 320px);
+  gap: 20px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  background: var(--color-page);
+}
+.page-help-support .booking-layout.no-details { grid-template-columns: 250px minmax(0, 1fr); }
+.page-help-support .sidebar,
+.page-help-support .profile-sidebar,
+.page-help-support .booking-sidebar,
+.page-help-support .rewards-sidebar {
+  position: sticky;
+  top: 112px;
+  min-width: 0;
+  padding: 16px 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+.page-help-support .sidebar nav { display: flex; flex-direction: column; gap: 3px; }
+.page-help-support .side-link {
+  display: flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  color: var(--color-text);
+  font-size: var(--font-size-14px);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.page-help-support .side-link .icon { width: 21px; height: 21px; }
+.page-help-support .side-link:hover { background: var(--color-fare-selected); color: var(--color-primary); }
+.page-help-support .side-link.is-active,
+.page-help-support .side-link.is-active:hover { background: var(--gradient-3); color: var(--color-on-primary); font-weight: var(--font-weight-semibold); }
+.page-help-support .sidebar-help { margin-top: 12px; border-radius: var(--radius-card); overflow: hidden; }
+.page-help-support .profile-main,
+.page-help-support .booking-main,
+.page-help-support .rewards-main { min-width: 0; color: var(--color-text); }
+.page-help-support .profile-main > h1,
+.page-help-support .booking-heading h1,
+.page-help-support .rewards-mobile-title {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-page-title-desktop);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+.page-help-support .profile-main > p,
+.page-help-support .overview-heading > p,
+.page-help-support .booking-heading > p:last-child { color: var(--color-muted); }
+.page-help-support .overview-heading { margin: 0 0 22px; }
+.page-help-support .overview-grid { gap: 16px; }
+.page-help-support .profile-card,
+.page-help-support .trip-card,
+.page-help-support .card,
+.page-help-support .booking-details,
+.page-help-support .points-history,
+.page-help-support .loyalty-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+.page-help-support .profile-card { padding: 22px; }
+.page-help-support .overview-card { display: flex; min-height: 210px; flex-direction: column; align-items: flex-start; }
+.page-help-support .overview-card h2,
+.page-help-support .profile-card-heading h3,
+.page-help-support .booking-heading h1,
+.page-help-support .rewards-main h2 { color: var(--color-primary); font-family: var(--font-heading); }
+.page-help-support .overview-card h2 { margin: 0 0 8px; font-size: var(--font-size-23px); font-weight: var(--font-weight-semibold); }
+.page-help-support .overview-card p { min-height: 44px; margin: 0 0 18px; color: var(--color-muted); }
+.page-help-support .overview-card .button { margin-top: auto; }
+.page-help-support .profile-card-heading { color: var(--color-primary); }
+.page-help-support .profile-card-heading > .icon,
+.page-help-support .profile-card-heading > svg { color: var(--color-primary); background: var(--color-fare-selected); }
+.page-help-support .profile-card-heading p,
+.page-help-support .profile-card p,
+.page-help-support .profile-card small { color: var(--color-muted); }
+.page-help-support .button {
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: var(--gradient-3);
+  color: var(--color-on-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-14px);
+  font-weight: var(--font-weight-semibold);
+  transition: box-shadow 160ms ease, filter 160ms ease;
+}
+.page-help-support .button:hover { box-shadow: var(--shadow-button-hover); filter: brightness(.97); }
+.page-help-support .button-outline { border-color: var(--color-border-focus); background: var(--color-surface); color: var(--color-primary); }
+.page-help-support .field { color: var(--color-text); font-size: var(--font-size-14px); }
+.page-help-support .field input,
+.page-help-support .field select,
+.page-help-support .field textarea,
+.page-help-support .form-control,
+.page-help-support .form-select {
+  min-height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-14px);
+  box-shadow: none;
+}
+.page-help-support .field input:focus,
+.page-help-support .field select:focus,
+.page-help-support .field textarea:focus,
+.page-help-support .form-control:focus,
+.page-help-support .form-select:focus { border-color: var(--color-border-focus); box-shadow: var(--shadow-focus); }
+.page-help-support .table { --bs-table-color: var(--color-text); --bs-table-bg: transparent; margin-bottom: 0; font-size: var(--font-size-14px); }
+.page-help-support .table thead th { padding: 12px; border-bottom-color: var(--color-border); background: var(--color-page); color: var(--color-muted); font-size: var(--font-size-12px); font-weight: var(--font-weight-semibold); white-space: nowrap; }
+.page-help-support .table tbody td { padding: 14px 12px; border-bottom-color: var(--color-border); vertical-align: middle; }
+.page-help-support .table tbody tr:last-child td { border-bottom: 0; }
+.page-help-support .booking-main { padding: 0; }
+.page-help-support .trip-card { overflow: hidden; box-shadow: var(--shadow-card); }
+.page-help-support .booking-tabs a.is-active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.page-help-support .flight-route .icon,
+.page-help-support .flight-route svg { color: var(--color-primary); }
+.page-help-support .booking-details { padding: 18px; }
+.page-help-support .booking-search { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-help-support .rewards-section-tabs { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-help-support .rewards-section-tabs a { color: var(--color-primary); }
+.page-help-support .milestone-card,
+.page-help-support .how-card,
+.page-help-support .points-history { border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-surface); box-shadow: var(--shadow-card); }
+.page-help-support .milestone-icon,
+.page-help-support .how-icon { color: var(--color-primary); background: var(--color-fare-selected); }
+.page-help-support :focus-visible { outline-color: var(--color-border-focus); }
+
+@media (max-width: 1050px) {
+  .page-help-support .profile-layout,
+  .page-help-support .rewards-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 18px; padding-inline: 18px; }
+  .page-help-support .booking-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 18px; padding-inline: 18px; }
+  .page-help-support .booking-layout .booking-details { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  .page-help-support .profile-layout,
+  .page-help-support .rewards-layout,
+  .page-help-support .booking-layout { display: block; padding: 16px 13px 28px; }
+  .page-help-support .sidebar,
+  .page-help-support .profile-sidebar,
+  .page-help-support .booking-sidebar,
+  .page-help-support .rewards-sidebar { position: static; margin-bottom: 18px; padding: 7px; }
+  .page-help-support .sidebar nav,
+  .page-help-support .rewards-sidebar nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .page-help-support .side-link { min-width: 0; min-height: 52px; gap: 8px; padding: 8px 9px; font-size: var(--font-size-14px); line-height: 1.2; overflow-wrap: anywhere; }
+  .page-help-support .side-link .icon { width: 20px; height: 20px; }
+  .page-help-support .profile-main > h1,
+  .page-help-support .booking-heading h1,
+  .page-help-support .rewards-mobile-title { font-size: var(--font-size-heading-1-mobile); }
+  .page-help-support .overview-grid { grid-template-columns: 1fr; gap: 12px; }
+  .page-help-support .overview-heading { margin-bottom: 16px; }
+  .page-help-support .overview-card { min-height: 0; }
+  .page-help-support .overview-card p { min-height: 0; }
+  .page-help-support .profile-card { padding: 16px; }
+  .page-help-support .booking-details { margin-top: 14px; }
+  .page-help-support .booking-main { padding: 0; }
+}
+@media (max-width: 380px) {
+  .page-help-support .profile-layout,
+  .page-help-support .rewards-layout,
+  .page-help-support .booking-layout { padding-inline: 10px; }
+  .page-help-support .side-link { gap: 6px; padding-inline: 7px; font-size: var(--font-size-13px); }
+}
+
+.page-help-support .overview-heading h1,
+.page-help-support .profile-subpage > h1 { color: var(--color-primary); font-family: var(--font-heading); font-size: var(--font-size-page-title-desktop); font-weight: var(--font-weight-semibold); line-height: 1.2; }
+.page-help-support .overview-heading > p,
+.page-help-support .profile-subpage > p,
+.page-help-support .profile-intro p { color: var(--color-muted); }
+.page-help-support .profile-subpage > p { margin: 7px 0 20px; }
+.page-help-support .profile-intro h2 { color: var(--color-primary); font-size: var(--font-size-section-title-desktop); font-weight: var(--font-weight-semibold); }
+.page-help-support .profile-card-heading h3 { font-size: var(--font-size-18px); font-weight: var(--font-weight-semibold); }
+.page-help-support .payment-saved,
+.page-help-support .traveller-row,
+.page-help-support .switch-row { border-color: var(--color-border); background: var(--color-surface); }
+.page-help-support .payment-saved + .payment-saved,
+.page-help-support .traveller-row + .traveller-row { border-top: 1px solid var(--color-border); }
+.page-help-support .faq-card details,
+.page-help-support .faq-item { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-help-support .faq-card summary,
+.page-help-support .faq-item summary { color: var(--color-primary); font-weight: var(--font-weight-semibold); }
+@media (max-width: 760px) {
+  .page-help-support .overview-heading h1,
+  .page-help-support .profile-subpage > h1 { font-size: var(--font-size-heading-1-mobile); }
+  .page-help-support .profile-intro h2 { font-size: var(--font-size-heading-2-mobile); }
+  .page-help-support .sidebar-help { display: none; }
+}
+@media (max-width: 760px) {
+  .page-help-support .profile-sidebar nav,
+  .page-help-support .booking-sidebar nav,
+  .page-help-support .rewards-sidebar nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .page-help-support .sidebar-profile { display: none; }
+}

@@ -1324,3 +1324,29 @@ body.account-page[class*="page-"] .app-shell * {
 body.account-page[class*="page-"] .app-shell :is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-heading);
 }
+
+:root { --account-color-ffffffd8: #ffffffd8; }
+
+:root { --account-color-ffffff48: #ffffff48; }
+
+:root { --account-color-142b5a0a: #142b5a0a; }
+
+:root { --account-color-ffffff18: #ffffff18; }
+
+:root { --account-color-ffffffdf: #ffffffdf; }
+
+:root { --account-color-fff4e7: #fff4e7; }
+
+:root { --account-color-9a5d13: #9a5d13; }
+
+:root { --account-color-278151: #278151; }
+
+:root { --account-color-edf7f0: #edf7f0; }
+
+:root { --account-color-e9edf4: #e9edf4; }
+
+:root { --account-color-f5f7fb: #f5f7fb; }
+
+:root { --account-color-287747: #287747; }
+
+:root { --account-wallet-balance-size: clamp(2rem, 4vw, 2.6rem); }

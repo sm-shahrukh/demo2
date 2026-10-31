@@ -708,3 +708,315 @@ body.page-rewards .app-shell :is(h5, h6) { font-size: var(--account-font-size-1r
 @media (min-width: 761px) and (max-width: 1000px) {
   .page-rewards .profile-hero-content { padding-left: 17px; padding-right: 17px; }
 }
+
+
+/* Rewards section links keep the page areas easy to navigate without scripting. */
+.page-rewards .rewards-section-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+}
+.page-rewards .rewards-section-tabs a {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: var(--radius-control);
+  color: var(--color-primary);
+  font-size: var(--font-size-14px);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.page-rewards .rewards-section-tabs a:hover,
+.page-rewards:has(#rewards-overview:target) .rewards-section-tabs a[href="#rewards-overview"],
+.page-rewards:has(#rewards-redemption:target) .rewards-section-tabs a[href="#rewards-redemption"],
+.page-rewards:has(#rewards-history:target) .rewards-section-tabs a[href="#rewards-history"],
+.page-rewards .rewards-section-tabs a[aria-current="page"] {
+  background: var(--color-fare-selected);
+  color: var(--color-primary);
+}
+@media (max-width: 575.98px) {
+  .page-rewards .rewards-section-tabs { gap: 4px; margin-bottom: 15px; }
+  .page-rewards .rewards-section-tabs a { min-height: 38px; padding: 7px 10px; font-size: var(--font-size-13px); }
+}
+
+
+/* Wallet-inspired account styling for rewards; values come from theme.css. */
+.page-rewards {
+  color: var(--color-text);
+  background: var(--color-page);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+.page-rewards .app-shell { max-width: none; min-height: 0; background: var(--color-page); }
+.page-rewards .profile-layout,
+.page-rewards .rewards-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  border-radius: 0;
+  background: var(--color-page);
+}
+.page-rewards .booking-layout {
+  grid-template-columns: 250px minmax(0, 1fr) minmax(270px, 320px);
+  gap: 20px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  background: var(--color-page);
+}
+.page-rewards .booking-layout.no-details { grid-template-columns: 250px minmax(0, 1fr); }
+.page-rewards .sidebar,
+.page-rewards .profile-sidebar,
+.page-rewards .booking-sidebar,
+.page-rewards .rewards-sidebar {
+  position: sticky;
+  top: 112px;
+  min-width: 0;
+  padding: 16px 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+.page-rewards .sidebar nav { display: flex; flex-direction: column; gap: 3px; }
+.page-rewards .side-link {
+  display: flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  color: var(--color-text);
+  font-size: var(--font-size-14px);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.page-rewards .side-link .icon { width: 21px; height: 21px; }
+.page-rewards .side-link:hover { background: var(--color-fare-selected); color: var(--color-primary); }
+.page-rewards .side-link.is-active,
+.page-rewards .side-link.is-active:hover { background: var(--gradient-3); color: var(--color-on-primary); font-weight: var(--font-weight-semibold); }
+.page-rewards .sidebar-help { margin-top: 12px; border-radius: var(--radius-card); overflow: hidden; }
+.page-rewards .profile-main,
+.page-rewards .booking-main,
+.page-rewards .rewards-main { min-width: 0; color: var(--color-text); }
+.page-rewards .profile-main > h1,
+.page-rewards .booking-heading h1,
+.page-rewards .rewards-mobile-title {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-page-title-desktop);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+.page-rewards .profile-main > p,
+.page-rewards .overview-heading > p,
+.page-rewards .booking-heading > p:last-child { color: var(--color-muted); }
+.page-rewards .overview-heading { margin: 0 0 22px; }
+.page-rewards .overview-grid { gap: 16px; }
+.page-rewards .profile-card,
+.page-rewards .trip-card,
+.page-rewards .card,
+.page-rewards .booking-details,
+.page-rewards .points-history,
+.page-rewards .loyalty-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+.page-rewards .profile-card { padding: 22px; }
+.page-rewards .overview-card { display: flex; min-height: 210px; flex-direction: column; align-items: flex-start; }
+.page-rewards .overview-card h2,
+.page-rewards .profile-card-heading h3,
+.page-rewards .booking-heading h1,
+.page-rewards .rewards-main h2 { color: var(--color-primary); font-family: var(--font-heading); }
+.page-rewards .overview-card h2 { margin: 0 0 8px; font-size: var(--font-size-23px); font-weight: var(--font-weight-semibold); }
+.page-rewards .overview-card p { min-height: 44px; margin: 0 0 18px; color: var(--color-muted); }
+.page-rewards .overview-card .button { margin-top: auto; }
+.page-rewards .profile-card-heading { color: var(--color-primary); }
+.page-rewards .profile-card-heading > .icon,
+.page-rewards .profile-card-heading > svg { color: var(--color-primary); background: var(--color-fare-selected); }
+.page-rewards .profile-card-heading p,
+.page-rewards .profile-card p,
+.page-rewards .profile-card small { color: var(--color-muted); }
+.page-rewards .button {
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: var(--gradient-3);
+  color: var(--color-on-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-14px);
+  font-weight: var(--font-weight-semibold);
+  transition: box-shadow 160ms ease, filter 160ms ease;
+}
+.page-rewards .button:hover { box-shadow: var(--shadow-button-hover); filter: brightness(.97); }
+.page-rewards .button-outline { border-color: var(--color-border-focus); background: var(--color-surface); color: var(--color-primary); }
+.page-rewards .field { color: var(--color-text); font-size: var(--font-size-14px); }
+.page-rewards .field input,
+.page-rewards .field select,
+.page-rewards .field textarea,
+.page-rewards .form-control,
+.page-rewards .form-select {
+  min-height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-14px);
+  box-shadow: none;
+}
+.page-rewards .field input:focus,
+.page-rewards .field select:focus,
+.page-rewards .field textarea:focus,
+.page-rewards .form-control:focus,
+.page-rewards .form-select:focus { border-color: var(--color-border-focus); box-shadow: var(--shadow-focus); }
+.page-rewards .table { --bs-table-color: var(--color-text); --bs-table-bg: transparent; margin-bottom: 0; font-size: var(--font-size-14px); }
+.page-rewards .table thead th { padding: 12px; border-bottom-color: var(--color-border); background: var(--color-page); color: var(--color-muted); font-size: var(--font-size-12px); font-weight: var(--font-weight-semibold); white-space: nowrap; }
+.page-rewards .table tbody td { padding: 14px 12px; border-bottom-color: var(--color-border); vertical-align: middle; }
+.page-rewards .table tbody tr:last-child td { border-bottom: 0; }
+.page-rewards .booking-main { padding: 0; }
+.page-rewards .trip-card { overflow: hidden; box-shadow: var(--shadow-card); }
+.page-rewards .booking-tabs a.is-active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.page-rewards .flight-route .icon,
+.page-rewards .flight-route svg { color: var(--color-primary); }
+.page-rewards .booking-details { padding: 18px; }
+.page-rewards .booking-search { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-rewards .rewards-section-tabs { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-rewards .rewards-section-tabs a { color: var(--color-primary); }
+.page-rewards .milestone-card,
+.page-rewards .how-card,
+.page-rewards .points-history { border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-surface); box-shadow: var(--shadow-card); }
+.page-rewards .milestone-icon,
+.page-rewards .how-icon { color: var(--color-primary); background: var(--color-fare-selected); }
+.page-rewards :focus-visible { outline-color: var(--color-border-focus); }
+
+@media (max-width: 1050px) {
+  .page-rewards .profile-layout,
+  .page-rewards .rewards-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 18px; padding-inline: 18px; }
+  .page-rewards .booking-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 18px; padding-inline: 18px; }
+  .page-rewards .booking-layout .booking-details { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  .page-rewards .profile-layout,
+  .page-rewards .rewards-layout,
+  .page-rewards .booking-layout { display: block; padding: 16px 13px 28px; }
+  .page-rewards .sidebar,
+  .page-rewards .profile-sidebar,
+  .page-rewards .booking-sidebar,
+  .page-rewards .rewards-sidebar { position: static; margin-bottom: 18px; padding: 7px; }
+  .page-rewards .sidebar nav,
+  .page-rewards .rewards-sidebar nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .page-rewards .side-link { min-width: 0; min-height: 52px; gap: 8px; padding: 8px 9px; font-size: var(--font-size-14px); line-height: 1.2; overflow-wrap: anywhere; }
+  .page-rewards .side-link .icon { width: 20px; height: 20px; }
+  .page-rewards .profile-main > h1,
+  .page-rewards .booking-heading h1,
+  .page-rewards .rewards-mobile-title { font-size: var(--font-size-heading-1-mobile); }
+  .page-rewards .overview-grid { grid-template-columns: 1fr; gap: 12px; }
+  .page-rewards .overview-heading { margin-bottom: 16px; }
+  .page-rewards .overview-card { min-height: 0; }
+  .page-rewards .overview-card p { min-height: 0; }
+  .page-rewards .profile-card { padding: 16px; }
+  .page-rewards .booking-details { margin-top: 14px; }
+  .page-rewards .booking-main { padding: 0; }
+}
+@media (max-width: 380px) {
+  .page-rewards .profile-layout,
+  .page-rewards .rewards-layout,
+  .page-rewards .booking-layout { padding-inline: 10px; }
+  .page-rewards .side-link { gap: 6px; padding-inline: 7px; font-size: var(--font-size-13px); }
+}
+
+.page-rewards .overview-heading h1,
+.page-rewards .profile-subpage > h1 { color: var(--color-primary); font-family: var(--font-heading); font-size: var(--font-size-page-title-desktop); font-weight: var(--font-weight-semibold); line-height: 1.2; }
+.page-rewards .overview-heading > p,
+.page-rewards .profile-subpage > p,
+.page-rewards .profile-intro p { color: var(--color-muted); }
+.page-rewards .profile-subpage > p { margin: 7px 0 20px; }
+.page-rewards .profile-intro h2 { color: var(--color-primary); font-size: var(--font-size-section-title-desktop); font-weight: var(--font-weight-semibold); }
+.page-rewards .profile-card-heading h3 { font-size: var(--font-size-18px); font-weight: var(--font-weight-semibold); }
+.page-rewards .payment-saved,
+.page-rewards .traveller-row,
+.page-rewards .switch-row { border-color: var(--color-border); background: var(--color-surface); }
+.page-rewards .payment-saved + .payment-saved,
+.page-rewards .traveller-row + .traveller-row { border-top: 1px solid var(--color-border); }
+.page-rewards .faq-card details,
+.page-rewards .faq-item { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-rewards .faq-card summary,
+.page-rewards .faq-item summary { color: var(--color-primary); font-weight: var(--font-weight-semibold); }
+@media (max-width: 760px) {
+  .page-rewards .overview-heading h1,
+  .page-rewards .profile-subpage > h1 { font-size: var(--font-size-heading-1-mobile); }
+  .page-rewards .profile-intro h2 { font-size: var(--font-size-heading-2-mobile); }
+  .page-rewards .sidebar-help { display: none; }
+}
+
+/* Keep reward highlights aligned with the site's Sparrow blue palette. */
+.page-rewards .voucher-popular {
+  border-color: var(--color-primary);
+  background: linear-gradient(125deg, var(--color-fare-selected), var(--color-surface));
+  box-shadow: var(--shadow-brand-card);
+}
+.page-rewards .voucher-popular::before,
+.page-rewards .voucher-popular::after {
+  filter: drop-shadow(1px 0 0 var(--color-primary));
+}
+.page-rewards .voucher-popular .voucher-icon {
+  background: var(--color-fare-selected);
+  color: var(--color-primary);
+}
+.page-rewards .voucher-popular .voucher-footer {
+  background: var(--color-fare-selected);
+  color: var(--color-primary);
+}
+.page-rewards .popular-label {
+  background: var(--gradient-3);
+  color: var(--color-on-primary);
+}
+.page-rewards .progress-track > span {
+  background: var(--color-primary);
+}
+.page-rewards .history-title a,
+.page-rewards .back-link { color: var(--color-primary); }
+.page-rewards .history-page .history-title nav a.is-active {
+  background: var(--gradient-3);
+  color: var(--color-on-primary);
+}
+.page-rewards .voucher-popular:hover {
+  box-shadow: var(--shadow-brand-card);
+}
+.page-rewards .how-icon .bi-airplane {
+  width: 27px;
+  height: 27px;
+  font-size: 27px;
+  transform: none;
+}
+.page-rewards .voucher-icon .bi-airplane {
+  width: 29px;
+  height: 29px;
+  font-size: 29px;
+  transform: none;
+}
+@media (max-width: 760px) {
+  .page-rewards .voucher-icon .bi-airplane { font-size: 28px; }
+}
+@media (max-width: 760px) {
+  .page-rewards .profile-sidebar nav,
+  .page-rewards .booking-sidebar nav,
+  .page-rewards .rewards-sidebar nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .page-rewards .sidebar-profile { display: none; }
+}

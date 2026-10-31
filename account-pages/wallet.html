@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="../images/icon.png?v=2">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="View your Sparrow Flights wallet balance and transaction history.">
+  <title>Wallet | Sparrow Flights</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="wallet.css">
+</head>
+<body class="account-page page-wallet" data-mobile-nav>
+  <a class="wallet-skip-link" href="#main-content">Skip to content</a>
+  <iframe class="shared-navbar-frame home-navbar" src="../components/navbar.html" title="Site navigation" scrolling="no"></iframe>
+
+  <div class="wallet-app-shell container-fluid p-0">
+    <div class="wallet-page-layout">
+      <aside class="wallet-sidebar" aria-label="Account navigation">
+        <div class="wallet-sidebar-profile">
+          <span class="wallet-avatar" aria-hidden="true">AA</span>
+          <strong>Ali Ahmed</strong>
+          <span>ali.ahmed@gmail.com</span>
+        </div>
+        <nav class="wallet-account-nav">
+          <a class="wallet-side-link" href="my-account.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="8" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="3" y="15" width="7" height="6" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/></svg><span>Overview</span></a>
+          <a class="wallet-side-link" href="my-bookings.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h3m4 0h3M7 17h3"/></svg><span>My Bookings</span></a>
+          <a class="wallet-side-link" href="profile.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3z"/></svg><span>Profile</span></a>
+          <a class="wallet-side-link" href="saved-travellers.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-3a7 7 0 0 1 14 0v3zM16 4a3 3 0 0 1 0 6m2 3a6 6 0 0 1 4 6v2h-4"/></svg><span>Saved Travellers</span></a>
+          <a class="wallet-side-link" href="payment-methods.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 15h4"/></svg><span>Payment Methods</span></a>
+          <a class="wallet-side-link is-active" href="wallet.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="15" rx="2"/><path d="M2 9h20m-5 5h2"/><path d="M5 5V3h14v2"/></svg><span>Wallet</span></a>
+          <a class="wallet-side-link" href="travel-preferences.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 2 2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Zm11 12 1 4 4 1-4 1-1 4-1-4-4-1 4-1 1-4Z"/></svg><span>Travel Preferences</span></a>
+          <a class="wallet-side-link" href="notifications.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0v6l3 4H3l3-4V9m4 13h4"/></svg><span>Notifications</span></a>
+          <a class="wallet-side-link" href="rewards.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.5 7.2 1-5.2 5.1 1.2 7.2L12 18.4l-6.3 3.4 1.2-7.2L1.7 9.5l7.2-1z"/></svg><span>Loyalty &amp; Rewards</span></a>
+          <a class="wallet-side-link" href="help-support.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 8a3 3 0 1 1 5 2c-2 1-2 2-2 4m0 3h.01"/></svg><span>Help &amp; Support</span></a>
+        </nav>
+      </aside>
+
+      <main id="main-content" class="wallet-main">
+        <header class="wallet-page-heading">
+          <p class="wallet-eyebrow">ACCOUNT WALLET</p>
+          <h1>Wallet</h1>
+          <p>See your balance, payments and recent account activity.</p>
+        </header>
+
+        <section class="wallet-balance-card" aria-labelledby="wallet-balance-title">
+          <div class="wallet-balance-copy">
+            <span class="wallet-balance-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="15" rx="2"/><path d="M2 9h20m-5 5h2"/><path d="M5 5V3h14v2"/></svg></span>
+            <div><p id="wallet-balance-title">Available balance</p><strong>PKR 24,800</strong><span>Ready for your next journey</span></div>
+          </div>
+          <a class="btn button wallet-balance-action" href="payment-methods.html">Manage payment methods <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        </section>
+
+        <section class="wallet-summary-grid" aria-label="Wallet summary">
+          <article class="wallet-summary-card"><span class="wallet-summary-icon wallet-summary-icon-blue"><i class="bi bi-arrow-down-left" aria-hidden="true"></i></span><div><span>Added this year</span><strong>PKR 38,500</strong><small>Across 8 transactions</small></div></article>
+          <article class="wallet-summary-card"><span class="wallet-summary-icon wallet-summary-icon-green"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i></span><div><span>Refunds received</span><strong>PKR 4,200</strong><small>Across 2 bookings</small></div></article>
+          <article class="wallet-summary-card"><span class="wallet-summary-icon wallet-summary-icon-navy"><i class="bi bi-credit-card-2-front" aria-hidden="true"></i></span><div><span>Saved methods</span><strong>2 cards</strong><small>Visa ending 4242</small></div></article>
+        </section>
+
+        <section class="wallet-history-card" aria-labelledby="wallet-history-title">
+          <div class="wallet-history-heading">
+            <div><h2 id="wallet-history-title">Wallet activity</h2><p>Review payments, additions and refunds.</p></div>
+            <a class="wallet-history-link" href="my-bookings.html">View bookings <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          </div>
+
+          <div class="wallet-tab-set">
+            <input class="wallet-tab-input" type="radio" name="wallet-history-tab" id="wallet-tab-all" checked>
+            <input class="wallet-tab-input" type="radio" name="wallet-history-tab" id="wallet-tab-payments">
+            <input class="wallet-tab-input" type="radio" name="wallet-history-tab" id="wallet-tab-refunds">
+            <div class="wallet-tab-list" role="group" aria-label="Filter wallet activity">
+              <label for="wallet-tab-all">All activity</label>
+              <label for="wallet-tab-payments">Payments</label>
+              <label for="wallet-tab-refunds">Refunds</label>
+            </div>
+            <div class="wallet-panels">
+              <div class="wallet-panel wallet-panel-all" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table wallet-table align-middle mb-0">
+                    <thead><tr><th scope="col">Date</th><th scope="col">Description</th><th scope="col">Reference</th><th scope="col">Status</th><th scope="col" class="text-end">Amount</th></tr></thead>
+                    <tbody>
+                      <tr><td>10 Nov 2026</td><td><strong>Flight booking</strong><small>Islamabad to Bangkok</small></td><td>BK7X2P</td><td><span class="wallet-status wallet-status-paid">Paid</span></td><td class="text-end wallet-amount-negative">− PKR 52,000</td></tr>
+                      <tr><td>05 Nov 2026</td><td><strong>Wallet top-up</strong><small>Visa ···· 4242</small></td><td>WL8D4K</td><td><span class="wallet-status wallet-status-complete">Completed</span></td><td class="text-end wallet-amount-positive">+ PKR 25,000</td></tr>
+                      <tr><td>29 Oct 2026</td><td><strong>Booking refund</strong><small>Dubai to Islamabad</small></td><td>RF2M8Q</td><td><span class="wallet-status wallet-status-refund">Refunded</span></td><td class="text-end wallet-amount-positive">+ PKR 4,200</td></tr>
+                      <tr><td>21 Oct 2026</td><td><strong>Flight booking</strong><small>Islamabad to Dubai</small></td><td>BK3M9Q</td><td><span class="wallet-status wallet-status-paid">Paid</span></td><td class="text-end wallet-amount-negative">− PKR 38,500</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="wallet-panel wallet-panel-payments" role="tabpanel">
+                <div class="table-responsive"><table class="table wallet-table align-middle mb-0"><thead><tr><th scope="col">Date</th><th scope="col">Payment</th><th scope="col">Reference</th><th scope="col">Status</th><th scope="col" class="text-end">Amount</th></tr></thead><tbody><tr><td>10 Nov 2026</td><td><strong>Flight booking</strong><small>Islamabad to Bangkok</small></td><td>BK7X2P</td><td><span class="wallet-status wallet-status-paid">Paid</span></td><td class="text-end wallet-amount-negative">− PKR 52,000</td></tr><tr><td>05 Nov 2026</td><td><strong>Wallet top-up</strong><small>Visa ···· 4242</small></td><td>WL8D4K</td><td><span class="wallet-status wallet-status-complete">Completed</span></td><td class="text-end wallet-amount-positive">+ PKR 25,000</td></tr><tr><td>21 Oct 2026</td><td><strong>Flight booking</strong><small>Islamabad to Dubai</small></td><td>BK3M9Q</td><td><span class="wallet-status wallet-status-paid">Paid</span></td><td class="text-end wallet-amount-negative">− PKR 38,500</td></tr></tbody></table></div>
+              </div>
+              <div class="wallet-panel wallet-panel-refunds" role="tabpanel">
+                <div class="table-responsive"><table class="table wallet-table align-middle mb-0"><thead><tr><th scope="col">Date</th><th scope="col">Refund</th><th scope="col">Reference</th><th scope="col">Status</th><th scope="col" class="text-end">Amount</th></tr></thead><tbody><tr><td>29 Oct 2026</td><td><strong>Booking refund</strong><small>Dubai to Islamabad</small></td><td>RF2M8Q</td><td><span class="wallet-status wallet-status-refund">Refunded</span></td><td class="text-end wallet-amount-positive">+ PKR 4,200</td></tr></tbody></table></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wallet-payment-prompt">
+          <div><h2>Payment methods</h2><p>Keep your preferred card ready for a quicker checkout.</p></div>
+          <a class="btn button button-outline" href="payment-methods.html">Manage cards <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <iframe class="shared-footer-frame" src="../components/footer.html" title="Site footer" width="100%" scrolling="no" loading="lazy" style="display:block;border:0"></iframe>
+  <iframe class="shared-bottom-nav-frame" src="../components/mobile-navigation.html#nav-account" title="Mobile navigation" scrolling="no"></iframe>
+</body>
+</html>

@@ -687,3 +687,229 @@ body.page-travel-preferences .app-shell :is(h5, h6) { font-size: var(--account-f
 @media (min-width: 761px) and (max-width: 1000px) {
   .page-travel-preferences .profile-hero-content { padding-left: 17px; padding-right: 17px; }
 }
+
+
+/* Wallet-inspired account styling for travel-preferences; values come from theme.css. */
+.page-travel-preferences {
+  color: var(--color-text);
+  background: var(--color-page);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+.page-travel-preferences .app-shell { max-width: none; min-height: 0; background: var(--color-page); }
+.page-travel-preferences .profile-layout,
+.page-travel-preferences .rewards-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  border-radius: 0;
+  background: var(--color-page);
+}
+.page-travel-preferences .booking-layout {
+  grid-template-columns: 250px minmax(0, 1fr) minmax(270px, 320px);
+  gap: 20px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  background: var(--color-page);
+}
+.page-travel-preferences .booking-layout.no-details { grid-template-columns: 250px minmax(0, 1fr); }
+.page-travel-preferences .sidebar,
+.page-travel-preferences .profile-sidebar,
+.page-travel-preferences .booking-sidebar,
+.page-travel-preferences .rewards-sidebar {
+  position: sticky;
+  top: 112px;
+  min-width: 0;
+  padding: 16px 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+.page-travel-preferences .sidebar nav { display: flex; flex-direction: column; gap: 3px; }
+.page-travel-preferences .side-link {
+  display: flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  color: var(--color-text);
+  font-size: var(--font-size-14px);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.page-travel-preferences .side-link .icon { width: 21px; height: 21px; }
+.page-travel-preferences .side-link:hover { background: var(--color-fare-selected); color: var(--color-primary); }
+.page-travel-preferences .side-link.is-active,
+.page-travel-preferences .side-link.is-active:hover { background: var(--gradient-3); color: var(--color-on-primary); font-weight: var(--font-weight-semibold); }
+.page-travel-preferences .sidebar-help { margin-top: 12px; border-radius: var(--radius-card); overflow: hidden; }
+.page-travel-preferences .profile-main,
+.page-travel-preferences .booking-main,
+.page-travel-preferences .rewards-main { min-width: 0; color: var(--color-text); }
+.page-travel-preferences .profile-main > h1,
+.page-travel-preferences .booking-heading h1,
+.page-travel-preferences .rewards-mobile-title {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-page-title-desktop);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+}
+.page-travel-preferences .profile-main > p,
+.page-travel-preferences .overview-heading > p,
+.page-travel-preferences .booking-heading > p:last-child { color: var(--color-muted); }
+.page-travel-preferences .overview-heading { margin: 0 0 22px; }
+.page-travel-preferences .overview-grid { gap: 16px; }
+.page-travel-preferences .profile-card,
+.page-travel-preferences .trip-card,
+.page-travel-preferences .card,
+.page-travel-preferences .booking-details,
+.page-travel-preferences .points-history,
+.page-travel-preferences .loyalty-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+.page-travel-preferences .profile-card { padding: 22px; }
+.page-travel-preferences .overview-card { display: flex; min-height: 210px; flex-direction: column; align-items: flex-start; }
+.page-travel-preferences .overview-card h2,
+.page-travel-preferences .profile-card-heading h3,
+.page-travel-preferences .booking-heading h1,
+.page-travel-preferences .rewards-main h2 { color: var(--color-primary); font-family: var(--font-heading); }
+.page-travel-preferences .overview-card h2 { margin: 0 0 8px; font-size: var(--font-size-23px); font-weight: var(--font-weight-semibold); }
+.page-travel-preferences .overview-card p { min-height: 44px; margin: 0 0 18px; color: var(--color-muted); }
+.page-travel-preferences .overview-card .button { margin-top: auto; }
+.page-travel-preferences .profile-card-heading { color: var(--color-primary); }
+.page-travel-preferences .profile-card-heading > .icon,
+.page-travel-preferences .profile-card-heading > svg { color: var(--color-primary); background: var(--color-fare-selected); }
+.page-travel-preferences .profile-card-heading p,
+.page-travel-preferences .profile-card p,
+.page-travel-preferences .profile-card small { color: var(--color-muted); }
+.page-travel-preferences .button {
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: var(--gradient-3);
+  color: var(--color-on-primary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-14px);
+  font-weight: var(--font-weight-semibold);
+  transition: box-shadow 160ms ease, filter 160ms ease;
+}
+.page-travel-preferences .button:hover { box-shadow: var(--shadow-button-hover); filter: brightness(.97); }
+.page-travel-preferences .button-outline { border-color: var(--color-border-focus); background: var(--color-surface); color: var(--color-primary); }
+.page-travel-preferences .field { color: var(--color-text); font-size: var(--font-size-14px); }
+.page-travel-preferences .field input,
+.page-travel-preferences .field select,
+.page-travel-preferences .field textarea,
+.page-travel-preferences .form-control,
+.page-travel-preferences .form-select {
+  min-height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-14px);
+  box-shadow: none;
+}
+.page-travel-preferences .field input:focus,
+.page-travel-preferences .field select:focus,
+.page-travel-preferences .field textarea:focus,
+.page-travel-preferences .form-control:focus,
+.page-travel-preferences .form-select:focus { border-color: var(--color-border-focus); box-shadow: var(--shadow-focus); }
+.page-travel-preferences .table { --bs-table-color: var(--color-text); --bs-table-bg: transparent; margin-bottom: 0; font-size: var(--font-size-14px); }
+.page-travel-preferences .table thead th { padding: 12px; border-bottom-color: var(--color-border); background: var(--color-page); color: var(--color-muted); font-size: var(--font-size-12px); font-weight: var(--font-weight-semibold); white-space: nowrap; }
+.page-travel-preferences .table tbody td { padding: 14px 12px; border-bottom-color: var(--color-border); vertical-align: middle; }
+.page-travel-preferences .table tbody tr:last-child td { border-bottom: 0; }
+.page-travel-preferences .booking-main { padding: 0; }
+.page-travel-preferences .trip-card { overflow: hidden; box-shadow: var(--shadow-card); }
+.page-travel-preferences .booking-tabs a.is-active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.page-travel-preferences .flight-route .icon,
+.page-travel-preferences .flight-route svg { color: var(--color-primary); }
+.page-travel-preferences .booking-details { padding: 18px; }
+.page-travel-preferences .booking-search { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-travel-preferences .rewards-section-tabs { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-travel-preferences .rewards-section-tabs a { color: var(--color-primary); }
+.page-travel-preferences .milestone-card,
+.page-travel-preferences .how-card,
+.page-travel-preferences .points-history { border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-surface); box-shadow: var(--shadow-card); }
+.page-travel-preferences .milestone-icon,
+.page-travel-preferences .how-icon { color: var(--color-primary); background: var(--color-fare-selected); }
+.page-travel-preferences :focus-visible { outline-color: var(--color-border-focus); }
+
+@media (max-width: 1050px) {
+  .page-travel-preferences .profile-layout,
+  .page-travel-preferences .rewards-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 18px; padding-inline: 18px; }
+  .page-travel-preferences .booking-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 18px; padding-inline: 18px; }
+  .page-travel-preferences .booking-layout .booking-details { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  .page-travel-preferences .profile-layout,
+  .page-travel-preferences .rewards-layout,
+  .page-travel-preferences .booking-layout { display: block; padding: 16px 13px 28px; }
+  .page-travel-preferences .sidebar,
+  .page-travel-preferences .profile-sidebar,
+  .page-travel-preferences .booking-sidebar,
+  .page-travel-preferences .rewards-sidebar { position: static; margin-bottom: 18px; padding: 7px; }
+  .page-travel-preferences .sidebar nav,
+  .page-travel-preferences .rewards-sidebar nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .page-travel-preferences .side-link { min-width: 0; min-height: 52px; gap: 8px; padding: 8px 9px; font-size: var(--font-size-14px); line-height: 1.2; overflow-wrap: anywhere; }
+  .page-travel-preferences .side-link .icon { width: 20px; height: 20px; }
+  .page-travel-preferences .profile-main > h1,
+  .page-travel-preferences .booking-heading h1,
+  .page-travel-preferences .rewards-mobile-title { font-size: var(--font-size-heading-1-mobile); }
+  .page-travel-preferences .overview-grid { grid-template-columns: 1fr; gap: 12px; }
+  .page-travel-preferences .overview-heading { margin-bottom: 16px; }
+  .page-travel-preferences .overview-card { min-height: 0; }
+  .page-travel-preferences .overview-card p { min-height: 0; }
+  .page-travel-preferences .profile-card { padding: 16px; }
+  .page-travel-preferences .booking-details { margin-top: 14px; }
+  .page-travel-preferences .booking-main { padding: 0; }
+}
+@media (max-width: 380px) {
+  .page-travel-preferences .profile-layout,
+  .page-travel-preferences .rewards-layout,
+  .page-travel-preferences .booking-layout { padding-inline: 10px; }
+  .page-travel-preferences .side-link { gap: 6px; padding-inline: 7px; font-size: var(--font-size-13px); }
+}
+
+.page-travel-preferences .overview-heading h1,
+.page-travel-preferences .profile-subpage > h1 { color: var(--color-primary); font-family: var(--font-heading); font-size: var(--font-size-page-title-desktop); font-weight: var(--font-weight-semibold); line-height: 1.2; }
+.page-travel-preferences .overview-heading > p,
+.page-travel-preferences .profile-subpage > p,
+.page-travel-preferences .profile-intro p { color: var(--color-muted); }
+.page-travel-preferences .profile-subpage > p { margin: 7px 0 20px; }
+.page-travel-preferences .profile-intro h2 { color: var(--color-primary); font-size: var(--font-size-section-title-desktop); font-weight: var(--font-weight-semibold); }
+.page-travel-preferences .profile-card-heading h3 { font-size: var(--font-size-18px); font-weight: var(--font-weight-semibold); }
+.page-travel-preferences .payment-saved,
+.page-travel-preferences .traveller-row,
+.page-travel-preferences .switch-row { border-color: var(--color-border); background: var(--color-surface); }
+.page-travel-preferences .payment-saved + .payment-saved,
+.page-travel-preferences .traveller-row + .traveller-row { border-top: 1px solid var(--color-border); }
+.page-travel-preferences .faq-card details,
+.page-travel-preferences .faq-item { border-color: var(--color-border); border-radius: var(--radius-control); background: var(--color-surface); }
+.page-travel-preferences .faq-card summary,
+.page-travel-preferences .faq-item summary { color: var(--color-primary); font-weight: var(--font-weight-semibold); }
+@media (max-width: 760px) {
+  .page-travel-preferences .overview-heading h1,
+  .page-travel-preferences .profile-subpage > h1 { font-size: var(--font-size-heading-1-mobile); }
+  .page-travel-preferences .profile-intro h2 { font-size: var(--font-size-heading-2-mobile); }
+  .page-travel-preferences .sidebar-help { display: none; }
+}
+@media (max-width: 760px) {
+  .page-travel-preferences .profile-sidebar nav,
+  .page-travel-preferences .booking-sidebar nav,
+  .page-travel-preferences .rewards-sidebar nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .page-travel-preferences .sidebar-profile { display: none; }
+}
