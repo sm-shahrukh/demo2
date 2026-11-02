@@ -837,6 +837,114 @@ body.page-rewards .app-shell :is(h5, h6) { font-size: var(--account-font-size-1r
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
 }
+.page-rewards .loyalty-card {
+  border-color: rgb(143 176 225 / 55%);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(78 132 218 / 62%), transparent 58%),
+    radial-gradient(ellipse at 0% 100%, rgb(18 51 115 / 78%), transparent 62%),
+    linear-gradient(135deg, #174c9a 0%, #123d7d 58%, #0c2d60 100%);
+  box-shadow: 0 8px 24px rgb(21 55 112 / 22%);
+  color: #fff;
+}
+.page-rewards .loyalty-card-top::before {
+  content: none;
+}
+.page-rewards .loyalty-card::before {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 189px;
+  background: #9a6038;
+  clip-path: polygon(
+    0 68.3%,
+    6% 64.8%,
+    8% 62.3%,
+    10% 64.4%,
+    16% 68.3%,
+    21.4% 59.5%,
+    23.4% 58.4%,
+    25.6% 59.5%,
+    32% 68.8%,
+    38.2% 61.7%,
+    40.3% 61.6%,
+    42.2% 62.2%,
+    49.6% 70%,
+    52% 70.8%,
+    54.8% 68.8%,
+    62.8% 56.6%,
+    65.7% 54.2%,
+    67.2% 55.6%,
+    73% 65.2%,
+    78.4% 60.4%,
+    80.5% 60.8%,
+    82.2% 62.2%,
+    88% 70%,
+    94% 68.3%,
+    99.8% 72.3%,
+    100% 100%,
+    0 100%
+  );
+  filter: drop-shadow(0 -4px 5px rgb(21 26 39 / 38%));
+  content: "";
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .page-rewards .loyalty-card::before {
+    height: 138px;
+  }
+}
+.page-rewards .loyalty-card .loyalty-art {
+  z-index: 1;
+}
+.page-rewards .loyalty-card .loyalty-points {
+  color: #fff;
+}
+.page-rewards .loyalty-art path:first-child {
+  stroke: #b9825a;
+}
+.page-rewards .loyalty-art path:nth-child(2) {
+  stroke: #b6d9f3;
+}
+.page-rewards .how-card {
+  border-color: #d6e3fa;
+  background: linear-gradient(145deg, #fff 0%, #f5f8ff 100%);
+}
+.page-rewards .how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.page-rewards .how-steps > .icon {
+  display: none;
+}
+.page-rewards .how-step {
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+}
+.page-rewards .how-icon {
+  width: 40px;
+  height: 40px;
+}
+.page-rewards .how-icon .icon {
+  width: 21px;
+  height: 21px;
+}
+.page-rewards .how-step > span:last-child {
+  min-width: 0;
+}
+.page-rewards .how-step strong {
+  display: block;
+  font-size: var(--font-size-14px);
+}
+.page-rewards .how-step p {
+  margin-top: 4px;
+  font-size: var(--font-size-12px);
+  line-height: 1.4;
+}
 .page-rewards .profile-card { padding: 22px; }
 .page-rewards .overview-card { display: flex; min-height: 210px; flex-direction: column; align-items: flex-start; }
 .page-rewards .overview-card h2,

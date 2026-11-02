@@ -23,7 +23,7 @@ body.navbar-component {
   display: flex;
   align-self: stretch;
   align-items: stretch;
-  gap: 24px;
+  gap: 26px;
   margin-right: auto;
 }
 .navbar-component .travel-nav .nav-service {
@@ -31,7 +31,13 @@ body.navbar-component {
   align-items: center;
   gap: 8px;
   align-self: stretch;
+  padding-inline: 6px;
+  padding-block: 2px;
   border-bottom: 3px solid transparent;
+}
+
+.navbar-component .travel-nav .nav-service span {
+  line-height: 1.1;
 }
 .navbar-component .auth-entry-actions,
 .navbar-component .header-action,
@@ -61,13 +67,13 @@ body.navbar-component {
   background: var(--color-surface);
 }
 .navbar-component .travel-header > .container {
-  min-height: 68px;
+  min-height: 60px;
 }
 .navbar-component .logo-brand {
   display: block;
   flex: 0 0 156px;
   width: 156px;
-  height: 50px;
+  height: 46px;
   overflow: hidden;
 }
 .navbar-component .brand-logo-image {

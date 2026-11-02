@@ -260,7 +260,10 @@
   stroke-linejoin: round;
   vertical-align: middle;
 }
-.flight-results-page .plane-side { transform: none; font-size: 20px; }
+.flight-results-page .plane-side {
+  transform: rotate(90deg);
+  font-size: 20px;
+}
 .flight-results-page .results-skip-link {
   position: fixed;
   top: -100px;

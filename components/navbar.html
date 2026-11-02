@@ -76,24 +76,21 @@
           <a
             class="nav-service is-current"
             data-service="flights"
-            href="../index.html#booking"
-            target="_top"
+            href="#"
             ><i class="bi bi-airplane" aria-hidden="true"></i
             ><span>Flights</span></a
           >
           <a
             class="nav-service"
             data-service="umrah"
-            href="../index.html#booking"
-            target="_top"
+            href="#"
             ><i class="bi bi-moon-stars" aria-hidden="true"></i
             ><span>Umrah</span></a
           >
           <a
             class="nav-service"
             data-service="visa"
-            href="../index.html#booking"
-            target="_top"
+            href="#"
             ><i class="bi bi-passport" aria-hidden="true"></i
             ><span>Visa</span></a
           >
@@ -220,7 +217,8 @@
           } catch (_) {}
         };
         links.forEach((link) => {
-          link.addEventListener("click", () => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
             const name = link.dataset.service;
             try {
               const choice = parent.document.getElementById(`service-${name}`);
