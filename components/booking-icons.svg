@@ -21,6 +21,10 @@
           <rect x="5" y="6" width="14" height="15" rx="2" />
           <path d="M9 6V2h6v4M8 9v9m8-9v9M8 21v2m8-2v2" />
         </symbol>
+        <symbol id="bk-handbag" viewBox="0 0 24 24">
+          <path d="M5 8h14l1 13H4L5 8Z" />
+          <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+        </symbol>
         <symbol id="bk-mail" viewBox="0 0 24 24">
           <rect x="2" y="4" width="20" height="16" rx="2" />
           <path d="m2 5 10 8L22 5" />
