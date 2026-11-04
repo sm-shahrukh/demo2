@@ -110,8 +110,8 @@
       >
         <div class="traveller-layout">
           <div>
-            <article class="bk-card your-flight">
-              <div class="card-heading">
+            <details class="bk-card your-flight">
+              <summary class="card-heading your-flight-heading">
                 <h3>
                   <span class="icon-tile peach"
                     ><svg class="bk-icon" aria-hidden="true">
@@ -120,48 +120,43 @@
                       /></svg></span
                   >Your flight
                 </h3>
-                <a class="bk-outline small" href="search-flight.html"
-                  >Change flight ›</a
-                >
-              </div>
-              <div class="flight-ticket">
-                <div class="ticket-route">
-                  <div class="ticket-date">
-                    <b>24 Nov 2026</b><span>·</span>Non-stop<span>·</span>3h 40m
+                <span class="your-flight-actions">
+                  <a class="bk-outline small" href="search-flight.html" onclick="event.stopPropagation()">Change flight ›</a>
+                  <svg class="bk-icon bk-chevron flight-toggle-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-chevron-down" /></svg>
+                </span>
+              </summary>
+              <div class="flight-ticket flight-ticket--segments">
+                <div class="flight-ticket-content">
+                <div class="ticket-leg-summary">
+                  <span class="ticket-leg-label">Flight 1</span>
+                  <div class="ticket-leg-city"><strong>ISB</strong><span>Islamabad</span></div>
+                  <div class="ticket-leg-route"><span>3 segments · 9h 25m</span><i></i><svg class="bk-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m23 11-9-2-5-8H7l3 9-6-1-2-3H0l2 6-2 6h2l2-3 6-1-3 9h2l5-8 9-2Z" /></svg><i></i></div>
+                  <div class="ticket-leg-city ticket-leg-destination"><strong>DXB</strong><span>Dubai</span></div>
+                </div>
+                <div class="ticket-segment-list">
+                  <div class="ticket-segment-row">
+                    <div class="segment-airline"><img src="images/airlines/emirates.png" alt="" /><span>Emirates<small>EK 615 · Economy</small></span></div>
+                    <div class="segment-airport"><strong>08:30</strong><span>Islamabad <b>ISB</b></span><small>Terminal 1</small></div>
+                    <div class="segment-route"><small>2h 05m · Direct</small><span><i></i><svg class="bk-icon ticket-plane" viewBox="0 0 24 24" aria-hidden="true"><path d="m23 11-9-2-5-8H7l3 9-6-1-2-3H0l2 6-2 6h2l2-3 6-1-3 9h2l5-8 9-2Z" /></svg><i></i></span></div>
+                    <div class="segment-airport segment-arrival"><strong>10:35</strong><span>Lahore <b>LHE</b></span><small>Terminal 3</small></div>
                   </div>
-                  <div class="ticket-times">
-                    <div>
-                      <strong>08:30</strong><b>ISB</b><span>Islamabad</span
-                      ><small>Terminal 1</small>
-                    </div>
-                    <div class="route-track">
-                      <span
-                        ><svg
-                          class="bk-icon ticket-plane"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="m23 11-9-2-5-8H7l3 9-6-1-2-3H0l2 6-2 6h2l2-3 6-1-3 9h2l5-8 9-2Z"
-                          /></svg></span
-                      ><small>3h 40m<br />Non-stop</small>
-                    </div>
-                    <div>
-                      <strong>11:10</strong><b>DXB</b><span>Dubai</span
-                      ><small>Terminal 3</small>
-                    </div>
+                  <div class="ticket-segment-row">
+                    <div class="segment-airline"><img src="images/airlines/emirates.png" alt="" /><span>Emirates<small>EK 615 · Economy</small></span></div>
+                    <div class="segment-airport"><strong>12:00</strong><span>Lahore <b>LHE</b></span><small>Terminal 1</small></div>
+                    <div class="segment-route"><small>3h 20m · 1 stop</small><span><i></i><svg class="bk-icon ticket-plane" viewBox="0 0 24 24" aria-hidden="true"><path d="m23 11-9-2-5-8H7l3 9-6-1-2-3H0l2 6-2 6h2l2-3 6-1-3 9h2l5-8 9-2Z" /></svg><i></i></span></div>
+                    <div class="segment-airport segment-arrival"><strong>15:20</strong><span>Doha <b>DOH</b></span><small>Terminal 2</small></div>
+                  </div>
+                  <div class="ticket-segment-row">
+                    <div class="segment-airline"><img src="images/airlines/emirates.png" alt="" /><span>Emirates<small>EK 615 · Economy</small></span></div>
+                    <div class="segment-airport"><strong>16:10</strong><span>Doha <b>DOH</b></span><small>Terminal 2</small></div>
+                    <div class="segment-route"><small>4h 00m · Direct</small><span><i></i><svg class="bk-icon ticket-plane" viewBox="0 0 24 24" aria-hidden="true"><path d="m23 11-9-2-5-8H7l3 9-6-1-2-3H0l2 6-2 6h2l2-3 6-1-3 9h2l5-8 9-2Z" /></svg><i></i></span></div>
+                    <div class="segment-airport segment-arrival"><strong>20:10</strong><span>Dubai <b>DXB</b></span><small>Terminal 3</small></div>
                   </div>
                 </div>
-                <div class="ticket-airline">
-                  <img
-                    class="ticket-emirates-logo"
-                    src="images/airlines/emirates.png"
-                    alt="Emirates"
-                  /><b>EK 615</b><small>Boeing 777-300ER</small
-                  ><span class="bk-pill">Economy · Essential</span>
                 </div>
               </div>
-              <div class="flight-links">
+              
+            <div class="flight-links">
                 <details>
                   <summary>
                     <svg class="bk-icon" aria-hidden="true">
@@ -185,7 +180,7 @@
                   </p>
                 </details>
               </div>
-            </article>
+              </details>
             <fieldset id="traveller-form" class="traveller-form">
               <details class="bk-card traveller-card" open>
                 <summary>
@@ -450,6 +445,7 @@
           </label>
         </div>
       </section>
+      
       <a
         class="review-backdrop"
         data-booking-navigation="step-travellers"
@@ -556,13 +552,14 @@
         </div>
       </div>
     </main>
-    <iframe
+<iframe
       class="booking-footer-frame"
       src="components/footer.html"
       title="Site footer"
       scrolling="no"
       loading="lazy"
     ></iframe>
+    
     
 
   <script>

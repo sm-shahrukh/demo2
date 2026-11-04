@@ -32,7 +32,7 @@
     
     
   </head>
-  <body class="booking-page" data-page="booking-confirmation" data-mobile-nav>
+  <body class="booking-page is-confirmation-loading" data-page="booking-confirmation" data-mobile-nav>
     <input
       class="state-radio"
       type="radio"
@@ -75,6 +75,16 @@
       title="Site navigation"
       scrolling="no"
     ></iframe>
+    <section class="confirmation-loading bk-container" role="status" aria-live="polite">
+      <div class="confirmation-loading-card">
+        <span class="confirmation-loading-spinner" aria-hidden="true"></span>
+        <span class="confirmation-loading-label">Payment confirmed</span>
+        <h1>Preparing your booking confirmation</h1>
+        <p>We’re finalizing your itinerary and booking details.</p>
+        <div class="confirmation-loading-track" aria-hidden="true"><span></span></div>
+        <small>This usually takes a few seconds.</small>
+      </div>
+    </section>
     <div class="booking-hero hero-confirm">
       <div class="confirmation-skyline"></div>
       <div class="bk-container">
@@ -348,7 +358,10 @@
       scrolling="no"
     ></iframe>
     
-  <script>
+<script>
+window.setTimeout(() => document.body.classList.remove("is-confirmation-loading"), 4000);
+</script>
+<script>
 (() => {
   const frame = [...document.querySelectorAll("iframe")].find(iframe =>
     (iframe.getAttribute("src") || "").includes("navbar.html"),

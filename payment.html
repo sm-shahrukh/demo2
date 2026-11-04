@@ -121,8 +121,8 @@
             class="state-radio"
             type="radio"
             name="payment-method"
-            id="method-wallet"
-            aria-label="Wallet"
+            id="method-branch"
+            aria-label="Pay at branch"
           />
           <div class="payment-layout">
             <aside class="payment-method-column">
@@ -144,31 +144,15 @@
                     ><strong>Bank transfer</strong
                     ><small>Pay via local bank (PKR)</small></span
                   ><b>›</b></label
-                ><label for="method-wallet"
+                ><label for="method-branch"
                   ><span class="icon-tile"
                     ><svg class="bk-icon" aria-hidden="true">
-                      <use href="components/booking-icons.svg#bk-wallet" /></svg></span
+                      <use href="components/booking-icons.svg#bk-bank" /></svg></span
                   ><span
-                    ><strong>Wallet</strong
-                    ><small class="wallet-desktop-caption">Use your wallet balance</small><small class="wallet-mobile-caption">Balance: <b>PKR 12,500</b></small></span
+                    ><strong>Pay at branch</strong
+                    ><small>Choose a city for branch payment</small></span
                   ><b>›</b></label
                 >
-              </div>
-              <div class="wallet-card">
-                <h3>
-                  <svg class="bk-icon" aria-hidden="true">
-                    <use href="components/booking-icons.svg#bk-wallet" /></svg
-                  ><span>Your Sparrow wallet<strong>PKR 12,500 <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-info" /></svg></strong></span>
-                </h3>
-                <label class="wallet-toggle"><input type="checkbox" id="use-wallet" aria-label="Use wallet balance" /><span aria-hidden="true"></span>Use wallet balance</label>
-                <p>Available balance will be applied<br />to your booking.</p>
-                <details>
-                  <summary>View details</summary>
-                  <p>
-                    Demo wallet credit. The remaining amount is simulated; no
-                    funds are transferred.
-                  </p>
-                </details>
               </div>
             </aside>
             <div class="payment-main">
@@ -181,38 +165,10 @@
                   <p class="field-note">
                     Your payment information is encrypted and secure.
                   </p>
-                  <div class="payment-fields">
-                    <label
-                      >Name on card<input
-                        value="Ali Khan"
-                        placeholder="e.g. Ali Raza"
-                        readonly
-                        aria-label="Name on card" /></label
-                    ><label
-                      >Card number
-                      <div class="card-input">
-                        <input
-                          value="4242 4242 4242 4242"
-                          placeholder="0000 0000 0000 0000"
-                          readonly
-                          aria-label="Card number"
-                        /><svg class="bk-icon" aria-hidden="true">
-                          <use href="components/booking-icons.svg#bk-card" />
-                        </svg></div
-                    ></label>
-                    <div class="card-small-fields">
-                      <label
-                        >Expiry date<input value="12 / 30" placeholder="MM / YY" readonly /></label
-                      ><label>CVC<span class="card-input"><input value="123" placeholder="e.g. 123" readonly /><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-info" /></svg></span></label
-                      ><label
-                        >Billing country<select>
-                          <option>Pakistan</option>
-                          <option>United Arab Emirates</option>
-                          <option>United Kingdom</option>
-                        </select></label
-                      >
-                    </div>
-                  </div>
+                  <p class="bk-info payment-demo-note">
+                    <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-info" /></svg>
+                    No transfer is required. Continue to simulate payment.
+                  </p>
                 </div>
                 <div class="bank-method">
                   <h2>Pay by bank transfer</h2>
@@ -226,10 +182,6 @@
                       <dd>Demo Bank</dd>
                     </div>
                     <div>
-                      <dt>Reference</dt>
-                      <dd>BK7X2P</dd>
-                    </div>
-                    <div>
                       <dt>Amount</dt>
                       <dd>PKR 149,000</dd>
                     </div>
@@ -240,20 +192,23 @@
                     >No transfer is required. Continue to simulate payment.
                   </p>
                 </div>
-                <div class="wallet-method">
-                  <h2>Pay with your wallet</h2>
-                  <p>Your demo wallet has PKR 12,500 available.</p>
-                  <p class="bk-info">
-                    <svg class="bk-icon" aria-hidden="true">
-                      <use href="components/booking-icons.svg#bk-wallet" /></svg
-                    >Wallet payment is a static display example.
-                  </p>
+                <div class="branch-method">
+                  <h2>Pay at branch</h2>
+                  <p>Select the city of the branch where you’ll complete your payment.</p>
+                  <label class="branch-city-field">Branch city
+                    <select name="branch-city" aria-label="Select branch city">
+                      <option value="" selected disabled>Select a city</option>
+                      <option value="islamabad">Islamabad</option>
+                      <option value="karachi">Karachi</option>
+                      <option value="lahore">Lahore</option>
+                      <option value="peshawar">Peshawar</option>
+                      <option value="quetta">Quetta</option>
+                    </select>
+                  </label>
                 </div>
                 <label class="consent"
                   ><input type="checkbox" name="consent" id="consent" required /><span
-                    >I agree to the
-                    <button type="button" class="payment-policy-link" popovertarget="payment-policies">Fare Conditions</button> and
-                    <button type="button" class="payment-policy-link" popovertarget="payment-policies">Privacy Policy</button><span class="consent-authorization"> and confirm
+                    >I agree to the Fare Conditions and Privacy Policy<span class="consent-authorization"> and confirm
                     that I am authorized to use this payment method.</span></span
                   ></label
                 >
@@ -263,9 +218,9 @@
                   <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-arrow" /></svg>
                 </button>
                 <a
-                  class="bk-primary pay-button" data-booking-navigation="step-complete"
+                  class="bk-primary pay-button"
                   tabindex="0"
-                  role="button" href="booking-confirmation.html">
+                  role="button" href="#payment-processing-state">
                   <svg class="bk-icon" aria-hidden="true">
                     <use href="components/booking-icons.svg#bk-lock" /></svg
                   >Pay PKR 149,000<svg
@@ -275,6 +230,7 @@
                     <use href="components/booking-icons.svg#bk-arrow" />
                   </svg>
                 </a>
+                <a class="payment-failure-preview" href="#payment-failed-state">Preview unsuccessful payment</a>
               </div>
             </div>
             <aside class="payment-sidebar">
@@ -316,38 +272,6 @@
                     <dd>PKR 149,000</dd>
                   </div>
                 </dl>
-                </div>
-              </div>
-              <div class="bk-card payment-help">
-                <details id="fare-conditions">
-                  <summary>
-                    <svg class="bk-icon" aria-hidden="true">
-                      <use href="components/booking-icons.svg#bk-doc" /></svg
-                    >Fare conditions<svg class="bk-icon bk-chevron" aria-hidden="true"><use href="components/booking-icons.svg#bk-chevron-down" /></svg>
-                  </summary>
-                  <p>Sample Economy fare. No ticket is issued in this demo.</p>
-                  <p id="privacy-details">Your sample entries stay on this page and are not sent to a server.</p>
-                </details>
-                <details>
-                  <summary>
-                    <svg class="bk-icon" aria-hidden="true">
-                      <use href="components/booking-icons.svg#bk-headset" /></svg
-                    >Need help with payment?<svg class="bk-icon bk-chevron" aria-hidden="true"><use href="components/booking-icons.svg#bk-chevron-down" /></svg>
-                  </summary>
-                  <p>
-                    Select a payment method and agree to the fare conditions to continue.
-                  </p>
-                </details>
-              </div>
-              <div class="payment-protection">
-                <svg class="bk-icon" aria-hidden="true">
-                  <use href="components/booking-icons.svg#bk-shield" />
-                </svg>
-                <div>
-                  <strong>Your payment is protected</strong>
-                  <p>
-                    We use industry-standard encryption to keep your information safe and secure.
-                  </p>
                 </div>
               </div>
               <details class="bk-card payment-extras">
@@ -396,9 +320,9 @@
               <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-arrow" /></svg>
             </button>
             <a
-              class="bk-primary payment-mobile-pay" data-booking-navigation="step-complete"
+              class="bk-primary payment-mobile-pay"
               tabindex="0"
-              role="button" href="booking-confirmation.html">
+              role="button" href="#payment-processing-state">
               <svg class="bk-icon" aria-hidden="true">
                 <use href="components/booking-icons.svg#bk-lock" /></svg
               >Pay now
@@ -408,80 +332,73 @@
             </a>
           </div>
         </div>
-        <div class="bk-card review-popover payment-policy-popover" id="payment-policies" popover="auto">
-          <button type="button" class="popover-close" popovertarget="payment-policies" popovertargetaction="hide" aria-label="Close payment policies">×</button>
-          <h3>Fare Conditions &amp; Privacy Policy</h3>
-          <p>This static booking uses sample fares and traveller details. No ticket is issued and no payment is collected. Your entries stay on this page and are not sent to a server.</p>
-        </div>
       </section>
-<section class="payment-status-examples bk-container" aria-label="Payment status examples">
-        <article class="payment-status-example payment-processing-example">
-          <span class="status-spinner-disc" aria-hidden="true"><span class="processing-spinner"></span></span>
-          <div class="status-copy">
-            <h2>Processing your payment</h2>
-            <p>Please do not close this page. We are securely processing your payment with your bank.</p>
-          </div>
-          <ul>
-            <li class="status-done">Connecting to your bank</li>
-            <li class="status-current">Verifying payment details</li>
-            <li>Finalising your booking</li>
-            <li class="status-note"><small>This usually takes a few seconds.</small></li>
-          </ul>
-        </article>
-        <article class="payment-status-example payment-failed-example">
-          <span class="error-icon" aria-hidden="true">!</span>
-          <div class="status-copy">
-            <h2>Payment unsuccessful</h2>
-            <p>We couldn’t process your payment right now.<br />This could be due to a bank issue or incorrect details.</p>
-            <div class="error-actions">
-              <a class="bk-primary" href="#payment-panel"><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-refresh" /></svg>Try again</a>
-              <a class="bk-outline" href="#payment-panel">Choose another method</a>
-            </div>
-          </div>
-          <aside class="payment-error-help">
-            <b>Need help?</b>
-            <p><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-card" /></svg>Check your card details</p>
-            <p><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-wallet" /></svg>Ensure sufficient balance</p>
-            <p><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-headset" /></svg>Try a different payment method</p>
-            <p><svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-phone" /></svg>Contact your bank</p>
-          </aside>
-        </article>
-      </section>
-<div id="payment-error" class="payment-status-card error">
-        <span class="error-icon">!</span>
-        <div>
-          <h2>Payment unsuccessful</h2>
-          <p>
-            We couldn’t process your demo payment.<br />Try again or choose
-            another method.
-          </p>
-          <div class="error-actions">
-            <a class="bk-primary" href="#payment-panel">Try another payment</a>
-            <a
-              class="bk-outline" data-booking-navigation="step-payment"
-              tabindex="0"
-              role="button"
-               href="payment.html">Choose another method</a>
-          </div>
-        </div>
-        <div class="payment-error-help">
-          <b>Need help?</b>
-          <p>Check your card details</p>
-          <p>Ensure sufficient balance</p>
-          <p>Try a different payment method</p>
-          <p>Contact your bank</p>
-        </div>
+  <section class="payment-result-pages bk-container" aria-label="Payment result examples">
+    <article id="payment-processing-state" class="payment-result-page payment-result-processing" aria-labelledby="payment-processing-title">
+      <div class="payment-result-heading">
+        <span class="payment-result-spinner" aria-hidden="true"></span>
+        <div><span class="payment-result-eyebrow">Secure payment</span><h1 id="payment-processing-title">Confirming your payment</h1><p>Please keep this page open while we verify your payment and prepare the booking.</p></div>
       </div>
+      <ol class="payment-processing-steps"><li class="is-complete">Connecting to your bank</li><li class="is-current">Verifying payment details</li><li>Preparing your booking</li></ol>
+      <p class="payment-processing-note">This usually takes a few seconds.</p>
+    </article>
+    <article id="payment-success-state" class="payment-result-page payment-result-success" aria-labelledby="payment-success-title">
+      <div class="payment-result-heading">
+        <span class="payment-result-icon" aria-hidden="true"><svg class="bk-icon" viewBox="0 0 24 24"><use href="components/booking-icons.svg#bk-check" /></svg></span>
+        <div><span class="payment-result-eyebrow">Payment complete</span><h1 id="payment-success-title">Payment successful</h1><p>Your payment is confirmed. Your booking details are ready to view.</p></div>
+      </div>
+      <div class="payment-result-summary"><span>Amount paid</span><strong>PKR 149,000</strong><span>Payment method</span><strong>Selected payment method</strong><span>Booking reference</span><strong>SPW-241126 · Demo</strong></div>
+      <div class="payment-result-actions"><a class="bk-primary" href="booking-confirmation.html">View confirmation details <svg class="bk-icon" aria-hidden="true"><use href="components/booking-icons.svg#bk-arrow" /></svg></a><a class="bk-outline" href="#payment-panel">Return to payment</a></div>
+    </article>
+    <article id="payment-failed-state" class="payment-result-page payment-result-failed" aria-labelledby="payment-failed-title">
+      <div class="payment-result-heading">
+        <span class="payment-result-icon" aria-hidden="true">!</span>
+        <div><span class="payment-result-eyebrow">Payment not completed</span><h1 id="payment-failed-title">Payment unsuccessful</h1><p>We couldn’t complete this demo payment. No payment was taken.</p></div>
+      </div>
+      <div class="payment-result-help"><strong>Before trying again</strong><span>Check your payment details and available balance, or choose another payment method.</span></div>
+      <div class="payment-result-actions"><a class="bk-primary" href="#payment-panel">Try payment again</a><a class="bk-outline" href="#payment-panel">Choose another method</a></div>
+    </article>
+  </section>
 </main>
 <iframe
-      class="booking-footer-frame"
-      src="components/footer.html"
-      title="Site footer"
-      scrolling="no"
-      loading="lazy"
-    ></iframe>
+  class="booking-footer-frame"
+  src="components/footer.html"
+  title="Site footer"
+  scrolling="no"
+  loading="lazy"
+></iframe>
 
 
+<script>
+(() => {
+  const pendingKey = "sparrow-payment-confirming";
+  const navigation = performance.getEntriesByType("navigation")[0];
+  if (sessionStorage.getItem(pendingKey)) {
+    sessionStorage.removeItem(pendingKey);
+    if (navigation?.type === "reload") {
+      window.location.hash = "payment-failed-state";
+      return;
+    }
+  }
+
+  document.addEventListener("click", event => {
+    const payLink = event.target.closest(".pay-button, .payment-mobile-pay");
+    if (!payLink) return;
+    sessionStorage.setItem(pendingKey, "1");
+    window.setTimeout(() => {
+      if (window.location.hash !== "#payment-processing-state") {
+        sessionStorage.removeItem(pendingKey);
+        return;
+      }
+      sessionStorage.removeItem(pendingKey);
+      window.location.hash = "payment-success-state";
+    }, 4000);
+  });
+  window.addEventListener("hashchange", () => {
+    if (window.location.hash !== "#payment-processing-state") sessionStorage.removeItem(pendingKey);
+  });
+})();
+</script>
 <script>
 (() => {
   const frame = [...document.querySelectorAll("iframe")].find(iframe =>
